@@ -1,3 +1,5 @@
+The base code is licensed under:
+
 MIT License
 
 Copyright (c) 2017-Present OpenNMT

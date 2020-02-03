@@ -6,6 +6,7 @@ data_dir=/home/dpk25/MolecularTransformer2/data/data/${dataset}/${dataset}
 
 python /home/dpk25/MolecularTransformer2/train.py -data ${data_dir}  \
 	-save_model ${save_model}${dataset}_model \
+	-train_from ${save_model}MIT_mixed_augm_model_step_390000.pt \
 	-seed 42 -gpu_ranks 0 -save_checkpoint_steps 10000 -keep_checkpoint -1 \
 	-train_steps 500000 -param_init 0 -param_init_glorot -max_generator_batches 32 \
 	-batch_size 4096 -batch_type tokens -normalization tokens -max_grad_norm 0 \

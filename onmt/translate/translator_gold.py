@@ -317,9 +317,8 @@ class Translator(object):
 
         src_data = {"reader": self.src_reader, "data": src, "dir": src_dir}
         tgt_data = {"reader": self.tgt_reader, "data": tgt, "dir": None}
-        tgt2_data = {"reader": self.tgt2_reader, "data": tgt2, "dir": None}
         _readers, _data, _dir = inputters.Dataset.config(
-            [('src', src_data), ('tgt', tgt_data), ('tgt2',tgt2_data)])
+            [('src', src_data), ('tgt', tgt_data)])
 
         data = inputters.Dataset(
             self.fields, readers=_readers, data=_data, dirs=_dir,
@@ -338,26 +337,40 @@ class Translator(object):
             shuffle=False
         )
 
-        xlation_builder = onmt.translate.TranslationBuilder(
-            data, self.fields, self.n_best, self.replace_unk, tgt,
-            self.phrase_table
-        )
-
-        # Statistics
-        counter = count(1)
-        pred_score_total, pred_words_total = 0, 0
-        gold_score_total, gold_words_total = 0, 0
-
-        all_scores = []
-        all_predictions = []
-
-        start_time = time.time()
-
+        
+        gold_scores_1 = 0
         for batch in data_iter:
-            gold_diff = self.translate_batch(
+            gold_scores_1  = self.translate_batch(
                 batch, data.src_vocabs, attn_debug
             )
-            return gold_diff
+
+        tgt2_data = {"reader": self.tgt2_reader, "data": tgt2, "dir": None}
+        _readers, _data, _dir = inputters.Dataset.config(
+            [('src', src_data), ('tgt', tgt2_data)])
+
+        data = inputters.Dataset(
+            self.fields, readers=_readers, data=_data, dirs=_dir,
+            sort_key=inputters.str2sortkey[self.data_type],
+            filter_pred=self._filter_pred
+        )
+
+        data_iter = inputters.OrderedIterator(
+            dataset=data,
+            device=self._dev,
+            batch_size=batch_size,
+            batch_size_fn=max_tok_len if batch_type == "tokens" else None,
+            train=False,
+            sort=False,
+            sort_within_batch=True,
+            shuffle=False
+        )
+
+        gold_scores_2 = 0
+        for batch in data_iter:
+            gold_scores_2  = self.translate_batch(
+                batch, data.src_vocabs, attn_debug
+            )
+        return gold_scores_1 - gold_scores_2
 
     def _decode_and_generate(
             self,
@@ -523,7 +536,7 @@ class Translator(object):
                     exclusion_tokens=self._exclusion_idxs,
                     stepwise_penalty=self.stepwise_penalty,
                     ratio=self.ratio)
-            return self._return_gold_diff(batch, src_vocabs,
+            return self._return_gold(batch, src_vocabs,
                                                        decode_strategy)
 
     def _run_encoder(self, batch):
@@ -542,7 +555,7 @@ class Translator(object):
         return src, enc_states, memory_bank, src_lengths
 
 
-    def _return_gold_diff(
+    def _return_gold(
             self,
             batch,
             src_vocabs,
@@ -567,12 +580,12 @@ class Translator(object):
         src, enc_states, memory_bank, src_lengths = self._run_encoder(batch)
         self.model.decoder.init_state(src, memory_bank, enc_states)
 
-        gold_scores_1, gold_scores_2 = self._gold_score(
+        gold_scores = self._gold_score(
                                        batch, memory_bank, src_lengths, src_vocabs, use_src_map,
                                        enc_states, batch_size, src)
-        return gold_scores_1 - gold_scores_2
+        return gold_scores
 
-    def _score_targets(self, batch, memory_bank, src_lengths,
+    def _score_target(self, batch, memory_bank, src_lengths,
                       src_vocabs, src_map):
         tgt = batch.tgt
         tgt_in = tgt[:-1]
@@ -586,18 +599,7 @@ class Translator(object):
         gold_scores = log_probs.gather(2, gold)
         gold_scores = gold_scores.sum(dim=0).view(-1)
 
-        tgt2 = batch.tgt2
-        tgt2_in = tgt2[:-1]
-
-        log_probs, attn = self._decode_and_generate(
-            tgt2_in, memory_bank, batch, src_vocabs,
-            memory_lengths=src_lengths, src_map=src_map)
-
-        log_probs[:, :, self._tgt_pad_idx] = 0
-        gold = tgt2[1:]
-        gold_scores = log_probs.gather(2, gold)
-        gold_scores_2 = gold_scores.sum(dim=0).view(-1)
-        return gold_scores, gold_scores_2
+        return gold_scores
 
     def _report_score(self, name, score_total, words_total):
         if words_total == 0:

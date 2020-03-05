@@ -18,13 +18,15 @@ def translate(opt):
     translator = build_translator(opt, report_score=True)
     src_shards = split_corpus(opt.src, opt.shard_size)
     tgt_shards = split_corpus(opt.tgt, opt.shard_size)
-    shard_pairs = zip(src_shards, tgt_shards)
+    tgt2_shards = split_corpus(opt.tgt2, opt.shard_size)
+    shard_trips = zip(src_shards, tgt_shards, tgt2_shards)
 
-    for i, (src_shard, tgt_shard) in enumerate(shard_pairs):
+    for i, (src_shard, tgt_shard, tgt2_shard) in enumerate(shard_trips):
         logger.info("Translating shard %d." % i)
         return translator.translate_gold_diff(
                src=src_shard,
                tgt=tgt_shard,
+               tgt2=tgt2_shard,
                src_dir=opt.src_dir,
                batch_size=opt.batch_size,
                batch_type=opt.batch_type,

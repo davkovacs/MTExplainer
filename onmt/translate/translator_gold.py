@@ -107,6 +107,7 @@ class Translator(object):
             fields,
             src_reader,
             tgt_reader,
+            tgt2_reader,
             gpu=-1,
             n_best=1,
             min_length=0,
@@ -163,6 +164,7 @@ class Translator(object):
             self._tgt_vocab.stoi[t] for t in self.ignore_when_blocking}
         self.src_reader = src_reader
         self.tgt_reader = tgt_reader
+        self.tgt2_reader = tgt2_reader
         self.replace_unk = replace_unk
         if self.replace_unk and not self.model.decoder.attentional:
             raise ValueError(
@@ -231,11 +233,13 @@ class Translator(object):
 
         src_reader = inputters.str2reader[opt.data_type].from_opt(opt)
         tgt_reader = inputters.str2reader["text"].from_opt(opt)
+        tgt2_reader = inputters.str2reader["text"].from_opt(opt)
         return cls(
             model,
             fields,
             src_reader,
             tgt_reader,
+            tgt2_reader,
             gpu=opt.gpu,
             n_best=opt.n_best,
             min_length=opt.min_length,
@@ -285,6 +289,7 @@ class Translator(object):
             self,
             src,
             tgt=None,
+            tgt2=None,
             src_dir=None,
             batch_size=None,
             batch_type="sents",
@@ -315,8 +320,9 @@ class Translator(object):
 
         src_data = {"reader": self.src_reader, "data": src, "dir": src_dir}
         tgt_data = {"reader": self.tgt_reader, "data": tgt, "dir": None}
+        tgt2_data = {"reader": self.tgt2_reader, "data": tgt2, "dir": None}
         _readers, _data, _dir = inputters.Dataset.config(
-            [('src', src_data), ('tgt', tgt_data)])
+            [('src', src_data), ('tgt', tgt_data), ('tgt2',tgt2_data)])
 
         data = inputters.Dataset(
             self.fields, readers=_readers, data=_data, dirs=_dir,

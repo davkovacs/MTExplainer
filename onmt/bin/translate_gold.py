@@ -47,7 +47,7 @@ def main():
     parser = _get_parser()
 
     opt = parser.parse_args()
-    translate(opt)
+    return translate(opt)
 
 
 if __name__ == "__main__":

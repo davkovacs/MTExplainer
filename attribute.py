@@ -3,13 +3,13 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import score
+from translate_IG import main as score
 
 class ProbDifference(nn.Module):
    # nn returning difference inn probability of two possible targets
-    def __init__(self, src):
+    def __init__(self):
         super(ProbDifference,self).__init__()
-        self.scorer = score(src)  # The function of William returning the two gold scores
+        self.scorer = score()  # The function of William returning the two gold scores
 
     def forward(self, x):
         x = self.scorer(x)

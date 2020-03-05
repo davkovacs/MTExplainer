@@ -57,7 +57,7 @@ def _dynamic_dict(example, src_field, tgt_field, tgt2_field):
         mask = torch.LongTensor(
             [unk_idx] + [src_ex_vocab.stoi[w] for w in tgt] + [unk_idx])
         example["alignment"] = mask
-return src_ex_vocab, example
+    return src_ex_vocab, example
 
 
 class Dataset(TorchtextDataset):

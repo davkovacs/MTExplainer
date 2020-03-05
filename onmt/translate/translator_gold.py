@@ -274,13 +274,13 @@ class Translator(object):
     def _gold_score(self, batch, memory_bank, src_lengths, src_vocabs,
                     use_src_map, enc_states, batch_size, src):
         if "tgt" in batch.__dict__:
-            gs_1, gs_2 = self._score_targets(
+            gs = self._score_target(
                 batch, memory_bank, src_lengths, src_vocabs,
                 batch.src_map if use_src_map else None)
             self.model.decoder.init_state(src, memory_bank, enc_states)
         else:
             gs = [0] * batch_size
-        return gs_1, gs_2
+        return gs
 
     def translate_gold_diff(
             self,
@@ -367,7 +367,7 @@ class Translator(object):
 
         gold_scores_2 = 0
         for batch in data_iter:
-            gold_scores_2  = self.translate_batch(
+            gold_scores_2 = self.translate_batch(
                 batch, data.src_vocabs, attn_debug
             )
         return gold_scores_1 - gold_scores_2

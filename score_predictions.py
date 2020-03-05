@@ -58,8 +58,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description='score_predictions.py',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    onmt.opts.add_md_help_argument(parser)
-
     parser.add_argument('-beam_size', type=int, default=5,
                        help='Beam size')
     parser.add_argument('-invalid_smiles', action="store_true",

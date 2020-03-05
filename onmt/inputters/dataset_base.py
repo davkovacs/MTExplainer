@@ -21,7 +21,7 @@ def _join_dicts(*args):
     return dict(chain(*[d.items() for d in args]))
 
 
-def _dynamic_dict(example, src_field, tgt_field):
+def _dynamic_dict(example, src_field, tgt_field, tgt2_field):
     """Create copy-vocab and numericalize with it.
 
     In-place adds ``"src_map"`` to ``example``. That is the copy-vocab
@@ -57,6 +57,10 @@ def _dynamic_dict(example, src_field, tgt_field):
         mask = torch.LongTensor(
             [unk_idx] + [src_ex_vocab.stoi[w] for w in tgt] + [unk_idx])
         example["alignment"] = mask
+        tgt2 = tgt2_field.tokenize(example["tgt2"])
+        mask = torch.LongTensor(
+            [unk_idx] + [src_ex_vocab.stoi[w] for w in tgt2] + [unk_idx])
+        example["alignment"] += mask
     return src_ex_vocab, example
 
 
@@ -122,9 +126,10 @@ class Dataset(TorchtextDataset):
             if can_copy:
                 src_field = fields['src']
                 tgt_field = fields['tgt']
+                tgt2_field = fields['tgt2']
                 # this assumes src_field and tgt_field are both text
                 src_ex_vocab, ex_dict = _dynamic_dict(
-                    ex_dict, src_field.base_field, tgt_field.base_field)
+                    ex_dict, src_field.base_field, tgt_field.base_field, tgt2_field.base_field)
                 self.src_vocabs.append(src_ex_vocab)
             ex_fields = {k: [(k, v)] for k, v in fields.items() if
                          k in ex_dict}

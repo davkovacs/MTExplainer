@@ -274,9 +274,6 @@ class Translator(object):
     def _gold_score(self, batch, memory_bank, src_lengths, src_vocabs,
                     use_src_map, enc_states, batch_size, src):
         if "tgt" in batch.__dict__:
-            #gs = self._score_target(
-            #    batch, memory_bank, src_lengths, src_vocabs,
-            #    batch.src_map if use_src_map else None)
             gs_1, gs_2 = self._score_targets(
                 batch, memory_bank, src_lengths, src_vocabs,
                 batch.src_map if use_src_map else None)

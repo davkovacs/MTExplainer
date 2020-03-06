@@ -292,7 +292,8 @@ class Translator(object):
             batch_type="sents",
             attn_debug=False,
             align_debug=False,
-            phrase_table=""):
+            phrase_table="",
+            src_embed=None):
         """Translate content of ``src`` and get gold scores from ``tgt``.
 
         Args:
@@ -303,6 +304,7 @@ class Translator(object):
             batch_size (int): size of examples per mini-batch
             attn_debug (bool): enables the attention logging
             align_debug (bool): enables the word alignment logging
+            src_embed: embeddings of the source
 
         Returns:
             (`list`, `list`)
@@ -338,10 +340,10 @@ class Translator(object):
         )
 
         
-        gold_scores_1 = 0
+        #gold_scores_1 = 0
         for batch in data_iter:
             gold_scores_1  = self.translate_batch(
-                batch, data.src_vocabs, attn_debug
+                batch, data.src_vocabs, attn_debug, src_embed
             )
 
         tgt2_data = {"reader": self.tgt2_reader, "data": tgt2, "dir": None}
@@ -365,11 +367,12 @@ class Translator(object):
             shuffle=False
         )
 
-        gold_scores_2 = 0
+        #gold_scores_2 = 0
         for batch in data_iter:
             gold_scores_2 = self.translate_batch(
-                batch, data.src_vocabs, attn_debug
+                batch, data.src_vocabs, attn_debug, src_embed
             )
+        gold_scores_1.requires_grad = True
         return gold_scores_1 - gold_scores_2
 
     def _decode_and_generate(
@@ -504,7 +507,7 @@ class Translator(object):
             alignment_attn, prediction_mask, src_lengths, n_best)
         return alignement
 
-    def translate_batch(self, batch, src_vocabs, attn_debug):
+    def translate_batch(self, batch, src_vocabs, attn_debug, src_embed=None):
         """Translate a batch of sentences."""
         with torch.no_grad():
             if self.beam_size == 1:
@@ -537,14 +540,15 @@ class Translator(object):
                     stepwise_penalty=self.stepwise_penalty,
                     ratio=self.ratio)
             return self._return_gold(batch, src_vocabs,
-                                                       decode_strategy)
+                                                       decode_strategy, src_embed)
 
-    def _run_encoder(self, batch):
+    def _run_encoder(self, batch, src_embed=None):
         src, src_lengths = batch.src if isinstance(batch.src, tuple) \
                            else (batch.src, None)
 
         enc_states, memory_bank, src_lengths = self.model.encoder(
-            src, src_lengths)
+            src, src_lengths, calc_IG=True, src_embeddings=src_embed)
+        #print(memory_bank)
         if src_lengths is None:
             assert not isinstance(memory_bank, tuple), \
                 'Ensemble decoding only supported for text data'
@@ -559,7 +563,7 @@ class Translator(object):
             self,
             batch,
             src_vocabs,
-            decode_strategy):
+            decode_strategy, src_embed = None):
         """Translate a batch of sentences step by step using cache.
 
         Args:
@@ -577,12 +581,13 @@ class Translator(object):
         batch_size = batch.batch_size
 
         # (1) Run the encoder on the src.
-        src, enc_states, memory_bank, src_lengths = self._run_encoder(batch)
+        src, enc_states, memory_bank, src_lengths = self._run_encoder(batch, src_embed)
         self.model.decoder.init_state(src, memory_bank, enc_states)
 
         gold_scores = self._gold_score(
                                        batch, memory_bank, src_lengths, src_vocabs, use_src_map,
                                        enc_states, batch_size, src)
+        gold_scores.retain_grad()
         return gold_scores
 
     def _score_target(self, batch, memory_bank, src_lengths,

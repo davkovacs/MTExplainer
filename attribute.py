@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
-import torch
 import torch.nn as nn
-import torch.nn.functional as F
 from translate_IG import main as score
 
 class ProbDifference(nn.Module):

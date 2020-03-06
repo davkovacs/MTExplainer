@@ -43,25 +43,6 @@ def build_translator(opt, report_score=True, logger=None, out_file=None):
     return translator
 
 
-def max_tok_len(new, count, sofar):
-    """
-    In token batching scheme, the number of sequences is limited
-    such that the total number of src/tgt tokens (including padding)
-    in a batch <= batch_size
-    """
-    # Maintains the longest src and tgt length in the current batch
-    global max_src_in_batch  # this is a hack
-    # Reset current longest length at a new batch (count=1)
-    if count == 1:
-        max_src_in_batch = 0
-        # max_tgt_in_batch = 0
-    # Src: [<bos> w1 ... wN <eos>]
-    max_src_in_batch = max(max_src_in_batch, len(new.src[0]) + 2)
-    # Tgt: [w1 ... wM <eos>]
-    src_elements = count * max_src_in_batch
-    return src_elements
-
-
 class Translator(object):
     """Translate a batch of sentences with a saved model.
 
@@ -271,17 +252,6 @@ class Translator(object):
         else:
             print(msg)
 
-    def _gold_score(self, batch, memory_bank, src_lengths, src_vocabs,
-                    use_src_map, enc_states, batch_size, src):
-        if "tgt" in batch.__dict__:
-            gs = self._score_target(
-                batch, memory_bank, src_lengths, src_vocabs,
-                batch.src_map if use_src_map else None)
-            self.model.decoder.init_state(src, memory_bank, enc_states)
-        else:
-            gs = [0] * batch_size
-        return gs
-
     def translate_gold_diff(
             self,
             src,
@@ -375,6 +345,115 @@ class Translator(object):
         gold_scores_1.requires_grad = True
         return gold_scores_1 - gold_scores_2
 
+    def translate_batch(self, batch, src_vocabs, attn_debug, src_embed=None):
+        """Translate a batch of sentences."""
+        with torch.no_grad():
+            if self.beam_size == 1:
+                decode_strategy = GreedySearch(
+                    pad=self._tgt_pad_idx,
+                    bos=self._tgt_bos_idx,
+                    eos=self._tgt_eos_idx,
+                    batch_size=batch.batch_size,
+                    min_length=self.min_length, max_length=self.max_length,
+                    block_ngram_repeat=self.block_ngram_repeat,
+                    exclusion_tokens=self._exclusion_idxs,
+                    return_attention=attn_debug or self.replace_unk,
+                    sampling_temp=self.random_sampling_temp,
+                    keep_topk=self.sample_from_topk)
+            else:
+                # TODO: support these blacklisted features
+                assert not self.dump_beam
+                decode_strategy = BeamSearch(
+                    self.beam_size,
+                    batch_size=batch.batch_size,
+                    pad=self._tgt_pad_idx,
+                    bos=self._tgt_bos_idx,
+                    eos=self._tgt_eos_idx,
+                    n_best=self.n_best,
+                    global_scorer=self.global_scorer,
+                    min_length=self.min_length, max_length=self.max_length,
+                    return_attention=attn_debug or self.replace_unk,
+                    block_ngram_repeat=self.block_ngram_repeat,
+                    exclusion_tokens=self._exclusion_idxs,
+                    stepwise_penalty=self.stepwise_penalty,
+                    ratio=self.ratio)
+            return self._return_gold(batch, src_vocabs,decode_strategy, src_embed)
+    
+    def _return_gold(
+            self,
+            batch,
+            src_vocabs,
+            decode_strategy, src_embed = None):
+        """Translate a batch of sentences step by step using cache.
+
+        Args:
+            batch: a batch of sentences, yield by data iterator.
+            src_vocabs (list): list of torchtext.data.Vocab if can_copy.
+            decode_strategy (DecodeStrategy): A decode strategy to use for
+                generate translation step by step.
+
+        Returns:
+            results (dict): The translation results.
+        """
+        # (0) Prep the components of the search.
+        use_src_map = self.copy_attn
+        parallel_paths = decode_strategy.parallel_paths  # beam_size
+        batch_size = batch.batch_size
+
+        # (1) Run the encoder on the src.
+        src, enc_states, memory_bank, src_lengths = self._run_encoder(batch, src_embed)
+        self.model.decoder.init_state(src, memory_bank, enc_states)
+
+        gold_scores = self._gold_score(
+                                       batch, memory_bank, src_lengths, src_vocabs, use_src_map,
+                                       enc_states, batch_size, src)
+        gold_scores.retain_grad()
+        return gold_scores
+
+    def _run_encoder(self, batch, src_embed=None):
+        src, src_lengths = batch.src if isinstance(batch.src, tuple) \
+                           else (batch.src, None)
+
+        enc_states, memory_bank, src_lengths = self.model.encoder(
+            src, src_lengths, calc_IG=True, src_embeddings=src_embed)
+        #print(memory_bank)
+        if src_lengths is None:
+            assert not isinstance(memory_bank, tuple), \
+                'Ensemble decoding only supported for text data'
+            src_lengths = torch.Tensor(batch.batch_size) \
+                               .type_as(memory_bank) \
+                               .long() \
+                               .fill_(memory_bank.size(0))
+        return src, enc_states, memory_bank, src_lengths
+
+ 
+    def _gold_score(self, batch, memory_bank, src_lengths, src_vocabs,
+                    use_src_map, enc_states, batch_size, src):
+        if "tgt" in batch.__dict__:
+            gs = self._score_target(
+                batch, memory_bank, src_lengths, src_vocabs,
+                batch.src_map if use_src_map else None)
+            self.model.decoder.init_state(src, memory_bank, enc_states)
+        else:
+            gs = [0] * batch_size
+        return gs
+
+    def _score_target(self, batch, memory_bank, src_lengths,
+                      src_vocabs, src_map):
+        tgt = batch.tgt
+        tgt_in = tgt[:-1]
+
+        log_probs, attn = self._decode_and_generate(
+            tgt_in, memory_bank, batch, src_vocabs,
+            memory_lengths=src_lengths, src_map=src_map)
+
+        log_probs[:, :, self._tgt_pad_idx] = 0
+        gold = tgt[1:]
+        gold_scores = log_probs.gather(2, gold)
+        gold_scores = gold_scores.sum(dim=0).view(-1)
+
+        return gold_scores
+
     def _decode_and_generate(
             self,
             decoder_in,
@@ -432,35 +511,20 @@ class Translator(object):
             # returns [(batch_size x beam_size) , vocab ] when 1 step
             # or [ tgt_len, batch_size, vocab ] when full sentence
         return log_probs, attn
-
-
-    def _align_pad_prediction(self, predictions, bos, pad):
-        """
-        Padding predictions in batch and add BOS.
-
-        Args:
-            predictions (List[List[Tensor]]): `(batch, n_best,)`, for each src
-                sequence contain n_best tgt predictions all of which ended with
-                eos id.
-            bos (int): bos index to be used.
-            pad (int): pad index to be used.
-
-        Return:
-            batched_nbest_predict (torch.LongTensor): `(batch, n_best, tgt_l)`
-        """
-        dtype, device = predictions[0][0].dtype, predictions[0][0].device
-        flatten_tgt = [best.tolist() for bests in predictions
-                       for best in bests]
-        paded_tgt = torch.tensor(
-            list(zip_longest(*flatten_tgt, fillvalue=pad)),
-            dtype=dtype, device=device).T
-        bos_tensor = torch.full([paded_tgt.size(0), 1], bos,
-                                dtype=dtype, device=device)
-        full_tgt = torch.cat((bos_tensor, paded_tgt), dim=-1)
-        batched_nbest_predict = full_tgt.view(
-            len(predictions), -1, full_tgt.size(-1))  # (batch, n_best, tgt_l)
-        return batched_nbest_predict
-
+ 
+#### EVERYTHING AFTER THIS IS IRRELEVANT FOR SCORING
+   
+    def _report_score(self, name, score_total, words_total):
+        if words_total == 0:
+            msg = "%s No words predicted" % (name,)
+        else:
+            avg_score = score_total / words_total
+            ppl = np.exp(-score_total.item() / words_total)
+            msg = ("%s AVG SCORE: %.4f, %s PPL: %.4f" % (
+                name, avg_score,
+                name, ppl))
+        return msg
+    
     def _align_forward(self, batch, predictions):
         """
         For a batch of input and its prediction, return a list of batch predict
@@ -507,112 +571,49 @@ class Translator(object):
             alignment_attn, prediction_mask, src_lengths, n_best)
         return alignement
 
-    def translate_batch(self, batch, src_vocabs, attn_debug, src_embed=None):
-        """Translate a batch of sentences."""
-        with torch.no_grad():
-            if self.beam_size == 1:
-                decode_strategy = GreedySearch(
-                    pad=self._tgt_pad_idx,
-                    bos=self._tgt_bos_idx,
-                    eos=self._tgt_eos_idx,
-                    batch_size=batch.batch_size,
-                    min_length=self.min_length, max_length=self.max_length,
-                    block_ngram_repeat=self.block_ngram_repeat,
-                    exclusion_tokens=self._exclusion_idxs,
-                    return_attention=attn_debug or self.replace_unk,
-                    sampling_temp=self.random_sampling_temp,
-                    keep_topk=self.sample_from_topk)
-            else:
-                # TODO: support these blacklisted features
-                assert not self.dump_beam
-                decode_strategy = BeamSearch(
-                    self.beam_size,
-                    batch_size=batch.batch_size,
-                    pad=self._tgt_pad_idx,
-                    bos=self._tgt_bos_idx,
-                    eos=self._tgt_eos_idx,
-                    n_best=self.n_best,
-                    global_scorer=self.global_scorer,
-                    min_length=self.min_length, max_length=self.max_length,
-                    return_attention=attn_debug or self.replace_unk,
-                    block_ngram_repeat=self.block_ngram_repeat,
-                    exclusion_tokens=self._exclusion_idxs,
-                    stepwise_penalty=self.stepwise_penalty,
-                    ratio=self.ratio)
-            return self._return_gold(batch, src_vocabs,
-                                                       decode_strategy, src_embed)
+    def max_tok_len(new, count, sofar):
+        """
+        In token batching scheme, the number of sequences is limited
+        such that the total number of src/tgt tokens (including padding)
+        in a batch <= batch_size
+        """
+        # Maintains the longest src and tgt length in the current batch
+        global max_src_in_batch  # this is a hack
+        # Reset current longest length at a new batch (count=1)
+        if count == 1:
+            max_src_in_batch = 0
+            # max_tgt_in_batch = 0
+        # Src: [<bos> w1 ... wN <eos>]
+        max_src_in_batch = max(max_src_in_batch, len(new.src[0]) + 2)
+        # Tgt: [w1 ... wM <eos>]
+        src_elements = count * max_src_in_batch
+        return src_elements
 
-    def _run_encoder(self, batch, src_embed=None):
-        src, src_lengths = batch.src if isinstance(batch.src, tuple) \
-                           else (batch.src, None)
-
-        enc_states, memory_bank, src_lengths = self.model.encoder(
-            src, src_lengths, calc_IG=True, src_embeddings=src_embed)
-        #print(memory_bank)
-        if src_lengths is None:
-            assert not isinstance(memory_bank, tuple), \
-                'Ensemble decoding only supported for text data'
-            src_lengths = torch.Tensor(batch.batch_size) \
-                               .type_as(memory_bank) \
-                               .long() \
-                               .fill_(memory_bank.size(0))
-        return src, enc_states, memory_bank, src_lengths
-
-
-    def _return_gold(
-            self,
-            batch,
-            src_vocabs,
-            decode_strategy, src_embed = None):
-        """Translate a batch of sentences step by step using cache.
+    def _align_pad_prediction(self, predictions, bos, pad):
+        """
+        Padding predictions in batch and add BOS.
 
         Args:
-            batch: a batch of sentences, yield by data iterator.
-            src_vocabs (list): list of torchtext.data.Vocab if can_copy.
-            decode_strategy (DecodeStrategy): A decode strategy to use for
-                generate translation step by step.
+            predictions (List[List[Tensor]]): `(batch, n_best,)`, for each src
+                sequence contain n_best tgt predictions all of which ended with
+                eos id.
+            bos (int): bos index to be used.
+            pad (int): pad index to be used.
 
-        Returns:
-            results (dict): The translation results.
+        Return:
+            batched_nbest_predict (torch.LongTensor): `(batch, n_best, tgt_l)`
         """
-        # (0) Prep the components of the search.
-        use_src_map = self.copy_attn
-        parallel_paths = decode_strategy.parallel_paths  # beam_size
-        batch_size = batch.batch_size
+        dtype, device = predictions[0][0].dtype, predictions[0][0].device
+        flatten_tgt = [best.tolist() for bests in predictions
+                       for best in bests]
+        paded_tgt = torch.tensor(
+            list(zip_longest(*flatten_tgt, fillvalue=pad)),
+            dtype=dtype, device=device).T
+        bos_tensor = torch.full([paded_tgt.size(0), 1], bos,
+                                dtype=dtype, device=device)
+        full_tgt = torch.cat((bos_tensor, paded_tgt), dim=-1)
+        batched_nbest_predict = full_tgt.view(
+            len(predictions), -1, full_tgt.size(-1))  # (batch, n_best, tgt_l)
+        return batched_nbest_predict
 
-        # (1) Run the encoder on the src.
-        src, enc_states, memory_bank, src_lengths = self._run_encoder(batch, src_embed)
-        self.model.decoder.init_state(src, memory_bank, enc_states)
 
-        gold_scores = self._gold_score(
-                                       batch, memory_bank, src_lengths, src_vocabs, use_src_map,
-                                       enc_states, batch_size, src)
-        gold_scores.retain_grad()
-        return gold_scores
-
-    def _score_target(self, batch, memory_bank, src_lengths,
-                      src_vocabs, src_map):
-        tgt = batch.tgt
-        tgt_in = tgt[:-1]
-
-        log_probs, attn = self._decode_and_generate(
-            tgt_in, memory_bank, batch, src_vocabs,
-            memory_lengths=src_lengths, src_map=src_map)
-
-        log_probs[:, :, self._tgt_pad_idx] = 0
-        gold = tgt[1:]
-        gold_scores = log_probs.gather(2, gold)
-        gold_scores = gold_scores.sum(dim=0).view(-1)
-
-        return gold_scores
-
-    def _report_score(self, name, score_total, words_total):
-        if words_total == 0:
-            msg = "%s No words predicted" % (name,)
-        else:
-            avg_score = score_total / words_total
-            ppl = np.exp(-score_total.item() / words_total)
-            msg = ("%s AVG SCORE: %.4f, %s PPL: %.4f" % (
-                name, avg_score,
-                name, ppl))
-        return msg

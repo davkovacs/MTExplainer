@@ -312,8 +312,8 @@ class Translator(object):
         
         #gold_scores_1 = 0
         for batch in data_iter:
-            gold_scores_1  = self.translate_batch(
-                batch, data.src_vocabs, attn_debug, src_embed
+            gold_scores_1, src, enc_states, memory_bank, src_lengths = self.translate_batch(
+                batch, data.src_vocabs, attn_debug, src_embed=src_embed
             )
 
         tgt2_data = {"reader": self.tgt2_reader, "data": tgt2, "dir": None}
@@ -340,14 +340,15 @@ class Translator(object):
         #gold_scores_2 = 0
         for batch in data_iter:
             gold_scores_2 = self.translate_batch(
-                batch, data.src_vocabs, attn_debug, src_embed
+                batch, data.src_vocabs, attn_debug, src, enc_states, memory_bank, src_lengths, src_embed, tgt2=True
             )
-        gold_scores_1.requires_grad = True
         return gold_scores_1 - gold_scores_2
 
-    def translate_batch(self, batch, src_vocabs, attn_debug, src_embed=None):
+    def translate_batch(self, batch, src_vocabs, attn_debug, src=None, enc_states=None, memory_bank=None, \
+                        src_lengths=None,  src_embed=None, tgt2=False):
         """Translate a batch of sentences."""
-        with torch.no_grad():
+        #with torch.no_grad():
+        if True:
             if self.beam_size == 1:
                 decode_strategy = GreedySearch(
                     pad=self._tgt_pad_idx,
@@ -377,13 +378,13 @@ class Translator(object):
                     exclusion_tokens=self._exclusion_idxs,
                     stepwise_penalty=self.stepwise_penalty,
                     ratio=self.ratio)
-            return self._return_gold(batch, src_vocabs,decode_strategy, src_embed)
+            return self._return_gold(batch, src_vocabs,decode_strategy,src, enc_states, memory_bank, src_lengths, src_embed, tgt2)
     
     def _return_gold(
             self,
             batch,
             src_vocabs,
-            decode_strategy, src_embed = None):
+            decode_strategy, src=None, enc_states=None, memory_bank=None, src_lengths=None, src_embed=None, tgt2=False):
         """Translate a batch of sentences step by step using cache.
 
         Args:
@@ -401,14 +402,17 @@ class Translator(object):
         batch_size = batch.batch_size
 
         # (1) Run the encoder on the src.
-        src, enc_states, memory_bank, src_lengths = self._run_encoder(batch, src_embed)
-        self.model.decoder.init_state(src, memory_bank, enc_states)
+        if not tgt2:
+            src, enc_states, memory_bank, src_lengths = self._run_encoder(batch, src_embed)
+            self.model.decoder.init_state(src, memory_bank, enc_states)
 
         gold_scores = self._gold_score(
                                        batch, memory_bank, src_lengths, src_vocabs, use_src_map,
                                        enc_states, batch_size, src)
-        gold_scores.retain_grad()
-        return gold_scores
+        if not tgt2:
+            return gold_scores, src, enc_states, memory_bank, src_lengths
+        else:
+            return gold_scores
 
     def _run_encoder(self, batch, src_embed=None):
         src, src_lengths = batch.src if isinstance(batch.src, tuple) \
@@ -416,7 +420,6 @@ class Translator(object):
 
         enc_states, memory_bank, src_lengths = self.model.encoder(
             src, src_lengths, calc_IG=True, src_embeddings=src_embed)
-        #print(memory_bank)
         if src_lengths is None:
             assert not isinstance(memory_bank, tuple), \
                 'Ensemble decoding only supported for text data'
@@ -433,7 +436,7 @@ class Translator(object):
             gs = self._score_target(
                 batch, memory_bank, src_lengths, src_vocabs,
                 batch.src_map if use_src_map else None)
-            self.model.decoder.init_state(src, memory_bank, enc_states)
+            #self.model.decoder.init_state(src, memory_bank, enc_states)
         else:
             gs = [0] * batch_size
         return gs

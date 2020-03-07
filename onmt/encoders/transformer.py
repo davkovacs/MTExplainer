@@ -3,7 +3,7 @@ Implementation of "Attention is All You Need"
 """
 
 import torch.nn as nn
-
+import torch
 from onmt.encoders.encoder import EncoderBase
 from onmt.modules import MultiHeadedAttention
 from onmt.modules.position_ffn import PositionwiseFeedForward
@@ -48,6 +48,7 @@ class TransformerEncoderLayer(nn.Module):
         input_norm = self.layer_norm(inputs)
         context, _ = self.self_attn(input_norm, input_norm, input_norm,
                                     mask=mask, attn_type="self")
+
         out = self.dropout(context) + inputs
         return self.feed_forward(out)
 
@@ -124,19 +125,25 @@ class TransformerEncoder(EncoderBase):
         """See :func:`EncoderBase.forward()`"""
         self._check_args(src, lengths)
 
+        '''
         if calc_IG:
             emb = src_embeddings
         else:
             emb = self.embed(src)
-
-        out = emb.transpose(0, 1).contiguous()
+        '''
+        if calc_IG==False:
+            src_embeddings = self.embed(src)
+        #out = emb.transpose(0, 1).contiguous()
+        out = src_embeddings.transpose(0, 1).contiguous()
+        #out = torch.transpose(emb,0,1)
+        #print(out)
         mask = ~sequence_mask(lengths).unsqueeze(1)
         # Run the forward pass of every layer of the tranformer.
         for layer in self.transformer:
             out = layer(out, mask)
         out = self.layer_norm(out)
-
-        return emb, out.transpose(0, 1).contiguous(), lengths
+        return src_embeddings, out.transpose(0, 1).contiguous(), lengths
+        #return emb, out.transpose(0, 1).contiguous(), lengths
 
     def update_dropout(self, dropout, attention_dropout):
         self.embeddings.update_dropout(dropout)

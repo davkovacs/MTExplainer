@@ -12,6 +12,7 @@ import onmt.inputters as inputters
 import onmt.opts as opts
 from onmt.utils.parse import ArgumentParser
 import torch.nn as nn
+import numpy as np
 
 class GoldScorer(nn.Module):
     def __init__(self, opt):
@@ -115,17 +116,22 @@ def _get_parser():
 def main():
     parser = _get_parser()
     opt = parser.parse_args()
-    src_embed = translate(opt)
+    #src_embed = translate(opt)
+    #src_embed = src_embed.detach().numpy()
+    #np.save("src_embed.npy", src_embed)
+    src_embed = torch.from_numpy(np.load("src_embed.npy"))
+    src_embed.requires_grad = True
     gold_scorer = GoldScorer(opt)
+    #torch.autograd.set_detect_anomaly(True)
     gold_diff = gold_scorer(src_embed)
     print(gold_diff)
     #gold_diff.requires_grad = True
-    gold_diff.backward()
+    #gold_diff.backward(retain_graph=True)
     #print(gold_diff.grad_fn)
-    print(src_embed.grad)
-    #print(torch.autograd.grad(gold_diff, src_embed))
+    #print(src_embed.grad_fn)
+    torch.autograd.set_detect_anomaly(True)
+    print(torch.autograd.grad(gold_diff, src_embed))
     #IG_attributions( gold_diff)
-
 
 if __name__ == "__main__":
     main()

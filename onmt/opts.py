@@ -607,6 +607,9 @@ def translate_opts(parser):
     group.add('--src', '-src', required=True,
               help="Source sequence to decode (one line per "
                    "sequence)")
+    group.add('--baseline', '-baseline', required=True,
+              help="Baseline sequence to decode (one line per "
+                   "sequence)")
     group.add('--src_dir', '-src_dir', default="",
               help='Source directory for image or audio files')
     group.add('--tgt', '-tgt',

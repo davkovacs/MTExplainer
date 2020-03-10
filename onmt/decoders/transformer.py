@@ -138,7 +138,8 @@ class TransformerDecoderLayer(nn.Module):
                     [tgt_len, tgt_len],
                     device=tgt_pad_mask.device,
                     dtype=torch.uint8)
-                future_mask = future_mask.triu_(1).view(1, tgt_len, tgt_len)
+                future_mask = torch.triu(future_mask, 1).view(1, tgt_len, tgt_len)
+                #future_mask = future_mask.triu_(1).view(1, tgt_len, tgt_len)
                 # BoolTensor was introduced in pytorch 1.2
                 try:
                     future_mask = future_mask.bool()

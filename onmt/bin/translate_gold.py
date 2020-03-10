@@ -13,10 +13,11 @@ import onmt.opts as opts
 from onmt.utils.parse import ArgumentParser
 import torch.nn as nn
 import numpy as np
+import matplotlib.pyplot as plt
 
 class GoldScorer(nn.Module):
+    # nn to produce the probability difference between tgt1 and tgt2
     def __init__(self, opt):
-        # tgt and tgt2: two target somethings
         super(GoldScorer, self).__init__()
         self.gold_scorer = TranslateGoldDiff(opt)
 
@@ -24,6 +25,7 @@ class GoldScorer(nn.Module):
         return self.gold_scorer(src_embed)
 
 class TranslateGoldDiff(object):
+    # functor returning prob difference between tgt1 and tgt2 given src_embed
     def __init__(self, opt):
         self.opt = opt
     def __call__(self, src_embed):
@@ -109,29 +111,45 @@ def _get_parser():
     opts.translate_opts(parser)
     return parser
 
-#def IG_attributions(gold_diff):
-    #IGs = torch.autograd.grad(gold_diff, src_embed)
-    #print(IGs)
-
 def main():
     parser = _get_parser()
     opt = parser.parse_args()
-    #src_embed = translate(opt)
-    #src_embed = src_embed.detach().numpy()
-    #np.save("src_embed.npy", src_embed)
-    src_embed = torch.from_numpy(np.load("src_embed.npy"))
-    src_embed.requires_grad = True
+    src_embed0 = translate(opt)
+    src_embed0 = src_embed0.detach().numpy()
+    np.save("sear_emb.npy", src_embed0)
+    src_embed = torch.from_numpy(np.load("sear_emb.npy"))
+    baseline_embed = torch.from_numpy(np.load("baseline.npy"))
+    #baseline_emb = baseline_embed
+    baseline_emb = torch.zeros(src_embed.size())
+    for i in range(src_embed.size()[0]):
+        baseline_emb[i][0] = baseline_embed
     gold_scorer = GoldScorer(opt)
-    #torch.autograd.set_detect_anomaly(True)
-    gold_diff = gold_scorer(src_embed)
-    print(gold_diff)
-    #gold_diff.requires_grad = True
-    #gold_diff.backward(retain_graph=True)
-    #print(gold_diff.grad_fn)
-    #print(src_embed.grad_fn)
-    torch.autograd.set_detect_anomaly(True)
-    print(torch.autograd.grad(gold_diff, src_embed))
-    #IG_attributions( gold_diff)
+    grads = np.zeros(src_embed.size())
+    steps = 50
+    gdiffs = []
+    scaled_inputs = [baseline_emb + i / steps * (src_embed - baseline_emb) for i in range(0, steps + 1)]
+    #scaled_inputs = [baseline_emb + np.sin(2 * np.pi * i / steps) + i / steps * (src_embed - baseline_emb) for i in range(0, steps + 1)]
+    for c, inp in enumerate(scaled_inputs):
+        inp.requires_grad = True
+        gold_diff = gold_scorer(inp)
+        #gdiffs.append(gold_diff)
+        if c == 0:
+            print(gold_diff)
+        elif c == steps:
+            print(gold_diff)
+        gold_scorer.zero_grad()
+        grad = torch.autograd.grad(gold_diff, inp)[0].numpy()
+        gdiffs.append(grad)
+        grads += grad
+    avg_grads = grads / steps
+    IG = (src_embed.numpy() - baseline_emb.numpy()) * avg_grads
+    #print(avg_grads)
+    #print(np.sum(avg_grads))
+    IG_norm = np.sum(IG, axis=2).squeeze(-1)
+    print(np.sum(IG_norm))
+    print(IG_norm)
+    #print(np.sum(IG_norm))
+    np.save("sear_IGs.npy", IG_norm)
 
 if __name__ == "__main__":
     main()

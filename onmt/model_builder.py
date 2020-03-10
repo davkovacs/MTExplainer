@@ -206,7 +206,6 @@ def build_base_model(model_opt, fields, gpu, checkpoint=None, gpu_id=None):
         checkpoint['model'] = {fix_key(k): v
                                for k, v in checkpoint['model'].items()}
         # end of patch for backward compatibility
-
         model.load_state_dict(checkpoint['model'], strict=False)
         generator.load_state_dict(checkpoint['generator'], strict=False)
     else:

@@ -264,7 +264,7 @@ class Translator(object):
             align_debug=False,
             phrase_table="",
             src_embed=None):
-        """Translate content of ``src`` and get gold scores from ``tgt``.
+        """Translate content of ``src`` and get gold score difference of ``tgt`` and "tgt2".
 
         Args:
             src: See :func:`self.src_reader.read()`.
@@ -277,11 +277,7 @@ class Translator(object):
             src_embed: embeddings of the source
 
         Returns:
-            (`list`, `list`)
-
-            * all_scores is a list of `batch_size` lists of `n_best` scores
-            * all_predictions is a list of `batch_size` lists
-                of `n_best` predictions
+            gold_score1 = gold_score2 (torch tensor)
         """
 
         if batch_size is None:
@@ -309,7 +305,6 @@ class Translator(object):
             shuffle=False
         )
 
-        
         #gold_scores_1 = 0
         for batch in data_iter:
             gold_scores_1, src, enc_states, memory_bank, src_lengths = self.translate_batch(
@@ -342,6 +337,7 @@ class Translator(object):
             gold_scores_2 = self.translate_batch(
                 batch, data.src_vocabs, attn_debug, src, enc_states, memory_bank, src_lengths, src_embed, tgt2=True
             )
+
         return gold_scores_1 - gold_scores_2
 
     def translate_batch(self, batch, src_vocabs, attn_debug, src=None, enc_states=None, memory_bank=None, \
@@ -417,7 +413,6 @@ class Translator(object):
     def _run_encoder(self, batch, src_embed=None):
         src, src_lengths = batch.src if isinstance(batch.src, tuple) \
                            else (batch.src, None)
-
         enc_states, memory_bank, src_lengths = self.model.encoder(
             src, src_lengths, calc_IG=True, src_embeddings=src_embed)
         if src_lengths is None:
@@ -430,8 +425,7 @@ class Translator(object):
         return src, enc_states, memory_bank, src_lengths
 
  
-    def _gold_score(self, batch, memory_bank, src_lengths, src_vocabs,
-                    use_src_map, enc_states, batch_size, src):
+    def _gold_score(self, batch, memory_bank, src_lengths, src_vocabs, use_src_map, enc_states, batch_size, src):
         if "tgt" in batch.__dict__:
             gs = self._score_target(
                 batch, memory_bank, src_lengths, src_vocabs,
@@ -449,12 +443,14 @@ class Translator(object):
         log_probs, attn = self._decode_and_generate(
             tgt_in, memory_bank, batch, src_vocabs,
             memory_lengths=src_lengths, src_map=src_map)
-
-        log_probs[:, :, self._tgt_pad_idx] = 0
+        log_probs_mask = torch.ones(log_probs.size())
+        log_probs_mask.requires_grad = False
+        log_probs_mask[:, :, self._tgt_pad_idx] = 0
+        #log_probs[:, :, self._tgt_pad_idx] = 0
+        log_probs = torch.mul(log_probs, log_probs_mask)
         gold = tgt[1:]
         gold_scores = log_probs.gather(2, gold)
         gold_scores = gold_scores.sum(dim=0).view(-1)
-
         return gold_scores
 
     def _decode_and_generate(

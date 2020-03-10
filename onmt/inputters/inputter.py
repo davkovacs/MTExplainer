@@ -635,8 +635,10 @@ class OrderedIterator(torchtext.data.Iterator):
                 # fast-forward if loaded from state
                 if self._iterations_this_epoch > idx:
                     continue
-                self.iterations += 1
-                self._iterations_this_epoch += 1
+                #self.iterations += 1
+                #self._iterations_this_epoch += 1
+                self.iterations = self.iterations + 1
+                self._iterations_this_epoch = self._iterations_this_epoch + 1
                 if self.sort_within_batch:
                     # NOTE: `rnn.pack_padded_sequence` requires that a
                     # minibatch be sorted by decreasing order, which

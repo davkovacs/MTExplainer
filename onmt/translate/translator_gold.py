@@ -263,7 +263,8 @@ class Translator(object):
             attn_debug=False,
             align_debug=False,
             phrase_table="",
-            src_embed=None):
+            src_embed=None,
+            gen_hidden_states=False):
         """Translate content of ``src`` and get gold score difference of ``tgt`` and "tgt2".
 
         Args:
@@ -306,10 +307,12 @@ class Translator(object):
         )
 
         #gold_scores_1 = 0
-        for batch in data_iter:
+        for i, batch in enumerate(data_iter):
             gold_scores_1, src, enc_states, memory_bank, src_lengths = self.translate_batch(
                 batch, data.src_vocabs, attn_debug, src_embed=src_embed
             )
+            if gen_hidden_states == True:
+                memory_bank.nump().save("hidden_states_b" + str(i))
 
         tgt2_data = {"reader": self.tgt2_reader, "data": tgt2, "dir": None}
         _readers, _data, _dir = inputters.Dataset.config(

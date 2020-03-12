@@ -1,0 +1,2 @@
+COC(=C)C=CC#N
+COC(=CCC#N)CC

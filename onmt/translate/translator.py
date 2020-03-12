@@ -287,7 +287,9 @@ class Translator(object):
             batch_type="sents",
             attn_debug=False,
             align_debug=False,
-            phrase_table=""):
+            phrase_table="",
+            generate_hidden_states=False,
+            out_dir=None):
         """Translate content of ``src`` and get gold scores from ``tgt``.
 
         Args:
@@ -298,6 +300,7 @@ class Translator(object):
             batch_size (int): size of examples per mini-batch
             attn_debug (bool): enables the attention logging
             align_debug (bool): enables the word alignment logging
+            generate_hidden_states (boold) True if save hidden state representations
 
         Returns:
             (`list`, `list`)
@@ -347,10 +350,13 @@ class Translator(object):
 
         start_time = time.time()
 
-        for batch in data_iter:
+        for i, batch in enumerate(data_iter):
             batch_data = self.translate_batch(
-                batch, data.src_vocabs, attn_debug
+                batch, data.src_vocabs, attn_debug, i, generate_hidden_states, out_dir
             )
+            if generate_hidden_states:
+                print('Batch ' + str(i) + ' hidden states saved')
+                continue
             translations = xlation_builder.from_batch(batch_data)
 
             for trans in translations:
@@ -414,6 +420,9 @@ class Translator(object):
                         os.write(1, output.encode('utf-8'))
 
         end_time = time.time()
+
+        if generate_hidden_states:
+            return
 
         if self.report_score:
             msg = self._report_score('PRED', pred_score_total,
@@ -511,8 +520,8 @@ class Translator(object):
             alignment_attn, prediction_mask, src_lengths, n_best)
         return alignement
 
-    def translate_batch(self, batch, src_vocabs, attn_debug):
-        """Translate a batch of sentences."""
+    def translate_batch(self, batch, src_vocabs, attn_debug, i, generate_hidden_states=False, out_dir=None):
+        """Translate a batch of sentences., i is the batch index"""
         with torch.no_grad():
             if self.beam_size == 1:
                 decode_strategy = GreedySearch(
@@ -544,7 +553,7 @@ class Translator(object):
                     stepwise_penalty=self.stepwise_penalty,
                     ratio=self.ratio)
             return self._translate_batch_with_strategy(batch, src_vocabs,
-                                                       decode_strategy)
+                                                       decode_strategy, i, generate_hidden_states, out_dir)
 
     def _run_encoder(self, batch):
         src, src_lengths = batch.src if isinstance(batch.src, tuple) \
@@ -619,41 +628,14 @@ class Translator(object):
             # or [ tgt_len, batch_size, vocab ] when full sentence
         return log_probs, attn
 
-    def _return_gold_diff(
-            self,
-            batch,
-            src_vocabs,
-            decode_strategy):
-        """Translate a batch of sentences step by step using cache.
-
-        Args:
-            batch: a batch of sentences, yield by data iterator.
-            src_vocabs (list): list of torchtext.data.Vocab if can_copy.
-            decode_strategy (DecodeStrategy): A decode strategy to use for
-                generate translation step by step.
-
-        Returns:
-            results (dict): The translation results.
-        """
-        # (0) Prep the components of the search.
-        use_src_map = self.copy_attn
-        parallel_paths = decode_strategy.parallel_paths  # beam_size
-        batch_size = batch.batch_size
-
-        # (1) Run the encoder on the src.
-        src, enc_states, memory_bank, src_lengths = self._run_encoder(batch)
-        self.model.decoder.init_state(src, memory_bank, enc_states)
-
-        gold_scores_1, gold_scores_2 = self._gold_score(
-                                       batch, memory_bank, src_lengths, src_vocabs, use_src_map,
-                                       enc_states, batch_size, src)
-        return gold_scores_1 - gold_scores_2
 
     def _translate_batch_with_strategy(
             self,
             batch,
             src_vocabs,
-            decode_strategy):
+            decode_strategy,
+            i, gen_hidden_states,
+            out_dir=None):
         """Translate a batch of sentences step by step using cache.
 
         Args:
@@ -661,6 +643,9 @@ class Translator(object):
             src_vocabs (list): list of torchtext.data.Vocab if can_copy.
             decode_strategy (DecodeStrategy): A decode strategy to use for
                 generate translation step by step.
+            i: index of the batch
+            gen_hidden_states: bool, if True saves the hidden state representations
+            out_dir: path to output directory for hidden state vecotrs
 
         Returns:
             results (dict): The translation results.
@@ -673,6 +658,11 @@ class Translator(object):
         # (1) Run the encoder on the src.
         src, enc_states, memory_bank, src_lengths = self._run_encoder(batch)
         self.model.decoder.init_state(src, memory_bank, enc_states)
+        if gen_hidden_states == True:
+            hiddens = memory_bank
+            np.save(out_dir + "hidden_states_b" + str(i), hiddens.detach().numpy().squueeze(-1))
+            return {}
+
 
         results = {
             "predictions": None,

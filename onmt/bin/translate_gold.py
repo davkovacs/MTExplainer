@@ -13,6 +13,7 @@ from onmt.utils.misc import split_corpus
 from onmt.utils.parse import ArgumentParser
 from onmt.utils.logging import init_logger
 from onmt.translate.translator_gold import build_translator
+import tqdm
 
 class GoldScorer(nn.Module):
     # nn to produce the probability difference between tgt1 and tgt2
@@ -27,7 +28,7 @@ class TranslateGoldDiff(object):
     # functor returning prob difference between tgt1 and tgt2 given src_embed
     def __init__(self, opt):
         self.opt = opt
-    def __call__(self, src_embed):
+    def __call__(self, src_embed, gen_hidden_states=False):
         translator = build_translator(self.opt, report_score=True)
         src_shards = split_corpus(self.opt.src, self.opt.shard_size)
         tgt_shards = split_corpus(self.opt.tgt, self.opt.shard_size)
@@ -44,9 +45,8 @@ class TranslateGoldDiff(object):
                batch_type=self.opt.batch_type,
                attn_debug=self.opt.attn_debug,
                align_debug=self.opt.align_debug,
-               src_embed=src_embed)
-
-
+               src_embed=src_embed,
+               gen_hidden_states=self.opt.gen_hidden_states)
 
 def translate(opt):
     '''
@@ -131,34 +131,33 @@ def main():
     src_embed0, bline_embed0 = translate(opt)  #Get source and baseline embeddings
     src_embed0 = src_embed0.detach().numpy() 
     bline_embed0 = bline_embed0.detach().numpy()
- 
     np.save("sear_emb.npy", src_embed0)  #Save as numpy arrays and reload as torch tensors
     np.save("baseline.npy", bline_embed0)
+
     src_embed = torch.from_numpy(np.load("sear_emb.npy"))
     baseline_embed = torch.from_numpy(np.load("baseline.npy"))
    
-    #baseline_emb = baseline_embed
     baseline_emb = torch.zeros(src_embed.size())  #repeat '.' baseline src_embed.size()[0] times
     for i in range(src_embed.size()[0]):
         baseline_emb[i][0] = baseline_embed
 
     gold_scorer = GoldScorer(opt)
     grads = np.zeros(src_embed.size())
-    steps = 50
+    steps = int(opt.n_ig_steps)
     gdiffs = []
     scaled_inputs = [baseline_emb + i / steps * (src_embed - baseline_emb) for i in range(0, steps + 1)]
     #scaled_inputs = [baseline_emb + np.sin(2 * np.pi * i / steps) + i / steps * (src_embed - baseline_emb) for i in range(0, steps + 1)]
-    print('\nGenerating Integrated Gradients...\n')
-    for c, inp in enumerate(scaled_inputs):
+    print('Generating Integrated Gradients...\n')
+    for c, inp in enumerate(tqdm.tqdm(scaled_inputs)):
         inp.requires_grad = True
         gold_diff = gold_scorer(inp)
         #gdiffs.append(gold_diff)
         if c == 0:
             min_diff = gold_diff.detach().numpy()[0]
-            print(gold_diff)
+            # print(gold_diff)
         elif c == steps:
             max_diff = gold_diff.detach().numpy()[0]
-            print(gold_diff)
+            # print(gold_diff)
         gold_scorer.zero_grad()
         grad = torch.autograd.grad(gold_diff, inp)[0].numpy()
         gdiffs.append(grad)
@@ -172,7 +171,7 @@ def main():
     print('Difference in target log probs: {:.3f}'.format(max_diff-min_diff))
     print('Sum of attributions: {:.3f}'.format(np.sum(IG_norm)))
   
-    np.save("sear_IGs.npy", IG_norm)
+    np.save(opt.output, IG_norm)
     
     print('\n')
     with open(opt.src) as file:

@@ -607,7 +607,7 @@ def translate_opts(parser):
     group.add('--src', '-src', required=True,
               help="Source sequence to decode (one line per "
                    "sequence)")
-    group.add('--baseline', '-baseline', required=True,
+    group.add('--baseline', '-baseline',
               help="Baseline sequence to decode (one line per "
                    "sequence)")
     group.add('--src_dir', '-src_dir', default="",
@@ -616,6 +616,10 @@ def translate_opts(parser):
               help='True target sequence (optional)')
     group.add('--tgt2', '-tgt2',
               help='Second possible target for calculating IG of prediction difference')
+    group.add('--n_ig_steps', '-n_ig_steps', default=50,
+              help="The number of points used to approximate the straight line path from baseline to source")
+    group.add('--gen_hidden_states', '-g_h_s', default=False, type=bool,
+              help='True if save the hidden state representation vecotrs.')
     group.add('--shard_size', '-shard_size', type=int, default=10000,
               help="Divide src and tgt (if applicable) into "
                    "smaller multiple src and tgt files, then "

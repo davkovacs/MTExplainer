@@ -660,7 +660,7 @@ class Translator(object):
         self.model.decoder.init_state(src, memory_bank, enc_states)
         if gen_hidden_states == True:
             hiddens = memory_bank
-            np.save(out_dir + "hidden_states_b" + str(i), hiddens.detach().numpy().squueeze(-1))
+            np.save(out_dir + "hidden_states_b" + str(i), hiddens.detach().squeeze().numpy())
             return {}
 
 

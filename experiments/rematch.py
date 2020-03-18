@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 """
+import os
 import numpy as np
 from mpi4py import MPI
 import argparse
@@ -94,6 +95,11 @@ class REMatchKernel(LocalSimilarityKernel):
             float: REMatch similarity between the structures A and B.
         """
         n, m = localkernel.shape
+        if self.metric=='linear':
+           localkernel = localkernel**2/(n*m)
+           return(np.sum(localkernel))
+          
+          
         K = np.exp(-(1 - localkernel) / self.alpha)
 
         # initialisation
@@ -126,17 +132,16 @@ class REMatchKernel(LocalSimilarityKernel):
 
         return glosim
 
-def main(src, dir):
+def main(src_text, src, dir, kern, n_best, out_txt):
      mpi_comm = MPI.COMM_WORLD
      mpi_rank = mpi_comm.Get_rank()
      mpi_size = mpi_comm.Get_size()
 
      src = np.load(src, allow_pickle=True)
+     #src = src[0:6]
      src = normalize(src)
      src = [src] 
      h_list = np.load(dir+'h_arrays_full.npy',allow_pickle=True)
-
-     #print('h_list len: {}, h_list[0].shape {}'.format(len(h_list), h_list[0].shape))
 
      dat_size = len(h_list)
 
@@ -146,7 +151,11 @@ def main(src, dir):
      h_list = [normalize(i) for i in h_list]
 
      my_len = len(h_list)
-     rem = REMatchKernel(alpha=1e-3, threshold=1e-9, metric='polynomial', normalize_kernel=True)
+      
+     if kern=='rematch':
+        rem = REMatchKernel(alpha=1e-3, threshold=1e-5, metric='polynomial', degree=2, gamma=1, coef0=0, normalize_kernel=True)
+     elif kern=='average':
+          rem = REMatchKernel(metric='linear')
 
      K = np.empty((my_len,1), dtype=np.float64)
  
@@ -154,7 +163,6 @@ def main(src, dir):
      
      K += rem.create(h_list, src) #Generate rematch similarities
 
-     print('my_len {}, K.shape {}, K.dtype {}'.format(my_len, K.shape, K.dtype))
      if mpi_rank==0:
         K_full = np.empty((dat_size,1),dtype=np.float64)
         #print("memory usage(bytes): {}".format(K.nbytes+K_full.nbytes))
@@ -165,7 +173,27 @@ def main(src, dir):
      mpi_comm.Gatherv(sendbuf=K,recvbuf = (K_full, sendcounts),root=0)
      
      if mpi_rank==0:
+        print('Kernel used: '+kern)
+  
         K = K_full
+
+        #filter NaNs
+        n_nans = np.count_nonzero(np.isnan(K))
+
+        max_indices = np.argpartition(K.flatten(),-n_best-n_nans)[-n_best-n_nans:-n_nans]        
+                
+        print('Similarities for {} most similar reactions: {}'.format(len(max_indices),K[max_indices]))
+        #src_file = open(src_text,'r')
+        #lines = src_file.readlines()
+
+        #print(lines[max_indices])
+        for index in max_indices:
+            cmd='sed "'+str(index)+'q;d" '+src_text+' >> '+out_txt
+            os.system(cmd)   
+        
+        cmd = 'sed -i "s/ //g" '+out_txt
+        os.system(cmd)
+
         print(K)
         print('Max similarity: {} which is index {}'.format(np.nanmax(K), np.nanargmax(K)))
         print('Min similarity: {}, which is index {}'.format(np.nanmin(K), np.nanargmin(K)))
@@ -176,10 +204,18 @@ def main(src, dir):
 if __name__ == "__main__":
 
      parser = argparse.ArgumentParser()
+     parser.add_argument('-src_txt', type=str, 
+                         help='Path to .txt file of training set reactions.')
+     parser.add_argument('-out_txt', type=str, 
+                         help='Path to .txt file which will contain the n_best detokenized reactions.')
      parser.add_argument('-src', type=str, 
                          help='Path to .npy file of source hidden states to compare with the training set.')
      parser.add_argument('-dir', type=str, 
                          help='Directory where the hidden state numpy arrays are stored.')
+     parser.add_argument('-kernel', type=str, 
+                         help='Type of kernel used to calculate the similarity between hidden state vectors')
+     parser.add_argument('-n_best', type=int, default=5, 
+                         help='Number of most similar training reactions to return.')
      args = parser.parse_args()
 
-     main(args.src, args.dir)
+     main(args.src_txt, args.src, args.dir, args.kernel, args.n_best, args.out_txt)

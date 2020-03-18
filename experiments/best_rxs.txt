@@ -1,0 +1,5 @@
+CN(C(=O)Cl)c1ccccc1.O=C(C=Cc1cccnc1)c1ccc(O)cc1
+C1CCOC1.CN.Cc1ccc(CCOS(=O)(=O)c2ccc(C)cc2)cc1
+CCn1cnc2c(N)nc(I)nc21.Cl.SCc1ccccc1.[Na+].[OH-]
+CC#CCn1c(N2CCN(C(=O)OC(C)(C)C)CC2)nc2nc(Cl)n(Cc3ccccc3C#N)c(=O)c21.CN(C)C=O.N#C[Na]
+C1CCOC1.CC(C)C[Mg+].CON(C)C(=O)c1ccc(O)nc1.[Cl-]

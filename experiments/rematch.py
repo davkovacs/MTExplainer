@@ -55,7 +55,7 @@ class REMatchKernel(LocalSimilarityKernel):
     https://doi.org/10.1039/c6cp00415f
     """
     def __init__(self, alpha=0.1, threshold=1e-6, metric="linear", gamma=None, degree=3, coef0=1, kernel_params=None,
-                 normalize_kernel=True, rematch=False):
+                 normalize_kernel=True, rematch=False, enc_IG=None):
         """
         Args:
             alpha(float): Parameter controlling the entropic penalty. Values
@@ -88,6 +88,7 @@ class REMatchKernel(LocalSimilarityKernel):
         """
         self.alpha = alpha
         self.threshold = threshold
+        self.enc_IG = enc_IG
         super().__init__(metric, gamma, degree, coef0, kernel_params, normalize_kernel)
 
     def get_global_similarity(self, localkernel):
@@ -104,6 +105,8 @@ class REMatchKernel(LocalSimilarityKernel):
         n, m = localkernel.shape 
         localkernel = localkernel**2/(n*m)  # square the dot products
         if not self.rematch:
+            #if enc_IG is not None:
+            #    localkernel = np.multiply(localkernel, enc_IG)
             return np.sum(localkernel)
 
         K = np.exp(- (1 - localkernel) / self.alpha)
@@ -139,12 +142,16 @@ class REMatchKernel(LocalSimilarityKernel):
         return glosim
 
 
-def main(src_text, src, dir, kern, n_best, out_txt):
+def main(src_text, src, dir, kern, n_best, out_txt, enc_IG):
     mpi_comm = MPI.COMM_WORLD
     mpi_rank = mpi_comm.Get_rank()
     mpi_size = mpi_comm.Get_size()
 
     src = np.load(src, allow_pickle=True)
+
+    if enc_IG is not None:
+        src = np.multiply(src, enc_IG**2)
+
     src = normalize(src)
     src = [src]
     h_list = np.load(dir+'h_arrays_full.npy', allow_pickle=True)
@@ -219,6 +226,8 @@ if __name__ == "__main__":
                         help='Type of kernel used to calculate the similarity between hidden state vectors')
     parser.add_argument('-n_best', type=int, default=5,
                         help='Number of most similar training reactions to return.')
+    parser.add_argument('-enc_IG', type=str, default=None,
+                        help='Numpy array of IG attributions to the src hidden state')
     args = parser.parse_args()
 
-    main(args.src_txt, args.src, args.dir, args.kernel, args.n_best, args.out_txt)
+    main(args.src_txt, args.src, args.dir, args.kernel, args.n_best, args.out_txt, args.enc_IG)

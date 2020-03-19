@@ -620,6 +620,8 @@ def translate_opts(parser):
               help="The number of points used to approximate the straight line path from baseline to source")
     group.add('--gen_hidden_states', '-g_h_s', default=False, type=bool,
               help='True if save the hidden state representation vecotrs.')
+    group.add('--src_hidden', '-src_h', default=None,
+              help='The source hidden state as an npy file')
     group.add('--shard_size', '-shard_size', type=int, default=10000,
               help="Divide src and tgt (if applicable) into "
                    "smaller multiple src and tgt files, then "
@@ -631,6 +633,8 @@ def translate_opts(parser):
     group.add('--output', '-output', default='pred.txt',
               help="Path to output the predictions (each line will "
                    "be the decoded sequence")
+    group.add('--output2', '-output2',
+              help='Hidden state IG attributions for finding most similar reactions')
     group.add('--report_align', '-report_align', action='store_true',
               help="Report alignment for each translation.")
     group.add('--report_time', '-report_time', action='store_true',

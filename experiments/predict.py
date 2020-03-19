@@ -12,5 +12,5 @@ def smi_tokenizer(smi):
     assert smi == ''.join(tokens)
     return ' '.join(tokens)
 
-m = Chem.MolToSmiles(Chem.MolFromSmiles('Cc3ccc(c2ccc(CC(=O)Nc1cccn(C)c1=O)c(F)c2)cc3'))
+m = Chem.MolToSmiles(Chem.MolFromSmiles('C[N+](C)(C)c1ccccc1[N+](=O)[O-]'))
 print(smi_tokenizer(m))

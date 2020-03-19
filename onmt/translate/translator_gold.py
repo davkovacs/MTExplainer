@@ -264,7 +264,8 @@ class Translator(object):
             align_debug=False,
             phrase_table="",
             src_embed=None,
-            gen_hidden_states=False):
+            hidden_state=None
+            ):
         """Translate content of ``src`` and get gold score difference of ``tgt`` and "tgt2".
 
         Args:
@@ -276,7 +277,7 @@ class Translator(object):
             attn_debug (bool): enables the attention logging
             align_debug (bool): enables the word alignment logging
             src_embed: embeddings of the source
-
+            hidden_state (torch tensor) output of the encoder layers
         Returns:
             gold_score1 = gold_score2 (torch tensor)
         """
@@ -306,13 +307,10 @@ class Translator(object):
             shuffle=False
         )
 
-        #gold_scores_1 = 0
         for i, batch in enumerate(data_iter):
             gold_scores_1, src, enc_states, memory_bank, src_lengths = self.translate_batch(
-                batch, data.src_vocabs, attn_debug, src_embed=src_embed
+                batch, data.src_vocabs, attn_debug, src_embed=src_embed, hidden_state=hidden_state
             )
-            if gen_hidden_states == True:
-                memory_bank.nump().save("hidden_states_b" + str(i))
 
         tgt2_data = {"reader": self.tgt2_reader, "data": tgt2, "dir": None}
         _readers, _data, _dir = inputters.Dataset.config(
@@ -335,55 +333,56 @@ class Translator(object):
             shuffle=False
         )
 
-        #gold_scores_2 = 0
         for batch in data_iter:
             gold_scores_2 = self.translate_batch(
-                batch, data.src_vocabs, attn_debug, src, enc_states, memory_bank, src_lengths, src_embed, tgt2=True
+                batch, data.src_vocabs, attn_debug, src, enc_states, memory_bank, src_lengths, src_embed,
+                tgt2=True, hidden_state=hidden_state
             )
 
         return gold_scores_1 - gold_scores_2
 
     def translate_batch(self, batch, src_vocabs, attn_debug, src=None, enc_states=None, memory_bank=None, \
-                        src_lengths=None,  src_embed=None, tgt2=False):
+                        src_lengths=None,  src_embed=None, tgt2=False, hidden_state=None):
         """Translate a batch of sentences."""
-        #with torch.no_grad():
-        if True:
-            if self.beam_size == 1:
-                decode_strategy = GreedySearch(
-                    pad=self._tgt_pad_idx,
-                    bos=self._tgt_bos_idx,
-                    eos=self._tgt_eos_idx,
-                    batch_size=batch.batch_size,
-                    min_length=self.min_length, max_length=self.max_length,
-                    block_ngram_repeat=self.block_ngram_repeat,
-                    exclusion_tokens=self._exclusion_idxs,
-                    return_attention=attn_debug or self.replace_unk,
-                    sampling_temp=self.random_sampling_temp,
-                    keep_topk=self.sample_from_topk)
-            else:
-                # TODO: support these blacklisted features
-                assert not self.dump_beam
-                decode_strategy = BeamSearch(
-                    self.beam_size,
-                    batch_size=batch.batch_size,
-                    pad=self._tgt_pad_idx,
-                    bos=self._tgt_bos_idx,
-                    eos=self._tgt_eos_idx,
-                    n_best=self.n_best,
-                    global_scorer=self.global_scorer,
-                    min_length=self.min_length, max_length=self.max_length,
-                    return_attention=attn_debug or self.replace_unk,
-                    block_ngram_repeat=self.block_ngram_repeat,
-                    exclusion_tokens=self._exclusion_idxs,
-                    stepwise_penalty=self.stepwise_penalty,
-                    ratio=self.ratio)
-            return self._return_gold(batch, src_vocabs,decode_strategy,src, enc_states, memory_bank, src_lengths, src_embed, tgt2)
+        if self.beam_size == 1:
+            decode_strategy = GreedySearch(
+                pad=self._tgt_pad_idx,
+                bos=self._tgt_bos_idx,
+                eos=self._tgt_eos_idx,
+                batch_size=batch.batch_size,
+                min_length=self.min_length, max_length=self.max_length,
+                block_ngram_repeat=self.block_ngram_repeat,
+                exclusion_tokens=self._exclusion_idxs,
+                return_attention=attn_debug or self.replace_unk,
+                sampling_temp=self.random_sampling_temp,
+                keep_topk=self.sample_from_topk)
+        else:
+            # TODO: support these blacklisted features
+            assert not self.dump_beam
+            decode_strategy = BeamSearch(
+                self.beam_size,
+                batch_size=batch.batch_size,
+                pad=self._tgt_pad_idx,
+                bos=self._tgt_bos_idx,
+                eos=self._tgt_eos_idx,
+                n_best=self.n_best,
+                global_scorer=self.global_scorer,
+                min_length=self.min_length, max_length=self.max_length,
+                return_attention=attn_debug or self.replace_unk,
+                block_ngram_repeat=self.block_ngram_repeat,
+                exclusion_tokens=self._exclusion_idxs,
+                stepwise_penalty=self.stepwise_penalty,
+                ratio=self.ratio)
+        return self._return_gold(batch, src_vocabs,decode_strategy,src, enc_states,
+                                 memory_bank, src_lengths, src_embed, tgt2, hidden_state=hidden_state)
     
     def _return_gold(
             self,
             batch,
             src_vocabs,
-            decode_strategy, src=None, enc_states=None, memory_bank=None, src_lengths=None, src_embed=None, tgt2=False):
+            decode_strategy, src=None, enc_states=None,
+            memory_bank=None, src_lengths=None,
+            src_embed=None, tgt2=False, hidden_state=None):
         """Translate a batch of sentences step by step using cache.
 
         Args:
@@ -391,6 +390,8 @@ class Translator(object):
             src_vocabs (list): list of torchtext.data.Vocab if can_copy.
             decode_strategy (DecodeStrategy): A decode strategy to use for
                 generate translation step by step.
+            src, enc_states, memory_bank: output of encoder, used when tgt2=True
+            hidden_state (torch tensor) output of the encoder, if not None calculates the most similar training input
 
         Returns:
             results (dict): The translation results.
@@ -402,7 +403,7 @@ class Translator(object):
 
         # (1) Run the encoder on the src.
         if not tgt2:
-            src, enc_states, memory_bank, src_lengths = self._run_encoder(batch, src_embed)
+            src, enc_states, memory_bank, src_lengths = self._run_encoder(batch, src_embed, hidden_state)
             self.model.decoder.init_state(src, memory_bank, enc_states)
 
         gold_scores = self._gold_score(
@@ -413,11 +414,17 @@ class Translator(object):
         else:
             return gold_scores
 
-    def _run_encoder(self, batch, src_embed=None):
+    def _run_encoder(self, batch, src_embed=None, hidden_state=None):
         src, src_lengths = batch.src if isinstance(batch.src, tuple) \
                            else (batch.src, None)
+        if src_embed is not None:
+            calc_IG = True
+        else:
+            calc_IG = False
         enc_states, memory_bank, src_lengths = self.model.encoder(
-            src, src_lengths, calc_IG=True, src_embeddings=src_embed)
+                src, src_lengths, calc_IG=calc_IG, src_embeddings=src_embed)
+        if hidden_state is not None:
+            memory_bank = hidden_state
         if src_lengths is None:
             assert not isinstance(memory_bank, tuple), \
                 'Ensemble decoding only supported for text data'
@@ -433,7 +440,6 @@ class Translator(object):
             gs = self._score_target(
                 batch, memory_bank, src_lengths, src_vocabs,
                 batch.src_map if use_src_map else None)
-            #self.model.decoder.init_state(src, memory_bank, enc_states)
         else:
             gs = [0] * batch_size
         return gs
@@ -449,7 +455,6 @@ class Translator(object):
         log_probs_mask = torch.ones(log_probs.size())
         log_probs_mask.requires_grad = False
         log_probs_mask[:, :, self._tgt_pad_idx] = 0
-        #log_probs[:, :, self._tgt_pad_idx] = 0
         log_probs = torch.mul(log_probs, log_probs_mask)
         gold = tgt[1:]
         gold_scores = log_probs.gather(2, gold)

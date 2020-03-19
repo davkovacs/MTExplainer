@@ -131,19 +131,15 @@ class TransformerEncoder(EncoderBase):
         else:
             emb = self.embed(src)
         '''
-        if calc_IG==False:
+        if not calc_IG:
             src_embeddings = self.embed(src)
-        #out = emb.transpose(0, 1).contiguous()
         out = src_embeddings.transpose(0, 1).contiguous()
-        #out = torch.transpose(emb,0,1)
-        #print(out)
         mask = ~sequence_mask(lengths).unsqueeze(1)
         # Run the forward pass of every layer of the tranformer.
         for layer in self.transformer:
             out = layer(out, mask)
         out = self.layer_norm(out)
         return src_embeddings, out.transpose(0, 1).contiguous(), lengths
-        #return emb, out.transpose(0, 1).contiguous(), lengths
 
     def update_dropout(self, dropout, attention_dropout):
         self.embeddings.update_dropout(dropout)

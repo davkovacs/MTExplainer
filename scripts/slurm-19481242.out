@@ -1,0 +1,80 @@
+Changed directory to /home/dpk25/MolecularTransformer2/scripts.
+
+JobID: 19481242
+======
+Time: Tue 11 Feb 14:38:51 GMT 2020
+Running on master node: gpu-e-12
+Current directory: /home/dpk25/MolecularTransformer2/scripts
+
+Nodes allocated:
+================
+gpu-e-12
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+./test_preds.sh 
+
+Traceback (most recent call last):
+  File "../translate.py", line 6, in <module>
+    main()
+  File "/home/dpk25/MolecularTransformer2/onmt/bin/translate.py", line 48, in main
+    translate(opt)
+  File "/home/dpk25/MolecularTransformer2/onmt/bin/translate.py", line 18, in translate
+    translator = build_translator(opt, report_score=True)
+  File "/home/dpk25/MolecularTransformer2/onmt/translate/translator.py", line 28, in build_translator
+    fields, model, model_opt = load_test_model(opt)
+  File "/home/dpk25/MolecularTransformer2/onmt/model_builder.py", line 109, in load_test_model
+    opt.gpu)
+  File "/home/dpk25/MolecularTransformer2/onmt/model_builder.py", line 234, in build_base_model
+    model.to(device)
+  File "/home/dpk25/.conda/envs/mol_transformer2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 432, in to
+    return self._apply(convert)
+  File "/home/dpk25/.conda/envs/mol_transformer2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 208, in _apply
+    module._apply(fn)
+  File "/home/dpk25/.conda/envs/mol_transformer2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 208, in _apply
+    module._apply(fn)
+  File "/home/dpk25/.conda/envs/mol_transformer2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 208, in _apply
+    module._apply(fn)
+  [Previous line repeated 2 more times]
+  File "/home/dpk25/.conda/envs/mol_transformer2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 230, in _apply
+    param_applied = fn(param)
+  File "/home/dpk25/.conda/envs/mol_transformer2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 430, in convert
+    return t.to(device, dtype if t.is_floating_point() else None, non_blocking)
+RuntimeError: CUDA error: invalid device ordinal
+Traceback (most recent call last):
+  File "../score_predictions.py", line 61, in <module>
+    onmt.opts.add_md_help_argument(parser)
+AttributeError: module 'onmt.opts' has no attribute 'add_md_help_argument'
+Traceback (most recent call last):
+  File "../translate.py", line 6, in <module>
+    main()
+  File "/home/dpk25/MolecularTransformer2/onmt/bin/translate.py", line 48, in main
+    translate(opt)
+  File "/home/dpk25/MolecularTransformer2/onmt/bin/translate.py", line 18, in translate
+    translator = build_translator(opt, report_score=True)
+  File "/home/dpk25/MolecularTransformer2/onmt/translate/translator.py", line 28, in build_translator
+    fields, model, model_opt = load_test_model(opt)
+  File "/home/dpk25/MolecularTransformer2/onmt/model_builder.py", line 109, in load_test_model
+    opt.gpu)
+  File "/home/dpk25/MolecularTransformer2/onmt/model_builder.py", line 234, in build_base_model
+    model.to(device)
+  File "/home/dpk25/.conda/envs/mol_transformer2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 432, in to
+    return self._apply(convert)
+  File "/home/dpk25/.conda/envs/mol_transformer2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 208, in _apply
+    module._apply(fn)
+  File "/home/dpk25/.conda/envs/mol_transformer2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 208, in _apply
+    module._apply(fn)
+  File "/home/dpk25/.conda/envs/mol_transformer2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 208, in _apply
+    module._apply(fn)
+  [Previous line repeated 2 more times]
+  File "/home/dpk25/.conda/envs/mol_transformer2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 230, in _apply
+    param_applied = fn(param)
+  File "/home/dpk25/.conda/envs/mol_transformer2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 430, in convert
+    return t.to(device, dtype if t.is_floating_point() else None, non_blocking)
+RuntimeError: CUDA error: invalid device ordinal
+Traceback (most recent call last):
+  File "../score_predictions.py", line 61, in <module>
+    onmt.opts.add_md_help_argument(parser)
+AttributeError: module 'onmt.opts' has no attribute 'add_md_help_argument'

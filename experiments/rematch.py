@@ -50,7 +50,7 @@ class REMatchKernel(LocalSimilarityKernel):
     Phys.  Chem. Chem. Phys. 18, 13754 (2016),
     https://doi.org/10.1039/c6cp00415f
     """
-    def __init__(self, alpha=0.1, threshold=1e-6, metric="linear", gamma=None, degree=3, coef0=1, kernel_params=None, normalize_kernel=True):
+    def __init__(self, alpha=0.1, threshold=1e-6, metric="linear", gamma=None, degree=3, coef0=1, kernel_params=None, normalize_kernel=True, rematch=False):
         """
         Args:
             alpha(float): Parameter controlling the entropic penalty. Values
@@ -78,7 +78,8 @@ class REMatchKernel(LocalSimilarityKernel):
             normalize_kernel(boolean): Whether to normalize the final global
                 similarity kernel. The normalization is achieved by dividing each
                 kernel element :math:`K_{ij}` with the factor
-                :math:`\sqrt{K_{ii}K_{jj}}`
+                :math:`\sqrt{K_{ii}K_{jj}}
+            rematch: if True runs rematch algorithm to find most similar structures, if False uses the average kernel
         """
         self.alpha = alpha
         self.threshold = threshold
@@ -91,12 +92,13 @@ class REMatchKernel(LocalSimilarityKernel):
         Args:
             localkernel(np.ndarray): NxM matrix of local similarities between
                 structures A and B, with N and M atoms respectively.
+                Similarity measure is the dot product of each tokens hidden embedding.
         Returns:
             float: REMatch similarity between the structures A and B.
         """
-        n, m = localkernel.shape
-        if self.metric=='linear':
-           localkernel = localkernel**2/(n*m)
+        n, m = localkernel.shape 
+        localkernel = localkernel**2/(n*m)  # square the dot products
+        if self.rematch==False:
            return(np.sum(localkernel))
           
           
@@ -138,7 +140,6 @@ def main(src_text, src, dir, kern, n_best, out_txt):
      mpi_size = mpi_comm.Get_size()
 
      src = np.load(src, allow_pickle=True)
-     #src = src[0:6]
      src = normalize(src)
      src = [src] 
      h_list = np.load(dir+'h_arrays_full.npy',allow_pickle=True)
@@ -152,44 +153,41 @@ def main(src_text, src, dir, kern, n_best, out_txt):
 
      my_len = len(h_list)
       
-     if kern=='rematch':
-        rem = REMatchKernel(alpha=1e-3, threshold=1e-5, metric='polynomial', degree=2, gamma=1, coef0=0, normalize_kernel=True)
-     elif kern=='average':
-          rem = REMatchKernel(metric='linear')
+     if kern == 'rematch':
+        rem = REMatchKernel(alpha=1e-3, rematch=True)
+     elif kern == 'average':
+        rem = REMatchKernel(alpha=1e-3, rematch=False)
 
-     K = np.empty((my_len,1), dtype=np.float64)
+     #K = np.empty((my_len,1), dtype=np.float64)
  
      sendcounts = np.array(mpi_comm.gather(my_len,root=0))
      
-     K += rem.create(h_list, src) #Generate rematch similarities
+     K = rem.create(h_list, src)  # Generate similarities
 
-     if mpi_rank==0:
-        K_full = np.empty((dat_size,1),dtype=np.float64)
+     if mpi_rank == 0:
+        K_full = np.zeros((dat_size, 1), dtype=np.float64)
         #print("memory usage(bytes): {}".format(K.nbytes+K_full.nbytes))
      else:
         K_full = None
      
      #Gather rows of similarity vector
-     mpi_comm.Gatherv(sendbuf=K,recvbuf = (K_full, sendcounts),root=0)
+     mpi_comm.Gatherv(sendbuf=K, recvbuf = (K_full, sendcounts), root=0)
      
      if mpi_rank==0:
-        print('Kernel used: '+kern)
+        print('Kernel used: ' + kern)
   
         K = K_full
 
         #filter NaNs
         n_nans = np.count_nonzero(np.isnan(K))
 
-        max_indices = np.argpartition(K.flatten(),-n_best-n_nans)[-n_best-n_nans:-n_nans]        
+        max_indices = np.argpartition(K.flatten(), - n_best - n_nans)[- n_best - n_nans : - n_nans]        
                 
-        print('Similarities for {} most similar reactions: {}'.format(len(max_indices),K[max_indices]))
-        #src_file = open(src_text,'r')
-        #lines = src_file.readlines()
+        print('Similarities for {} most similar reactions: {}'.format(len(max_indices), K[max_indices]))
 
-        #print(lines[max_indices])
         for index in max_indices:
-            cmd='sed "'+str(index)+'q;d" '+src_text+' >> '+out_txt
-            os.system(cmd)   
+           cmd='sed "'+str(index)+'q;d" '+src_text+' >> '+out_txt
+           os.system(cmd)   
         
         cmd = 'sed -i "s/ //g" '+out_txt
         os.system(cmd)

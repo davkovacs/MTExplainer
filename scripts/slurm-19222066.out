@@ -1,0 +1,1088 @@
+Changed directory to /home/dpk25/MolecularTransformer2/scripts.
+
+JobID: 19222066
+======
+Time: Tue  4 Feb 14:16:30 GMT 2020
+Running on master node: gpu-e-90
+Current directory: /home/dpk25/MolecularTransformer2/scripts
+
+Nodes allocated:
+================
+gpu-e-90
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+./train.sh 
+
+[2020-02-04 14:16:46,005 INFO]  * src vocab size = 298
+[2020-02-04 14:16:46,005 INFO]  * tgt vocab size = 298
+[2020-02-04 14:16:46,005 INFO] Building model...
+[2020-02-04 14:16:54,432 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(298, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(298, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=256, out_features=298, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2020-02-04 14:16:54,435 INFO] encoder: 5337088
+[2020-02-04 14:16:54,435 INFO] decoder: 6392106
+[2020-02-04 14:16:54,435 INFO] * number of parameters: 11729194
+[2020-02-04 14:16:54,468 INFO] Starting training on GPU: [0]
+[2020-02-04 14:16:54,468 INFO] Start training loop and validate every 10000 steps...
+[2020-02-04 14:16:54,468 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 14:17:04,261 INFO] number of examples: 818070
+[2020-02-04 14:22:24,528 INFO] Step 1000/500000; acc:  51.45; ppl:  5.28; xent: 1.66; lr: 0.00017; 47742/29071 tok/s;    330 sec
+[2020-02-04 14:27:43,272 INFO] Step 2000/500000; acc:  69.40; ppl:  2.34; xent: 0.85; lr: 0.00035; 49443/30080 tok/s;    649 sec
+[2020-02-04 14:33:02,142 INFO] Step 3000/500000; acc:  76.20; ppl:  1.92; xent: 0.65; lr: 0.00052; 49410/30108 tok/s;    968 sec
+[2020-02-04 14:35:58,600 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 14:36:13,881 INFO] number of examples: 818070
+[2020-02-04 14:38:38,522 INFO] Step 4000/500000; acc:  82.69; ppl:  1.61; xent: 0.48; lr: 0.00070; 46833/28509 tok/s;   1304 sec
+[2020-02-04 14:43:57,669 INFO] Step 5000/500000; acc:  87.80; ppl:  1.41; xent: 0.34; lr: 0.00087; 49374/30025 tok/s;   1623 sec
+[2020-02-04 14:49:17,804 INFO] Step 6000/500000; acc:  91.12; ppl:  1.29; xent: 0.25; lr: 0.00105; 49233/30017 tok/s;   1943 sec
+[2020-02-04 14:54:37,801 INFO] Step 7000/500000; acc:  93.27; ppl:  1.22; xent: 0.20; lr: 0.00122; 49242/30025 tok/s;   2263 sec
+[2020-02-04 14:55:12,840 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 14:55:22,846 INFO] number of examples: 818070
+[2020-02-04 15:00:09,153 INFO] Step 8000/500000; acc:  94.64; ppl:  1.17; xent: 0.16; lr: 0.00140; 47543/28959 tok/s;   2595 sec
+[2020-02-04 15:05:27,516 INFO] Step 9000/500000; acc:  95.64; ppl:  1.14; xent: 0.13; lr: 0.00132; 49505/30072 tok/s;   2913 sec
+[2020-02-04 15:10:46,723 INFO] Step 10000/500000; acc:  96.44; ppl:  1.11; xent: 0.11; lr: 0.00125; 49356/30079 tok/s;   3232 sec
+[2020-02-04 15:10:46,726 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-04 15:10:47,005 INFO] number of examples: 30000
+[2020-02-04 15:11:17,253 INFO] Validation perplexity: 1.05999
+[2020-02-04 15:11:17,254 INFO] Validation accuracy: 98.1728
+[2020-02-04 15:11:17,256 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_10000.pt
+[2020-02-04 15:14:49,725 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 15:15:03,936 INFO] number of examples: 818070
+[2020-02-04 15:16:53,649 INFO] Step 11000/500000; acc:  96.95; ppl:  1.10; xent: 0.09; lr: 0.00119; 42933/26063 tok/s;   3599 sec
+[2020-02-04 15:22:13,300 INFO] Step 12000/500000; acc:  97.29; ppl:  1.09; xent: 0.08; lr: 0.00114; 49293/30010 tok/s;   3919 sec
+[2020-02-04 15:27:33,138 INFO] Step 13000/500000; acc:  97.59; ppl:  1.08; xent: 0.07; lr: 0.00110; 49285/30078 tok/s;   4239 sec
+[2020-02-04 15:32:53,400 INFO] Step 14000/500000; acc:  97.80; ppl:  1.07; xent: 0.07; lr: 0.00106; 49202/30030 tok/s;   4559 sec
+[2020-02-04 15:34:03,750 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 15:34:20,497 INFO] number of examples: 818070
+[2020-02-04 15:38:31,215 INFO] Step 15000/500000; acc:  97.95; ppl:  1.07; xent: 0.06; lr: 0.00102; 46628/28380 tok/s;   4897 sec
+[2020-02-04 15:43:48,633 INFO] Step 16000/500000; acc:  98.10; ppl:  1.06; xent: 0.06; lr: 0.00099; 49656/30166 tok/s;   5214 sec
+[2020-02-04 15:49:06,263 INFO] Step 17000/500000; acc:  98.23; ppl:  1.06; xent: 0.06; lr: 0.00096; 49598/30200 tok/s;   5532 sec
+[2020-02-04 15:53:12,746 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 15:53:23,800 INFO] number of examples: 818070
+[2020-02-04 15:54:37,502 INFO] Step 18000/500000; acc:  98.33; ppl:  1.05; xent: 0.05; lr: 0.00093; 47561/28853 tok/s;   5863 sec
+[2020-02-04 15:59:56,309 INFO] Step 19000/500000; acc:  98.41; ppl:  1.05; xent: 0.05; lr: 0.00091; 49436/30160 tok/s;   6182 sec
+[2020-02-04 16:05:14,337 INFO] Step 20000/500000; acc:  98.50; ppl:  1.05; xent: 0.05; lr: 0.00088; 49555/30172 tok/s;   6500 sec
+[2020-02-04 16:05:14,339 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-04 16:05:14,500 INFO] number of examples: 30000
+[2020-02-04 16:05:44,760 INFO] Validation perplexity: 1.03074
+[2020-02-04 16:05:44,760 INFO] Validation accuracy: 99.0755
+[2020-02-04 16:05:44,763 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_20000.pt
+[2020-02-04 16:11:00,936 INFO] Step 21000/500000; acc:  98.56; ppl:  1.05; xent: 0.04; lr: 0.00086; 45459/27761 tok/s;   6846 sec
+[2020-02-04 16:12:45,417 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 16:12:58,522 INFO] number of examples: 818070
+[2020-02-04 16:16:31,955 INFO] Step 22000/500000; acc:  98.62; ppl:  1.04; xent: 0.04; lr: 0.00084; 47587/28951 tok/s;   7177 sec
+[2020-02-04 16:21:46,442 INFO] Step 23000/500000; acc:  98.67; ppl:  1.04; xent: 0.04; lr: 0.00082; 50117/30464 tok/s;   7492 sec
+[2020-02-04 16:27:01,601 INFO] Step 24000/500000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00081; 49995/30525 tok/s;   7807 sec
+[2020-02-04 16:31:41,267 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 16:31:58,796 INFO] number of examples: 818070
+[2020-02-04 16:32:37,720 INFO] Step 25000/500000; acc:  98.77; ppl:  1.04; xent: 0.04; lr: 0.00079; 46876/28464 tok/s;   8143 sec
+[2020-02-04 16:37:53,579 INFO] Step 26000/500000; acc:  98.81; ppl:  1.04; xent: 0.04; lr: 0.00078; 49885/30343 tok/s;   8459 sec
+[2020-02-04 16:43:08,113 INFO] Step 27000/500000; acc:  98.85; ppl:  1.04; xent: 0.04; lr: 0.00076; 50105/30506 tok/s;   8774 sec
+[2020-02-04 16:48:23,553 INFO] Step 28000/500000; acc:  98.89; ppl:  1.04; xent: 0.03; lr: 0.00075; 49950/30471 tok/s;   9089 sec
+[2020-02-04 16:50:43,511 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 16:50:54,455 INFO] number of examples: 818070
+[2020-02-04 16:53:53,044 INFO] Step 29000/500000; acc:  98.91; ppl:  1.03; xent: 0.03; lr: 0.00073; 47809/29062 tok/s;   9419 sec
+[2020-02-04 16:59:06,779 INFO] Step 30000/500000; acc:  98.95; ppl:  1.03; xent: 0.03; lr: 0.00072; 50232/30566 tok/s;   9732 sec
+[2020-02-04 16:59:06,781 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-04 16:59:06,942 INFO] number of examples: 30000
+[2020-02-04 16:59:37,064 INFO] Validation perplexity: 1.02395
+[2020-02-04 16:59:37,064 INFO] Validation accuracy: 99.2973
+[2020-02-04 16:59:37,067 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_30000.pt
+[2020-02-04 17:04:53,311 INFO] Step 31000/500000; acc:  98.97; ppl:  1.03; xent: 0.03; lr: 0.00071; 45474/27769 tok/s;  10079 sec
+[2020-02-04 17:10:07,860 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 17:10:25,384 INFO] number of examples: 818070
+[2020-02-04 17:10:29,541 INFO] Step 32000/500000; acc:  99.00; ppl:  1.03; xent: 0.03; lr: 0.00070; 46859/28472 tok/s;  10415 sec
+[2020-02-04 17:15:43,601 INFO] Step 33000/500000; acc:  99.02; ppl:  1.03; xent: 0.03; lr: 0.00069; 50174/30546 tok/s;  10729 sec
+[2020-02-04 17:20:58,521 INFO] Step 34000/500000; acc:  99.04; ppl:  1.03; xent: 0.03; lr: 0.00068; 50043/30453 tok/s;  11044 sec
+[2020-02-04 17:26:14,136 INFO] Step 35000/500000; acc:  99.08; ppl:  1.03; xent: 0.03; lr: 0.00067; 49919/30428 tok/s;  11360 sec
+[2020-02-04 17:29:08,474 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 17:29:19,661 INFO] number of examples: 818070
+[2020-02-04 17:31:43,474 INFO] Step 36000/500000; acc:  99.09; ppl:  1.03; xent: 0.03; lr: 0.00066; 47833/29121 tok/s;  11689 sec
+[2020-02-04 17:36:58,304 INFO] Step 37000/500000; acc:  99.11; ppl:  1.03; xent: 0.03; lr: 0.00065; 50052/30430 tok/s;  12004 sec
+[2020-02-04 17:42:14,009 INFO] Step 38000/500000; acc:  99.13; ppl:  1.03; xent: 0.03; lr: 0.00064; 49924/30432 tok/s;  12320 sec
+[2020-02-04 17:47:29,654 INFO] Step 39000/500000; acc:  99.15; ppl:  1.03; xent: 0.03; lr: 0.00063; 49919/30436 tok/s;  12635 sec
+[2020-02-04 17:48:03,218 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 17:48:17,138 INFO] number of examples: 818070
+[2020-02-04 17:53:01,188 INFO] Step 40000/500000; acc:  99.17; ppl:  1.03; xent: 0.03; lr: 0.00062; 47516/28940 tok/s;  12967 sec
+[2020-02-04 17:53:01,189 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-04 17:53:01,356 INFO] number of examples: 30000
+[2020-02-04 17:53:31,482 INFO] Validation perplexity: 1.02199
+[2020-02-04 17:53:31,482 INFO] Validation accuracy: 99.3824
+[2020-02-04 17:53:31,485 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_40000.pt
+[2020-02-04 17:58:46,633 INFO] Step 41000/500000; acc:  99.17; ppl:  1.03; xent: 0.03; lr: 0.00062; 45625/27718 tok/s;  13312 sec
+[2020-02-04 18:04:02,200 INFO] Step 42000/500000; acc:  99.20; ppl:  1.03; xent: 0.02; lr: 0.00061; 49927/30420 tok/s;  13628 sec
+[2020-02-04 18:07:31,219 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 18:07:48,740 INFO] number of examples: 818070
+[2020-02-04 18:09:37,360 INFO] Step 43000/500000; acc:  99.21; ppl:  1.02; xent: 0.02; lr: 0.00060; 47001/28542 tok/s;  13963 sec
+[2020-02-04 18:14:52,486 INFO] Step 44000/500000; acc:  99.22; ppl:  1.02; xent: 0.02; lr: 0.00060; 50001/30448 tok/s;  14278 sec
+[2020-02-04 18:20:07,657 INFO] Step 45000/500000; acc:  99.24; ppl:  1.02; xent: 0.02; lr: 0.00059; 50015/30522 tok/s;  14593 sec
+[2020-02-04 18:25:23,524 INFO] Step 46000/500000; acc:  99.25; ppl:  1.02; xent: 0.02; lr: 0.00058; 49886/30450 tok/s;  14909 sec
+[2020-02-04 18:26:31,964 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 18:26:43,418 INFO] number of examples: 818070
+[2020-02-04 18:30:52,762 INFO] Step 47000/500000; acc:  99.26; ppl:  1.02; xent: 0.02; lr: 0.00058; 47842/29120 tok/s;  15238 sec
+[2020-02-04 18:36:07,700 INFO] Step 48000/500000; acc:  99.27; ppl:  1.02; xent: 0.02; lr: 0.00057; 50047/30403 tok/s;  15553 sec
+[2020-02-04 18:41:24,200 INFO] Step 49000/500000; acc:  99.29; ppl:  1.02; xent: 0.02; lr: 0.00056; 49775/30299 tok/s;  15870 sec
+[2020-02-04 18:45:28,649 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 18:45:42,773 INFO] number of examples: 818070
+[2020-02-04 18:46:56,706 INFO] Step 50000/500000; acc:  99.30; ppl:  1.02; xent: 0.02; lr: 0.00056; 47379/28766 tok/s;  16202 sec
+[2020-02-04 18:46:56,708 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-04 18:46:56,879 INFO] number of examples: 30000
+[2020-02-04 18:47:26,983 INFO] Validation perplexity: 1.02108
+[2020-02-04 18:47:26,983 INFO] Validation accuracy: 99.4252
+[2020-02-04 18:47:26,985 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_50000.pt
+[2020-02-04 18:52:42,462 INFO] Step 51000/500000; acc:  99.30; ppl:  1.02; xent: 0.02; lr: 0.00055; 45582/27787 tok/s;  16548 sec
+[2020-02-04 18:57:57,432 INFO] Step 52000/500000; acc:  99.32; ppl:  1.02; xent: 0.02; lr: 0.00055; 50036/30483 tok/s;  16863 sec
+[2020-02-04 19:03:12,528 INFO] Step 53000/500000; acc:  99.33; ppl:  1.02; xent: 0.02; lr: 0.00054; 50004/30535 tok/s;  17178 sec
+[2020-02-04 19:04:55,927 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 19:05:09,630 INFO] number of examples: 818070
+[2020-02-04 19:08:44,319 INFO] Step 54000/500000; acc:  99.34; ppl:  1.02; xent: 0.02; lr: 0.00054; 47477/28891 tok/s;  17510 sec
+[2020-02-04 19:13:59,117 INFO] Step 55000/500000; acc:  99.35; ppl:  1.02; xent: 0.02; lr: 0.00053; 50067/30399 tok/s;  17825 sec
+[2020-02-04 19:19:14,643 INFO] Step 56000/500000; acc:  99.36; ppl:  1.02; xent: 0.02; lr: 0.00053; 49933/30503 tok/s;  18140 sec
+[2020-02-04 19:23:53,085 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 19:24:10,470 INFO] number of examples: 818070
+[2020-02-04 19:24:49,793 INFO] Step 57000/500000; acc:  99.37; ppl:  1.02; xent: 0.02; lr: 0.00052; 47016/28542 tok/s;  18475 sec
+[2020-02-04 19:30:04,603 INFO] Step 58000/500000; acc:  99.37; ppl:  1.02; xent: 0.02; lr: 0.00052; 50051/30457 tok/s;  18790 sec
+[2020-02-04 19:35:18,692 INFO] Step 59000/500000; acc:  99.38; ppl:  1.02; xent: 0.02; lr: 0.00051; 50175/30549 tok/s;  19104 sec
+[2020-02-04 19:40:33,853 INFO] Step 60000/500000; acc:  99.39; ppl:  1.02; xent: 0.02; lr: 0.00051; 49993/30485 tok/s;  19419 sec
+[2020-02-04 19:40:33,855 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-04 19:40:34,020 INFO] number of examples: 30000
+[2020-02-04 19:41:04,167 INFO] Validation perplexity: 1.01954
+[2020-02-04 19:41:04,167 INFO] Validation accuracy: 99.4682
+[2020-02-04 19:41:04,169 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_60000.pt
+[2020-02-04 19:43:23,359 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 19:43:34,480 INFO] number of examples: 818070
+[2020-02-04 19:46:34,266 INFO] Step 61000/500000; acc:  99.40; ppl:  1.02; xent: 0.02; lr: 0.00051; 43708/26575 tok/s;  19780 sec
+[2020-02-04 19:51:48,348 INFO] Step 62000/500000; acc:  99.40; ppl:  1.02; xent: 0.02; lr: 0.00050; 50180/30531 tok/s;  20094 sec
+[2020-02-04 19:57:04,298 INFO] Step 63000/500000; acc:  99.41; ppl:  1.02; xent: 0.02; lr: 0.00050; 49876/30465 tok/s;  20410 sec
+[2020-02-04 20:02:17,885 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 20:02:35,005 INFO] number of examples: 818070
+[2020-02-04 20:02:40,068 INFO] Step 64000/500000; acc:  99.42; ppl:  1.02; xent: 0.02; lr: 0.00049; 46922/28504 tok/s;  20746 sec
+[2020-02-04 20:07:54,627 INFO] Step 65000/500000; acc:  99.43; ppl:  1.02; xent: 0.02; lr: 0.00049; 50096/30492 tok/s;  21060 sec
+[2020-02-04 20:13:09,959 INFO] Step 66000/500000; acc:  99.43; ppl:  1.02; xent: 0.02; lr: 0.00049; 49979/30417 tok/s;  21375 sec
+[2020-02-04 20:18:25,961 INFO] Step 67000/500000; acc:  99.44; ppl:  1.02; xent: 0.02; lr: 0.00048; 49857/30394 tok/s;  21691 sec
+[2020-02-04 20:21:19,649 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 20:21:35,023 INFO] number of examples: 818070
+[2020-02-04 20:23:59,491 INFO] Step 68000/500000; acc:  99.44; ppl:  1.02; xent: 0.02; lr: 0.00048; 47232/28743 tok/s;  22025 sec
+[2020-02-04 20:29:14,246 INFO] Step 69000/500000; acc:  99.45; ppl:  1.02; xent: 0.02; lr: 0.00048; 50064/30447 tok/s;  22340 sec
+[2020-02-04 20:34:30,014 INFO] Step 70000/500000; acc:  99.47; ppl:  1.02; xent: 0.02; lr: 0.00047; 49914/30435 tok/s;  22656 sec
+[2020-02-04 20:34:30,016 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-04 20:34:30,184 INFO] number of examples: 30000
+[2020-02-04 20:35:00,373 INFO] Validation perplexity: 1.01926
+[2020-02-04 20:35:00,373 INFO] Validation accuracy: 99.491
+[2020-02-04 20:35:00,376 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_70000.pt
+[2020-02-04 20:40:16,375 INFO] Step 71000/500000; acc:  99.46; ppl:  1.02; xent: 0.02; lr: 0.00047; 45492/27740 tok/s;  23002 sec
+[2020-02-04 20:40:49,276 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 20:41:00,789 INFO] number of examples: 818070
+[2020-02-04 20:45:46,341 INFO] Step 72000/500000; acc:  99.47; ppl:  1.02; xent: 0.02; lr: 0.00047; 47742/29064 tok/s;  23332 sec
+[2020-02-04 20:51:02,079 INFO] Step 73000/500000; acc:  99.47; ppl:  1.02; xent: 0.02; lr: 0.00046; 49918/30326 tok/s;  23648 sec
+[2020-02-04 20:56:18,079 INFO] Step 74000/500000; acc:  99.48; ppl:  1.02; xent: 0.02; lr: 0.00046; 49859/30394 tok/s;  23964 sec
+[2020-02-04 20:59:46,331 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 21:00:00,721 INFO] number of examples: 818070
+[2020-02-04 21:01:50,140 INFO] Step 75000/500000; acc:  99.49; ppl:  1.02; xent: 0.02; lr: 0.00046; 47440/28794 tok/s;  24296 sec
+[2020-02-04 21:07:05,370 INFO] Step 76000/500000; acc:  99.49; ppl:  1.02; xent: 0.02; lr: 0.00045; 49984/30446 tok/s;  24611 sec
+[2020-02-04 21:12:20,795 INFO] Step 77000/500000; acc:  99.50; ppl:  1.02; xent: 0.02; lr: 0.00045; 49975/30487 tok/s;  24926 sec
+[2020-02-04 21:17:36,550 INFO] Step 78000/500000; acc:  99.51; ppl:  1.02; xent: 0.01; lr: 0.00045; 49904/30467 tok/s;  25242 sec
+[2020-02-04 21:18:44,003 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 21:18:58,451 INFO] number of examples: 818070
+[2020-02-04 21:23:08,910 INFO] Step 79000/500000; acc:  99.50; ppl:  1.02; xent: 0.01; lr: 0.00044; 47393/28854 tok/s;  25574 sec
+[2020-02-04 21:28:23,679 INFO] Step 80000/500000; acc:  99.51; ppl:  1.01; xent: 0.01; lr: 0.00044; 50073/30426 tok/s;  25889 sec
+[2020-02-04 21:28:23,680 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-04 21:28:23,846 INFO] number of examples: 30000
+[2020-02-04 21:28:53,999 INFO] Validation perplexity: 1.01875
+[2020-02-04 21:28:53,999 INFO] Validation accuracy: 99.5103
+[2020-02-04 21:28:54,001 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_80000.pt
+[2020-02-04 21:34:09,652 INFO] Step 81000/500000; acc:  99.51; ppl:  1.01; xent: 0.01; lr: 0.00044; 45535/27704 tok/s;  26235 sec
+[2020-02-04 21:38:12,604 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 21:38:27,242 INFO] number of examples: 818070
+[2020-02-04 21:39:41,959 INFO] Step 82000/500000; acc:  99.52; ppl:  1.01; xent: 0.01; lr: 0.00044; 47407/28788 tok/s;  26567 sec
+[2020-02-04 21:44:57,185 INFO] Step 83000/500000; acc:  99.52; ppl:  1.01; xent: 0.01; lr: 0.00043; 49997/30463 tok/s;  26883 sec
+[2020-02-04 21:50:12,473 INFO] Step 84000/500000; acc:  99.53; ppl:  1.01; xent: 0.01; lr: 0.00043; 49987/30481 tok/s;  27198 sec
+[2020-02-04 21:55:27,540 INFO] Step 85000/500000; acc:  99.54; ppl:  1.01; xent: 0.01; lr: 0.00043; 50007/30533 tok/s;  27513 sec
+[2020-02-04 21:57:10,452 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 21:57:25,415 INFO] number of examples: 818070
+[2020-02-04 22:01:00,756 INFO] Step 86000/500000; acc:  99.54; ppl:  1.01; xent: 0.01; lr: 0.00043; 47274/28763 tok/s;  27846 sec
+[2020-02-04 22:06:15,672 INFO] Step 87000/500000; acc:  99.54; ppl:  1.01; xent: 0.01; lr: 0.00042; 50048/30390 tok/s;  28161 sec
+[2020-02-04 22:11:31,104 INFO] Step 88000/500000; acc:  99.55; ppl:  1.01; xent: 0.01; lr: 0.00042; 49948/30514 tok/s;  28477 sec
+[2020-02-04 22:16:04,093 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 22:16:14,610 INFO] number of examples: 818070
+[2020-02-04 22:16:53,858 INFO] Step 89000/500000; acc:  99.55; ppl:  1.01; xent: 0.01; lr: 0.00042; 48813/29611 tok/s;  28799 sec
+[2020-02-04 22:22:03,846 INFO] Step 90000/500000; acc:  99.55; ppl:  1.01; xent: 0.01; lr: 0.00042; 50840/30943 tok/s;  29109 sec
+[2020-02-04 22:22:03,847 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-04 22:22:03,993 INFO] number of examples: 30000
+[2020-02-04 22:22:33,761 INFO] Validation perplexity: 1.01852
+[2020-02-04 22:22:33,761 INFO] Validation accuracy: 99.5316
+[2020-02-04 22:22:33,763 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_90000.pt
+[2020-02-04 22:27:43,489 INFO] Step 91000/500000; acc:  99.56; ppl:  1.01; xent: 0.01; lr: 0.00041; 46399/28264 tok/s;  29449 sec
+[2020-02-04 22:32:53,964 INFO] Step 92000/500000; acc:  99.57; ppl:  1.01; xent: 0.01; lr: 0.00041; 50749/30929 tok/s;  29759 sec
+[2020-02-04 22:35:09,833 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 22:35:26,555 INFO] number of examples: 818070
+[2020-02-04 22:38:24,061 INFO] Step 93000/500000; acc:  99.56; ppl:  1.01; xent: 0.01; lr: 0.00041; 47722/29019 tok/s;  30090 sec
+[2020-02-04 22:43:33,099 INFO] Step 94000/500000; acc:  99.57; ppl:  1.01; xent: 0.01; lr: 0.00041; 50996/31033 tok/s;  30399 sec
+[2020-02-04 22:48:44,437 INFO] Step 95000/500000; acc:  99.58; ppl:  1.01; xent: 0.01; lr: 0.00041; 50614/30921 tok/s;  30710 sec
+[2020-02-04 22:53:53,884 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 22:54:04,969 INFO] number of examples: 818070
+[2020-02-04 22:54:10,757 INFO] Step 96000/500000; acc:  99.58; ppl:  1.01; xent: 0.01; lr: 0.00040; 48281/29318 tok/s;  31036 sec
+[2020-02-04 22:59:21,645 INFO] Step 97000/500000; acc:  99.58; ppl:  1.01; xent: 0.01; lr: 0.00040; 50687/30843 tok/s;  31347 sec
+[2020-02-04 23:04:33,531 INFO] Step 98000/500000; acc:  99.58; ppl:  1.01; xent: 0.01; lr: 0.00040; 50531/30766 tok/s;  31659 sec
+[2020-02-04 23:09:45,974 INFO] Step 99000/500000; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00040; 50426/30737 tok/s;  31972 sec
+[2020-02-04 23:12:37,048 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 23:12:50,692 INFO] number of examples: 818070
+[2020-02-04 23:15:14,285 INFO] Step 100000/500000; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00040; 47982/29215 tok/s;  32300 sec
+[2020-02-04 23:15:14,286 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-04 23:15:14,442 INFO] number of examples: 30000
+[2020-02-04 23:15:44,285 INFO] Validation perplexity: 1.01886
+[2020-02-04 23:15:44,286 INFO] Validation accuracy: 99.5309
+[2020-02-04 23:15:44,288 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_100000.pt
+[2020-02-04 23:20:56,054 INFO] Step 101000/500000; acc:  99.59; ppl:  1.01; xent: 0.01; lr: 0.00039; 46107/28021 tok/s;  32642 sec
+[2020-02-04 23:26:08,419 INFO] Step 102000/500000; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00039; 50458/30780 tok/s;  32954 sec
+[2020-02-04 23:31:20,796 INFO] Step 103000/500000; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00039; 50440/30758 tok/s;  33266 sec
+[2020-02-04 23:31:52,427 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 23:32:05,818 INFO] number of examples: 818070
+[2020-02-04 23:36:48,400 INFO] Step 104000/500000; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00039; 48087/29264 tok/s;  33594 sec
+[2020-02-04 23:42:00,079 INFO] Step 105000/500000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00039; 50569/30714 tok/s;  33906 sec
+[2020-02-04 23:47:12,484 INFO] Step 106000/500000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00038; 50431/30749 tok/s;  34218 sec
+[2020-02-04 23:50:37,634 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-04 23:50:54,868 INFO] number of examples: 818070
+[2020-02-04 23:52:43,817 INFO] Step 107000/500000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00038; 47545/28857 tok/s;  34549 sec
+[2020-02-04 23:57:55,708 INFO] Step 108000/500000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00038; 50519/30786 tok/s;  34861 sec
+[2020-02-05 00:03:07,839 INFO] Step 109000/500000; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00038; 50503/30798 tok/s;  35173 sec
+[2020-02-05 00:08:20,314 INFO] Step 110000/500000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00038; 50428/30786 tok/s;  35486 sec
+[2020-02-05 00:08:20,315 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 00:08:20,469 INFO] number of examples: 30000
+[2020-02-05 00:08:50,317 INFO] Validation perplexity: 1.01923
+[2020-02-05 00:08:50,317 INFO] Validation accuracy: 99.5407
+[2020-02-05 00:08:50,320 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_110000.pt
+[2020-02-05 00:09:56,949 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 00:10:08,319 INFO] number of examples: 818070
+[2020-02-05 00:14:18,834 INFO] Step 111000/500000; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00038; 43935/26746 tok/s;  35844 sec
+[2020-02-05 00:19:32,624 INFO] Step 112000/500000; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00037; 50228/30526 tok/s;  36158 sec
+[2020-02-05 00:24:46,904 INFO] Step 113000/500000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00037; 50128/30509 tok/s;  36472 sec
+[2020-02-05 00:28:48,439 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 00:29:02,525 INFO] number of examples: 818070
+[2020-02-05 00:30:17,592 INFO] Step 114000/500000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00037; 47639/28904 tok/s;  36803 sec
+[2020-02-05 00:35:32,119 INFO] Step 115000/500000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00037; 50109/30538 tok/s;  37118 sec
+[2020-02-05 00:40:46,173 INFO] Step 116000/500000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00037; 50182/30605 tok/s;  37432 sec
+[2020-02-05 00:46:00,364 INFO] Step 117000/500000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00037; 50148/30622 tok/s;  37746 sec
+[2020-02-05 00:47:41,990 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 00:47:56,006 INFO] number of examples: 818070
+[2020-02-05 00:51:31,594 INFO] Step 118000/500000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00036; 47557/28947 tok/s;  38077 sec
+[2020-02-05 00:56:45,394 INFO] Step 119000/500000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00036; 50227/30482 tok/s;  38391 sec
+[2020-02-05 01:02:00,005 INFO] Step 120000/500000; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00036; 50078/30595 tok/s;  38706 sec
+[2020-02-05 01:02:00,006 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 01:02:00,171 INFO] number of examples: 30000
+[2020-02-05 01:02:30,249 INFO] Validation perplexity: 1.019
+[2020-02-05 01:02:30,249 INFO] Validation accuracy: 99.5605
+[2020-02-05 01:02:30,251 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_120000.pt
+[2020-02-05 01:07:06,390 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 01:07:20,238 INFO] number of examples: 818070
+[2020-02-05 01:08:01,223 INFO] Step 121000/500000; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00036; 43616/26447 tok/s;  39067 sec
+[2020-02-05 01:13:15,283 INFO] Step 122000/500000; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00036; 50179/30562 tok/s;  39381 sec
+[2020-02-05 01:18:28,613 INFO] Step 123000/500000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00036; 50297/30627 tok/s;  39694 sec
+[2020-02-05 01:23:43,113 INFO] Step 124000/500000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00035; 50099/30557 tok/s;  40009 sec
+[2020-02-05 01:25:59,818 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 01:26:13,434 INFO] number of examples: 818070
+[2020-02-05 01:29:14,469 INFO] Step 125000/500000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00035; 47542/28901 tok/s;  40340 sec
+[2020-02-05 01:34:27,526 INFO] Step 126000/500000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00035; 50341/30629 tok/s;  40653 sec
+[2020-02-05 01:39:40,434 INFO] Step 127000/500000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00035; 50360/30765 tok/s;  40966 sec
+[2020-02-05 01:44:50,986 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 01:45:08,291 INFO] number of examples: 818070
+[2020-02-05 01:45:14,850 INFO] Step 128000/500000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00035; 47111/28602 tok/s;  41300 sec
+[2020-02-05 01:50:27,948 INFO] Step 129000/500000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00035; 50330/30632 tok/s;  41613 sec
+[2020-02-05 01:55:41,982 INFO] Step 130000/500000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00035; 50185/30542 tok/s;  41928 sec
+[2020-02-05 01:55:41,984 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 01:55:42,150 INFO] number of examples: 30000
+[2020-02-05 01:56:12,179 INFO] Validation perplexity: 1.01918
+[2020-02-05 01:56:12,179 INFO] Validation accuracy: 99.5587
+[2020-02-05 01:56:12,181 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_130000.pt
+[2020-02-05 02:01:27,099 INFO] Step 131000/500000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00035; 45653/27837 tok/s;  42273 sec
+[2020-02-05 02:04:18,504 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 02:04:29,476 INFO] number of examples: 818070
+[2020-02-05 02:06:55,025 INFO] Step 132000/500000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00034; 48037/29237 tok/s;  42601 sec
+[2020-02-05 02:12:08,738 INFO] Step 133000/500000; acc:  99.67; ppl:  1.01; xent: 0.01; lr: 0.00034; 50231/30542 tok/s;  42914 sec
+[2020-02-05 02:17:23,514 INFO] Step 134000/500000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00034; 50071/30546 tok/s;  43229 sec
+[2020-02-05 02:22:38,135 INFO] Step 135000/500000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00034; 50080/30530 tok/s;  43544 sec
+[2020-02-05 02:23:09,095 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 02:23:26,248 INFO] number of examples: 818070
+[2020-02-05 02:28:11,736 INFO] Step 136000/500000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00034; 47223/28742 tok/s;  43877 sec
+[2020-02-05 02:33:25,586 INFO] Step 137000/500000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00034; 50219/30499 tok/s;  44191 sec
+[2020-02-05 02:38:40,281 INFO] Step 138000/500000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00034; 50082/30541 tok/s;  44506 sec
+[2020-02-05 02:42:05,923 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 02:42:17,040 INFO] number of examples: 818070
+[2020-02-05 02:44:07,877 INFO] Step 139000/500000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00034; 48088/29194 tok/s;  44833 sec
+[2020-02-05 02:49:22,132 INFO] Step 140000/500000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00033; 50138/30546 tok/s;  45148 sec
+[2020-02-05 02:49:22,134 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 02:49:24,818 INFO] number of examples: 30000
+[2020-02-05 02:49:54,906 INFO] Validation perplexity: 1.01929
+[2020-02-05 02:49:54,906 INFO] Validation accuracy: 99.5645
+[2020-02-05 02:49:54,909 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_140000.pt
+[2020-02-05 02:55:09,378 INFO] Step 141000/500000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00033; 45397/27675 tok/s;  45495 sec
+[2020-02-05 03:00:24,177 INFO] Step 142000/500000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00033; 50055/30571 tok/s;  45810 sec
+[2020-02-05 03:01:29,899 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 03:01:44,353 INFO] number of examples: 818070
+[2020-02-05 03:05:55,457 INFO] Step 143000/500000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00033; 47548/28937 tok/s;  46141 sec
+[2020-02-05 03:11:09,205 INFO] Step 144000/500000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00033; 50235/30534 tok/s;  46455 sec
+[2020-02-05 03:16:23,319 INFO] Step 145000/500000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00033; 50154/30519 tok/s;  46769 sec
+[2020-02-05 03:20:23,782 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 03:20:38,851 INFO] number of examples: 818070
+[2020-02-05 03:21:54,828 INFO] Step 146000/500000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00033; 47521/28842 tok/s;  47100 sec
+[2020-02-05 03:27:09,040 INFO] Step 147000/500000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00033; 50159/30563 tok/s;  47415 sec
+[2020-02-05 03:32:23,125 INFO] Step 148000/500000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00032; 50177/30598 tok/s;  47729 sec
+[2020-02-05 03:37:37,378 INFO] Step 149000/500000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00032; 50138/30613 tok/s;  48043 sec
+[2020-02-05 03:39:18,053 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 03:39:29,439 INFO] number of examples: 818070
+[2020-02-05 03:43:05,953 INFO] Step 150000/500000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00032; 47941/29189 tok/s;  48371 sec
+[2020-02-05 03:43:05,964 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 03:43:06,133 INFO] number of examples: 30000
+[2020-02-05 03:43:36,161 INFO] Validation perplexity: 1.01998
+[2020-02-05 03:43:36,161 INFO] Validation accuracy: 99.5708
+[2020-02-05 03:43:36,163 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_150000.pt
+[2020-02-05 03:48:50,324 INFO] Step 151000/500000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00032; 45769/27775 tok/s;  48716 sec
+[2020-02-05 03:54:04,829 INFO] Step 152000/500000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00032; 50095/30602 tok/s;  49030 sec
+[2020-02-05 03:58:39,807 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 03:58:53,754 INFO] number of examples: 818070
+[2020-02-05 03:59:35,658 INFO] Step 153000/500000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00032; 47623/28891 tok/s;  49361 sec
+[2020-02-05 04:04:49,859 INFO] Step 154000/500000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00032; 50157/30540 tok/s;  49675 sec
+[2020-02-05 04:10:03,880 INFO] Step 155000/500000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00032; 50185/30557 tok/s;  49989 sec
+[2020-02-05 04:15:17,544 INFO] Step 156000/500000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00032; 50232/30631 tok/s;  50303 sec
+[2020-02-05 04:17:33,550 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 04:17:47,308 INFO] number of examples: 818070
+[2020-02-05 04:20:49,000 INFO] Step 157000/500000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00032; 47528/28911 tok/s;  50635 sec
+[2020-02-05 04:26:02,067 INFO] Step 158000/500000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00031; 50340/30618 tok/s;  50948 sec
+[2020-02-05 04:31:16,763 INFO] Step 159000/500000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00031; 50073/30568 tok/s;  51262 sec
+[2020-02-05 04:36:26,849 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 04:36:44,534 INFO] number of examples: 818070
+[2020-02-05 04:36:51,995 INFO] Step 160000/500000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00031; 46997/28552 tok/s;  51598 sec
+[2020-02-05 04:36:51,996 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 04:36:52,158 INFO] number of examples: 30000
+[2020-02-05 04:37:22,196 INFO] Validation perplexity: 1.0196
+[2020-02-05 04:37:22,197 INFO] Validation accuracy: 99.5741
+[2020-02-05 04:37:22,199 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_160000.pt
+[2020-02-05 04:42:35,655 INFO] Step 161000/500000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00031; 45855/27911 tok/s;  51941 sec
+[2020-02-05 04:47:49,683 INFO] Step 162000/500000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00031; 50184/30551 tok/s;  52255 sec
+[2020-02-05 04:53:04,278 INFO] Step 163000/500000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00031; 50083/30531 tok/s;  52570 sec
+[2020-02-05 04:55:54,671 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 04:56:06,086 INFO] number of examples: 818070
+[2020-02-05 04:58:32,599 INFO] Step 164000/500000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00031; 47979/29192 tok/s;  52898 sec
+[2020-02-05 05:03:46,297 INFO] Step 165000/500000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00031; 50234/30533 tok/s;  53212 sec
+[2020-02-05 05:09:01,005 INFO] Step 166000/500000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00031; 50081/30573 tok/s;  53527 sec
+[2020-02-05 05:14:15,518 INFO] Step 167000/500000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00031; 50098/30538 tok/s;  53841 sec
+[2020-02-05 05:14:45,491 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 05:14:59,693 INFO] number of examples: 818070
+[2020-02-05 05:19:46,187 INFO] Step 168000/500000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00030; 47641/29003 tok/s;  54172 sec
+[2020-02-05 05:25:00,004 INFO] Step 169000/500000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00030; 50226/30476 tok/s;  54486 sec
+[2020-02-05 05:30:14,731 INFO] Step 170000/500000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00030; 50058/30555 tok/s;  54800 sec
+[2020-02-05 05:30:14,732 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 05:30:14,897 INFO] number of examples: 30000
+[2020-02-05 05:30:44,937 INFO] Validation perplexity: 1.02019
+[2020-02-05 05:30:44,937 INFO] Validation accuracy: 99.5777
+[2020-02-05 05:30:44,939 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_170000.pt
+[2020-02-05 05:34:10,242 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 05:34:24,324 INFO] number of examples: 818070
+[2020-02-05 05:36:15,823 INFO] Step 171000/500000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00030; 43627/26479 tok/s;  55161 sec
+[2020-02-05 05:41:30,022 INFO] Step 172000/500000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00030; 50148/30548 tok/s;  55476 sec
+[2020-02-05 05:46:44,263 INFO] Step 173000/500000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00030; 50165/30576 tok/s;  55790 sec
+[2020-02-05 05:51:59,045 INFO] Step 174000/500000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00030; 50057/30568 tok/s;  56105 sec
+[2020-02-05 05:53:03,868 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 05:53:18,017 INFO] number of examples: 818070
+[2020-02-05 05:57:30,062 INFO] Step 175000/500000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00030; 47585/28969 tok/s;  56436 sec
+[2020-02-05 06:02:43,838 INFO] Step 176000/500000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00030; 50230/30531 tok/s;  56749 sec
+[2020-02-05 06:07:58,072 INFO] Step 177000/500000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00030; 50136/30515 tok/s;  57064 sec
+[2020-02-05 06:11:57,671 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 06:12:12,086 INFO] number of examples: 818070
+[2020-02-05 06:13:29,016 INFO] Step 178000/500000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00030; 47602/28887 tok/s;  57395 sec
+[2020-02-05 06:18:43,443 INFO] Step 179000/500000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00030; 50124/30546 tok/s;  57709 sec
+[2020-02-05 06:23:57,647 INFO] Step 180000/500000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00029; 50159/30579 tok/s;  58023 sec
+[2020-02-05 06:23:57,648 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 06:23:57,813 INFO] number of examples: 30000
+[2020-02-05 06:24:27,856 INFO] Validation perplexity: 1.02032
+[2020-02-05 06:24:27,856 INFO] Validation accuracy: 99.5814
+[2020-02-05 06:24:27,859 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_180000.pt
+[2020-02-05 06:29:42,302 INFO] Step 181000/500000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00029; 45715/27919 tok/s;  58368 sec
+[2020-02-05 06:31:21,937 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 06:31:36,309 INFO] number of examples: 818070
+[2020-02-05 06:35:13,667 INFO] Step 182000/500000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00029; 47538/28936 tok/s;  58699 sec
+[2020-02-05 06:40:27,522 INFO] Step 183000/500000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00029; 50217/30479 tok/s;  59013 sec
+[2020-02-05 06:45:41,946 INFO] Step 184000/500000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00029; 50108/30607 tok/s;  59327 sec
+[2020-02-05 06:50:16,083 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 06:50:30,875 INFO] number of examples: 818070
+[2020-02-05 06:51:13,370 INFO] Step 185000/500000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00029; 47536/28841 tok/s;  59659 sec
+[2020-02-05 06:56:27,377 INFO] Step 186000/500000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00029; 50188/30569 tok/s;  59973 sec
+[2020-02-05 07:01:41,153 INFO] Step 187000/500000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00029; 50224/30557 tok/s;  60287 sec
+[2020-02-05 07:06:54,803 INFO] Step 188000/500000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00029; 50236/30633 tok/s;  60600 sec
+[2020-02-05 07:09:09,933 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 07:09:20,947 INFO] number of examples: 818070
+[2020-02-05 07:12:23,440 INFO] Step 189000/500000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00029; 47934/29160 tok/s;  60929 sec
+[2020-02-05 07:17:36,594 INFO] Step 190000/500000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00029; 50326/30624 tok/s;  61242 sec
+[2020-02-05 07:17:36,596 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 07:17:40,063 INFO] number of examples: 30000
+[2020-02-05 07:18:10,160 INFO] Validation perplexity: 1.02035
+[2020-02-05 07:18:10,160 INFO] Validation accuracy: 99.5764
+[2020-02-05 07:18:10,163 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_190000.pt
+[2020-02-05 07:23:25,448 INFO] Step 191000/500000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00029; 45171/27568 tok/s;  61591 sec
+[2020-02-05 07:28:34,883 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 07:28:53,350 INFO] number of examples: 818070
+[2020-02-05 07:29:01,893 INFO] Step 192000/500000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00029; 46827/28440 tok/s;  61927 sec
+[2020-02-05 07:34:14,811 INFO] Step 193000/500000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00028; 50359/30668 tok/s;  62240 sec
+[2020-02-05 07:39:28,629 INFO] Step 194000/500000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00028; 50217/30565 tok/s;  62554 sec
+[2020-02-05 07:44:42,928 INFO] Step 195000/500000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00028; 50131/30565 tok/s;  62868 sec
+[2020-02-05 07:47:32,282 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 07:47:47,387 INFO] number of examples: 818070
+[2020-02-05 07:50:14,876 INFO] Step 196000/500000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00028; 47455/28868 tok/s;  63200 sec
+[2020-02-05 07:55:28,892 INFO] Step 197000/500000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00028; 50182/30513 tok/s;  63514 sec
+[2020-02-05 08:00:43,879 INFO] Step 198000/500000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00028; 50038/30528 tok/s;  63829 sec
+[2020-02-05 08:05:58,749 INFO] Step 199000/500000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00028; 50040/30517 tok/s;  64144 sec
+[2020-02-05 08:06:28,154 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 08:06:39,871 INFO] number of examples: 818070
+[2020-02-05 08:11:26,627 INFO] Step 200000/500000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00028; 48046/29232 tok/s;  64472 sec
+[2020-02-05 08:11:26,629 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 08:11:26,794 INFO] number of examples: 30000
+[2020-02-05 08:11:56,804 INFO] Validation perplexity: 1.02079
+[2020-02-05 08:11:56,804 INFO] Validation accuracy: 99.5795
+[2020-02-05 08:11:56,806 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_200000.pt
+[2020-02-05 08:17:10,703 INFO] Step 201000/500000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00028; 45809/27813 tok/s;  64816 sec
+[2020-02-05 08:22:25,206 INFO] Step 202000/500000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00028; 50093/30576 tok/s;  65131 sec
+[2020-02-05 08:25:49,089 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 08:26:03,214 INFO] number of examples: 818070
+[2020-02-05 08:27:55,878 INFO] Step 203000/500000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00028; 47641/28919 tok/s;  65461 sec
+[2020-02-05 08:33:10,377 INFO] Step 204000/500000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00028; 50101/30514 tok/s;  65776 sec
+[2020-02-05 08:38:24,948 INFO] Step 205000/500000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00028; 50112/30550 tok/s;  66090 sec
+[2020-02-05 08:43:39,907 INFO] Step 206000/500000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00028; 50029/30539 tok/s;  66405 sec
+[2020-02-05 08:44:43,782 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 08:44:58,110 INFO] number of examples: 818070
+[2020-02-05 08:49:10,874 INFO] Step 207000/500000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00027; 47593/28988 tok/s;  66736 sec
+[2020-02-05 08:54:24,453 INFO] Step 208000/500000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00027; 50262/30547 tok/s;  67050 sec
+[2020-02-05 08:59:38,464 INFO] Step 209000/500000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00027; 50172/30527 tok/s;  67364 sec
+[2020-02-05 09:03:36,941 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 09:03:51,475 INFO] number of examples: 818070
+[2020-02-05 09:05:09,423 INFO] Step 210000/500000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00027; 47599/28896 tok/s;  67695 sec
+[2020-02-05 09:05:09,425 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 09:05:09,590 INFO] number of examples: 30000
+[2020-02-05 09:05:39,633 INFO] Validation perplexity: 1.02081
+[2020-02-05 09:05:39,633 INFO] Validation accuracy: 99.586
+[2020-02-05 09:05:39,636 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_210000.pt
+[2020-02-05 09:10:54,361 INFO] Step 211000/500000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00027; 45690/27835 tok/s;  68040 sec
+[2020-02-05 09:16:08,690 INFO] Step 212000/500000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00027; 50139/30561 tok/s;  68354 sec
+[2020-02-05 09:21:23,130 INFO] Step 213000/500000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00027; 50109/30603 tok/s;  68669 sec
+[2020-02-05 09:23:02,179 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 09:23:16,759 INFO] number of examples: 818070
+[2020-02-05 09:26:54,585 INFO] Step 214000/500000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00027; 47525/28937 tok/s;  69000 sec
+[2020-02-05 09:32:08,202 INFO] Step 215000/500000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00027; 50255/30499 tok/s;  69314 sec
+[2020-02-05 09:37:22,394 INFO] Step 216000/500000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00027; 50145/30617 tok/s;  69628 sec
+[2020-02-05 09:41:55,377 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 09:42:10,512 INFO] number of examples: 818070
+[2020-02-05 09:42:53,970 INFO] Step 217000/500000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00027; 47514/28848 tok/s;  69960 sec
+[2020-02-05 09:48:08,225 INFO] Step 218000/500000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00027; 50149/30534 tok/s;  70274 sec
+[2020-02-05 09:53:22,293 INFO] Step 219000/500000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00027; 50176/30539 tok/s;  70588 sec
+[2020-02-05 09:58:36,029 INFO] Step 220000/500000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00027; 50224/30614 tok/s;  70902 sec
+[2020-02-05 09:58:36,031 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 09:58:36,196 INFO] number of examples: 30000
+[2020-02-05 09:59:06,251 INFO] Validation perplexity: 1.02109
+[2020-02-05 09:59:06,251 INFO] Validation accuracy: 99.5922
+[2020-02-05 09:59:06,253 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_220000.pt
+[2020-02-05 10:01:20,749 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 10:01:32,094 INFO] number of examples: 818070
+[2020-02-05 10:04:35,374 INFO] Step 221000/500000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00027; 43837/26679 tok/s;  71261 sec
+[2020-02-05 10:09:48,188 INFO] Step 222000/500000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00027; 50380/30639 tok/s;  71574 sec
+[2020-02-05 10:15:02,671 INFO] Step 223000/500000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00026; 50108/30588 tok/s;  71888 sec
+[2020-02-05 10:20:10,650 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 10:20:24,695 INFO] number of examples: 818070
+[2020-02-05 10:20:33,989 INFO] Step 224000/500000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00026; 47552/28879 tok/s;  72220 sec
+[2020-02-05 10:25:47,368 INFO] Step 225000/500000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00026; 50285/30623 tok/s;  72533 sec
+[2020-02-05 10:31:01,583 INFO] Step 226000/500000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00026; 50154/30541 tok/s;  72847 sec
+[2020-02-05 10:36:16,376 INFO] Step 227000/500000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00026; 50052/30505 tok/s;  73162 sec
+[2020-02-05 10:39:05,380 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 10:39:19,282 INFO] number of examples: 818070
+[2020-02-05 10:41:47,154 INFO] Step 228000/500000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00026; 47622/28986 tok/s;  73493 sec
+[2020-02-05 10:47:00,622 INFO] Step 229000/500000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00026; 50271/30541 tok/s;  73806 sec
+[2020-02-05 10:52:15,125 INFO] Step 230000/500000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00026; 50114/30584 tok/s;  74121 sec
+[2020-02-05 10:52:15,129 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 10:52:15,337 INFO] number of examples: 30000
+[2020-02-05 10:52:45,405 INFO] Validation perplexity: 1.02169
+[2020-02-05 10:52:45,405 INFO] Validation accuracy: 99.5846
+[2020-02-05 10:52:45,407 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_230000.pt
+[2020-02-05 10:58:00,126 INFO] Step 231000/500000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00026; 45660/27842 tok/s;  74466 sec
+[2020-02-05 10:58:28,567 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 10:58:42,143 INFO] number of examples: 818070
+[2020-02-05 11:03:30,305 INFO] Step 232000/500000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00026; 47723/29029 tok/s;  74796 sec
+[2020-02-05 11:08:44,304 INFO] Step 233000/500000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00026; 50199/30482 tok/s;  75110 sec
+[2020-02-05 11:13:59,198 INFO] Step 234000/500000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00026; 50032/30534 tok/s;  75425 sec
+[2020-02-05 11:17:22,483 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 11:17:39,753 INFO] number of examples: 818070
+[2020-02-05 11:19:33,031 INFO] Step 235000/500000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00026; 47191/28647 tok/s;  75759 sec
+[2020-02-05 11:24:46,998 INFO] Step 236000/500000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00026; 50185/30587 tok/s;  76073 sec
+[2020-02-05 11:30:01,083 INFO] Step 237000/500000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00026; 50189/30580 tok/s;  76387 sec
+[2020-02-05 11:35:15,670 INFO] Step 238000/500000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00026; 50089/30566 tok/s;  76701 sec
+[2020-02-05 11:36:18,520 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 11:36:29,722 INFO] number of examples: 818070
+[2020-02-05 11:40:43,815 INFO] Step 239000/500000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00026; 48001/29255 tok/s;  77029 sec
+[2020-02-05 11:45:57,817 INFO] Step 240000/500000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00026; 50194/30493 tok/s;  77343 sec
+[2020-02-05 11:45:57,818 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 11:45:58,044 INFO] number of examples: 30000
+[2020-02-05 11:46:28,120 INFO] Validation perplexity: 1.02151
+[2020-02-05 11:46:28,120 INFO] Validation accuracy: 99.5829
+[2020-02-05 11:46:28,123 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_240000.pt
+[2020-02-05 11:51:43,127 INFO] Step 241000/500000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00025; 45625/27758 tok/s;  77689 sec
+[2020-02-05 11:55:41,329 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 11:55:58,949 INFO] number of examples: 818070
+[2020-02-05 11:57:17,364 INFO] Step 242000/500000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00025; 47133/28607 tok/s;  78023 sec
+[2020-02-05 12:02:31,638 INFO] Step 243000/500000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00025; 50147/30574 tok/s;  78337 sec
+[2020-02-05 12:07:45,674 INFO] Step 244000/500000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00025; 50186/30574 tok/s;  78651 sec
+[2020-02-05 12:12:59,800 INFO] Step 245000/500000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00025; 50158/30641 tok/s;  78965 sec
+[2020-02-05 12:14:37,847 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 12:14:49,426 INFO] number of examples: 818070
+[2020-02-05 12:18:28,671 INFO] Step 246000/500000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00025; 47899/29168 tok/s;  79294 sec
+[2020-02-05 12:23:42,707 INFO] Step 247000/500000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00025; 50189/30455 tok/s;  79608 sec
+[2020-02-05 12:28:57,451 INFO] Step 248000/500000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00025; 50058/30572 tok/s;  79923 sec
+[2020-02-05 12:33:30,010 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 12:33:44,445 INFO] number of examples: 818070
+[2020-02-05 12:34:28,771 INFO] Step 249000/500000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00025; 47551/28865 tok/s;  80254 sec
+[2020-02-05 12:39:42,798 INFO] Step 250000/500000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00025; 50186/30546 tok/s;  80568 sec
+[2020-02-05 12:39:42,801 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 12:39:42,968 INFO] number of examples: 30000
+[2020-02-05 12:40:13,006 INFO] Validation perplexity: 1.02158
+[2020-02-05 12:40:13,006 INFO] Validation accuracy: 99.5866
+[2020-02-05 12:40:13,008 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_250000.pt
+[2020-02-05 12:45:27,103 INFO] Step 251000/500000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00025; 45769/27880 tok/s;  80913 sec
+[2020-02-05 12:50:40,612 INFO] Step 252000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00025; 50261/30622 tok/s;  81226 sec
+[2020-02-05 12:52:53,778 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 12:53:08,364 INFO] number of examples: 818070
+[2020-02-05 12:56:12,960 INFO] Step 253000/500000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00025; 47397/28851 tok/s;  81558 sec
+[2020-02-05 13:01:26,362 INFO] Step 254000/500000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00025; 50287/30564 tok/s;  81872 sec
+[2020-02-05 13:06:41,315 INFO] Step 255000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00025; 50032/30559 tok/s;  82187 sec
+[2020-02-05 13:11:49,157 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 13:12:04,371 INFO] number of examples: 818070
+[2020-02-05 13:12:14,265 INFO] Step 256000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00025; 47318/28734 tok/s;  82520 sec
+[2020-02-05 13:17:27,290 INFO] Step 257000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00025; 50343/30658 tok/s;  82833 sec
+[2020-02-05 13:22:41,157 INFO] Step 258000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00025; 50210/30570 tok/s;  83147 sec
+[2020-02-05 13:27:55,562 INFO] Step 259000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00025; 50114/30543 tok/s;  83461 sec
+[2020-02-05 13:30:43,300 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 13:30:54,879 INFO] number of examples: 818070
+[2020-02-05 13:33:24,083 INFO] Step 260000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00025; 47950/29179 tok/s;  83790 sec
+[2020-02-05 13:33:24,085 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 13:33:24,251 INFO] number of examples: 30000
+[2020-02-05 13:33:54,288 INFO] Validation perplexity: 1.02199
+[2020-02-05 13:33:54,288 INFO] Validation accuracy: 99.5924
+[2020-02-05 13:33:54,290 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_260000.pt
+[2020-02-05 13:39:08,371 INFO] Step 261000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00024; 45771/27807 tok/s;  84134 sec
+[2020-02-05 13:44:21,479 INFO] Step 262000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00024; 50337/30721 tok/s;  84447 sec
+[2020-02-05 13:49:36,388 INFO] Step 263000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00024; 50023/30509 tok/s;  84762 sec
+[2020-02-05 13:50:04,059 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 13:50:18,326 INFO] number of examples: 818070
+[2020-02-05 13:55:08,024 INFO] Step 264000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00024; 47513/28915 tok/s;  85094 sec
+[2020-02-05 14:00:19,607 INFO] Step 265000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00024; 50593/30713 tok/s;  85405 sec
+[2020-02-05 14:05:32,140 INFO] Step 266000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00024; 50409/30760 tok/s;  85718 sec
+[2020-02-05 14:08:53,789 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 14:09:08,155 INFO] number of examples: 818070
+[2020-02-05 14:11:02,452 INFO] Step 267000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00024; 47694/28959 tok/s;  86048 sec
+[2020-02-05 14:16:16,301 INFO] Step 268000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00024; 50203/30585 tok/s;  86362 sec
+[2020-02-05 14:21:30,566 INFO] Step 269000/500000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00024; 50161/30567 tok/s;  86676 sec
+[2020-02-05 14:26:45,128 INFO] Step 270000/500000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00024; 50093/30568 tok/s;  86991 sec
+[2020-02-05 14:26:45,130 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 14:26:45,304 INFO] number of examples: 30000
+[2020-02-05 14:27:15,344 INFO] Validation perplexity: 1.02226
+[2020-02-05 14:27:15,344 INFO] Validation accuracy: 99.5902
+[2020-02-05 14:27:15,347 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_270000.pt
+[2020-02-05 14:28:17,983 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 14:28:32,401 INFO] number of examples: 818070
+[2020-02-05 14:32:46,565 INFO] Step 271000/500000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00024; 43579/26570 tok/s;  87352 sec
+[2020-02-05 14:37:59,875 INFO] Step 272000/500000; acc:  99.83; ppl:  1.01; xent: 0.00; lr: 0.00024; 50305/30553 tok/s;  87665 sec
+[2020-02-05 14:43:13,833 INFO] Step 273000/500000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00024; 50182/30519 tok/s;  87979 sec
+[2020-02-05 14:47:10,578 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 14:47:25,139 INFO] number of examples: 818070
+[2020-02-05 14:48:44,494 INFO] Step 274000/500000; acc:  99.83; ppl:  1.01; xent: 0.00; lr: 0.00024; 47641/28923 tok/s;  88310 sec
+[2020-02-05 14:53:59,094 INFO] Step 275000/500000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00024; 50096/30540 tok/s;  88625 sec
+[2020-02-05 14:59:13,362 INFO] Step 276000/500000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00024; 50148/30563 tok/s;  88939 sec
+[2020-02-05 15:04:27,654 INFO] Step 277000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00024; 50132/30614 tok/s;  89253 sec
+[2020-02-05 15:06:04,884 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 15:06:15,945 INFO] number of examples: 818070
+[2020-02-05 15:09:55,541 INFO] Step 278000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00024; 48042/29261 tok/s;  89581 sec
+[2020-02-05 15:15:09,211 INFO] Step 279000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00024; 50247/30489 tok/s;  89895 sec
+[2020-02-05 15:20:23,316 INFO] Step 280000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00024; 50160/30630 tok/s;  90209 sec
+[2020-02-05 15:20:23,317 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 15:20:26,773 INFO] number of examples: 30000
+[2020-02-05 15:20:56,815 INFO] Validation perplexity: 1.02214
+[2020-02-05 15:20:56,815 INFO] Validation accuracy: 99.5956
+[2020-02-05 15:20:56,818 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_280000.pt
+[2020-02-05 15:25:28,021 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 15:25:46,577 INFO] number of examples: 818070
+[2020-02-05 15:26:32,114 INFO] Step 281000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00024; 42718/25937 tok/s;  90578 sec
+[2020-02-05 15:31:46,211 INFO] Step 282000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00024; 50174/30549 tok/s;  90892 sec
+[2020-02-05 15:36:59,938 INFO] Step 283000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00023; 50230/30578 tok/s;  91205 sec
+[2020-02-05 15:42:13,476 INFO] Step 284000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00023; 50255/30634 tok/s;  91519 sec
+[2020-02-05 15:44:26,096 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 15:44:41,232 INFO] number of examples: 818070
+[2020-02-05 15:47:46,179 INFO] Step 285000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00023; 47347/28805 tok/s;  91852 sec
+[2020-02-05 15:52:59,033 INFO] Step 286000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00023; 50375/30636 tok/s;  92165 sec
+[2020-02-05 15:58:13,275 INFO] Step 287000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00023; 50146/30619 tok/s;  92479 sec
+[2020-02-05 16:03:19,384 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 16:03:30,986 INFO] number of examples: 818070
+[2020-02-05 16:03:41,789 INFO] Step 288000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00023; 47957/29108 tok/s;  92807 sec
+[2020-02-05 16:08:54,831 INFO] Step 289000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00023; 50339/30671 tok/s;  93120 sec
+[2020-02-05 16:14:08,669 INFO] Step 290000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00023; 50214/30570 tok/s;  93434 sec
+[2020-02-05 16:14:08,671 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 16:14:08,835 INFO] number of examples: 30000
+[2020-02-05 16:14:38,868 INFO] Validation perplexity: 1.02209
+[2020-02-05 16:14:38,868 INFO] Validation accuracy: 99.598
+[2020-02-05 16:14:38,871 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_290000.pt
+[2020-02-05 16:19:53,770 INFO] Step 291000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00023; 45656/27819 tok/s;  93779 sec
+[2020-02-05 16:22:40,689 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 16:22:54,910 INFO] number of examples: 818070
+[2020-02-05 16:25:24,633 INFO] Step 292000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00023; 47609/28978 tok/s;  94110 sec
+[2020-02-05 16:30:37,987 INFO] Step 293000/500000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00023; 50290/30564 tok/s;  94424 sec
+[2020-02-05 16:35:52,229 INFO] Step 294000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00023; 50157/30601 tok/s;  94738 sec
+[2020-02-05 16:41:06,368 INFO] Step 295000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00023; 50144/30576 tok/s;  95052 sec
+[2020-02-05 16:41:32,938 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 16:41:47,344 INFO] number of examples: 818070
+[2020-02-05 16:46:37,052 INFO] Step 296000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00023; 47650/29005 tok/s;  95383 sec
+[2020-02-05 16:51:50,774 INFO] Step 297000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00023; 50243/30504 tok/s;  95696 sec
+[2020-02-05 16:57:05,123 INFO] Step 298000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00023; 50117/30586 tok/s;  96011 sec
+[2020-02-05 17:00:26,551 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 17:00:40,986 INFO] number of examples: 818070
+[2020-02-05 17:02:35,706 INFO] Step 299000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00023; 47655/28934 tok/s;  96341 sec
+[2020-02-05 17:07:49,302 INFO] Step 300000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00023; 50243/30605 tok/s;  96655 sec
+[2020-02-05 17:07:49,303 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 17:07:49,468 INFO] number of examples: 30000
+[2020-02-05 17:08:19,484 INFO] Validation perplexity: 1.02272
+[2020-02-05 17:08:19,484 INFO] Validation accuracy: 99.5944
+[2020-02-05 17:08:19,486 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_300000.pt
+[2020-02-05 17:13:33,621 INFO] Step 301000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00023; 45782/27908 tok/s;  96999 sec
+[2020-02-05 17:18:47,975 INFO] Step 302000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00023; 50126/30565 tok/s;  97314 sec
+[2020-02-05 17:19:49,165 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 17:20:03,769 INFO] number of examples: 818070
+[2020-02-05 17:24:18,947 INFO] Step 303000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00023; 47591/29023 tok/s;  97644 sec
+[2020-02-05 17:29:32,372 INFO] Step 304000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00023; 50288/30552 tok/s;  97958 sec
+[2020-02-05 17:34:46,325 INFO] Step 305000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00023; 50182/30516 tok/s;  98272 sec
+[2020-02-05 17:38:42,258 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 17:38:57,372 INFO] number of examples: 818070
+[2020-02-05 17:40:17,520 INFO] Step 306000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00023; 47564/28879 tok/s;  98603 sec
+[2020-02-05 17:45:31,283 INFO] Step 307000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00023; 50229/30622 tok/s;  98917 sec
+[2020-02-05 17:50:44,850 INFO] Step 308000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00023; 50262/30628 tok/s;  99230 sec
+[2020-02-05 17:55:58,542 INFO] Step 309000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50230/30661 tok/s;  99544 sec
+[2020-02-05 17:57:34,574 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 17:57:46,080 INFO] number of examples: 818070
+[2020-02-05 18:01:26,744 INFO] Step 310000/500000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00022; 47995/29252 tok/s;  99872 sec
+[2020-02-05 18:01:26,745 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 18:01:26,910 INFO] number of examples: 30000
+[2020-02-05 18:01:56,920 INFO] Validation perplexity: 1.02281
+[2020-02-05 18:01:56,920 INFO] Validation accuracy: 99.5967
+[2020-02-05 18:01:56,923 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_310000.pt
+[2020-02-05 18:07:10,827 INFO] Step 311000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 45807/27791 tok/s; 100216 sec
+[2020-02-05 18:12:25,105 INFO] Step 312000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50132/30624 tok/s; 100531 sec
+[2020-02-05 18:16:55,504 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 18:17:09,634 INFO] number of examples: 818070
+[2020-02-05 18:17:55,471 INFO] Step 313000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 47688/28946 tok/s; 100861 sec
+[2020-02-05 18:23:09,026 INFO] Step 314000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50260/30597 tok/s; 101175 sec
+[2020-02-05 18:28:22,292 INFO] Step 315000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50304/30630 tok/s; 101488 sec
+[2020-02-05 18:33:35,870 INFO] Step 316000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50249/30620 tok/s; 101801 sec
+[2020-02-05 18:35:46,671 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 18:36:00,909 INFO] number of examples: 818070
+[2020-02-05 18:39:06,775 INFO] Step 317000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 47604/28962 tok/s; 102132 sec
+[2020-02-05 18:44:19,596 INFO] Step 318000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50380/30645 tok/s; 102445 sec
+[2020-02-05 18:49:34,294 INFO] Step 319000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50074/30560 tok/s; 102760 sec
+[2020-02-05 18:54:39,694 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 18:54:54,195 INFO] number of examples: 818070
+[2020-02-05 18:55:05,923 INFO] Step 320000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 47507/28846 tok/s; 103091 sec
+[2020-02-05 18:55:05,924 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 18:55:06,088 INFO] number of examples: 30000
+[2020-02-05 18:55:36,074 INFO] Validation perplexity: 1.02267
+[2020-02-05 18:55:36,075 INFO] Validation accuracy: 99.6004
+[2020-02-05 18:55:36,077 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_320000.pt
+[2020-02-05 19:00:49,158 INFO] Step 321000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 45911/27973 tok/s; 103435 sec
+[2020-02-05 19:06:02,439 INFO] Step 322000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50303/30613 tok/s; 103748 sec
+[2020-02-05 19:11:16,404 INFO] Step 323000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50184/30582 tok/s; 104062 sec
+[2020-02-05 19:14:01,996 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 19:14:16,757 INFO] number of examples: 818070
+[2020-02-05 19:16:47,522 INFO] Step 324000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 47572/28962 tok/s; 104393 sec
+[2020-02-05 19:22:00,800 INFO] Step 325000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50302/30565 tok/s; 104706 sec
+[2020-02-05 19:27:15,199 INFO] Step 326000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50132/30594 tok/s; 105021 sec
+[2020-02-05 19:32:29,570 INFO] Step 327000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50107/30553 tok/s; 105335 sec
+[2020-02-05 19:32:55,495 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 19:33:10,661 INFO] number of examples: 818070
+[2020-02-05 19:38:00,553 INFO] Step 328000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 47607/28982 tok/s; 105666 sec
+[2020-02-05 19:43:13,654 INFO] Step 329000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50342/30550 tok/s; 105979 sec
+[2020-02-05 19:48:27,681 INFO] Step 330000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00022; 50169/30645 tok/s; 106293 sec
+[2020-02-05 19:48:27,682 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 19:48:27,847 INFO] number of examples: 30000
+[2020-02-05 19:48:57,822 INFO] Validation perplexity: 1.02315
+[2020-02-05 19:48:57,822 INFO] Validation accuracy: 99.6039
+[2020-02-05 19:48:57,824 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_330000.pt
+[2020-02-05 19:52:18,264 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 19:52:29,672 INFO] number of examples: 818070
+[2020-02-05 19:54:25,617 INFO] Step 331000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00022; 44013/26709 tok/s; 106651 sec
+[2020-02-05 19:59:39,347 INFO] Step 332000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50221/30579 tok/s; 106965 sec
+[2020-02-05 20:04:53,432 INFO] Step 333000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50200/30618 tok/s; 107279 sec
+[2020-02-05 20:10:07,855 INFO] Step 334000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00022; 50116/30555 tok/s; 107593 sec
+[2020-02-05 20:11:08,463 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 20:11:22,589 INFO] number of examples: 818070
+[2020-02-05 20:15:38,374 INFO] Step 335000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00022; 47656/29061 tok/s; 107924 sec
+[2020-02-05 20:20:51,623 INFO] Step 336000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00022; 50315/30555 tok/s; 108237 sec
+[2020-02-05 20:26:05,260 INFO] Step 337000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00022; 50233/30563 tok/s; 108551 sec
+[2020-02-05 20:29:59,919 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 20:30:14,236 INFO] number of examples: 818070
+[2020-02-05 20:31:35,562 INFO] Step 338000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00022; 47692/28949 tok/s; 108881 sec
+[2020-02-05 20:36:49,580 INFO] Step 339000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50188/30603 tok/s; 109195 sec
+[2020-02-05 20:42:03,503 INFO] Step 340000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50206/30592 tok/s; 109509 sec
+[2020-02-05 20:42:03,504 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 20:42:03,673 INFO] number of examples: 30000
+[2020-02-05 20:42:33,744 INFO] Validation perplexity: 1.02351
+[2020-02-05 20:42:33,744 INFO] Validation accuracy: 99.5952
+[2020-02-05 20:42:33,746 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_340000.pt
+[2020-02-05 20:47:47,913 INFO] Step 341000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 45748/27923 tok/s; 109853 sec
+[2020-02-05 20:49:23,445 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 20:49:37,610 INFO] number of examples: 818070
+[2020-02-05 20:53:18,550 INFO] Step 342000/500000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00021; 47642/29037 tok/s; 110184 sec
+[2020-02-05 20:58:31,693 INFO] Step 343000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50332/30543 tok/s; 110497 sec
+[2020-02-05 21:03:45,560 INFO] Step 344000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50195/30683 tok/s; 110811 sec
+[2020-02-05 21:08:14,589 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 21:08:28,893 INFO] number of examples: 818070
+[2020-02-05 21:09:15,732 INFO] Step 345000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 47719/28926 tok/s; 111141 sec
+[2020-02-05 21:14:29,369 INFO] Step 346000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50247/30603 tok/s; 111455 sec
+[2020-02-05 21:19:42,928 INFO] Step 347000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50257/30595 tok/s; 111768 sec
+[2020-02-05 21:24:56,726 INFO] Step 348000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50213/30606 tok/s; 112082 sec
+[2020-02-05 21:27:06,934 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 21:27:21,608 INFO] number of examples: 818070
+[2020-02-05 21:30:28,046 INFO] Step 349000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 47545/28916 tok/s; 112414 sec
+[2020-02-05 21:35:40,530 INFO] Step 350000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50435/30685 tok/s; 112726 sec
+[2020-02-05 21:35:40,531 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 21:35:40,700 INFO] number of examples: 30000
+[2020-02-05 21:36:10,706 INFO] Validation perplexity: 1.02339
+[2020-02-05 21:36:10,706 INFO] Validation accuracy: 99.5948
+[2020-02-05 21:36:10,708 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_350000.pt
+[2020-02-05 21:41:25,252 INFO] Step 351000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 45712/27899 tok/s; 113071 sec
+[2020-02-05 21:46:29,680 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 21:46:44,580 INFO] number of examples: 818070
+[2020-02-05 21:46:57,339 INFO] Step 352000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 47442/28820 tok/s; 113403 sec
+[2020-02-05 21:52:10,255 INFO] Step 353000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50351/30666 tok/s; 113716 sec
+[2020-02-05 21:57:23,983 INFO] Step 354000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50240/30566 tok/s; 114030 sec
+[2020-02-05 22:02:38,525 INFO] Step 355000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50091/30540 tok/s; 114344 sec
+[2020-02-05 22:05:23,815 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 22:05:34,926 INFO] number of examples: 818070
+[2020-02-05 22:08:06,267 INFO] Step 356000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 48062/29253 tok/s; 114672 sec
+[2020-02-05 22:13:19,598 INFO] Step 357000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50295/30554 tok/s; 114985 sec
+[2020-02-05 22:18:34,212 INFO] Step 358000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50098/30590 tok/s; 115300 sec
+[2020-02-05 22:23:48,627 INFO] Step 359000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50099/30546 tok/s; 115614 sec
+[2020-02-05 22:24:13,595 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 22:24:27,197 INFO] number of examples: 818070
+[2020-02-05 22:29:18,365 INFO] Step 360000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 47787/29078 tok/s; 115944 sec
+[2020-02-05 22:29:18,367 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 22:29:21,860 INFO] number of examples: 30000
+[2020-02-05 22:29:51,921 INFO] Validation perplexity: 1.02377
+[2020-02-05 22:29:51,921 INFO] Validation accuracy: 99.5952
+[2020-02-05 22:29:51,924 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_360000.pt
+[2020-02-05 22:35:05,828 INFO] Step 361000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 45362/27522 tok/s; 116291 sec
+[2020-02-05 22:40:20,330 INFO] Step 362000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50094/30599 tok/s; 116606 sec
+[2020-02-05 22:43:39,908 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 22:43:58,518 INFO] number of examples: 818070
+[2020-02-05 22:45:55,653 INFO] Step 363000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00021; 46981/28516 tok/s; 116941 sec
+[2020-02-05 22:51:09,496 INFO] Step 364000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50209/30581 tok/s; 117255 sec
+[2020-02-05 22:56:23,624 INFO] Step 365000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00021; 50173/30602 tok/s; 117569 sec
+[2020-02-05 23:01:38,099 INFO] Step 366000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00021; 50116/30546 tok/s; 117884 sec
+[2020-02-05 23:02:37,589 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 23:02:52,806 INFO] number of examples: 818070
+[2020-02-05 23:07:09,902 INFO] Step 367000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00021; 47471/28950 tok/s; 118215 sec
+[2020-02-05 23:12:23,463 INFO] Step 368000/500000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00021; 50266/30524 tok/s; 118529 sec
+[2020-02-05 23:17:37,661 INFO] Step 369000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00021; 50145/30517 tok/s; 118843 sec
+[2020-02-05 23:21:32,041 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 23:21:43,504 INFO] number of examples: 818070
+[2020-02-05 23:23:05,447 INFO] Step 370000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00021; 48057/29173 tok/s; 119171 sec
+[2020-02-05 23:23:05,448 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-05 23:23:05,615 INFO] number of examples: 30000
+[2020-02-05 23:23:35,599 INFO] Validation perplexity: 1.02337
+[2020-02-05 23:23:35,599 INFO] Validation accuracy: 99.6014
+[2020-02-05 23:23:35,602 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_370000.pt
+[2020-02-05 23:28:49,928 INFO] Step 371000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00021; 45750/27900 tok/s; 119515 sec
+[2020-02-05 23:34:03,805 INFO] Step 372000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 50213/30593 tok/s; 119829 sec
+[2020-02-05 23:39:17,718 INFO] Step 373000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 50193/30627 tok/s; 120143 sec
+[2020-02-05 23:40:52,230 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 23:41:06,296 INFO] number of examples: 818070
+[2020-02-05 23:44:48,497 INFO] Step 374000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 47621/29026 tok/s; 120474 sec
+[2020-02-05 23:50:02,110 INFO] Step 375000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 50256/30511 tok/s; 120788 sec
+[2020-02-05 23:55:16,243 INFO] Step 376000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 50152/30631 tok/s; 121102 sec
+[2020-02-05 23:59:44,852 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-05 23:59:58,839 INFO] number of examples: 818070
+[2020-02-06 00:00:46,878 INFO] Step 377000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 47653/28894 tok/s; 121432 sec
+[2020-02-06 00:06:02,365 INFO] Step 378000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 49960/30443 tok/s; 121748 sec
+[2020-02-06 00:11:16,488 INFO] Step 379000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 50167/30527 tok/s; 122062 sec
+[2020-02-06 00:16:30,782 INFO] Step 380000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 50134/30557 tok/s; 122376 sec
+[2020-02-06 00:16:30,797 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-06 00:16:30,960 INFO] number of examples: 30000
+[2020-02-06 00:17:00,994 INFO] Validation perplexity: 1.02419
+[2020-02-06 00:17:00,994 INFO] Validation accuracy: 99.6005
+[2020-02-06 00:17:00,996 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_380000.pt
+[2020-02-06 00:19:10,770 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-06 00:19:28,540 INFO] number of examples: 818070
+[2020-02-06 00:22:36,516 INFO] Step 381000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 43073/26207 tok/s; 122742 sec
+[2020-02-06 00:27:50,119 INFO] Step 382000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 50256/30571 tok/s; 123056 sec
+[2020-02-06 00:33:05,190 INFO] Step 383000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 50013/30523 tok/s; 123371 sec
+[2020-02-06 00:38:09,037 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-06 00:38:20,669 INFO] number of examples: 818070
+[2020-02-06 00:38:33,942 INFO] Step 384000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 47925/29104 tok/s; 123699 sec
+[2020-02-06 00:43:46,764 INFO] Step 385000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 50366/30678 tok/s; 124012 sec
+[2020-02-06 00:49:00,399 INFO] Step 386000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 50254/30584 tok/s; 124326 sec
+[2020-02-06 00:54:14,733 INFO] Step 387000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 50124/30556 tok/s; 124640 sec
+[2020-02-06 00:56:59,054 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-06 00:57:13,691 INFO] number of examples: 818070
+[2020-02-06 00:59:46,004 INFO] Step 388000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 47552/28936 tok/s; 124972 sec
+[2020-02-06 01:04:59,372 INFO] Step 389000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 50289/30559 tok/s; 125285 sec
+[2020-02-06 01:10:13,865 INFO] Step 390000/500000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00020; 50115/30594 tok/s; 125599 sec
+[2020-02-06 01:10:13,867 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-06 01:10:14,034 INFO] number of examples: 30000
+[2020-02-06 01:10:44,110 INFO] Validation perplexity: 1.0237
+[2020-02-06 01:10:44,110 INFO] Validation accuracy: 99.6021
+[2020-02-06 01:10:44,112 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_390000.pt
+[2020-02-06 01:15:58,795 INFO] Step 391000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 45668/27840 tok/s; 125944 sec
+[2020-02-06 01:16:22,832 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-06 01:16:37,551 INFO] number of examples: 818070
+[2020-02-06 01:21:29,546 INFO] Step 392000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 47643/28985 tok/s; 126275 sec
+[2020-02-06 01:26:43,087 INFO] Step 393000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 50273/30512 tok/s; 126589 sec
+[2020-02-06 01:31:57,564 INFO] Step 394000/500000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00020; 50100/30602 tok/s; 126903 sec
+[2020-02-06 01:35:16,221 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-06 01:35:27,201 INFO] number of examples: 818070
+[2020-02-06 01:37:24,974 INFO] Step 395000/500000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00020; 48117/29213 tok/s; 127231 sec
+[2020-02-06 01:42:38,724 INFO] Step 396000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 50217/30583 tok/s; 127544 sec
+[2020-02-06 01:47:52,812 INFO] Step 397000/500000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00020; 50180/30609 tok/s; 127858 sec
+[2020-02-06 01:53:07,177 INFO] Step 398000/500000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00020; 50134/30550 tok/s; 128173 sec
+[2020-02-06 01:54:06,002 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.train.0.pt
+[2020-02-06 01:54:23,032 INFO] number of examples: 818070
+[2020-02-06 01:58:40,647 INFO] Step 399000/500000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00020; 47233/28814 tok/s; 128506 sec
+[2020-02-06 02:03:54,090 INFO] Step 400000/500000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00020; 50286/30522 tok/s; 128820 sec
+[2020-02-06 02:03:54,092 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/data/data/MIT_separated_augm/MIT_separated_augm.valid.0.pt
+[2020-02-06 02:03:54,264 INFO] number of examples: 30000
+[2020-02-06 02:04:24,268 INFO] Validation perplexity: 1.02342
+[2020-02-06 02:04:24,268 INFO] Validation accuracy: 99.6005
+[2020-02-06 02:04:24,270 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/MIT_separated_augm/MIT_separated_augm_model_step_400000.pt
+[2020-02-06 02:09:34,768 INFO] Step 401000/500000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00020; 46245/28169 tok/s; 129160 sec
+slurmstepd: error: *** JOB 19222066 ON gpu-e-90 CANCELLED AT 2020-02-06T02:12:42 DUE TO TIME LIMIT ***
+slurmstepd: error: task_p_post_term: rmdir(/sys/fs/cgroup/cpuset/slurm19222066/slurm19222066.4294967294_0) failed Device or resource busy

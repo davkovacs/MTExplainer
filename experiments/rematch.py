@@ -13,6 +13,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 """
+
+
 import os
 import numpy as np
 from mpi4py import MPI
@@ -21,12 +23,14 @@ from sklearn.preprocessing import normalize
 
 from localsimilaritykernel import LocalSimilarityKernel
 
+
 def return_borders(index, dat_len, mpi_size):
     mpi_borders = np.linspace(0, dat_len, mpi_size + 1).astype('int')
 
     border_low = mpi_borders[index]
     border_high = mpi_borders[index+1]
     return border_low, border_high
+
 
 class REMatchKernel(LocalSimilarityKernel):
     """Used to compute a global similarity of structures based on the
@@ -50,7 +54,8 @@ class REMatchKernel(LocalSimilarityKernel):
     Phys.  Chem. Chem. Phys. 18, 13754 (2016),
     https://doi.org/10.1039/c6cp00415f
     """
-    def __init__(self, alpha=0.1, threshold=1e-6, metric="linear", gamma=None, degree=3, coef0=1, kernel_params=None, normalize_kernel=True, rematch=False):
+    def __init__(self, alpha=0.1, threshold=1e-6, metric="linear", gamma=None, degree=3, coef0=1, kernel_params=None,
+                 normalize_kernel=True, rematch=False):
         """
         Args:
             alpha(float): Parameter controlling the entropic penalty. Values
@@ -98,11 +103,10 @@ class REMatchKernel(LocalSimilarityKernel):
         """
         n, m = localkernel.shape 
         localkernel = localkernel**2/(n*m)  # square the dot products
-        if self.rematch==False:
-           return(np.sum(localkernel))
-          
-          
-        K = np.exp(-(1 - localkernel) / self.alpha)
+        if not self.rematch:
+            return np.sum(localkernel)
+
+        K = np.exp(- (1 - localkernel) / self.alpha)
 
         # initialisation
         u = np.ones((n,)) / n
@@ -114,7 +118,7 @@ class REMatchKernel(LocalSimilarityKernel):
         # converge balancing vectors u and v
         itercount = 0
         error = 1
-        while (error > self.threshold):
+        while error > self.threshold:
             uprev = u
             vprev = v
             v = np.divide(em, np.dot(K.T, u))
@@ -122,7 +126,7 @@ class REMatchKernel(LocalSimilarityKernel):
 
             # determine error every now and then
             if itercount % 5:
-                error = np.sum((u - uprev) ** 2) / np.sum((u) ** 2) + np.sum((v - vprev) ** 2) / np.sum((v) ** 2)
+                error = np.sum((u - uprev) ** 2) / np.sum((u) ** 2) + np.sum((v - vprev) ** 2) / np.sum(v ** 2)
             itercount += 1
 
         # using Tr(X.T Y) = Sum[ij](Xij * Yij)
@@ -130,65 +134,66 @@ class REMatchKernel(LocalSimilarityKernel):
         # P_ij = u_i * v_j * K_ij
         pity = np.multiply( np.multiply(K, u.reshape((-1, 1))), v)
 
-        glosim = np.sum( np.multiply( pity, localkernel))
+        glosim = np.sum(np.multiply(pity, localkernel))
 
         return glosim
 
+
 def main(src_text, src, dir, kern, n_best, out_txt):
-     mpi_comm = MPI.COMM_WORLD
-     mpi_rank = mpi_comm.Get_rank()
-     mpi_size = mpi_comm.Get_size()
+    mpi_comm = MPI.COMM_WORLD
+    mpi_rank = mpi_comm.Get_rank()
+    mpi_size = mpi_comm.Get_size()
 
-     src = np.load(src, allow_pickle=True)
-     src = normalize(src)
-     src = [src] 
-     h_list = np.load(dir+'h_arrays_full.npy',allow_pickle=True)
+    src = np.load(src, allow_pickle=True)
+    src = normalize(src)
+    src = [src]
+    h_list = np.load(dir+'h_arrays_full.npy', allow_pickle=True)
 
-     dat_size = len(h_list)
+    dat_size = len(h_list)
 
-     my_border_low, my_border_high = return_borders(mpi_rank, dat_size, mpi_size)
+    my_border_low, my_border_high = return_borders(mpi_rank, dat_size, mpi_size)
 
-     h_list = h_list[my_border_low:my_border_high]
-     h_list = [normalize(i) for i in h_list]
+    h_list = h_list[my_border_low:my_border_high]
+    h_list = [normalize(i) for i in h_list]
 
-     my_len = len(h_list)
-      
-     if kern == 'rematch':
+    my_len = len(h_list)
+
+    if kern == 'rematch':
         rem = REMatchKernel(alpha=1e-3, rematch=True)
-     elif kern == 'average':
+    elif kern == 'average':
         rem = REMatchKernel(alpha=1e-3, rematch=False)
 
-     #K = np.empty((my_len,1), dtype=np.float64)
- 
-     sendcounts = np.array(mpi_comm.gather(my_len,root=0))
-     
-     K = rem.create(h_list, src)  # Generate similarities
+    # K = np.empty((my_len,1), dtype=np.float64)
 
-     if mpi_rank == 0:
-        K_full = np.zeros((dat_size, 1), dtype=np.float64)
-        #print("memory usage(bytes): {}".format(K.nbytes+K_full.nbytes))
-     else:
-        K_full = None
-     
-     #Gather rows of similarity vector
-     mpi_comm.Gatherv(sendbuf=K, recvbuf = (K_full, sendcounts), root=0)
-     
-     if mpi_rank==0:
+    sendcounts = np.array(mpi_comm.gather(my_len, root=0))
+
+    K = rem.create(h_list, src)  # Generate similarities
+
+    if mpi_rank == 0:
+        k_full = np.zeros((dat_size, 1), dtype=np.float64)
+        # print("memory usage(bytes): {}".format(K.nbytes + K_full.nbytes))
+    else:
+        k_full = None
+
+    # Gather rows of similarity vector
+    mpi_comm.Gatherv(sendbuf=K, recvbuf=(k_full, sendcounts), root=0)
+
+    if mpi_rank == 0:
         print('Kernel used: ' + kern)
-  
-        K = K_full
 
-        #filter NaNs
+        K = k_full
+
+        # filter NaNs
         n_nans = np.count_nonzero(np.isnan(K))
 
-        max_indices = np.argpartition(K.flatten(), - n_best - n_nans)[- n_best - n_nans : - n_nans]        
-                
+        max_indices = np.argpartition(K.flatten(), - n_best - n_nans)[- n_best - n_nans: - n_nans]
+
         print('Similarities for {} most similar reactions: {}'.format(len(max_indices), K[max_indices]))
 
         for index in max_indices:
-           cmd='sed "'+str(index)+'q;d" '+src_text+' >> '+out_txt
-           os.system(cmd)   
-        
+            cmd = 'sed "'+str(index)+'q;d" '+src_text+' >> '+out_txt
+            os.system(cmd)
+
         cmd = 'sed -i "s/ //g" '+out_txt
         os.system(cmd)
 
@@ -196,24 +201,24 @@ def main(src_text, src, dir, kern, n_best, out_txt):
         print('Max similarity: {} which is index {}'.format(np.nanmax(K), np.nanargmax(K)))
         print('Min similarity: {}, which is index {}'.format(np.nanmin(K), np.nanargmin(K)))
         print('No. of NaNs: {}'.format(np.count_nonzero(np.isnan(K))))
-     mpi_comm.Barrier()
-     MPI.Finalize()
+    mpi_comm.Barrier()
+    MPI.Finalize()
+
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-src_txt', type=str,
+                        help='Path to .txt file of training set reactions.')
+    parser.add_argument('-out_txt', type=str,
+                        help='Path to .txt file which will contain the n_best detokenized reactions.')
+    parser.add_argument('-src', type=str,
+                        help='Path to .npy file of source hidden states to compare with the training set.')
+    parser.add_argument('-dir', type=str,
+                        help='Directory where the hidden state numpy arrays are stored.')
+    parser.add_argument('-kernel', type=str,
+                        help='Type of kernel used to calculate the similarity between hidden state vectors')
+    parser.add_argument('-n_best', type=int, default=5,
+                        help='Number of most similar training reactions to return.')
+    args = parser.parse_args()
 
-     parser = argparse.ArgumentParser()
-     parser.add_argument('-src_txt', type=str, 
-                         help='Path to .txt file of training set reactions.')
-     parser.add_argument('-out_txt', type=str, 
-                         help='Path to .txt file which will contain the n_best detokenized reactions.')
-     parser.add_argument('-src', type=str, 
-                         help='Path to .npy file of source hidden states to compare with the training set.')
-     parser.add_argument('-dir', type=str, 
-                         help='Directory where the hidden state numpy arrays are stored.')
-     parser.add_argument('-kernel', type=str, 
-                         help='Type of kernel used to calculate the similarity between hidden state vectors')
-     parser.add_argument('-n_best', type=int, default=5, 
-                         help='Number of most similar training reactions to return.')
-     args = parser.parse_args()
-
-     main(args.src_txt, args.src, args.dir, args.kernel, args.n_best, args.out_txt)
+    main(args.src_txt, args.src, args.dir, args.kernel, args.n_best, args.out_txt)

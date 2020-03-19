@@ -1,3 +1,25 @@
+# Interpretable reaction prediction
+
+## Requirements
+OpenNMT-py as described below
+
+## Usage
+#### Integrated gradients
+Given a reactant and reagents and two possible target structures, it attributes the difference in probability between the two targets to part of the input. 
+
+```angular2
+python translate_IG.py
+```
+##### opts:
+* `-model` model file used, type: `.pt`
+* `-baseline` The baseline for IGs, a single `.` by default, type: `.txt`
+* `-src` reactant and reagent and tokenized strings, type: `.txt`
+* `-tgt` and `-tgt2` are the two targets as tokenized strings, type: `.txt`
+* `-n_ig_steps` number of points to approximate the straight line path for IG, type: `int`
+* `-output` file where the IG attributions are saved, type: `.npy`
+
+Remaining arguments are the same as for the `translate.py` which is the file used to make predictions. 
+
 # OpenNMT-py: Open-Source Neural Machine Translation
 
 [![Build Status](https://travis-ci.org/OpenNMT/OpenNMT-py.svg?branch=master)](https://travis-ci.org/OpenNMT/OpenNMT-py)

@@ -15,6 +15,7 @@ from onmt.utils.logging import init_logger
 from onmt.translate.translator_gold import build_translator
 import tqdm
 
+
 class GoldScorer(nn.Module):
     # nn to produce the probability difference between tgt1 and tgt2
     def __init__(self, opt):
@@ -24,10 +25,12 @@ class GoldScorer(nn.Module):
     def forward(self, src_embed):
         return self.gold_scorer(src_embed)
 
+
 class TranslateGoldDiff(object):
     # functor returning prob difference between tgt1 and tgt2 given src_embed
     def __init__(self, opt):
         self.opt = opt
+
     def __call__(self, src_embed, gen_hidden_states=False):
         translator = build_translator(self.opt, report_score=True)
         src_shards = split_corpus(self.opt.src, self.opt.shard_size)
@@ -48,10 +51,11 @@ class TranslateGoldDiff(object):
                src_embed=src_embed,
                gen_hidden_states=self.opt.gen_hidden_states)
 
+
 def translate(opt):
-    '''
-    Returns source and baseline embeddings
-    '''
+
+    """ Returns source and baseline embeddings"""
+
     ArgumentParser.validate_translate_opts(opt)
     logger = init_logger(opt.log_file)
 
@@ -61,7 +65,7 @@ def translate(opt):
 
     print("\nEmbedding source and baseline...\n")
    
-    #Loop for src_embedding
+    # Loop for src_embedding
     for i, src_shard in enumerate(src_shards):
         src_data = {"reader": translator.src_reader, "data": src_shard, "dir": opt.src_dir}
         _readers, _data, _dir = inputters.Dataset.config(
@@ -88,7 +92,7 @@ def translate(opt):
             src, src_lengths = batch.src
             src_embed = translator.model.encoder.embed(src, src_lengths)
 
-    #Loop for baseline_embedding
+    # Loop for baseline_embedding
     for i, src_shard in enumerate(baseline_shards):
         src_data = {"reader": translator.src_reader, "data": src_shard, "dir": opt.src_dir}
         _readers, _data, _dir = inputters.Dataset.config(
@@ -124,6 +128,7 @@ def _get_parser():
     opts.translate_opts(parser)
     return parser
 
+
 def main():
     parser = _get_parser()
     opt = parser.parse_args()
@@ -146,7 +151,7 @@ def main():
     steps = int(opt.n_ig_steps)
     gdiffs = []
     scaled_inputs = [baseline_emb + i / steps * (src_embed - baseline_emb) for i in range(0, steps + 1)]
-    #scaled_inputs = [baseline_emb + np.sin(2 * np.pi * i / steps) + i / steps * (src_embed - baseline_emb) for i in range(0, steps + 1)]
+    # scaled_inputs = [baseline_emb + np.sin(2 * np.pi * i / steps) + i / steps * (src_embed - baseline_emb) for i in range(0, steps + 1)]
     print('Generating Integrated Gradients...\n')
     for c, inp in enumerate(tqdm.tqdm(scaled_inputs)):
         inp.requires_grad = True
@@ -175,8 +180,10 @@ def main():
     
     print('\n')
     with open(opt.src) as file:
-         for line in file:
-             for i, ch in enumerate(line.split()):
-                 print((ch,IG_norm[i]))
+        for line in file:
+            for i, ch in enumerate(line.split()):
+                print(ch, IG_norm[i])
+
+
 if __name__ == "__main__":
     main()

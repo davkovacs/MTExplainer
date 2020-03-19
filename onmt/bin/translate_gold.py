@@ -133,16 +133,16 @@ def main():
     parser = _get_parser()
     opt = parser.parse_args()
 
-    src_embed0, bline_embed0 = translate(opt)  #Get source and baseline embeddings
+    src_embed0, bline_embed0 = translate(opt)  # Get source and baseline embeddings
     src_embed0 = src_embed0.detach().numpy() 
     bline_embed0 = bline_embed0.detach().numpy()
-    np.save("sear_emb.npy", src_embed0)  #Save as numpy arrays and reload as torch tensors
+    np.save("sear_emb.npy", src_embed0)  # Save as numpy arrays and reload as torch tensors
     np.save("baseline.npy", bline_embed0)
 
     src_embed = torch.from_numpy(np.load("sear_emb.npy"))
     baseline_embed = torch.from_numpy(np.load("baseline.npy"))
    
-    baseline_emb = torch.zeros(src_embed.size())  #repeat '.' baseline src_embed.size()[0] times
+    baseline_emb = torch.zeros(src_embed.size())  # Repeat '.' baseline src_embed.size()[0] times
     for i in range(src_embed.size()[0]):
         baseline_emb[i][0] = baseline_embed
 
@@ -156,21 +156,16 @@ def main():
     for c, inp in enumerate(tqdm.tqdm(scaled_inputs)):
         inp.requires_grad = True
         gold_diff = gold_scorer(inp)
-        #gdiffs.append(gold_diff)
         if c == 0:
             min_diff = gold_diff.detach().numpy()[0]
-            # print(gold_diff)
         elif c == steps:
             max_diff = gold_diff.detach().numpy()[0]
-            # print(gold_diff)
         gold_scorer.zero_grad()
         grad = torch.autograd.grad(gold_diff, inp)[0].numpy()
         gdiffs.append(grad)
         grads += grad
     avg_grads = grads / steps
     IG = (src_embed.numpy() - baseline_emb.numpy()) * avg_grads
-    #print(avg_grads)
-    #print(np.sum(avg_grads))
     IG_norm = np.sum(IG, axis=2).squeeze(-1)
     print('\nNumber of IG steps: {}'.format(steps))
     print('Difference in target log probs: {:.3f}'.format(max_diff-min_diff))

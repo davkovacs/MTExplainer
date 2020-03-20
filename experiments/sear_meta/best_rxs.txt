@@ -1,0 +1,15 @@
+Cc1ccc(-c2cc(C=O)nn2C(C)(C)C)cc1.NCCN1CCN(c2ccccc2F)CC1
+CC(=O)OC(C)=O.CCCCC(=O)Nc1ccccc1C(=O)OC.O=S(=O)(O)O.O=[N+]([O-])O
+CC(C)(C)OC(=O)C(C)(C)Oc1ccc(CCCC2NC(=O)NC2=O)cc1.CN(C)C=O.Cc1ccc(CCl)cc1C.O=C([O-])[O-].O=S(=O)([O-])[O-].[K+].[K+].[Mg+2]
+C1COCCO1.COc1ccc(O)cc1.O.[Na].c1ccc(CN(CC2CO2)CC2CO2)cc1
+CCCCCN1C(=O)C(O)(c2cc(Br)ccc2O)c2ccccc21.CCCCCN1C(=O)C(O)(c2cc(Cl)c(Cl)cc2O)c2ccccc21
+CC(C)(C)OC(=O)NC1C2CCC1Cc1cc(CCC=O)ccc1C2.CO.Cl.FC(F)(F)C1CCNCC1.[BH3-]C#N.[Na+]
+CCC=CCCOC(=O)CCC(O)CCCCCC.O=C(Cl)OCCc1ccccc1.c1ccncc1
+CCOC(=O)CC(C)=NN(C)C.CCOC(=O)CC(C)=O.CCOC(=O)CCC(C)=O
+CN(C)C=O.Cn1c(=O)c2[nH]cnc2n(C)c1=O.O.O=C([O-])[O-].O=C(c1ccc(CBr)cc1)c1ccc(C(F)(F)F)cc1.[K+].[K+]
+CN.Cc1ccc(S(=O)(=O)OCC2Cc3cc(F)cc(-c4cc(F)ccc4F)c3O2)cc1.Cl
+CC(C)(C)OC(=O)NC1C2CCC1Cc1cc(CCC=O)ccc1C2.CO.Cl.FC(F)(F)C1CCNCC1.[BH3-]C#N.[Na+]
+CCC=CCCOC(=O)CCC(O)CCCCCC.O=C(Cl)OCCc1ccccc1.c1ccncc1
+CCOC(=O)CC(C)=NN(C)C.CCOC(=O)CC(C)=O.CCOC(=O)CCC(C)=O
+CN(C)C=O.Cn1c(=O)c2[nH]cnc2n(C)c1=O.O.O=C([O-])[O-].O=C(c1ccc(CBr)cc1)c1ccc(C(F)(F)F)cc1.[K+].[K+]
+CN.Cc1ccc(S(=O)(=O)OCC2Cc3cc(F)cc(-c4cc(F)ccc4F)c3O2)cc1.Cl

@@ -20,8 +20,8 @@ from onmt.modules.copy_generator import collapse_copy_scores
 
 
 def build_translator(opt, report_score=True, logger=None, out_file=None):
-    if out_file is None:
-        out_file = codecs.open(opt.output, 'w+', 'utf-8')
+    #if out_file is None:
+    #    out_file = codecs.open(opt.output, 'w+', 'utf-8')
 
     load_test_model = onmt.decoders.ensemble.load_test_model \
         if len(opt.models) > 1 else onmt.model_builder.load_test_model

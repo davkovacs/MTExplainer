@@ -1,0 +1,4 @@
+C1CCOC1.CC(C)C[Mg+].CON(C)C(=O)c1ccc(O)nc1.[Cl-]
+CC(C)(O)c1cc(C=CC(=O)O)cnc1N.CN(C)C=O.CNCc1cc2ccccc2n1C.Cl.ClCCCl.O.On1nnc2ccccc21
+CC(C)CC(=O)c1ccc(O)nc1
+CN(Cc1cc2ccccc2n1C)C(=O)C=Cc1cnc(N)c(C(C)(C)O)c1

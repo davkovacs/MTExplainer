@@ -1,0 +1,5 @@
+CC(C)(C)OC(=O)NC1C2CCC1Cc1cc(CCC=O)ccc1C2.CO.Cl.FC(F)(F)C1CCNCC1.[BH3-]C#N.[Na+]
+CN.Cc1ccc(S(=O)(=O)OCC2Cc3cc(F)cc(-c4cc(F)ccc4F)c3O2)cc1.Cl
+CCC=CCCOC(=O)CCC(O)CCCCCC.O=C(Cl)OCCc1ccccc1.c1ccncc1
+CN(C)C=O.Cn1c(=O)c2[nH]cnc2n(C)c1=O.O.O=C([O-])[O-].O=C(c1ccc(CBr)cc1)c1ccc(C(F)(F)F)cc1.[K+].[K+]
+CCOC(=O)CC(C)=NN(C)C.CCOC(=O)CC(C)=O.CCOC(=O)CCC(C)=O

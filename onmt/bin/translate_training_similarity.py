@@ -137,11 +137,14 @@ def main():
     src_hidden0, bline_hidden0 = return_hiddens(opt)  # Get source and baseline embeddings
     src_hidden0 = src_hidden0.detach().numpy()
     bline_hidden0 = bline_hidden0.detach().numpy()
-    np.save("sear_hidden.npy", src_hidden0)  # Save as numpy arrays and reload as torch tensors
+
+    print(src_hidden0)
+    print(src_hidden0.shape)
+    np.save(opt.output, src_hidden0)  # Save as numpy arrays and reload as torch tensors
     np.save("baseline_hidden.npy", bline_hidden0)
 
-    src_hidden = torch.from_numpy(np.load("sear_hidden.npy"))
-    baseline_hidden = torch.from_numpy(np.load("baseline_hidden.npy"))
+    src_hidden = torch.from_numpy(np.load(opt.output, allow_pickle=True))
+    baseline_hidden = torch.from_numpy(np.load("baseline_hidden.npy", allow_pickle=True))
 
     baseline_hid = torch.zeros(src_hidden.size())  # repeat '.' baseline src_embed.size()[0] times
     for i in range(src_hidden.size()[0]):
@@ -177,7 +180,7 @@ def main():
     print('Difference in target log probs: {:.3f}'.format(max_diff - min_diff))
     print('Sum of attributions: {:.3f}'.format(np.sum(IG)))
 
-    np.save(opt.output, IG)
+    np.save(str(opt.output2), IG)
 
 
 

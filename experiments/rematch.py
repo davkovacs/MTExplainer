@@ -16,10 +16,12 @@ limitations under the License.
 
 
 import os
+import argparse
+
 import numpy as np
 from mpi4py import MPI
-import argparse
 from sklearn.preprocessing import normalize
+from scipy.special import softmax
 
 from localsimilaritykernel import LocalSimilarityKernel
 
@@ -89,6 +91,7 @@ class REMatchKernel(LocalSimilarityKernel):
         self.alpha = alpha
         self.threshold = threshold
         self.enc_IG = enc_IG
+        self.rematch = rematch
         super().__init__(metric, gamma, degree, coef0, kernel_params, normalize_kernel)
 
     def get_global_similarity(self, localkernel):
@@ -147,10 +150,13 @@ def main(src_text, src, dir, kern, n_best, out_txt, enc_IG):
     mpi_rank = mpi_comm.Get_rank()
     mpi_size = mpi_comm.Get_size()
 
-    src = np.load(src, allow_pickle=True)
-
+    src = np.squeeze(np.load(src, allow_pickle=True))
+    
     if enc_IG is not None:
-        src = np.multiply(src, enc_IG**2)
+        print('weighting with IGs')
+        enc_IG = np.squeeze(np.load(enc_IG, allow_pickle=True))
+        enc_IG = softmax(enc_IG**2, axis=1)
+        src = np.multiply(src, enc_IG)
 
     src = normalize(src)
     src = [src]
@@ -178,7 +184,6 @@ def main(src_text, src, dir, kern, n_best, out_txt, enc_IG):
 
     if mpi_rank == 0:
         k_full = np.zeros((dat_size, 1), dtype=np.float64)
-        # print("memory usage(bytes): {}".format(K.nbytes + K_full.nbytes))
     else:
         k_full = None
 
@@ -186,14 +191,15 @@ def main(src_text, src, dir, kern, n_best, out_txt, enc_IG):
     mpi_comm.Gatherv(sendbuf=K, recvbuf=(k_full, sendcounts), root=0)
 
     if mpi_rank == 0:
-        print('Kernel used: ' + kern)
+        print('\nKernel used: ' + kern)
 
         K = k_full
 
         # filter NaNs
         n_nans = np.count_nonzero(np.isnan(K))
-
-        max_indices = np.argpartition(K.flatten(), - n_best - n_nans)[- n_best - n_nans: - n_nans]
+        print(K.flatten())
+        max_indices = np.argpartition(K.flatten(), -n_best)[-n_best: ]
+        #max_indices = np.argpartition(K.flatten(), -n_best-n_nans)[-n_best-n_nans: -n_nans]
 
         print('Similarities for {} most similar reactions: {}'.format(len(max_indices), K[max_indices]))
 
@@ -204,7 +210,6 @@ def main(src_text, src, dir, kern, n_best, out_txt, enc_IG):
         cmd = 'sed -i "s/ //g" '+out_txt
         os.system(cmd)
 
-        print(K)
         print('Max similarity: {} which is index {}'.format(np.nanmax(K), np.nanargmax(K)))
         print('Min similarity: {}, which is index {}'.format(np.nanmin(K), np.nanargmin(K)))
         print('No. of NaNs: {}'.format(np.count_nonzero(np.isnan(K))))

@@ -18,3 +18,5 @@ python ../translate_train_sim.py -model ${model_dir}${dataset}_last20_average.pt
 
 python rematch.py -src_txt ${src_dir}../datasets/MIT_mixed/src-train.txt -src ${rx_id}enc_hidden.npy \
                   -enc_IG ${rx_id}enc_IG.npy -dir ${src_dir} -kernel average -out_txt ${rx_id}best_rxs.txt -n_best 5
+#python rematch.py -src_txt ${src_dir}../datasets/MIT_mixed/src-train.txt -src ${rx_id}enc_hidden.npy \
+#                   -dir ${src_dir} -kernel average -out_txt ${rx_id}best_rxs_noig.txt -n_best 5

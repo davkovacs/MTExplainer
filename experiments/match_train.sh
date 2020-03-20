@@ -5,9 +5,9 @@ model_dir=../trained_model/
 baseline_txt=./baseline.txt
 
 rx_id=./sear_meta/
-src_txt=${rx_id}sear_meta.txt
-tgt1_txt=${rx_id}sear_meta_tgt1.txt
-tgt2_txt=${rx_id}sear_meta_tgt2.txt
+src_txt=${rx_id}src.txt
+tgt1_txt=${rx_id}tgt1.txt
+tgt2_txt=${rx_id}tgt2.txt
 
 src_dir=/rds-d2/user/wjm41/hpc-work/hidden_states/
 

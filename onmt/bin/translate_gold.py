@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+import logging
 
 import torch
 import torch.nn as nn
@@ -48,8 +49,7 @@ class TranslateGoldDiff(object):
                batch_type=self.opt.batch_type,
                attn_debug=self.opt.attn_debug,
                align_debug=self.opt.align_debug,
-               src_embed=src_embed,
-               gen_hidden_states=self.opt.gen_hidden_states)
+               src_embed=src_embed,)
 
 
 def translate(opt):
@@ -142,9 +142,10 @@ def main():
     src_embed = torch.from_numpy(np.load("sear_emb.npy"))
     baseline_embed = torch.from_numpy(np.load("baseline.npy"))
    
-    baseline_emb = torch.zeros(src_embed.size())  # Repeat '.' baseline src_embed.size()[0] times
-    for i in range(src_embed.size()[0]):
-        baseline_emb[i][0] = baseline_embed
+    #baseline_emb = torch.zeros(src_embed.size())  # Repeat '.' baseline src_embed.size()[0] times
+    #for i in range(src_embed.size()[0]):
+    #    baseline_emb[i][0] = baseline_embed
+    baseline_emb = baseline_embed
 
     gold_scorer = GoldScorer(opt)
     grads = np.zeros(src_embed.size())
@@ -169,7 +170,11 @@ def main():
     IG_norm = np.sum(IG, axis=2).squeeze(-1)
     print('\nNumber of IG steps: {}'.format(steps))
     print('Difference in target log probs: {:.3f}'.format(max_diff-min_diff))
-    print('Sum of attributions: {:.3f}'.format(np.sum(IG_norm)))
+    print('Sum of attributions: {:.3f} \n'.format(np.sum(IG_norm)))
+
+    convergence_diff = (max_diff-min_diff) / np.sum(IG_norm)
+    if convergence_diff < 0.9 or convergence_diff > 1.1:
+        logging.warn('IGs not converged, increase n_ig_steps!')
   
     np.save(opt.output, IG_norm)
     

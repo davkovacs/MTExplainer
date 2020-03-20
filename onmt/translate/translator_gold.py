@@ -339,6 +339,9 @@ class Translator(object):
                 tgt2=True, hidden_state=hidden_state
             )
 
+        gold_scores_1 = torch.exp(gold_scores_1)
+        gold_scores_2 = torch.exp(gold_scores_2)
+
         return gold_scores_1 - gold_scores_2
 
     def translate_batch(self, batch, src_vocabs, attn_debug, src=None, enc_states=None, memory_bank=None, \

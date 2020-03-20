@@ -15,7 +15,8 @@ def translate(opt):
     ArgumentParser.validate_translate_opts(opt)
     logger = init_logger(opt.log_file)
 
-    translator = build_translator(opt, report_score=True, out_file=opt.output)
+    #translator = build_translator(opt, report_score=True, out_file=opt.output)  Changed to None to fix a bug ??????
+    translator = build_translator(opt, report_score=True, out_file=None)
     src_shards = split_corpus(opt.src, opt.shard_size)
     tgt_shards = split_corpus(opt.tgt, opt.shard_size)
     shard_pairs = zip(src_shards, tgt_shards)

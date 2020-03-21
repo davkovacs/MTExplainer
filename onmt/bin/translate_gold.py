@@ -169,7 +169,7 @@ def main():
     IG = (src_embed.numpy() - baseline_emb.numpy()) * avg_grads
     IG_norm = np.sum(IG, axis=2).squeeze(-1)
     print('\nNumber of IG steps: {}'.format(steps))
-    print('Difference in target log probs: {:.3f}'.format(max_diff-min_diff))
+    print('Difference in target probabilities: {:.3f}'.format(max_diff-min_diff))
     print('Sum of attributions: {:.3f} \n'.format(np.sum(IG_norm)))
 
     convergence_diff = (max_diff-min_diff) / np.sum(IG_norm)

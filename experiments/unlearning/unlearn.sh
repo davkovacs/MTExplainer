@@ -1,5 +1,4 @@
 #! /bin/bash
-
 DATA_SRC=../../
 DATA_TGT=../../
 DATA_DIR=./data_unlearn
@@ -16,10 +15,9 @@ do
      -attention_dropout 0 -learning_rate 0.001 -warmup_steps 0 \
      -decay_method none -save_model unlearnt.pt
 
-  python ../../socre_unlearnt.py -model unlearnt.pt \
+  python ../../score_unlearnt.py -model unlearnt.pt \
      -src  -tgt  -score_file scores.npy
 
   rm unlearnt.pt
   rm DATA_DIR/*.txt
 done
-

@@ -311,36 +311,39 @@ class Translator(object):
             gold_scores_1, src, enc_states, memory_bank, src_lengths = self.translate_batch(
                 batch, data.src_vocabs, attn_debug, src_embed=src_embed, hidden_state=hidden_state
             )
+        gold_scores_1 = torch.exp(gold_scores_1)
 
-        tgt2_data = {"reader": self.tgt2_reader, "data": tgt2, "dir": None}
-        _readers, _data, _dir = inputters.Dataset.config(
-            [('src', src_data), ('tgt', tgt2_data)])
+        if tgt2 is not None:
+            tgt2_data = {"reader": self.tgt2_reader, "data": tgt2, "dir": None}
+            _readers, _data, _dir = inputters.Dataset.config(
+                [('src', src_data), ('tgt', tgt2_data)])
 
-        data = inputters.Dataset(
-            self.fields, readers=_readers, data=_data, dirs=_dir,
-            sort_key=inputters.str2sortkey[self.data_type],
-            filter_pred=self._filter_pred
-        )
-
-        data_iter = inputters.OrderedIterator(
-            dataset=data,
-            device=self._dev,
-            batch_size=batch_size,
-            batch_size_fn=max_tok_len if batch_type == "tokens" else None,
-            train=False,
-            sort=False,
-            sort_within_batch=True,
-            shuffle=False
-        )
-
-        for batch in data_iter:
-            gold_scores_2 = self.translate_batch(
-                batch, data.src_vocabs, attn_debug, src, enc_states, memory_bank, src_lengths, src_embed,
-                tgt2=True, hidden_state=hidden_state
+            data = inputters.Dataset(
+                self.fields, readers=_readers, data=_data, dirs=_dir,
+                sort_key=inputters.str2sortkey[self.data_type],
+                filter_pred=self._filter_pred
             )
 
-        gold_scores_1 = torch.exp(gold_scores_1)
-        gold_scores_2 = torch.exp(gold_scores_2)
+            data_iter = inputters.OrderedIterator(
+                dataset=data,
+                device=self._dev,
+                batch_size=batch_size,
+                batch_size_fn=max_tok_len if batch_type == "tokens" else None,
+                train=False,
+                sort=False,
+                sort_within_batch=True,
+                shuffle=False
+            )
+
+            for batch in data_iter:
+                gold_scores_2 = self.translate_batch(
+                    batch, data.src_vocabs, attn_debug, src, enc_states, memory_bank, src_lengths, src_embed,
+                    tgt2=True, hidden_state=hidden_state
+            )
+            gold_scores_2 = torch.exp(gold_scores_2)
+        else:
+            gold_scores_2 = 0
+
 
         return gold_scores_1 - gold_scores_2
 

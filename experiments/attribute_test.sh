@@ -3,7 +3,7 @@
 dataset=MIT_mixed_augm
 model_dir=../trained_model/
 
-rx_id=./phosphate/
+rx_id=./USPTO_mess/Cl/
 baseline_txt=${rx_id}baseline.txt
 src_txt=${rx_id}src.txt
 tgt1_txt=${rx_id}tgt1.txt

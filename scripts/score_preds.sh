@@ -1,11 +1,9 @@
 #! /bin/bash
 
-dataset=MIT_mixed_augm
-datadir=../data/data/${dataset}/
-save_model=../trained_model/
+dataset=USPTO_15k #MIT_mixed_clean_augm  #MIT_mixed_augm
+datadir=../data/data/$dataset/data/
 experiments=../experiments/
-model_list=${save_model}last20/
 
 python ../score_predictions.py -targets ${datadir}tgt-test.txt \
-	-predictions ${experiments}predictions_${model}_on_${dataset}_test.txt \
-    -beam_size 1
+	-predictions ${experiments}predictions_clean_on_USPTO_15.txt \
+    -beam_size 5 -invalid_smiles

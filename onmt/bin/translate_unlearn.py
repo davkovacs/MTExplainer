@@ -101,15 +101,14 @@ def main():
 
     src_embed = translate(opt)  # Get source embeddings
 
-    #src_embed0 = src_embed0.detach().numpy()
- #   np.save("sear_emb.npy", src_embed0)  # Save as numpy arrays and reload as torch tensors
-
-#    src_embed = torch.from_numpy(np.load("sear_emb.npy"))
-
     gold_scorer = GoldScorer(opt)
     score = gold_scorer(src_embed)
-
-    np.save(opt.score_file, score)
+    try:
+        score_list = np.load(opt.score_file)
+    except FileNotFoundError:
+        score_list=np.ndarray([])
+    score_list = np.append(score_list, score.detach().numpy()[0])
+    np.save(opt.score_file, score_list)
 
 if __name__ == "__main__":
     main()

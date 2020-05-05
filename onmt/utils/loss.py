@@ -106,7 +106,7 @@ class LossComputeBase(nn.Module):
         """
         return NotImplementedError
 
-    def _compute_loss(self, batch, output, target, **kwargs):
+    def _compute_loss(self, batch, output, target, unlearn=False, **kwargs):
         """
         Compute the loss. Subclass must define this method.
 
@@ -126,7 +126,8 @@ class LossComputeBase(nn.Module):
                  normalization=1.0,
                  shard_size=0,
                  trunc_start=0,
-                 trunc_size=None):
+                 trunc_size=None,
+                 unlearn=False):
         """Compute the forward loss, possibly in shards in which case this
         method also runs the backward pass and returns ``None`` as the loss
         value.
@@ -164,6 +165,8 @@ class LossComputeBase(nn.Module):
         batch_stats = onmt.utils.Statistics()
         for shard in shards(shard_state, shard_size):
             loss, stats = self._compute_loss(batch, **shard)
+            if unlearn:
+                loss = -1 * loss
             loss.div(float(normalization)).backward()
             batch_stats.update(stats)
         return None, batch_stats

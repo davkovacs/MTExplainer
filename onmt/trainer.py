@@ -195,7 +195,8 @@ class Trainer(object):
               train_steps,
               save_checkpoint_steps=5000,
               valid_iter=None,
-              valid_steps=10000):
+              valid_steps=10000,
+              unlearn=False):
         """
         The main training loop by iterating over `train_iter` and possibly
         running validation on `valid_iter`.
@@ -207,6 +208,7 @@ class Trainer(object):
               iterations.
             valid_iter: A generator that returns the next validation batch.
             valid_steps: Run evaluation every this many iterations.
+            unlearn: Bool which determines if loss is multiplied by -1
 
         Returns:
             The gathered statistics.
@@ -241,7 +243,7 @@ class Trainer(object):
 
             self._gradient_accumulation(
                 batches, normalization, total_stats,
-                report_stats)
+                report_stats, unlearn)
 
             if self.average_decay > 0 and i % self.average_every == 0:
                 self._update_average(step)
@@ -333,7 +335,7 @@ class Trainer(object):
         return stats
 
     def _gradient_accumulation(self, true_batches, normalization, total_stats,
-                               report_stats):
+                               report_stats, unlearn):
         if self.accum_count > 1:
             self.optim.zero_grad()
 
@@ -375,6 +377,8 @@ class Trainer(object):
                         shard_size=self.shard_size,
                         trunc_start=j,
                         trunc_size=trunc_size)
+                    if unlearn:
+                        loss = -1*loss
 
                     if loss is not None:
                         self.optim.backward(loss)

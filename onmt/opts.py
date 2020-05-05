@@ -358,6 +358,8 @@ def train_opts(parser):
               help="""Save a checkpoint every X steps""")
     group.add('--keep_checkpoint', '-keep_checkpoint', type=int, default=-1,
               help="Keep X checkpoints (negative: keep all)")
+    group.add('--unlearn', '-unlearn', type=bool, default=False,
+              help="Whether or not train.py is used for 'unlearning' ie backprop-ing -ve loss")
 
     # GPU
     group.add('--gpuid', '-gpuid', default=[], nargs='*', type=int,

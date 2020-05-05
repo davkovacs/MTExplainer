@@ -1,0 +1,5 @@
+[Cl-]
+O=C(Cl)c1ccc(C=Cc2cc3ccccc3s2)s1
+NC(=O)c1ccc(C=Cc2cc3ccccc3s2)s1
+[N-]=Cc1cc2ccccc2s1
+[N-]=[N+]=Cc1cc2ccccc2s1

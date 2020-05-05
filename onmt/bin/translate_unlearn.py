@@ -107,37 +107,9 @@ def main():
 #    src_embed = torch.from_numpy(np.load("sear_emb.npy"))
 
     gold_scorer = GoldScorer(opt)
-    print('Unlearning the training elements...\n')
-    for c, inp in enumerate(tqdm.tqdm(scaled_inputs)):
-        inp.requires_grad = True
-        gold_diff = gold_scorer(inp)
-        if c == 0:
-            min_diff = gold_diff.detach().numpy()[0]
-        elif c == steps:
-            max_diff = gold_diff.detach().numpy()[0]
-        gold_scorer.zero_grad()
-        grad = torch.autograd.grad(gold_diff, inp)[0].numpy()
-        gdiffs.append(grad)
-        grads += grad
-    avg_grads = grads / steps
-    IG = (src_embed.numpy() - baseline_emb.numpy()) * avg_grads
-    IG_norm = np.sum(IG, axis=2).squeeze(-1)
-    print('\nNumber of IG steps: {}'.format(steps))
-    print('Difference in target probabilities: {:.3f}'.format(max_diff - min_diff))
-    print('Sum of attributions: {:.3f} \n'.format(np.sum(IG_norm)))
+    score = gold_scorer(src_embed)
 
-    convergence_diff = (max_diff - min_diff) / np.sum(IG_norm)
-    if convergence_diff < 0.9 or convergence_diff > 1.1:
-        logging.warn('IGs not converged, increase n_ig_steps!')
-
-    np.save(opt.output, IG_norm)
-
-    print('\n')
-    with open(opt.src) as file:
-        for line in file:
-            for i, ch in enumerate(line.split()):
-                print(ch, IG_norm[i])
-
+    np.save(opt.score_file, score)
 
 if __name__ == "__main__":
     main()

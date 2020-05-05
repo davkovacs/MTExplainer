@@ -1,0 +1,5 @@
+O C 1 C = C C C 1
+O C 1 C C C = C 1
+O = C 1 C = C C C 1
+O = C 1 C C C = C 1
+O = C 1 C = C C C 1 O

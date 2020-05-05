@@ -1,0 +1,5 @@
+CC(C)(O)CC(C)(C)C
+CC(C)(C)CC(C)(C)O
+CC(C)(CO)CC(C)(C)C
+CC(C)C(O)C(C)(C)C
+CC(C)(C)CC(C)C

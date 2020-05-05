@@ -1,0 +1,5 @@
+NC(=O)c1ccccc1
+O=C([O-])c1ccccc1.[NH4+]
+O=C(O)c1ccccc1.[NH4+]
+[NH-]O
+NC(=O)c1ccccc1.[NH4+]

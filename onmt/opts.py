@@ -622,6 +622,8 @@ def translate_opts(parser):
               help='True if save the hidden state representation vecotrs.')
     group.add('--src_hidden', '-src_h', default=None,
               help='The source hidden state as an npy file')
+    group.add('--score_file', '-score_file', default=None,
+              help='The .npy file to which to save the unlearnt scores of -tgt')
     group.add('--shard_size', '-shard_size', type=int, default=10000,
               help="Divide src and tgt (if applicable) into "
                    "smaller multiple src and tgt files, then "

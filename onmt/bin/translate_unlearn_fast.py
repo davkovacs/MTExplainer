@@ -70,19 +70,14 @@ def main():
     #fields = checkpoint['vocab']
 
     #assert fields == translator.fields
-    train_iter = build_dataset_iter("train", translator.fields, opt)
+    train_iter = build_dataset_iter("train", translator.fields, opt, is_train=False)
 
     score_list = []
     for batch in tqdm.tqdm(train_iter):
-        src, src_lengths = batch.src
-        tgt = batch.tgt
-        #translator_copy = type(translator)()
-        #translator_copy.load_state_dict(translator.state_dict()) # TODO check that this makes a proper copy (no pointers!)
+
         translator_copy = copy.deepcopy(translator)
 
         train(translator_copy, batch, opt)  # should update model weights
-
-        #src_embed = translator_copy.model.encoder.embed(src, src_lengths)
 
         # Set to translate mode
         translator_copy.model.eval()
@@ -100,8 +95,8 @@ def main():
                 batch_size=opt.batch_size,
                 batch_type=opt.batch_type,
                 attn_debug=opt.attn_debug,
-                align_debug=opt.align_debug,)
-                #src_embed=src_embed)
+                align_debug=opt.align_debug,
+                unlearn=True)
         score_list.append(score.detach()[0])
     np.save(opt.score_file, score_list) # TODO make sure to choose different score_file to avoid overwriting previous results
 

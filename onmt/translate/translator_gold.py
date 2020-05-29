@@ -265,7 +265,8 @@ class Translator(object):
             align_debug=False,
             phrase_table="",
             src_embed=None,
-            hidden_state=None
+            hidden_state=None,
+            unlearn=False
             ):
         """Translate content of ``src`` and get gold score difference of ``tgt`` and "tgt2".
 
@@ -308,10 +309,18 @@ class Translator(object):
             shuffle=False
         )
 
-        for i, batch in enumerate(data_iter):
-            gold_scores_1, src, enc_states, memory_bank, src_lengths = self.translate_batch(
-                batch, data.src_vocabs, attn_debug, src_embed=src_embed, hidden_state=hidden_state
-            )
+        if unlearn:
+            with torch.no_grad():
+                for i, batch in enumerate(data_iter):
+                    gold_scores_1, src, enc_states, memory_bank, src_lengths = self.translate_batch(
+                        batch, data.src_vocabs, attn_debug, src_embed=src_embed, hidden_state=hidden_state
+                    )
+
+        else:
+            for i, batch in enumerate(data_iter):
+                gold_scores_1, src, enc_states, memory_bank, src_lengths = self.translate_batch(
+                    batch, data.src_vocabs, attn_debug, src_embed=src_embed, hidden_state=hidden_state
+                )
         gold_scores_1 = torch.exp(gold_scores_1)
 
         if tgt2 is not None:

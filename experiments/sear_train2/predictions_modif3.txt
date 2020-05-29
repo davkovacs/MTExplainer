@@ -1,0 +1,5 @@
+CC(=O)N1CCC(CC(=O)c2ccc([N+](=O)[O-])cc2)CC1
+CC(=O)N1CCC(CC(=O)c2cccc([N+](=O)[O-])c2)CC1
+CC(=O)N1CCC(CC(=O)c2ccccc2[N+](=O)[O-])CC1
+O=C(CC1CCN(C(C)=O)CC1)c1ccc([N+](=O)[O-])cc1
+CC(=O)N1CCC(CC(=O)c2ccc([N+]([O-])=O)cc2)CC1

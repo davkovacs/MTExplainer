@@ -1,0 +1,5 @@
+Cc1cc(=O)c2cccc(C=O)c2o1
+Cc1cc(=O)c2cccc(CC=O)c2o1
+Cc1cc(=O)c2cccc(CO)c2o1
+CCc1cc(=O)c2cccc(C=O)c2o1
+Cc1cc(=O)c2cccc(C=O)c2o1)c

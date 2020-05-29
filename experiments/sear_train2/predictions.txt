@@ -1,0 +1,5 @@
+CC(=O)N1CCC(CC(=O)c2ccc(F)cc2)CC1
+CC(=O)N1CCC(CC(=O)c2ccc(O)cc2)CC1
+CC(=O)N1CCC(CC(=O)c2c[nH]c(F)c2)CC1
+CC(=O)N1CCC(CC(=O)c2cccc(F)c2)CC1
+CC(=O)N1CCC(CC(=O)c2c[nH]c(F)cc2)CC1

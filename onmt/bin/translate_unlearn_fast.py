@@ -17,10 +17,11 @@ from onmt.utils.loss import build_loss_compute
 from onmt.inputters.inputter import build_dataset_iter
 from onmt.translate.translator_gold import build_translator
 import tqdm
+import copy
 
 
 def train(translator, batch, opt):
-    translator.model.train() # set to train mode
+    translator.model.train()  # set to train mode
     #load training data in opt as batch?
     src, src_lengths = batch.src
     tgt = batch.tgt
@@ -39,22 +40,21 @@ def train(translator, batch, opt):
             batch,
             outputs,
             attns,
-            normalization=1, # should be fine? see 159 of trainer.py
+            normalization=1,  # should be fine? see 159 of trainer.py
             shard_size=1,
             unlearn=True)
-        if loss is not None:
-            optimizer.backward(loss)
-            loss.backward()
-        else:
-            print('Oh no, Loss is None!')
-        optim.step()
+        #if loss is not None:
+        #    optimizer.backward(loss)
+        #    loss.backward()
+        #else:
+        #    print('Oh no, Loss is None!')
+        optimizer.step()
 
 def _get_parser():
     parser = ArgumentParser(description='translate_unlearn_fast.py')
     opts.config_opts(parser)
     opts.model_opts(parser)
-    opts.train_opts(parser)
-    opts.translate_opts(parser)
+    opts.untrain_opts(parser)
     return parser
 
 
@@ -65,21 +65,24 @@ def main():
     translator = build_translator(opt, report_score=True) # TODO check report_score
 
     # TODO delete this if the assert is working
-    checkpoint = torch.load(opt.train_from,
-                            map_location=lambda storage, loc: storage)
-    fields = checkpoint['vocab']
+    #checkpoint = torch.load(opt.train_from,
+    #                        map_location=lambda storage, loc: storage)
+    #fields = checkpoint['vocab']
 
-    assert fields==translator.fields
+    #assert fields == translator.fields
     train_iter = build_dataset_iter("train", translator.fields, opt)
 
     score_list = []
-    for batch in tqdm(train_iter):
+    for batch in tqdm.tqdm(train_iter):
         src, src_lengths = batch.src
         tgt = batch.tgt
-        translator_copy = translator.copy() # TODO check that this makes a proper copy (no pointers!)
+        #translator_copy = type(translator)()
+        #translator_copy.load_state_dict(translator.state_dict()) # TODO check that this makes a proper copy (no pointers!)
+        translator_copy = copy.deepcopy(translator)
 
-        train(translator_copy, batch, opt) # should update model weights
-        src_embed = translator_copy.model.encoder.embed(src, src_lengths)
+        train(translator_copy, batch, opt)  # should update model weights
+
+        #src_embed = translator_copy.model.encoder.embed(src, src_lengths)
 
         # Set to translate mode
         translator_copy.model.eval()
@@ -90,15 +93,15 @@ def main():
         shard_trips = zip(src_shards, tgt_shards)
 
         for i, (src_shard, tgt_shard) in enumerate(shard_trips):
-            score = translator.translate_gold_diff(
+            score = translator_copy.translate_gold_diff(
                 src=src_shard,
                 tgt=tgt_shard,
                 src_dir=opt.src_dir,
                 batch_size=opt.batch_size,
                 batch_type=opt.batch_type,
                 attn_debug=opt.attn_debug,
-                align_debug=opt.align_debug,
-                src_embed=src_embed)
+                align_debug=opt.align_debug,)
+                #src_embed=src_embed)
         score_list.append(score.detach()[0])
     np.save(opt.score_file, score_list) # TODO make sure to choose different score_file to avoid overwriting previous results
 

@@ -1,0 +1,5 @@
+CC(=O)C=CCC(C)=O
+CC(=O)CC=CC(C)=O
+CC(=O)C=CCC=O
+CC(=O)C=CCC(=O)C
+CC(=O)CC=O

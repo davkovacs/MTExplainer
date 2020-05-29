@@ -84,11 +84,11 @@ class Translator(object):
 
     def __init__(
             self,
-            model,
-            fields,
-            src_reader,
-            tgt_reader,
-            tgt2_reader,
+            model=None,
+            fields=None,
+            src_reader=None,
+            tgt_reader=None,
+            tgt2_reader=None,
             gpu=-1,
             n_best=1,
             min_length=0,
@@ -115,7 +115,8 @@ class Translator(object):
             seed=-1):
         self.model = model
         self.fields = fields
-        tgt_field = dict(self.fields)["tgt"].base_field
+        if self.fields is not None:
+            tgt_field = dict(self.fields)["tgt"].base_field
         self._tgt_vocab = tgt_field.vocab
         self._tgt_eos_idx = self._tgt_vocab.stoi[tgt_field.eos_token]
         self._tgt_pad_idx = self._tgt_vocab.stoi[tgt_field.pad_token]

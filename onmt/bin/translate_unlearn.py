@@ -105,9 +105,10 @@ def main():
     score = gold_scorer(src_embed)
     try:
         score_list = np.load(opt.score_file)
+        score_list = np.append(score_list, score.detach().numpy()[0])
     except FileNotFoundError:
-        score_list=np.ndarray([])
-    score_list = np.append(score_list, score.detach().numpy()[0])
+        score_list = score.detach().numpy()
+
     np.save(opt.score_file, score_list)
 
 if __name__ == "__main__":

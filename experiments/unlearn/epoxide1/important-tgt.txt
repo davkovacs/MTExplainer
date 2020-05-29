@@ -1,0 +1,4 @@
+C c 1 c c c ( S ( = O ) ( = O ) [O-] ) c c 1
+CC(C)(C)OC(=O)N1CCC(C(O)c2sccc2Cl)CC1
+CS(=O)(=O)CCCNCc1cc2nc(-c3cccc4[nH]ncc34)nc(N3CCOCC3)c2s1
+Cc1cc2nc(NC(=O)c3ccc(C(C)(C)O)cc3)cc(N3CCC(S(=O)(=O)c4ccccc4)CC3)n2n1

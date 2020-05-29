@@ -1,0 +1,5 @@
+CC(=O)C=CI
+IC=CC(C)=O
+CC(=O)C=CCI
+CC(=O)C=CI.I
+CC(=O)CC=CI

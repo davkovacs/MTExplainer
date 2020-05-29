@@ -134,18 +134,21 @@ def main():
     opt = parser.parse_args()
 
     src_embed0, bline_embed0 = translate(opt)  # Get source and baseline embeddings
-    src_embed0 = src_embed0.detach().numpy() 
-    bline_embed0 = bline_embed0.detach().numpy()
-    np.save("sear_emb.npy", src_embed0)  # Save as numpy arrays and reload as torch tensors
-    np.save("baseline.npy", bline_embed0)
+    #src_embed0 = src_embed0.detach().numpy()
+    #bline_embed0 = bline_embed0.detach().numpy()
+    #np.save("sear_emb.npy", src_embed0)  # Save as numpy arrays and reload as torch tensors
+    #np.save("baseline.npy", bline_embed0)
 
-    src_embed = torch.from_numpy(np.load("sear_emb.npy"))
-    baseline_embed = torch.from_numpy(np.load("baseline.npy"))
-   
+    #src_embed = torch.from_numpy(np.load("sear_emb.npy"))
+    #baseline_embed = torch.from_numpy(np.load("baseline.npy"))
+
+    src_embed = src_embed0.detach()
+    baseline_emb = bline_embed0.detach()
+
     #baseline_emb = torch.zeros(src_embed.size())  # Repeat '.' baseline src_embed.size()[0] times
     #for i in range(src_embed.size()[0]):
     #    baseline_emb[i][0] = baseline_embed
-    baseline_emb = baseline_embed
+    #baseline_emb = baseline_embed
 
     gold_scorer = GoldScorer(opt)
     grads = np.zeros(src_embed.size())
@@ -182,7 +185,7 @@ def main():
     with open(opt.src) as file:
         for line in file:
             for i, ch in enumerate(line.split()):
-                print(ch, IG_norm[i])
+                print(ch, "{0:.5g}".format(IG_norm[i]))
 
 
 if __name__ == "__main__":

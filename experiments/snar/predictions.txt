@@ -1,0 +1,5 @@
+CN(C)c1c(F)cccc1[N+](=O)[O-]
+CN(C)c1c([N+](=O)[O-])cccc1F
+CN(C)c1c(Br)cccc1[N+](=O)[O-]
+O=[N+]([O-])c1cccc(F)c1N(C)C
+CN(C)c1cccc([N+](=O)[O-])c1F

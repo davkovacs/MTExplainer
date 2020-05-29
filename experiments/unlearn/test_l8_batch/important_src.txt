@@ -1,0 +1,6 @@
+C1COCCO1.CCOC(C)=O.Cc1ccc(S(=O)(=O)n2ccc3c4c(cnc32)CCCN4C2CCCCC2)cc1.O.[Na+].[OH-]
+CC(=O)Cl.CCCC[Sn](=O)CCCC.CCN(CC)CC.COc1cccc(NCC(O)Cn2c3ccc(Br)cc3c3cc(Br)ccc32)c1.Cc1ccccc1
+C1CCOC1.CN(Cc1ccccc1)C(=O)C1CCCO1.O.[Al+3].[H-].[H-].[H-].[H-].[Li+].[Na+].[OH-]
+CC(C)C(N)CO.Cc1ccccc1.O=Cc1ccccc1
+
+

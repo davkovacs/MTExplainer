@@ -30,11 +30,11 @@ def main(args):
     inds = np.argpartition(scores, -10)[-10:] # index of top-10 scoring reactions (should contain original)
 
     print('\nOriginal reaction:')
-    bashCommand = "sed '" + str(np.argmax(scores) + 1) + "q;d' ../data/clean-train.txt"
+    bashCommand = "sed '" + str(np.argmax(scores) + 1) + "q;d' "+args.dataset
     subprocess.call(bashCommand, shell=True)
     print('\nMost similar reactions:')
-    for ind in inds:
-        bashCommand = "sed '" + str(ind + 1) + "q;d' ../data/clean-train.txt"
+    for ind in inds[np.argsort(scores[inds])]:
+        bashCommand = "sed '" + str(ind + 1) + "q;d' "+args.dataset
         subprocess.call(bashCommand, shell=True)
         print('score = {:.3f}'.format(scores[ind]))
     if args.plot:

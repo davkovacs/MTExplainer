@@ -7,6 +7,11 @@ multi-bleu.perl
 *.sublime-*
 .DS_Store
 data/
+experiments/unlearn/epoxide1/
+experiments/unlearn/test_l2/
+experiments/unlearn/test_l8/
+experiments/unlearn/test_l8_batch/
+experiments/unlearn/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

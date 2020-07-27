@@ -73,7 +73,7 @@ def main():
     train_iter = build_dataset_iter("train", translator.fields, opt, is_train=False)
 
     score_list = []
-    for batch in tqdm.tqdm(train_iter):
+    for num, batch in enumerate(train_iter):
 
         translator_copy = copy.deepcopy(translator)
 
@@ -98,6 +98,8 @@ def main():
                 align_debug=opt.align_debug,
                 unlearn=True)
         score_list.append(score.detach()[0])
+        if num % 500 == 1:
+            np.save(opt.score_file, score_list)
     np.save(opt.score_file, score_list) # TODO make sure to choose different score_file to avoid overwriting previous results
 
 if __name__ == "__main__":

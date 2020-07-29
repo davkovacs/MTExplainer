@@ -1,5 +1,0 @@
-BrCC=Cc1ccccc1Br
-BrCCC=Cc1ccccc1
-BrCC=Cc1ccccc1
-BrCCCc1ccccc1
-BrCC(Br)Cc1ccccc1

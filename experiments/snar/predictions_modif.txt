@@ -1,5 +1,0 @@
-CN(C)c1cccc(N)c1F
-CN(C)c1c(N)cccc1F
-Nc1cccc(F)c1
-CN(C)c1cccc(F)c1F
-Nc1cccc(F)c1F

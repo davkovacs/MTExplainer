@@ -1,5 +1,0 @@
-O=Cc1ccccc1
-O=CCc1ccccc1
-CC(=O)c1ccccc1
-COC(O)c1ccccc1
-O=CCc1ccccc1O

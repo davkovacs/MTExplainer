@@ -1,5 +1,0 @@
-O=C(C=CCl)CC=CI
-O=C(C=CI)CC=CCl
-O=C(C=CI)CC=CI
-O=C(C=CCl)C=CI
-O=C(C=CI)C=CCl

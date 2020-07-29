@@ -1,5 +1,0 @@
-CCCCNC1C=CC(c2ccc(Br)cc2)=CC1
-CCCCNC1CC=C(c2ccc(Br)cc2)C=C1
-CCCCNC1C=CC(c2ccc(Br)cc2)=CC1.I
-CCCCNC1=CC=C(c2ccc(Br)cc2)C=C1
-CCCCNC1C=C=C(c2ccc(Br)cc2)C=C1

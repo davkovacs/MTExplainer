@@ -1,2 +1,0 @@
-BrCC(Br)C(Br)c1ccccc1
-BrCC(Br)Cc1ccccc1

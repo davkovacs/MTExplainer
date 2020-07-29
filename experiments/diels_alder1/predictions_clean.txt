@@ -1,5 +1,0 @@
-C=C(CCC#N)OC
-C=C(C#N)CCC(=C)OC
-C=C(CCCC#N)OC
-C=C(CCC#N)C(=C)OC
-C=C(C=CC#N)OC

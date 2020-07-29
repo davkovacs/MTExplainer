@@ -1,2 +1,0 @@
-Cc1ccc(N(C(=O)Cc2ccccc2F)c2cccn(C)c2=O)cc1
-Cc1ccc(C(C(=O)Nc2cccn(C)c2=O)c2ccccc2F)cc1

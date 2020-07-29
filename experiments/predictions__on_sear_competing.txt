@@ -1,2 +1,0 @@
-CC(=O)Nc1ccc(C)c(Br)c1
-CC(=O)Nc1ccc(C)cc1Br

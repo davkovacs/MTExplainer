@@ -7,7 +7,9 @@ multi-bleu.perl
 *.sublime-*
 .DS_Store
 data/
-experiments/
+experiments/test_reactions
+experiments/test_set_preds
+experiments/unlearn
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

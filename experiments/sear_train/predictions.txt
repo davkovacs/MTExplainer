@@ -1,5 +1,0 @@
-O=C(CCl)c1ccc(F)c(F)c1
-O=C(CCl)c1cccc(F)c1F
-O=C(CBr)c1ccc(F)c(F)c1
-Fc1ccc(C(=O)CCl)cc1F
-OC(CCl)c1ccc(F)c(F)c1

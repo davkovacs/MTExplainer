@@ -4,7 +4,7 @@
 OpenNMT-py as described below
 
 ## Usage
-#### Integrated gradients
+#### Integrated Gradients
 Given a reactant and reagents and two possible target structures, it attributes the difference in probability between the two targets to part of the input. 
 
 ```angular2
@@ -19,6 +19,16 @@ python translate_IG.py
 * `-output` file where the IG attributions are saved, type: `.npy`
 
 Remaining arguments are the same as for the `translate.py` which is the file used to make predictions. 
+
+### Attribution to Training Data
+Attribute the prediction to some of the training set reactions. 
+
+#### Usage:
+* Generate the encoder hidden state for each reaction in the training set using `experiments/data_attribution/gen_hiddens.sh`
+* Concatentate the hidden states into a single numpy array using `experiments/data_attribution/process_hiddens.sh`
+* Prepare the training set for visualisation of the best matching reactions using `experiments/data_attribution/prep_train_rxs.sh`
+* attribute the reaction of interest using `experiments/data_attribution/attribute_to_data.sh`
+
 
 # OpenNMT-py: Open-Source Neural Machine Translation
 

@@ -3,18 +3,21 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 import argparse
 import subprocess
+import os
 
 def main(args):
-    input = args.input
+    os.system("python ../../translate.py -model {} -src {} -tgt {} -shard_size 0 \
+               -output './h' -g_h_s True -batch_size 1 -replace_unk -max_length 200 \
+               -n_best 1".format(args.model, args.input, args.input))
 
-    X = np.load(args.dir+'hidden_states_b' + str(input) + '.npy') # already averaged
+    X = np.load('./hhidden_states_b0.npy') # already averaged
     X = X.reshape(-1,1)
 
-    Y = np.load(args.dir+'hidden_states.npy').T # load (N, 256) array, transpose to (256,N)
+    Y = np.load(args.hiddens).T # load (N, 256) array, transpose to (256,N)
     dist = np.linalg.norm(X-Y, axis=0)
     scores = 1/(1+dist)
     
-    inds = np.argpartition(scores, -10)[-10:] # index of top-10 scoring reactions (should contain original)
+    inds = np.argpartition(scores, -args.n_match)[-args.n_match:] # index of top-n scoring reactions
 
     print('\nOriginal reaction:')
     bashCommand = "sed '" + str(np.argmax(scores) + 1) + "q;d' "+args.dataset
@@ -36,12 +39,16 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-input', type=int, default=481,
-                     help='Index of hiddenstate to compare against.')
+    parser.add_argument('-model', type=str,
+                     help='Model file whose predictions are interpreted')
+    parser.add_argument('-input', type=str, 
+                     help='File containing reactant-reagent SMILES of reaction to interpret')
     parser.add_argument('-type', type=str, default='dist',
                      help='Method for calculating similarity', choices=['dist', 'dotproduct'])
-    parser.add_argument('-dir', type=str, default='../../data/data/USPTO_15k/hidden_states/',
-                     help='Location of saved hidden state .npy arrays.')
+    parser.add_argument('-hiddens', type=str, default='../../data/data/USPTO_15k/hidden_states/',
+                     help='Saved hidden state .npy arrays file.')
+    parser.add_argument('-n_match', type=int, default=10, 
+                     help='Number of best matching training reactions to return')
     parser.add_argument('-dataset', type=str, default='USPTO-15k.txt',
                      help='Location of untokenized reaction dataset for extraction of reactions.')
     parser.add_argument('-plot', action='store_true',

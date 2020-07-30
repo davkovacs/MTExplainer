@@ -10,7 +10,7 @@ def main(args):
                -output './h' -g_h_s True -batch_size 1 -replace_unk -max_length 200 \
                -n_best 1".format(args.model, args.input, args.input))
 
-    X = np.load('./hhidden_states_b0.npy') # already averaged
+    X = np.load('./hidden_states_b0.npy') # already averaged
     X = X.reshape(-1,1)
 
     Y = np.load(args.hiddens).T # load (N, 256) array, transpose to (256,N)

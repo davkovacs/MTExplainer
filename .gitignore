@@ -10,6 +10,7 @@ data/
 experiments/unlearn/
 experiments/test_set_preds/
 experiments/test_reactions
+experiments/data_attribution/pistachio/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

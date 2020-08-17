@@ -7,6 +7,10 @@ sed 's/.*>>//g' train.txt > tgt-train.txt
 sed 's/.*>>//g' val.txt > tgt-val.txt
 sed 's/.*>>//g' test.txt > tgt-test.txt
 
+paste -d ':' src-train.txt tgt-train.txt | sort -R > train.txt
+sed 's/.*://g' train.txt > tgt-train.txt
+sed 's/:.*//g' train.txt > src-train.txt
+
 rm train.txt
 rm val.txt
 rm test.txt

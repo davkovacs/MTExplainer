@@ -1,0 +1,2355 @@
+Changed directory to /home/dpk25/MolecularTransformer2/scripts/toy_model/sear_small/convergence.
+
+JobID: 27626685
+======
+Time: Wed 19 Aug 19:11:30 BST 2020
+Running on master node: gpu-e-2
+Current directory: /home/dpk25/MolecularTransformer2/scripts/toy_model/sear_small/convergence
+
+Nodes allocated:
+================
+gpu-e-2
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+./train.sh 
+
+[2020-08-19 19:11:37,688 INFO]  * src vocab size = 20
+[2020-08-19 19:11:37,688 INFO]  * tgt vocab size = 20
+[2020-08-19 19:11:37,688 INFO] Building model...
+[2020-08-19 19:11:44,509 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(20, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(20, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=256, out_features=20, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2020-08-19 19:11:44,597 INFO] encoder: 5265920
+[2020-08-19 19:11:44,597 INFO] decoder: 6320660
+[2020-08-19 19:11:44,597 INFO] * number of parameters: 11586580
+[2020-08-19 19:11:44,608 INFO] Starting training on GPU: [0]
+[2020-08-19 19:11:44,609 INFO] Start training loop and validate every 10000 steps...
+[2020-08-19 19:11:44,609 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:11:44,753 INFO] number of examples: 9920
+[2020-08-19 19:12:00,562 INFO] Step 100/15600; acc:  51.84; ppl:  3.65; xent: 1.30; lr: 0.00014; 2469/1999 tok/s;     16 sec
+[2020-08-19 19:12:16,054 INFO] Step 200/15600; acc:  73.42; ppl:  1.83; xent: 0.61; lr: 0.00028; 2540/2057 tok/s;     31 sec
+[2020-08-19 19:12:31,533 INFO] Step 300/15600; acc:  78.36; ppl:  1.63; xent: 0.49; lr: 0.00042; 2557/2076 tok/s;     47 sec
+[2020-08-19 19:12:33,414 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_312.pt
+[2020-08-19 19:12:47,373 INFO] Step 400/15600; acc:  82.00; ppl:  1.50; xent: 0.40; lr: 0.00056; 2480/2009 tok/s;     63 sec
+[2020-08-19 19:13:02,863 INFO] Step 500/15600; acc:  83.38; ppl:  1.45; xent: 0.37; lr: 0.00070; 2534/2063 tok/s;     78 sec
+[2020-08-19 19:13:18,354 INFO] Step 600/15600; acc:  84.24; ppl:  1.42; xent: 0.35; lr: 0.00084; 2508/2033 tok/s;     94 sec
+[2020-08-19 19:13:22,084 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_624.pt
+[2020-08-19 19:13:34,137 INFO] Step 700/15600; acc:  85.60; ppl:  1.38; xent: 0.32; lr: 0.00098; 2514/2049 tok/s;    110 sec
+[2020-08-19 19:13:49,643 INFO] Step 800/15600; acc:  85.33; ppl:  1.38; xent: 0.32; lr: 0.00112; 2527/2052 tok/s;    125 sec
+[2020-08-19 19:14:05,081 INFO] Step 900/15600; acc:  86.06; ppl:  1.36; xent: 0.31; lr: 0.00126; 2554/2075 tok/s;    140 sec
+[2020-08-19 19:14:10,673 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_936.pt
+[2020-08-19 19:14:21,733 INFO] Step 1000/15600; acc:  86.28; ppl:  1.34; xent: 0.30; lr: 0.00140; 2337/1899 tok/s;    157 sec
+[2020-08-19 19:14:21,886 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:14:21,975 INFO] number of examples: 9920
+[2020-08-19 19:14:37,347 INFO] Step 1100/15600; acc:  86.24; ppl:  1.35; xent: 0.30; lr: 0.00154; 2519/2039 tok/s;    173 sec
+[2020-08-19 19:14:52,717 INFO] Step 1200/15600; acc:  86.65; ppl:  1.33; xent: 0.29; lr: 0.00168; 2564/2075 tok/s;    188 sec
+[2020-08-19 19:15:00,149 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_1248.pt
+[2020-08-19 19:15:08,409 INFO] Step 1300/15600; acc:  86.54; ppl:  1.34; xent: 0.29; lr: 0.00182; 2518/2045 tok/s;    204 sec
+[2020-08-19 19:15:23,859 INFO] Step 1400/15600; acc:  86.63; ppl:  1.33; xent: 0.29; lr: 0.00196; 2545/2063 tok/s;    219 sec
+[2020-08-19 19:15:39,247 INFO] Step 1500/15600; acc:  85.43; ppl:  1.38; xent: 0.32; lr: 0.00210; 2550/2076 tok/s;    235 sec
+[2020-08-19 19:15:48,471 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_1560.pt
+[2020-08-19 19:15:54,956 INFO] Step 1600/15600; acc:  85.34; ppl:  1.38; xent: 0.32; lr: 0.00224; 2474/2005 tok/s;    250 sec
+[2020-08-19 19:16:10,386 INFO] Step 1700/15600; acc:  84.81; ppl:  1.39; xent: 0.33; lr: 0.00238; 2569/2094 tok/s;    266 sec
+[2020-08-19 19:16:25,828 INFO] Step 1800/15600; acc:  84.31; ppl:  1.40; xent: 0.34; lr: 0.00252; 2539/2061 tok/s;    281 sec
+[2020-08-19 19:16:36,937 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_1872.pt
+[2020-08-19 19:16:42,523 INFO] Step 1900/15600; acc:  83.96; ppl:  1.42; xent: 0.35; lr: 0.00266; 2363/1920 tok/s;    298 sec
+[2020-08-19 19:16:57,923 INFO] Step 2000/15600; acc:  84.19; ppl:  1.40; xent: 0.34; lr: 0.00279; 2528/2054 tok/s;    313 sec
+[2020-08-19 19:16:58,231 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:16:58,273 INFO] number of examples: 9920
+[2020-08-19 19:17:13,509 INFO] Step 2100/15600; acc:  84.19; ppl:  1.41; xent: 0.34; lr: 0.00273; 2523/2042 tok/s;    329 sec
+[2020-08-19 19:17:26,458 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_2184.pt
+[2020-08-19 19:17:29,332 INFO] Step 2200/15600; acc:  82.97; ppl:  1.43; xent: 0.36; lr: 0.00266; 2490/2015 tok/s;    345 sec
+[2020-08-19 19:17:44,745 INFO] Step 2300/15600; acc:  84.97; ppl:  1.38; xent: 0.32; lr: 0.00261; 2563/2081 tok/s;    360 sec
+[2020-08-19 19:18:00,110 INFO] Step 2400/15600; acc:  85.14; ppl:  1.36; xent: 0.31; lr: 0.00255; 2562/2076 tok/s;    376 sec
+[2020-08-19 19:18:14,933 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_2496.pt
+[2020-08-19 19:18:16,110 INFO] Step 2500/15600; acc:  84.87; ppl:  1.37; xent: 0.32; lr: 0.00250; 2452/1997 tok/s;    392 sec
+[2020-08-19 19:18:31,574 INFO] Step 2600/15600; acc:  85.76; ppl:  1.35; xent: 0.30; lr: 0.00245; 2512/2034 tok/s;    407 sec
+[2020-08-19 19:18:46,968 INFO] Step 2700/15600; acc:  85.50; ppl:  1.36; xent: 0.31; lr: 0.00241; 2574/2099 tok/s;    422 sec
+[2020-08-19 19:19:02,464 INFO] Step 2800/15600; acc:  85.13; ppl:  1.37; xent: 0.32; lr: 0.00236; 2534/2058 tok/s;    438 sec
+[2020-08-19 19:19:03,698 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_2808.pt
+[2020-08-19 19:19:18,399 INFO] Step 2900/15600; acc:  85.74; ppl:  1.35; xent: 0.30; lr: 0.00232; 2473/2010 tok/s;    454 sec
+[2020-08-19 19:19:33,876 INFO] Step 3000/15600; acc:  83.74; ppl:  1.41; xent: 0.35; lr: 0.00228; 2516/2044 tok/s;    469 sec
+[2020-08-19 19:19:34,338 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:19:34,381 INFO] number of examples: 9920
+[2020-08-19 19:19:49,463 INFO] Step 3100/15600; acc:  85.48; ppl:  1.35; xent: 0.30; lr: 0.00224; 2521/2041 tok/s;    485 sec
+[2020-08-19 19:19:52,550 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_3120.pt
+[2020-08-19 19:20:05,164 INFO] Step 3200/15600; acc:  85.79; ppl:  1.33; xent: 0.29; lr: 0.00221; 2511/2032 tok/s;    501 sec
+[2020-08-19 19:20:20,606 INFO] Step 3300/15600; acc:  84.98; ppl:  1.37; xent: 0.32; lr: 0.00218; 2557/2076 tok/s;    516 sec
+[2020-08-19 19:20:36,321 INFO] Step 3400/15600; acc:  85.80; ppl:  1.34; xent: 0.30; lr: 0.00214; 2558/2073 tok/s;    532 sec
+[2020-08-19 19:20:41,255 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_3432.pt
+[2020-08-19 19:20:52,080 INFO] Step 3500/15600; acc:  85.88; ppl:  1.33; xent: 0.29; lr: 0.00211; 2486/2025 tok/s;    547 sec
+[2020-08-19 19:21:07,593 INFO] Step 3600/15600; acc:  86.33; ppl:  1.32; xent: 0.28; lr: 0.00208; 2512/2034 tok/s;    563 sec
+[2020-08-19 19:21:23,018 INFO] Step 3700/15600; acc:  85.95; ppl:  1.34; xent: 0.29; lr: 0.00205; 2572/2097 tok/s;    578 sec
+[2020-08-19 19:21:29,853 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_3744.pt
+[2020-08-19 19:21:38,868 INFO] Step 3800/15600; acc:  86.06; ppl:  1.33; xent: 0.29; lr: 0.00203; 2476/2012 tok/s;    594 sec
+[2020-08-19 19:21:54,297 INFO] Step 3900/15600; acc:  86.09; ppl:  1.33; xent: 0.29; lr: 0.00200; 2548/2070 tok/s;    610 sec
+[2020-08-19 19:22:09,694 INFO] Step 4000/15600; acc:  85.51; ppl:  1.35; xent: 0.30; lr: 0.00198; 2535/2060 tok/s;    625 sec
+[2020-08-19 19:22:10,316 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:22:10,363 INFO] number of examples: 9920
+[2020-08-19 19:22:18,497 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_4056.pt
+[2020-08-19 19:22:25,539 INFO] Step 4100/15600; acc:  84.02; ppl:  1.41; xent: 0.34; lr: 0.00195; 2478/2006 tok/s;    641 sec
+[2020-08-19 19:22:40,995 INFO] Step 4200/15600; acc:  85.88; ppl:  1.33; xent: 0.28; lr: 0.00193; 2551/2063 tok/s;    656 sec
+[2020-08-19 19:22:56,430 INFO] Step 4300/15600; acc:  86.16; ppl:  1.33; xent: 0.29; lr: 0.00191; 2557/2077 tok/s;    672 sec
+[2020-08-19 19:23:06,967 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_4368.pt
+[2020-08-19 19:23:12,241 INFO] Step 4400/15600; acc:  86.24; ppl:  1.32; xent: 0.28; lr: 0.00188; 2493/2020 tok/s;    688 sec
+[2020-08-19 19:23:27,711 INFO] Step 4500/15600; acc:  85.81; ppl:  1.34; xent: 0.29; lr: 0.00186; 2532/2062 tok/s;    703 sec
+[2020-08-19 19:23:43,177 INFO] Step 4600/15600; acc:  86.30; ppl:  1.33; xent: 0.28; lr: 0.00184; 2511/2033 tok/s;    719 sec
+[2020-08-19 19:23:55,545 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_4680.pt
+[2020-08-19 19:23:58,938 INFO] Step 4700/15600; acc:  86.51; ppl:  1.32; xent: 0.28; lr: 0.00182; 2515/2050 tok/s;    734 sec
+[2020-08-19 19:24:14,452 INFO] Step 4800/15600; acc:  87.29; ppl:  1.29; xent: 0.26; lr: 0.00180; 2537/2061 tok/s;    750 sec
+[2020-08-19 19:24:29,902 INFO] Step 4900/15600; acc:  87.63; ppl:  1.29; xent: 0.25; lr: 0.00179; 2541/2064 tok/s;    765 sec
+[2020-08-19 19:24:44,122 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_4992.pt
+[2020-08-19 19:24:45,721 INFO] Step 5000/15600; acc:  86.94; ppl:  1.30; xent: 0.26; lr: 0.00177; 2469/2008 tok/s;    781 sec
+[2020-08-19 19:24:46,489 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:24:46,531 INFO] number of examples: 9920
+[2020-08-19 19:25:01,320 INFO] Step 5100/15600; acc:  86.97; ppl:  1.30; xent: 0.26; lr: 0.00175; 2515/2037 tok/s;    797 sec
+[2020-08-19 19:25:16,742 INFO] Step 5200/15600; acc:  85.81; ppl:  1.34; xent: 0.29; lr: 0.00173; 2557/2066 tok/s;    812 sec
+[2020-08-19 19:25:32,199 INFO] Step 5300/15600; acc:  86.76; ppl:  1.31; xent: 0.27; lr: 0.00172; 2556/2077 tok/s;    828 sec
+[2020-08-19 19:25:32,813 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_5304.pt
+[2020-08-19 19:25:48,037 INFO] Step 5400/15600; acc:  87.10; ppl:  1.29; xent: 0.26; lr: 0.00170; 2487/2015 tok/s;    843 sec
+[2020-08-19 19:26:03,498 INFO] Step 5500/15600; acc:  86.88; ppl:  1.30; xent: 0.26; lr: 0.00169; 2535/2067 tok/s;    859 sec
+[2020-08-19 19:26:18,981 INFO] Step 5600/15600; acc:  87.14; ppl:  1.30; xent: 0.26; lr: 0.00167; 2506/2028 tok/s;    874 sec
+[2020-08-19 19:26:21,461 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_5616.pt
+[2020-08-19 19:26:34,821 INFO] Step 5700/15600; acc:  86.39; ppl:  1.32; xent: 0.28; lr: 0.00166; 2499/2037 tok/s;    890 sec
+[2020-08-19 19:26:50,291 INFO] Step 5800/15600; acc:  86.99; ppl:  1.29; xent: 0.26; lr: 0.00164; 2549/2070 tok/s;    906 sec
+[2020-08-19 19:27:05,738 INFO] Step 5900/15600; acc:  87.30; ppl:  1.29; xent: 0.26; lr: 0.00163; 2540/2064 tok/s;    921 sec
+[2020-08-19 19:27:10,078 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_5928.pt
+[2020-08-19 19:27:21,587 INFO] Step 6000/15600; acc:  84.43; ppl:  1.38; xent: 0.32; lr: 0.00161; 2464/2005 tok/s;    937 sec
+[2020-08-19 19:27:22,511 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:27:22,587 INFO] number of examples: 9920
+[2020-08-19 19:27:37,190 INFO] Step 6100/15600; acc:  86.22; ppl:  1.33; xent: 0.28; lr: 0.00160; 2515/2037 tok/s;    953 sec
+[2020-08-19 19:27:52,620 INFO] Step 6200/15600; acc:  86.77; ppl:  1.30; xent: 0.26; lr: 0.00159; 2555/2065 tok/s;    968 sec
+[2020-08-19 19:27:58,808 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_6240.pt
+[2020-08-19 19:28:08,326 INFO] Step 6300/15600; acc:  86.76; ppl:  1.31; xent: 0.27; lr: 0.00157; 2514/2042 tok/s;    984 sec
+[2020-08-19 19:28:23,786 INFO] Step 6400/15600; acc:  86.99; ppl:  1.29; xent: 0.26; lr: 0.00156; 2548/2063 tok/s;    999 sec
+[2020-08-19 19:28:39,264 INFO] Step 6500/15600; acc:  87.04; ppl:  1.29; xent: 0.25; lr: 0.00155; 2531/2063 tok/s;   1015 sec
+[2020-08-19 19:28:47,311 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_6552.pt
+[2020-08-19 19:28:55,049 INFO] Step 6600/15600; acc:  86.81; ppl:  1.30; xent: 0.26; lr: 0.00154; 2463/1992 tok/s;   1030 sec
+[2020-08-19 19:29:10,502 INFO] Step 6700/15600; acc:  87.29; ppl:  1.29; xent: 0.25; lr: 0.00153; 2560/2088 tok/s;   1046 sec
+[2020-08-19 19:29:25,990 INFO] Step 6800/15600; acc:  87.58; ppl:  1.28; xent: 0.25; lr: 0.00152; 2544/2065 tok/s;   1061 sec
+[2020-08-19 19:29:35,867 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_6864.pt
+[2020-08-19 19:29:41,834 INFO] Step 6900/15600; acc:  87.20; ppl:  1.30; xent: 0.26; lr: 0.00150; 2478/2014 tok/s;   1077 sec
+[2020-08-19 19:29:57,302 INFO] Step 7000/15600; acc:  87.09; ppl:  1.29; xent: 0.25; lr: 0.00149; 2527/2057 tok/s;   1093 sec
+[2020-08-19 19:29:58,384 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:29:58,461 INFO] number of examples: 9920
+[2020-08-19 19:30:12,930 INFO] Step 7100/15600; acc:  87.95; ppl:  1.28; xent: 0.24; lr: 0.00148; 2507/2030 tok/s;   1108 sec
+[2020-08-19 19:30:24,672 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_7176.pt
+[2020-08-19 19:30:28,761 INFO] Step 7200/15600; acc:  87.09; ppl:  1.29; xent: 0.25; lr: 0.00147; 2493/2015 tok/s;   1124 sec
+[2020-08-19 19:30:44,246 INFO] Step 7300/15600; acc:  87.79; ppl:  1.27; xent: 0.24; lr: 0.00146; 2549/2071 tok/s;   1140 sec
+[2020-08-19 19:30:59,756 INFO] Step 7400/15600; acc:  86.95; ppl:  1.29; xent: 0.26; lr: 0.00145; 2539/2057 tok/s;   1155 sec
+[2020-08-19 19:31:13,375 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_7488.pt
+[2020-08-19 19:31:15,553 INFO] Step 7500/15600; acc:  86.91; ppl:  1.30; xent: 0.26; lr: 0.00144; 2479/2019 tok/s;   1171 sec
+[2020-08-19 19:31:31,015 INFO] Step 7600/15600; acc:  87.13; ppl:  1.29; xent: 0.26; lr: 0.00143; 2516/2037 tok/s;   1186 sec
+[2020-08-19 19:31:46,516 INFO] Step 7700/15600; acc:  87.28; ppl:  1.29; xent: 0.25; lr: 0.00142; 2549/2078 tok/s;   1202 sec
+[2020-08-19 19:32:02,017 INFO] Step 7800/15600; acc:  87.72; ppl:  1.27; xent: 0.24; lr: 0.00142; 2545/2067 tok/s;   1217 sec
+[2020-08-19 19:32:02,019 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_7800.pt
+[2020-08-19 19:32:17,731 INFO] Step 7900/15600; acc:  87.87; ppl:  1.27; xent: 0.24; lr: 0.00141; 2497/2028 tok/s;   1233 sec
+[2020-08-19 19:32:33,127 INFO] Step 8000/15600; acc:  87.09; ppl:  1.29; xent: 0.26; lr: 0.00140; 2540/2066 tok/s;   1249 sec
+[2020-08-19 19:32:34,352 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:32:34,429 INFO] number of examples: 9920
+[2020-08-19 19:32:48,628 INFO] Step 8100/15600; acc:  88.13; ppl:  1.26; xent: 0.23; lr: 0.00139; 2525/2046 tok/s;   1264 sec
+[2020-08-19 19:32:50,470 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_8112.pt
+[2020-08-19 19:33:04,228 INFO] Step 8200/15600; acc:  87.91; ppl:  1.26; xent: 0.23; lr: 0.00138; 2533/2048 tok/s;   1280 sec
+[2020-08-19 19:33:19,545 INFO] Step 8300/15600; acc:  87.11; ppl:  1.30; xent: 0.26; lr: 0.00137; 2578/2093 tok/s;   1295 sec
+[2020-08-19 19:33:34,782 INFO] Step 8400/15600; acc:  87.52; ppl:  1.28; xent: 0.24; lr: 0.00136; 2585/2095 tok/s;   1310 sec
+[2020-08-19 19:33:38,447 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_8424.pt
+[2020-08-19 19:33:50,375 INFO] Step 8500/15600; acc:  87.59; ppl:  1.28; xent: 0.25; lr: 0.00136; 2507/2042 tok/s;   1326 sec
+[2020-08-19 19:34:05,647 INFO] Step 8600/15600; acc:  87.47; ppl:  1.28; xent: 0.25; lr: 0.00135; 2549/2064 tok/s;   1341 sec
+[2020-08-19 19:34:20,977 INFO] Step 8700/15600; acc:  86.51; ppl:  1.32; xent: 0.28; lr: 0.00134; 2577/2100 tok/s;   1356 sec
+[2020-08-19 19:34:26,455 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_8736.pt
+[2020-08-19 19:34:36,582 INFO] Step 8800/15600; acc:  85.62; ppl:  1.35; xent: 0.30; lr: 0.00133; 2527/2052 tok/s;   1372 sec
+[2020-08-19 19:34:51,827 INFO] Step 8900/15600; acc:  86.10; ppl:  1.34; xent: 0.29; lr: 0.00132; 2576/2092 tok/s;   1387 sec
+[2020-08-19 19:35:07,091 INFO] Step 9000/15600; acc:  86.09; ppl:  1.32; xent: 0.28; lr: 0.00132; 2562/2083 tok/s;   1402 sec
+[2020-08-19 19:35:08,465 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:35:08,543 INFO] number of examples: 9920
+[2020-08-19 19:35:14,564 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_9048.pt
+[2020-08-19 19:35:22,759 INFO] Step 9100/15600; acc:  87.58; ppl:  1.28; xent: 0.25; lr: 0.00131; 2501/2027 tok/s;   1418 sec
+[2020-08-19 19:35:38,091 INFO] Step 9200/15600; acc:  87.74; ppl:  1.27; xent: 0.24; lr: 0.00130; 2588/2093 tok/s;   1433 sec
+[2020-08-19 19:35:53,396 INFO] Step 9300/15600; acc:  87.65; ppl:  1.27; xent: 0.24; lr: 0.00130; 2585/2099 tok/s;   1449 sec
+[2020-08-19 19:36:02,533 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_9360.pt
+[2020-08-19 19:36:08,909 INFO] Step 9400/15600; acc:  87.76; ppl:  1.28; xent: 0.24; lr: 0.00129; 2539/2058 tok/s;   1464 sec
+[2020-08-19 19:36:24,193 INFO] Step 9500/15600; acc:  88.15; ppl:  1.26; xent: 0.23; lr: 0.00128; 2553/2079 tok/s;   1480 sec
+[2020-08-19 19:36:39,473 INFO] Step 9600/15600; acc:  87.95; ppl:  1.27; xent: 0.24; lr: 0.00128; 2550/2065 tok/s;   1495 sec
+[2020-08-19 19:36:50,456 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_9672.pt
+[2020-08-19 19:36:55,117 INFO] Step 9700/15600; acc:  88.25; ppl:  1.26; xent: 0.23; lr: 0.00127; 2524/2056 tok/s;   1511 sec
+[2020-08-19 19:37:10,418 INFO] Step 9800/15600; acc:  88.39; ppl:  1.26; xent: 0.23; lr: 0.00126; 2578/2094 tok/s;   1526 sec
+[2020-08-19 19:37:25,675 INFO] Step 9900/15600; acc:  87.12; ppl:  1.31; xent: 0.27; lr: 0.00126; 2577/2093 tok/s;   1541 sec
+[2020-08-19 19:37:38,484 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_9984.pt
+[2020-08-19 19:37:41,252 INFO] Step 10000/15600; acc:  87.25; ppl:  1.29; xent: 0.25; lr: 0.00125; 2509/2039 tok/s;   1557 sec
+[2020-08-19 19:37:41,253 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.valid.0.pt
+[2020-08-19 19:37:41,288 INFO] number of examples: 620
+[2020-08-19 19:37:42,325 INFO] Validation perplexity: 1.30392
+[2020-08-19 19:37:42,325 INFO] Validation accuracy: 89.9546
+[2020-08-19 19:37:43,856 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:37:43,936 INFO] number of examples: 9920
+[2020-08-19 19:37:57,712 INFO] Step 10100/15600; acc:  87.79; ppl:  1.28; xent: 0.25; lr: 0.00124; 2376/1926 tok/s;   1573 sec
+[2020-08-19 19:38:12,939 INFO] Step 10200/15600; acc:  87.93; ppl:  1.27; xent: 0.24; lr: 0.00124; 2597/2100 tok/s;   1588 sec
+[2020-08-19 19:38:27,588 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_10296.pt
+[2020-08-19 19:38:28,559 INFO] Step 10300/15600; acc:  87.88; ppl:  1.27; xent: 0.24; lr: 0.00123; 2530/2056 tok/s;   1604 sec
+[2020-08-19 19:38:43,771 INFO] Step 10400/15600; acc:  87.70; ppl:  1.28; xent: 0.25; lr: 0.00123; 2593/2100 tok/s;   1619 sec
+[2020-08-19 19:38:58,994 INFO] Step 10500/15600; acc:  87.84; ppl:  1.27; xent: 0.24; lr: 0.00122; 2561/2086 tok/s;   1634 sec
+[2020-08-19 19:39:14,270 INFO] Step 10600/15600; acc:  88.02; ppl:  1.26; xent: 0.23; lr: 0.00121; 2548/2063 tok/s;   1650 sec
+[2020-08-19 19:39:15,491 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_10608.pt
+[2020-08-19 19:39:29,845 INFO] Step 10700/15600; acc:  87.25; ppl:  1.30; xent: 0.26; lr: 0.00121; 2536/2066 tok/s;   1665 sec
+[2020-08-19 19:39:45,082 INFO] Step 10800/15600; acc:  88.39; ppl:  1.26; xent: 0.23; lr: 0.00120; 2589/2104 tok/s;   1680 sec
+[2020-08-19 19:40:00,337 INFO] Step 10900/15600; acc:  88.29; ppl:  1.26; xent: 0.23; lr: 0.00120; 2577/2094 tok/s;   1696 sec
+[2020-08-19 19:40:03,380 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_10920.pt
+[2020-08-19 19:40:15,882 INFO] Step 11000/15600; acc:  87.98; ppl:  1.26; xent: 0.23; lr: 0.00119; 2516/2044 tok/s;   1711 sec
+[2020-08-19 19:40:17,559 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:40:17,648 INFO] number of examples: 9920
+[2020-08-19 19:40:31,291 INFO] Step 11100/15600; acc:  88.44; ppl:  1.26; xent: 0.23; lr: 0.00119; 2538/2057 tok/s;   1727 sec
+[2020-08-19 19:40:46,538 INFO] Step 11200/15600; acc:  88.32; ppl:  1.26; xent: 0.23; lr: 0.00118; 2589/2093 tok/s;   1742 sec
+[2020-08-19 19:40:51,428 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_11232.pt
+[2020-08-19 19:41:02,133 INFO] Step 11300/15600; acc:  88.35; ppl:  1.26; xent: 0.23; lr: 0.00118; 2537/2063 tok/s;   1758 sec
+[2020-08-19 19:41:17,375 INFO] Step 11400/15600; acc:  88.19; ppl:  1.26; xent: 0.23; lr: 0.00117; 2587/2095 tok/s;   1773 sec
+[2020-08-19 19:41:32,633 INFO] Step 11500/15600; acc:  87.29; ppl:  1.29; xent: 0.26; lr: 0.00117; 2556/2082 tok/s;   1788 sec
+[2020-08-19 19:41:39,331 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_11544.pt
+[2020-08-19 19:41:48,196 INFO] Step 11600/15600; acc:  87.94; ppl:  1.28; xent: 0.24; lr: 0.00116; 2501/2025 tok/s;   1804 sec
+[2020-08-19 19:42:03,436 INFO] Step 11700/15600; acc:  88.41; ppl:  1.26; xent: 0.23; lr: 0.00116; 2592/2111 tok/s;   1819 sec
+[2020-08-19 19:42:18,705 INFO] Step 11800/15600; acc:  88.28; ppl:  1.26; xent: 0.23; lr: 0.00115; 2583/2099 tok/s;   1834 sec
+[2020-08-19 19:42:27,222 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_11856.pt
+[2020-08-19 19:42:34,196 INFO] Step 11900/15600; acc:  88.45; ppl:  1.27; xent: 0.24; lr: 0.00115; 2539/2063 tok/s;   1850 sec
+[2020-08-19 19:42:49,430 INFO] Step 12000/15600; acc:  87.99; ppl:  1.27; xent: 0.24; lr: 0.00114; 2568/2086 tok/s;   1865 sec
+[2020-08-19 19:42:51,261 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:42:51,348 INFO] number of examples: 9920
+[2020-08-19 19:43:04,861 INFO] Step 12100/15600; acc:  88.66; ppl:  1.25; xent: 0.22; lr: 0.00114; 2531/2052 tok/s;   1880 sec
+[2020-08-19 19:43:15,200 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_12168.pt
+[2020-08-19 19:43:20,346 INFO] Step 12200/15600; acc:  88.37; ppl:  1.26; xent: 0.23; lr: 0.00113; 2552/2063 tok/s;   1896 sec
+[2020-08-19 19:43:35,599 INFO] Step 12300/15600; acc:  88.61; ppl:  1.25; xent: 0.23; lr: 0.00113; 2592/2107 tok/s;   1911 sec
+[2020-08-19 19:43:50,871 INFO] Step 12400/15600; acc:  88.03; ppl:  1.27; xent: 0.24; lr: 0.00112; 2582/2091 tok/s;   1926 sec
+[2020-08-19 19:44:03,107 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_12480.pt
+[2020-08-19 19:44:06,522 INFO] Step 12500/15600; acc:  88.46; ppl:  1.25; xent: 0.22; lr: 0.00112; 2495/2032 tok/s;   1942 sec
+[2020-08-19 19:44:21,796 INFO] Step 12600/15600; acc:  88.28; ppl:  1.26; xent: 0.23; lr: 0.00111; 2546/2063 tok/s;   1957 sec
+[2020-08-19 19:44:37,087 INFO] Step 12700/15600; acc:  88.22; ppl:  1.27; xent: 0.24; lr: 0.00111; 2584/2105 tok/s;   1972 sec
+[2020-08-19 19:44:50,967 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_12792.pt
+[2020-08-19 19:44:52,507 INFO] Step 12800/15600; acc:  88.47; ppl:  1.26; xent: 0.23; lr: 0.00110; 2561/2079 tok/s;   1988 sec
+[2020-08-19 19:45:07,592 INFO] Step 12900/15600; acc:  88.44; ppl:  1.26; xent: 0.23; lr: 0.00110; 2606/2117 tok/s;   2003 sec
+[2020-08-19 19:45:22,675 INFO] Step 13000/15600; acc:  88.27; ppl:  1.26; xent: 0.23; lr: 0.00110; 2590/2104 tok/s;   2018 sec
+[2020-08-19 19:45:24,650 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:45:24,733 INFO] number of examples: 9920
+[2020-08-19 19:45:37,894 INFO] Step 13100/15600; acc:  88.74; ppl:  1.25; xent: 0.22; lr: 0.00109; 2566/2081 tok/s;   2033 sec
+[2020-08-19 19:45:38,492 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_13104.pt
+[2020-08-19 19:45:53,269 INFO] Step 13200/15600; acc:  88.66; ppl:  1.25; xent: 0.22; lr: 0.00109; 2576/2083 tok/s;   2049 sec
+[2020-08-19 19:46:08,338 INFO] Step 13300/15600; acc:  88.39; ppl:  1.26; xent: 0.23; lr: 0.00108; 2618/2128 tok/s;   2064 sec
+[2020-08-19 19:46:23,436 INFO] Step 13400/15600; acc:  88.51; ppl:  1.25; xent: 0.23; lr: 0.00108; 2614/2118 tok/s;   2079 sec
+[2020-08-19 19:46:25,851 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_13416.pt
+[2020-08-19 19:46:38,944 INFO] Step 13500/15600; acc:  88.68; ppl:  1.24; xent: 0.22; lr: 0.00108; 2520/2051 tok/s;   2094 sec
+[2020-08-19 19:46:54,021 INFO] Step 13600/15600; acc:  87.71; ppl:  1.29; xent: 0.25; lr: 0.00107; 2576/2087 tok/s;   2109 sec
+[2020-08-19 19:47:09,094 INFO] Step 13700/15600; acc:  87.56; ppl:  1.29; xent: 0.25; lr: 0.00107; 2622/2137 tok/s;   2124 sec
+[2020-08-19 19:47:13,320 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_13728.pt
+[2020-08-19 19:47:24,489 INFO] Step 13800/15600; acc:  87.58; ppl:  1.29; xent: 0.25; lr: 0.00106; 2566/2082 tok/s;   2140 sec
+[2020-08-19 19:47:39,539 INFO] Step 13900/15600; acc:  88.25; ppl:  1.27; xent: 0.24; lr: 0.00106; 2611/2123 tok/s;   2155 sec
+[2020-08-19 19:47:54,604 INFO] Step 14000/15600; acc:  87.84; ppl:  1.27; xent: 0.24; lr: 0.00106; 2589/2102 tok/s;   2170 sec
+[2020-08-19 19:47:56,725 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:47:56,810 INFO] number of examples: 9920
+[2020-08-19 19:48:00,793 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_14040.pt
+[2020-08-19 19:48:10,131 INFO] Step 14100/15600; acc:  88.21; ppl:  1.26; xent: 0.23; lr: 0.00105; 2516/2041 tok/s;   2186 sec
+[2020-08-19 19:48:25,177 INFO] Step 14200/15600; acc:  88.47; ppl:  1.25; xent: 0.22; lr: 0.00105; 2633/2130 tok/s;   2201 sec
+[2020-08-19 19:48:40,245 INFO] Step 14300/15600; acc:  88.64; ppl:  1.25; xent: 0.22; lr: 0.00105; 2615/2124 tok/s;   2216 sec
+[2020-08-19 19:48:48,085 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_14352.pt
+[2020-08-19 19:48:55,636 INFO] Step 14400/15600; acc:  88.31; ppl:  1.25; xent: 0.23; lr: 0.00104; 2568/2080 tok/s;   2231 sec
+[2020-08-19 19:49:10,744 INFO] Step 14500/15600; acc:  88.68; ppl:  1.24; xent: 0.22; lr: 0.00104; 2588/2107 tok/s;   2246 sec
+[2020-08-19 19:49:25,858 INFO] Step 14600/15600; acc:  88.79; ppl:  1.24; xent: 0.22; lr: 0.00103; 2569/2081 tok/s;   2261 sec
+[2020-08-19 19:49:35,505 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_14664.pt
+[2020-08-19 19:49:41,251 INFO] Step 14700/15600; acc:  89.02; ppl:  1.24; xent: 0.22; lr: 0.00103; 2570/2094 tok/s;   2277 sec
+[2020-08-19 19:49:56,333 INFO] Step 14800/15600; acc:  88.88; ppl:  1.24; xent: 0.22; lr: 0.00103; 2617/2123 tok/s;   2292 sec
+[2020-08-19 19:50:11,436 INFO] Step 14900/15600; acc:  87.32; ppl:  1.30; xent: 0.26; lr: 0.00102; 2601/2115 tok/s;   2307 sec
+[2020-08-19 19:50:22,908 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_14976.pt
+[2020-08-19 19:50:26,927 INFO] Step 15000/15600; acc:  87.45; ppl:  1.28; xent: 0.25; lr: 0.00102; 2519/2045 tok/s;   2322 sec
+[2020-08-19 19:50:29,188 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:50:29,275 INFO] number of examples: 9920
+[2020-08-19 19:50:42,169 INFO] Step 15100/15600; acc:  88.76; ppl:  1.25; xent: 0.23; lr: 0.00102; 2566/2081 tok/s;   2338 sec
+[2020-08-19 19:50:57,233 INFO] Step 15200/15600; acc:  88.16; ppl:  1.26; xent: 0.23; lr: 0.00101; 2623/2123 tok/s;   2353 sec
+[2020-08-19 19:51:10,496 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_15288.pt
+[2020-08-19 19:51:12,670 INFO] Step 15300/15600; acc:  88.48; ppl:  1.26; xent: 0.23; lr: 0.00101; 2556/2077 tok/s;   2368 sec
+[2020-08-19 19:51:27,762 INFO] Step 15400/15600; acc:  88.46; ppl:  1.25; xent: 0.23; lr: 0.00101; 2623/2124 tok/s;   2383 sec
+[2020-08-19 19:51:42,880 INFO] Step 15500/15600; acc:  88.46; ppl:  1.25; xent: 0.23; lr: 0.00100; 2583/2103 tok/s;   2398 sec
+[2020-08-19 19:51:58,059 INFO] Step 15600/15600; acc:  88.76; ppl:  1.25; xent: 0.22; lr: 0.00100; 2558/2073 tok/s;   2413 sec
+[2020-08-19 19:51:58,061 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv1/toy_model_step_15600.pt
+[2020-08-19 19:51:59,528 INFO]  * src vocab size = 20
+[2020-08-19 19:51:59,528 INFO]  * tgt vocab size = 20
+[2020-08-19 19:51:59,528 INFO] Building model...
+[2020-08-19 19:52:01,592 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(20, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(20, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=256, out_features=20, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2020-08-19 19:52:01,594 INFO] encoder: 5265920
+[2020-08-19 19:52:01,594 INFO] decoder: 6320660
+[2020-08-19 19:52:01,594 INFO] * number of parameters: 11586580
+[2020-08-19 19:52:01,598 INFO] Starting training on GPU: [0]
+[2020-08-19 19:52:01,598 INFO] Start training loop and validate every 10000 steps...
+[2020-08-19 19:52:01,598 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:52:01,672 INFO] number of examples: 9920
+[2020-08-19 19:52:17,228 INFO] Step 100/15600; acc:  51.84; ppl:  3.65; xent: 1.30; lr: 0.00014; 2520/2040 tok/s;     16 sec
+[2020-08-19 19:52:32,560 INFO] Step 200/15600; acc:  73.42; ppl:  1.83; xent: 0.61; lr: 0.00028; 2567/2078 tok/s;     31 sec
+[2020-08-19 19:52:47,893 INFO] Step 300/15600; acc:  78.36; ppl:  1.63; xent: 0.49; lr: 0.00042; 2581/2096 tok/s;     46 sec
+[2020-08-19 19:52:49,731 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_312.pt
+[2020-08-19 19:53:03,534 INFO] Step 400/15600; acc:  82.00; ppl:  1.50; xent: 0.40; lr: 0.00056; 2511/2035 tok/s;     62 sec
+[2020-08-19 19:53:18,865 INFO] Step 500/15600; acc:  83.38; ppl:  1.45; xent: 0.37; lr: 0.00070; 2560/2084 tok/s;     77 sec
+[2020-08-19 19:53:34,198 INFO] Step 600/15600; acc:  84.24; ppl:  1.42; xent: 0.35; lr: 0.00084; 2533/2054 tok/s;     93 sec
+[2020-08-19 19:53:37,870 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_624.pt
+[2020-08-19 19:53:49,878 INFO] Step 700/15600; acc:  85.60; ppl:  1.38; xent: 0.32; lr: 0.00098; 2530/2063 tok/s;    108 sec
+[2020-08-19 19:54:05,192 INFO] Step 800/15600; acc:  85.33; ppl:  1.38; xent: 0.32; lr: 0.00112; 2559/2078 tok/s;    124 sec
+[2020-08-19 19:54:20,616 INFO] Step 900/15600; acc:  86.06; ppl:  1.36; xent: 0.31; lr: 0.00126; 2568/2087 tok/s;    139 sec
+[2020-08-19 19:54:26,133 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_936.pt
+[2020-08-19 19:54:36,198 INFO] Step 1000/15600; acc:  86.28; ppl:  1.34; xent: 0.30; lr: 0.00140; 2497/2029 tok/s;    155 sec
+[2020-08-19 19:54:36,351 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:54:36,439 INFO] number of examples: 9920
+[2020-08-19 19:54:51,653 INFO] Step 1100/15600; acc:  86.24; ppl:  1.35; xent: 0.30; lr: 0.00154; 2545/2060 tok/s;    170 sec
+[2020-08-19 19:55:06,975 INFO] Step 1200/15600; acc:  86.65; ppl:  1.33; xent: 0.29; lr: 0.00168; 2572/2082 tok/s;    185 sec
+[2020-08-19 19:55:14,321 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_1248.pt
+[2020-08-19 19:55:22,543 INFO] Step 1300/15600; acc:  86.54; ppl:  1.34; xent: 0.29; lr: 0.00182; 2538/2061 tok/s;    201 sec
+[2020-08-19 19:55:37,937 INFO] Step 1400/15600; acc:  86.63; ppl:  1.33; xent: 0.29; lr: 0.00196; 2567/2081 tok/s;    216 sec
+[2020-08-19 19:55:53,719 INFO] Step 1500/15600; acc:  85.43; ppl:  1.38; xent: 0.32; lr: 0.00210; 2557/2082 tok/s;    232 sec
+[2020-08-19 19:56:02,929 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_1560.pt
+[2020-08-19 19:56:09,519 INFO] Step 1600/15600; acc:  85.34; ppl:  1.38; xent: 0.32; lr: 0.00224; 2459/1993 tok/s;    248 sec
+[2020-08-19 19:56:24,856 INFO] Step 1700/15600; acc:  84.81; ppl:  1.39; xent: 0.33; lr: 0.00238; 2585/2107 tok/s;    263 sec
+[2020-08-19 19:56:40,215 INFO] Step 1800/15600; acc:  84.31; ppl:  1.40; xent: 0.34; lr: 0.00252; 2552/2072 tok/s;    279 sec
+[2020-08-19 19:56:51,251 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_1872.pt
+[2020-08-19 19:56:55,805 INFO] Step 1900/15600; acc:  83.96; ppl:  1.42; xent: 0.35; lr: 0.00266; 2530/2057 tok/s;    294 sec
+[2020-08-19 19:57:11,139 INFO] Step 2000/15600; acc:  84.19; ppl:  1.40; xent: 0.34; lr: 0.00279; 2539/2062 tok/s;    310 sec
+[2020-08-19 19:57:11,449 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:57:11,491 INFO] number of examples: 9920
+[2020-08-19 19:57:26,606 INFO] Step 2100/15600; acc:  84.19; ppl:  1.41; xent: 0.34; lr: 0.00273; 2542/2058 tok/s;    325 sec
+[2020-08-19 19:57:39,487 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_2184.pt
+[2020-08-19 19:57:42,372 INFO] Step 2200/15600; acc:  82.97; ppl:  1.43; xent: 0.36; lr: 0.00266; 2499/2022 tok/s;    341 sec
+[2020-08-19 19:57:57,687 INFO] Step 2300/15600; acc:  84.97; ppl:  1.38; xent: 0.32; lr: 0.00261; 2579/2094 tok/s;    356 sec
+[2020-08-19 19:58:12,986 INFO] Step 2400/15600; acc:  85.14; ppl:  1.36; xent: 0.31; lr: 0.00255; 2573/2085 tok/s;    371 sec
+[2020-08-19 19:58:27,736 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_2496.pt
+[2020-08-19 19:58:28,680 INFO] Step 2500/15600; acc:  84.87; ppl:  1.37; xent: 0.32; lr: 0.00250; 2500/2036 tok/s;    387 sec
+[2020-08-19 19:58:44,043 INFO] Step 2600/15600; acc:  85.76; ppl:  1.35; xent: 0.30; lr: 0.00245; 2528/2048 tok/s;    402 sec
+[2020-08-19 19:58:59,371 INFO] Step 2700/15600; acc:  85.50; ppl:  1.36; xent: 0.31; lr: 0.00241; 2585/2108 tok/s;    418 sec
+[2020-08-19 19:59:14,691 INFO] Step 2800/15600; acc:  85.13; ppl:  1.37; xent: 0.32; lr: 0.00236; 2563/2081 tok/s;    433 sec
+[2020-08-19 19:59:15,913 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_2808.pt
+[2020-08-19 19:59:30,302 INFO] Step 2900/15600; acc:  85.74; ppl:  1.35; xent: 0.30; lr: 0.00232; 2525/2052 tok/s;    449 sec
+[2020-08-19 19:59:45,637 INFO] Step 3000/15600; acc:  83.74; ppl:  1.41; xent: 0.35; lr: 0.00228; 2540/2063 tok/s;    464 sec
+[2020-08-19 19:59:46,099 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 19:59:46,141 INFO] number of examples: 9920
+[2020-08-19 20:00:01,134 INFO] Step 3100/15600; acc:  85.48; ppl:  1.35; xent: 0.30; lr: 0.00224; 2535/2053 tok/s;    480 sec
+[2020-08-19 20:00:04,223 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_3120.pt
+[2020-08-19 20:00:16,914 INFO] Step 3200/15600; acc:  85.79; ppl:  1.33; xent: 0.29; lr: 0.00221; 2499/2022 tok/s;    495 sec
+[2020-08-19 20:00:32,279 INFO] Step 3300/15600; acc:  84.98; ppl:  1.37; xent: 0.32; lr: 0.00218; 2569/2087 tok/s;    511 sec
+[2020-08-19 20:00:47,625 INFO] Step 3400/15600; acc:  85.80; ppl:  1.34; xent: 0.30; lr: 0.00214; 2566/2079 tok/s;    526 sec
+[2020-08-19 20:00:52,553 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_3432.pt
+[2020-08-19 20:01:03,289 INFO] Step 3500/15600; acc:  85.88; ppl:  1.33; xent: 0.29; lr: 0.00211; 2501/2037 tok/s;    542 sec
+[2020-08-19 20:01:18,956 INFO] Step 3600/15600; acc:  86.33; ppl:  1.32; xent: 0.28; lr: 0.00208; 2528/2047 tok/s;    557 sec
+[2020-08-19 20:01:34,324 INFO] Step 3700/15600; acc:  85.95; ppl:  1.34; xent: 0.29; lr: 0.00205; 2582/2105 tok/s;    573 sec
+[2020-08-19 20:01:41,123 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_3744.pt
+[2020-08-19 20:01:50,070 INFO] Step 3800/15600; acc:  86.06; ppl:  1.33; xent: 0.29; lr: 0.00203; 2492/2025 tok/s;    588 sec
+[2020-08-19 20:02:05,418 INFO] Step 3900/15600; acc:  86.09; ppl:  1.33; xent: 0.29; lr: 0.00200; 2562/2081 tok/s;    604 sec
+[2020-08-19 20:02:20,789 INFO] Step 4000/15600; acc:  85.51; ppl:  1.35; xent: 0.30; lr: 0.00198; 2540/2064 tok/s;    619 sec
+[2020-08-19 20:02:21,403 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:02:21,495 INFO] number of examples: 9920
+[2020-08-19 20:02:29,548 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_4056.pt
+[2020-08-19 20:02:36,543 INFO] Step 4100/15600; acc:  84.02; ppl:  1.41; xent: 0.34; lr: 0.00195; 2492/2018 tok/s;    635 sec
+[2020-08-19 20:02:51,901 INFO] Step 4200/15600; acc:  85.88; ppl:  1.33; xent: 0.28; lr: 0.00193; 2568/2076 tok/s;    650 sec
+[2020-08-19 20:03:07,310 INFO] Step 4300/15600; acc:  86.16; ppl:  1.33; xent: 0.29; lr: 0.00191; 2561/2081 tok/s;    666 sec
+[2020-08-19 20:03:17,728 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_4368.pt
+[2020-08-19 20:03:22,998 INFO] Step 4400/15600; acc:  86.24; ppl:  1.32; xent: 0.28; lr: 0.00188; 2513/2036 tok/s;    681 sec
+[2020-08-19 20:03:38,378 INFO] Step 4500/15600; acc:  85.81; ppl:  1.34; xent: 0.29; lr: 0.00186; 2547/2075 tok/s;    697 sec
+[2020-08-19 20:03:53,791 INFO] Step 4600/15600; acc:  86.30; ppl:  1.33; xent: 0.28; lr: 0.00184; 2519/2040 tok/s;    712 sec
+[2020-08-19 20:04:06,077 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_4680.pt
+[2020-08-19 20:04:09,494 INFO] Step 4700/15600; acc:  86.51; ppl:  1.32; xent: 0.28; lr: 0.00182; 2524/2057 tok/s;    728 sec
+[2020-08-19 20:04:24,862 INFO] Step 4800/15600; acc:  87.29; ppl:  1.29; xent: 0.26; lr: 0.00180; 2561/2081 tok/s;    743 sec
+[2020-08-19 20:04:40,228 INFO] Step 4900/15600; acc:  87.63; ppl:  1.29; xent: 0.25; lr: 0.00179; 2555/2075 tok/s;    759 sec
+[2020-08-19 20:04:54,361 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_4992.pt
+[2020-08-19 20:04:55,872 INFO] Step 5000/15600; acc:  86.94; ppl:  1.30; xent: 0.26; lr: 0.00177; 2497/2030 tok/s;    774 sec
+[2020-08-19 20:04:56,638 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:04:56,683 INFO] number of examples: 9920
+[2020-08-19 20:05:11,330 INFO] Step 5100/15600; acc:  86.97; ppl:  1.30; xent: 0.26; lr: 0.00175; 2538/2056 tok/s;    790 sec
+[2020-08-19 20:05:26,687 INFO] Step 5200/15600; acc:  85.81; ppl:  1.34; xent: 0.29; lr: 0.00173; 2567/2074 tok/s;    805 sec
+[2020-08-19 20:05:42,057 INFO] Step 5300/15600; acc:  86.76; ppl:  1.31; xent: 0.27; lr: 0.00172; 2570/2089 tok/s;    820 sec
+[2020-08-19 20:05:42,667 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_5304.pt
+[2020-08-19 20:05:57,712 INFO] Step 5400/15600; acc:  87.10; ppl:  1.29; xent: 0.26; lr: 0.00170; 2516/2038 tok/s;    836 sec
+[2020-08-19 20:06:13,102 INFO] Step 5500/15600; acc:  86.88; ppl:  1.30; xent: 0.26; lr: 0.00169; 2547/2076 tok/s;    852 sec
+[2020-08-19 20:06:28,448 INFO] Step 5600/15600; acc:  87.14; ppl:  1.30; xent: 0.26; lr: 0.00167; 2529/2046 tok/s;    867 sec
+[2020-08-19 20:06:30,906 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_5616.pt
+[2020-08-19 20:06:44,152 INFO] Step 5700/15600; acc:  86.39; ppl:  1.32; xent: 0.28; lr: 0.00166; 2521/2055 tok/s;    883 sec
+[2020-08-19 20:06:59,520 INFO] Step 5800/15600; acc:  86.99; ppl:  1.29; xent: 0.26; lr: 0.00164; 2565/2084 tok/s;    898 sec
+[2020-08-19 20:07:14,868 INFO] Step 5900/15600; acc:  87.30; ppl:  1.29; xent: 0.26; lr: 0.00163; 2556/2077 tok/s;    913 sec
+[2020-08-19 20:07:19,177 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_5928.pt
+[2020-08-19 20:07:30,580 INFO] Step 6000/15600; acc:  84.43; ppl:  1.38; xent: 0.32; lr: 0.00161; 2486/2022 tok/s;    929 sec
+[2020-08-19 20:07:31,501 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:07:31,575 INFO] number of examples: 9920
+[2020-08-19 20:07:46,080 INFO] Step 6100/15600; acc:  86.22; ppl:  1.33; xent: 0.28; lr: 0.00160; 2531/2050 tok/s;    944 sec
+[2020-08-19 20:08:01,393 INFO] Step 6200/15600; acc:  86.77; ppl:  1.30; xent: 0.26; lr: 0.00159; 2575/2081 tok/s;    960 sec
+[2020-08-19 20:08:07,538 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_6240.pt
+[2020-08-19 20:08:17,123 INFO] Step 6300/15600; acc:  86.76; ppl:  1.31; xent: 0.27; lr: 0.00157; 2510/2038 tok/s;    976 sec
+[2020-08-19 20:08:32,472 INFO] Step 6400/15600; acc:  86.99; ppl:  1.29; xent: 0.26; lr: 0.00156; 2566/2078 tok/s;    991 sec
+[2020-08-19 20:08:47,807 INFO] Step 6500/15600; acc:  87.04; ppl:  1.29; xent: 0.25; lr: 0.00155; 2555/2082 tok/s;   1006 sec
+[2020-08-19 20:08:55,814 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_6552.pt
+[2020-08-19 20:09:03,473 INFO] Step 6600/15600; acc:  86.81; ppl:  1.30; xent: 0.26; lr: 0.00154; 2481/2007 tok/s;   1022 sec
+[2020-08-19 20:09:18,824 INFO] Step 6700/15600; acc:  87.29; ppl:  1.29; xent: 0.25; lr: 0.00153; 2577/2102 tok/s;   1037 sec
+[2020-08-19 20:09:34,214 INFO] Step 6800/15600; acc:  87.58; ppl:  1.28; xent: 0.25; lr: 0.00152; 2560/2078 tok/s;   1053 sec
+[2020-08-19 20:09:44,096 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_6864.pt
+[2020-08-19 20:09:49,884 INFO] Step 6900/15600; acc:  87.20; ppl:  1.30; xent: 0.26; lr: 0.00150; 2505/2036 tok/s;   1068 sec
+[2020-08-19 20:10:05,235 INFO] Step 7000/15600; acc:  87.09; ppl:  1.29; xent: 0.25; lr: 0.00149; 2547/2072 tok/s;   1084 sec
+[2020-08-19 20:10:06,304 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:10:06,381 INFO] number of examples: 9920
+[2020-08-19 20:10:20,697 INFO] Step 7100/15600; acc:  87.95; ppl:  1.28; xent: 0.24; lr: 0.00148; 2534/2052 tok/s;   1099 sec
+[2020-08-19 20:10:32,340 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_7176.pt
+[2020-08-19 20:10:36,409 INFO] Step 7200/15600; acc:  87.09; ppl:  1.29; xent: 0.25; lr: 0.00147; 2511/2031 tok/s;   1115 sec
+[2020-08-19 20:10:51,734 INFO] Step 7300/15600; acc:  87.79; ppl:  1.27; xent: 0.24; lr: 0.00146; 2576/2092 tok/s;   1130 sec
+[2020-08-19 20:11:07,154 INFO] Step 7400/15600; acc:  86.95; ppl:  1.29; xent: 0.26; lr: 0.00145; 2554/2069 tok/s;   1146 sec
+[2020-08-19 20:11:20,620 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_7488.pt
+[2020-08-19 20:11:22,762 INFO] Step 7500/15600; acc:  86.91; ppl:  1.30; xent: 0.26; lr: 0.00144; 2509/2044 tok/s;   1161 sec
+[2020-08-19 20:11:38,046 INFO] Step 7600/15600; acc:  87.13; ppl:  1.29; xent: 0.26; lr: 0.00143; 2546/2061 tok/s;   1176 sec
+[2020-08-19 20:11:53,294 INFO] Step 7700/15600; acc:  87.28; ppl:  1.29; xent: 0.25; lr: 0.00142; 2591/2112 tok/s;   1192 sec
+[2020-08-19 20:12:08,540 INFO] Step 7800/15600; acc:  87.72; ppl:  1.27; xent: 0.24; lr: 0.00142; 2588/2101 tok/s;   1207 sec
+[2020-08-19 20:12:08,542 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_7800.pt
+[2020-08-19 20:12:24,000 INFO] Step 7900/15600; acc:  87.87; ppl:  1.27; xent: 0.24; lr: 0.00141; 2538/2062 tok/s;   1222 sec
+[2020-08-19 20:12:39,167 INFO] Step 8000/15600; acc:  87.09; ppl:  1.29; xent: 0.26; lr: 0.00140; 2578/2097 tok/s;   1238 sec
+[2020-08-19 20:12:40,374 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:12:40,450 INFO] number of examples: 9920
+[2020-08-19 20:12:54,415 INFO] Step 8100/15600; acc:  88.13; ppl:  1.26; xent: 0.23; lr: 0.00139; 2567/2080 tok/s;   1253 sec
+[2020-08-19 20:12:56,230 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_8112.pt
+[2020-08-19 20:13:09,857 INFO] Step 8200/15600; acc:  87.91; ppl:  1.26; xent: 0.23; lr: 0.00138; 2559/2069 tok/s;   1268 sec
+[2020-08-19 20:13:25,012 INFO] Step 8300/15600; acc:  87.11; ppl:  1.30; xent: 0.26; lr: 0.00137; 2606/2116 tok/s;   1283 sec
+[2020-08-19 20:13:40,157 INFO] Step 8400/15600; acc:  87.52; ppl:  1.28; xent: 0.24; lr: 0.00136; 2600/2108 tok/s;   1299 sec
+[2020-08-19 20:13:43,809 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_8424.pt
+[2020-08-19 20:13:55,764 INFO] Step 8500/15600; acc:  87.59; ppl:  1.28; xent: 0.25; lr: 0.00136; 2505/2041 tok/s;   1314 sec
+[2020-08-19 20:14:10,939 INFO] Step 8600/15600; acc:  87.47; ppl:  1.28; xent: 0.25; lr: 0.00135; 2566/2077 tok/s;   1329 sec
+[2020-08-19 20:14:26,177 INFO] Step 8700/15600; acc:  86.51; ppl:  1.32; xent: 0.28; lr: 0.00134; 2593/2112 tok/s;   1345 sec
+[2020-08-19 20:14:31,606 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_8736.pt
+[2020-08-19 20:14:41,695 INFO] Step 8800/15600; acc:  85.62; ppl:  1.35; xent: 0.30; lr: 0.00133; 2541/2064 tok/s;   1360 sec
+[2020-08-19 20:14:56,838 INFO] Step 8900/15600; acc:  86.10; ppl:  1.34; xent: 0.29; lr: 0.00132; 2593/2106 tok/s;   1375 sec
+[2020-08-19 20:15:11,999 INFO] Step 9000/15600; acc:  86.09; ppl:  1.32; xent: 0.28; lr: 0.00132; 2579/2097 tok/s;   1390 sec
+[2020-08-19 20:15:13,364 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:15:13,443 INFO] number of examples: 9920
+[2020-08-19 20:15:19,407 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_9048.pt
+[2020-08-19 20:15:27,623 INFO] Step 9100/15600; acc:  87.58; ppl:  1.28; xent: 0.25; lr: 0.00131; 2508/2032 tok/s;   1406 sec
+[2020-08-19 20:15:42,731 INFO] Step 9200/15600; acc:  87.74; ppl:  1.27; xent: 0.24; lr: 0.00130; 2612/2112 tok/s;   1421 sec
+[2020-08-19 20:15:57,887 INFO] Step 9300/15600; acc:  87.65; ppl:  1.27; xent: 0.24; lr: 0.00130; 2610/2119 tok/s;   1436 sec
+[2020-08-19 20:16:06,943 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_9360.pt
+[2020-08-19 20:16:13,381 INFO] Step 9400/15600; acc:  87.76; ppl:  1.28; xent: 0.24; lr: 0.00129; 2542/2060 tok/s;   1452 sec
+[2020-08-19 20:16:28,483 INFO] Step 9500/15600; acc:  88.15; ppl:  1.26; xent: 0.23; lr: 0.00128; 2584/2104 tok/s;   1467 sec
+[2020-08-19 20:16:43,593 INFO] Step 9600/15600; acc:  87.95; ppl:  1.27; xent: 0.24; lr: 0.00128; 2579/2088 tok/s;   1482 sec
+[2020-08-19 20:16:54,424 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_9672.pt
+[2020-08-19 20:16:58,944 INFO] Step 9700/15600; acc:  88.25; ppl:  1.26; xent: 0.23; lr: 0.00127; 2572/2096 tok/s;   1497 sec
+[2020-08-19 20:17:14,058 INFO] Step 9800/15600; acc:  88.39; ppl:  1.26; xent: 0.23; lr: 0.00126; 2610/2120 tok/s;   1512 sec
+[2020-08-19 20:17:29,161 INFO] Step 9900/15600; acc:  87.12; ppl:  1.31; xent: 0.27; lr: 0.00126; 2603/2114 tok/s;   1528 sec
+[2020-08-19 20:17:41,810 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_9984.pt
+[2020-08-19 20:17:44,534 INFO] Step 10000/15600; acc:  87.25; ppl:  1.29; xent: 0.25; lr: 0.00125; 2542/2067 tok/s;   1543 sec
+[2020-08-19 20:17:44,535 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.valid.0.pt
+[2020-08-19 20:17:44,574 INFO] number of examples: 620
+[2020-08-19 20:17:45,618 INFO] Validation perplexity: 1.30392
+[2020-08-19 20:17:45,618 INFO] Validation accuracy: 89.9546
+[2020-08-19 20:17:47,127 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:17:47,206 INFO] number of examples: 9920
+[2020-08-19 20:18:00,856 INFO] Step 10100/15600; acc:  87.79; ppl:  1.28; xent: 0.25; lr: 0.00124; 2396/1942 tok/s;   1559 sec
+[2020-08-19 20:18:15,950 INFO] Step 10200/15600; acc:  87.93; ppl:  1.27; xent: 0.24; lr: 0.00124; 2620/2118 tok/s;   1574 sec
+[2020-08-19 20:18:30,404 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_10296.pt
+[2020-08-19 20:18:31,315 INFO] Step 10300/15600; acc:  87.88; ppl:  1.27; xent: 0.24; lr: 0.00123; 2572/2090 tok/s;   1590 sec
+[2020-08-19 20:18:46,391 INFO] Step 10400/15600; acc:  87.70; ppl:  1.28; xent: 0.25; lr: 0.00123; 2617/2119 tok/s;   1605 sec
+[2020-08-19 20:19:01,567 INFO] Step 10500/15600; acc:  87.84; ppl:  1.27; xent: 0.24; lr: 0.00122; 2569/2092 tok/s;   1620 sec
+[2020-08-19 20:19:16,650 INFO] Step 10600/15600; acc:  88.02; ppl:  1.26; xent: 0.23; lr: 0.00121; 2581/2090 tok/s;   1635 sec
+[2020-08-19 20:19:17,931 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_10608.pt
+[2020-08-19 20:19:32,192 INFO] Step 10700/15600; acc:  87.25; ppl:  1.30; xent: 0.26; lr: 0.00121; 2553/2080 tok/s;   1651 sec
+[2020-08-19 20:19:47,292 INFO] Step 10800/15600; acc:  88.39; ppl:  1.26; xent: 0.23; lr: 0.00120; 2613/2123 tok/s;   1666 sec
+[2020-08-19 20:20:02,470 INFO] Step 10900/15600; acc:  88.29; ppl:  1.26; xent: 0.23; lr: 0.00120; 2590/2105 tok/s;   1681 sec
+[2020-08-19 20:20:05,476 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_10920.pt
+[2020-08-19 20:20:18,206 INFO] Step 11000/15600; acc:  87.98; ppl:  1.26; xent: 0.23; lr: 0.00119; 2485/2019 tok/s;   1697 sec
+[2020-08-19 20:20:19,871 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:20:19,952 INFO] number of examples: 9920
+[2020-08-19 20:20:33,411 INFO] Step 11100/15600; acc:  88.44; ppl:  1.26; xent: 0.23; lr: 0.00119; 2572/2085 tok/s;   1712 sec
+[2020-08-19 20:20:48,481 INFO] Step 11200/15600; acc:  88.32; ppl:  1.26; xent: 0.23; lr: 0.00118; 2620/2118 tok/s;   1727 sec
+[2020-08-19 20:20:53,346 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_11232.pt
+[2020-08-19 20:21:03,997 INFO] Step 11300/15600; acc:  88.35; ppl:  1.26; xent: 0.23; lr: 0.00118; 2550/2073 tok/s;   1742 sec
+[2020-08-19 20:21:19,068 INFO] Step 11400/15600; acc:  88.19; ppl:  1.26; xent: 0.23; lr: 0.00117; 2617/2119 tok/s;   1757 sec
+[2020-08-19 20:21:34,178 INFO] Step 11500/15600; acc:  87.29; ppl:  1.29; xent: 0.26; lr: 0.00117; 2581/2102 tok/s;   1773 sec
+[2020-08-19 20:21:40,819 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_11544.pt
+[2020-08-19 20:21:49,589 INFO] Step 11600/15600; acc:  87.94; ppl:  1.28; xent: 0.24; lr: 0.00116; 2526/2045 tok/s;   1788 sec
+[2020-08-19 20:22:04,653 INFO] Step 11700/15600; acc:  88.41; ppl:  1.26; xent: 0.23; lr: 0.00116; 2622/2136 tok/s;   1803 sec
+[2020-08-19 20:22:19,775 INFO] Step 11800/15600; acc:  88.28; ppl:  1.26; xent: 0.23; lr: 0.00115; 2608/2119 tok/s;   1818 sec
+[2020-08-19 20:22:28,204 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_11856.pt
+[2020-08-19 20:22:35,211 INFO] Step 11900/15600; acc:  88.45; ppl:  1.27; xent: 0.24; lr: 0.00115; 2548/2071 tok/s;   1834 sec
+[2020-08-19 20:22:50,286 INFO] Step 12000/15600; acc:  87.99; ppl:  1.27; xent: 0.24; lr: 0.00114; 2595/2108 tok/s;   1849 sec
+[2020-08-19 20:22:52,110 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:22:52,194 INFO] number of examples: 9920
+[2020-08-19 20:23:05,558 INFO] Step 12100/15600; acc:  88.66; ppl:  1.25; xent: 0.22; lr: 0.00114; 2557/2073 tok/s;   1864 sec
+[2020-08-19 20:23:15,808 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_12168.pt
+[2020-08-19 20:23:20,968 INFO] Step 12200/15600; acc:  88.37; ppl:  1.26; xent: 0.23; lr: 0.00113; 2565/2073 tok/s;   1879 sec
+[2020-08-19 20:23:36,036 INFO] Step 12300/15600; acc:  88.61; ppl:  1.25; xent: 0.23; lr: 0.00113; 2624/2133 tok/s;   1894 sec
+[2020-08-19 20:23:51,052 INFO] Step 12400/15600; acc:  88.03; ppl:  1.27; xent: 0.24; lr: 0.00112; 2626/2126 tok/s;   1909 sec
+[2020-08-19 20:24:03,004 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_12480.pt
+[2020-08-19 20:24:06,329 INFO] Step 12500/15600; acc:  88.46; ppl:  1.25; xent: 0.22; lr: 0.00112; 2556/2081 tok/s;   1925 sec
+[2020-08-19 20:24:21,303 INFO] Step 12600/15600; acc:  88.28; ppl:  1.26; xent: 0.23; lr: 0.00111; 2597/2104 tok/s;   1940 sec
+[2020-08-19 20:24:36,316 INFO] Step 12700/15600; acc:  88.22; ppl:  1.27; xent: 0.24; lr: 0.00111; 2631/2144 tok/s;   1955 sec
+[2020-08-19 20:24:50,047 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_12792.pt
+[2020-08-19 20:24:51,576 INFO] Step 12800/15600; acc:  88.47; ppl:  1.26; xent: 0.23; lr: 0.00110; 2587/2101 tok/s;   1970 sec
+[2020-08-19 20:25:06,549 INFO] Step 12900/15600; acc:  88.44; ppl:  1.26; xent: 0.23; lr: 0.00110; 2625/2133 tok/s;   1985 sec
+[2020-08-19 20:25:21,503 INFO] Step 13000/15600; acc:  88.27; ppl:  1.26; xent: 0.23; lr: 0.00110; 2612/2122 tok/s;   2000 sec
+[2020-08-19 20:25:23,450 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:25:23,533 INFO] number of examples: 9920
+[2020-08-19 20:25:36,584 INFO] Step 13100/15600; acc:  88.74; ppl:  1.25; xent: 0.22; lr: 0.00109; 2589/2100 tok/s;   2015 sec
+[2020-08-19 20:25:37,175 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_13104.pt
+[2020-08-19 20:25:51,808 INFO] Step 13200/15600; acc:  88.66; ppl:  1.25; xent: 0.22; lr: 0.00109; 2601/2103 tok/s;   2030 sec
+[2020-08-19 20:26:06,718 INFO] Step 13300/15600; acc:  88.39; ppl:  1.26; xent: 0.23; lr: 0.00108; 2646/2150 tok/s;   2045 sec
+[2020-08-19 20:26:21,990 INFO] Step 13400/15600; acc:  88.51; ppl:  1.25; xent: 0.23; lr: 0.00108; 2643/2141 tok/s;   2060 sec
+[2020-08-19 20:26:24,395 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_13416.pt
+[2020-08-19 20:26:37,655 INFO] Step 13500/15600; acc:  88.68; ppl:  1.24; xent: 0.22; lr: 0.00108; 2495/2031 tok/s;   2076 sec
+[2020-08-19 20:26:52,641 INFO] Step 13600/15600; acc:  87.71; ppl:  1.29; xent: 0.25; lr: 0.00107; 2592/2100 tok/s;   2091 sec
+[2020-08-19 20:27:07,586 INFO] Step 13700/15600; acc:  87.56; ppl:  1.29; xent: 0.25; lr: 0.00107; 2645/2155 tok/s;   2106 sec
+[2020-08-19 20:27:11,770 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_13728.pt
+[2020-08-19 20:27:22,870 INFO] Step 13800/15600; acc:  87.58; ppl:  1.29; xent: 0.25; lr: 0.00106; 2584/2097 tok/s;   2121 sec
+[2020-08-19 20:27:37,833 INFO] Step 13900/15600; acc:  88.25; ppl:  1.27; xent: 0.24; lr: 0.00106; 2626/2135 tok/s;   2136 sec
+[2020-08-19 20:27:52,766 INFO] Step 14000/15600; acc:  87.84; ppl:  1.27; xent: 0.24; lr: 0.00106; 2612/2121 tok/s;   2151 sec
+[2020-08-19 20:27:54,856 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:27:54,941 INFO] number of examples: 9920
+[2020-08-19 20:27:58,904 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_14040.pt
+[2020-08-19 20:28:08,158 INFO] Step 14100/15600; acc:  88.21; ppl:  1.26; xent: 0.23; lr: 0.00105; 2538/2059 tok/s;   2167 sec
+[2020-08-19 20:28:23,107 INFO] Step 14200/15600; acc:  88.47; ppl:  1.25; xent: 0.22; lr: 0.00105; 2650/2144 tok/s;   2182 sec
+[2020-08-19 20:28:38,045 INFO] Step 14300/15600; acc:  88.64; ppl:  1.25; xent: 0.22; lr: 0.00105; 2638/2143 tok/s;   2196 sec
+[2020-08-19 20:28:45,834 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_14352.pt
+[2020-08-19 20:28:53,280 INFO] Step 14400/15600; acc:  88.31; ppl:  1.25; xent: 0.23; lr: 0.00104; 2594/2102 tok/s;   2212 sec
+[2020-08-19 20:29:08,276 INFO] Step 14500/15600; acc:  88.68; ppl:  1.24; xent: 0.22; lr: 0.00104; 2607/2123 tok/s;   2227 sec
+[2020-08-19 20:29:23,289 INFO] Step 14600/15600; acc:  88.79; ppl:  1.24; xent: 0.22; lr: 0.00103; 2586/2095 tok/s;   2242 sec
+[2020-08-19 20:29:32,871 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_14664.pt
+[2020-08-19 20:29:38,575 INFO] Step 14700/15600; acc:  89.02; ppl:  1.24; xent: 0.22; lr: 0.00103; 2588/2109 tok/s;   2257 sec
+[2020-08-19 20:29:53,517 INFO] Step 14800/15600; acc:  88.88; ppl:  1.24; xent: 0.22; lr: 0.00103; 2642/2142 tok/s;   2272 sec
+[2020-08-19 20:30:08,470 INFO] Step 14900/15600; acc:  87.32; ppl:  1.30; xent: 0.26; lr: 0.00102; 2627/2136 tok/s;   2287 sec
+[2020-08-19 20:30:19,856 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_14976.pt
+[2020-08-19 20:30:23,758 INFO] Step 15000/15600; acc:  87.45; ppl:  1.28; xent: 0.25; lr: 0.00102; 2552/2073 tok/s;   2302 sec
+[2020-08-19 20:30:26,002 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:30:26,090 INFO] number of examples: 9920
+[2020-08-19 20:30:38,891 INFO] Step 15100/15600; acc:  88.76; ppl:  1.25; xent: 0.23; lr: 0.00102; 2584/2096 tok/s;   2317 sec
+[2020-08-19 20:30:53,828 INFO] Step 15200/15600; acc:  88.16; ppl:  1.26; xent: 0.23; lr: 0.00101; 2645/2141 tok/s;   2332 sec
+[2020-08-19 20:31:07,032 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_15288.pt
+[2020-08-19 20:31:09,086 INFO] Step 15300/15600; acc:  88.48; ppl:  1.26; xent: 0.23; lr: 0.00101; 2586/2101 tok/s;   2347 sec
+[2020-08-19 20:31:24,011 INFO] Step 15400/15600; acc:  88.46; ppl:  1.25; xent: 0.23; lr: 0.00101; 2653/2148 tok/s;   2362 sec
+[2020-08-19 20:31:38,979 INFO] Step 15500/15600; acc:  88.46; ppl:  1.25; xent: 0.23; lr: 0.00100; 2609/2124 tok/s;   2377 sec
+[2020-08-19 20:31:53,915 INFO] Step 15600/15600; acc:  88.76; ppl:  1.25; xent: 0.22; lr: 0.00100; 2600/2107 tok/s;   2392 sec
+[2020-08-19 20:31:53,916 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv2/toy_model_step_15600.pt
+[2020-08-19 20:31:55,174 INFO]  * src vocab size = 20
+[2020-08-19 20:31:55,174 INFO]  * tgt vocab size = 20
+[2020-08-19 20:31:55,174 INFO] Building model...
+[2020-08-19 20:31:57,241 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(20, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(20, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=256, out_features=20, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2020-08-19 20:31:57,243 INFO] encoder: 5265920
+[2020-08-19 20:31:57,243 INFO] decoder: 6320660
+[2020-08-19 20:31:57,244 INFO] * number of parameters: 11586580
+[2020-08-19 20:31:57,255 INFO] Starting training on GPU: [0]
+[2020-08-19 20:31:57,255 INFO] Start training loop and validate every 10000 steps...
+[2020-08-19 20:31:57,255 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:31:57,328 INFO] number of examples: 9920
+[2020-08-19 20:32:12,554 INFO] Step 100/15600; acc:  51.84; ppl:  3.65; xent: 1.30; lr: 0.00014; 2574/2084 tok/s;     15 sec
+[2020-08-19 20:32:27,621 INFO] Step 200/15600; acc:  73.42; ppl:  1.83; xent: 0.61; lr: 0.00028; 2612/2115 tok/s;     30 sec
+[2020-08-19 20:32:42,675 INFO] Step 300/15600; acc:  78.36; ppl:  1.63; xent: 0.49; lr: 0.00042; 2629/2135 tok/s;     45 sec
+[2020-08-19 20:32:44,478 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_312.pt
+[2020-08-19 20:32:58,032 INFO] Step 400/15600; acc:  82.00; ppl:  1.50; xent: 0.40; lr: 0.00056; 2558/2072 tok/s;     61 sec
+[2020-08-19 20:33:13,135 INFO] Step 500/15600; acc:  83.38; ppl:  1.45; xent: 0.37; lr: 0.00070; 2605/2120 tok/s;     76 sec
+[2020-08-19 20:33:28,231 INFO] Step 600/15600; acc:  84.24; ppl:  1.42; xent: 0.35; lr: 0.00084; 2573/2086 tok/s;     91 sec
+[2020-08-19 20:33:31,843 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_624.pt
+[2020-08-19 20:33:43,773 INFO] Step 700/15600; acc:  85.60; ppl:  1.38; xent: 0.32; lr: 0.00098; 2552/2081 tok/s;    107 sec
+[2020-08-19 20:33:58,851 INFO] Step 800/15600; acc:  85.33; ppl:  1.38; xent: 0.32; lr: 0.00112; 2599/2110 tok/s;    122 sec
+[2020-08-19 20:34:13,909 INFO] Step 900/15600; acc:  86.06; ppl:  1.36; xent: 0.31; lr: 0.00126; 2618/2127 tok/s;    137 sec
+[2020-08-19 20:34:19,344 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_936.pt
+[2020-08-19 20:34:29,383 INFO] Step 1000/15600; acc:  86.28; ppl:  1.34; xent: 0.30; lr: 0.00140; 2515/2043 tok/s;    152 sec
+[2020-08-19 20:34:29,534 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:34:29,623 INFO] number of examples: 9920
+[2020-08-19 20:34:44,629 INFO] Step 1100/15600; acc:  86.24; ppl:  1.35; xent: 0.30; lr: 0.00154; 2580/2089 tok/s;    167 sec
+[2020-08-19 20:34:59,654 INFO] Step 1200/15600; acc:  86.65; ppl:  1.33; xent: 0.29; lr: 0.00168; 2623/2123 tok/s;    182 sec
+[2020-08-19 20:35:06,877 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_1248.pt
+[2020-08-19 20:35:15,025 INFO] Step 1300/15600; acc:  86.54; ppl:  1.34; xent: 0.29; lr: 0.00182; 2571/2087 tok/s;    198 sec
+[2020-08-19 20:35:30,111 INFO] Step 1400/15600; acc:  86.63; ppl:  1.33; xent: 0.29; lr: 0.00196; 2606/2112 tok/s;    213 sec
+[2020-08-19 20:35:45,135 INFO] Step 1500/15600; acc:  85.43; ppl:  1.38; xent: 0.32; lr: 0.00210; 2612/2126 tok/s;    228 sec
+[2020-08-19 20:35:54,170 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_1560.pt
+[2020-08-19 20:36:00,447 INFO] Step 1600/15600; acc:  85.34; ppl:  1.38; xent: 0.32; lr: 0.00224; 2538/2057 tok/s;    243 sec
+[2020-08-19 20:36:15,492 INFO] Step 1700/15600; acc:  84.81; ppl:  1.39; xent: 0.33; lr: 0.00238; 2635/2148 tok/s;    258 sec
+[2020-08-19 20:36:30,553 INFO] Step 1800/15600; acc:  84.31; ppl:  1.40; xent: 0.34; lr: 0.00252; 2603/2113 tok/s;    273 sec
+[2020-08-19 20:36:41,389 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_1872.pt
+[2020-08-19 20:36:45,980 INFO] Step 1900/15600; acc:  83.96; ppl:  1.42; xent: 0.35; lr: 0.00266; 2557/2078 tok/s;    289 sec
+[2020-08-19 20:37:01,008 INFO] Step 2000/15600; acc:  84.19; ppl:  1.40; xent: 0.34; lr: 0.00279; 2590/2104 tok/s;    304 sec
+[2020-08-19 20:37:01,311 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:37:01,350 INFO] number of examples: 9920
+[2020-08-19 20:37:16,197 INFO] Step 2100/15600; acc:  84.19; ppl:  1.41; xent: 0.34; lr: 0.00273; 2588/2095 tok/s;    319 sec
+[2020-08-19 20:37:28,809 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_2184.pt
+[2020-08-19 20:37:31,507 INFO] Step 2200/15600; acc:  82.97; ppl:  1.43; xent: 0.36; lr: 0.00266; 2573/2082 tok/s;    334 sec
+[2020-08-19 20:37:46,563 INFO] Step 2300/15600; acc:  84.97; ppl:  1.38; xent: 0.32; lr: 0.00261; 2623/2130 tok/s;    349 sec
+[2020-08-19 20:38:01,583 INFO] Step 2400/15600; acc:  85.14; ppl:  1.36; xent: 0.31; lr: 0.00255; 2621/2124 tok/s;    364 sec
+[2020-08-19 20:38:16,046 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_2496.pt
+[2020-08-19 20:38:16,927 INFO] Step 2500/15600; acc:  84.87; ppl:  1.37; xent: 0.32; lr: 0.00250; 2557/2083 tok/s;    380 sec
+[2020-08-19 20:38:31,988 INFO] Step 2600/15600; acc:  85.76; ppl:  1.35; xent: 0.30; lr: 0.00245; 2579/2089 tok/s;    395 sec
+[2020-08-19 20:38:47,046 INFO] Step 2700/15600; acc:  85.50; ppl:  1.36; xent: 0.31; lr: 0.00241; 2632/2146 tok/s;    410 sec
+[2020-08-19 20:39:02,078 INFO] Step 2800/15600; acc:  85.13; ppl:  1.37; xent: 0.32; lr: 0.00236; 2612/2121 tok/s;    425 sec
+[2020-08-19 20:39:03,285 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_2808.pt
+[2020-08-19 20:39:17,486 INFO] Step 2900/15600; acc:  85.74; ppl:  1.35; xent: 0.30; lr: 0.00232; 2558/2079 tok/s;    440 sec
+[2020-08-19 20:39:32,541 INFO] Step 3000/15600; acc:  83.74; ppl:  1.41; xent: 0.35; lr: 0.00228; 2587/2102 tok/s;    455 sec
+[2020-08-19 20:39:32,998 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:39:33,040 INFO] number of examples: 9920
+[2020-08-19 20:39:47,734 INFO] Step 3100/15600; acc:  85.48; ppl:  1.35; xent: 0.30; lr: 0.00224; 2586/2094 tok/s;    470 sec
+[2020-08-19 20:39:50,749 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_3120.pt
+[2020-08-19 20:40:03,134 INFO] Step 3200/15600; acc:  85.79; ppl:  1.33; xent: 0.29; lr: 0.00221; 2561/2072 tok/s;    486 sec
+[2020-08-19 20:40:18,160 INFO] Step 3300/15600; acc:  84.98; ppl:  1.37; xent: 0.32; lr: 0.00218; 2627/2134 tok/s;    501 sec
+[2020-08-19 20:40:33,193 INFO] Step 3400/15600; acc:  85.80; ppl:  1.34; xent: 0.30; lr: 0.00214; 2619/2122 tok/s;    516 sec
+[2020-08-19 20:40:38,013 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_3432.pt
+[2020-08-19 20:40:48,591 INFO] Step 3500/15600; acc:  85.88; ppl:  1.33; xent: 0.29; lr: 0.00211; 2545/2073 tok/s;    531 sec
+[2020-08-19 20:41:03,715 INFO] Step 3600/15600; acc:  86.33; ppl:  1.32; xent: 0.28; lr: 0.00208; 2588/2095 tok/s;    546 sec
+[2020-08-19 20:41:18,789 INFO] Step 3700/15600; acc:  85.95; ppl:  1.34; xent: 0.29; lr: 0.00205; 2632/2146 tok/s;    562 sec
+[2020-08-19 20:41:25,398 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_3744.pt
+[2020-08-19 20:41:34,121 INFO] Step 3800/15600; acc:  86.06; ppl:  1.33; xent: 0.29; lr: 0.00203; 2560/2080 tok/s;    577 sec
+[2020-08-19 20:41:49,139 INFO] Step 3900/15600; acc:  86.09; ppl:  1.33; xent: 0.29; lr: 0.00200; 2618/2127 tok/s;    592 sec
+[2020-08-19 20:42:04,192 INFO] Step 4000/15600; acc:  85.51; ppl:  1.35; xent: 0.30; lr: 0.00198; 2593/2107 tok/s;    607 sec
+[2020-08-19 20:42:04,794 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:42:04,836 INFO] number of examples: 9920
+[2020-08-19 20:42:12,708 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_4056.pt
+[2020-08-19 20:42:19,659 INFO] Step 4100/15600; acc:  84.02; ppl:  1.41; xent: 0.34; lr: 0.00195; 2538/2055 tok/s;    622 sec
+[2020-08-19 20:42:34,655 INFO] Step 4200/15600; acc:  85.88; ppl:  1.33; xent: 0.28; lr: 0.00193; 2630/2126 tok/s;    637 sec
+[2020-08-19 20:42:49,727 INFO] Step 4300/15600; acc:  86.16; ppl:  1.33; xent: 0.29; lr: 0.00191; 2619/2127 tok/s;    652 sec
+[2020-08-19 20:42:59,948 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_4368.pt
+[2020-08-19 20:43:05,145 INFO] Step 4400/15600; acc:  86.24; ppl:  1.32; xent: 0.28; lr: 0.00188; 2557/2072 tok/s;    668 sec
+[2020-08-19 20:43:20,161 INFO] Step 4500/15600; acc:  85.81; ppl:  1.34; xent: 0.29; lr: 0.00186; 2609/2125 tok/s;    683 sec
+[2020-08-19 20:43:35,194 INFO] Step 4600/15600; acc:  86.30; ppl:  1.33; xent: 0.28; lr: 0.00184; 2583/2092 tok/s;    698 sec
+[2020-08-19 20:43:47,186 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_4680.pt
+[2020-08-19 20:43:50,495 INFO] Step 4700/15600; acc:  86.51; ppl:  1.32; xent: 0.28; lr: 0.00182; 2590/2111 tok/s;    713 sec
+[2020-08-19 20:44:05,521 INFO] Step 4800/15600; acc:  87.29; ppl:  1.29; xent: 0.26; lr: 0.00180; 2620/2128 tok/s;    728 sec
+[2020-08-19 20:44:20,562 INFO] Step 4900/15600; acc:  87.63; ppl:  1.29; xent: 0.25; lr: 0.00179; 2610/2120 tok/s;    743 sec
+[2020-08-19 20:44:34,371 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_4992.pt
+[2020-08-19 20:44:35,887 INFO] Step 5000/15600; acc:  86.94; ppl:  1.30; xent: 0.26; lr: 0.00177; 2549/2072 tok/s;    759 sec
+[2020-08-19 20:44:36,634 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:44:36,675 INFO] number of examples: 9920
+[2020-08-19 20:44:51,017 INFO] Step 5100/15600; acc:  86.97; ppl:  1.30; xent: 0.26; lr: 0.00175; 2593/2100 tok/s;    774 sec
+[2020-08-19 20:45:06,065 INFO] Step 5200/15600; acc:  85.81; ppl:  1.34; xent: 0.29; lr: 0.00173; 2620/2117 tok/s;    789 sec
+[2020-08-19 20:45:21,087 INFO] Step 5300/15600; acc:  86.76; ppl:  1.31; xent: 0.27; lr: 0.00172; 2630/2137 tok/s;    804 sec
+[2020-08-19 20:45:21,688 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_5304.pt
+[2020-08-19 20:45:36,414 INFO] Step 5400/15600; acc:  87.10; ppl:  1.29; xent: 0.26; lr: 0.00170; 2570/2082 tok/s;    819 sec
+[2020-08-19 20:45:51,503 INFO] Step 5500/15600; acc:  86.88; ppl:  1.30; xent: 0.26; lr: 0.00169; 2598/2118 tok/s;    834 sec
+[2020-08-19 20:46:06,557 INFO] Step 5600/15600; acc:  87.14; ppl:  1.30; xent: 0.26; lr: 0.00167; 2578/2086 tok/s;    849 sec
+[2020-08-19 20:46:08,975 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_5616.pt
+[2020-08-19 20:46:21,971 INFO] Step 5700/15600; acc:  86.39; ppl:  1.32; xent: 0.28; lr: 0.00166; 2571/2095 tok/s;    865 sec
+[2020-08-19 20:46:37,019 INFO] Step 5800/15600; acc:  86.99; ppl:  1.29; xent: 0.26; lr: 0.00164; 2620/2128 tok/s;    880 sec
+[2020-08-19 20:46:52,058 INFO] Step 5900/15600; acc:  87.30; ppl:  1.29; xent: 0.26; lr: 0.00163; 2612/2123 tok/s;    895 sec
+[2020-08-19 20:46:56,276 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_5928.pt
+[2020-08-19 20:47:07,582 INFO] Step 6000/15600; acc:  84.43; ppl:  1.38; xent: 0.32; lr: 0.00161; 2516/2047 tok/s;    910 sec
+[2020-08-19 20:47:08,491 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:47:08,565 INFO] number of examples: 9920
+[2020-08-19 20:47:22,744 INFO] Step 6100/15600; acc:  86.22; ppl:  1.33; xent: 0.28; lr: 0.00160; 2588/2096 tok/s;    925 sec
+[2020-08-19 20:47:37,767 INFO] Step 6200/15600; acc:  86.77; ppl:  1.30; xent: 0.26; lr: 0.00159; 2625/2121 tok/s;    941 sec
+[2020-08-19 20:47:43,776 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_6240.pt
+[2020-08-19 20:47:53,055 INFO] Step 6300/15600; acc:  86.76; ppl:  1.31; xent: 0.27; lr: 0.00157; 2582/2097 tok/s;    956 sec
+[2020-08-19 20:48:08,078 INFO] Step 6400/15600; acc:  86.99; ppl:  1.29; xent: 0.26; lr: 0.00156; 2622/2124 tok/s;    971 sec
+[2020-08-19 20:48:23,209 INFO] Step 6500/15600; acc:  87.04; ppl:  1.29; xent: 0.25; lr: 0.00155; 2589/2111 tok/s;    986 sec
+[2020-08-19 20:48:30,780 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_6552.pt
+[2020-08-19 20:48:37,903 INFO] Step 6600/15600; acc:  86.81; ppl:  1.30; xent: 0.26; lr: 0.00154; 2645/2140 tok/s;   1001 sec
+[2020-08-19 20:48:52,256 INFO] Step 6700/15600; acc:  87.29; ppl:  1.29; xent: 0.25; lr: 0.00153; 2756/2248 tok/s;   1015 sec
+[2020-08-19 20:49:06,554 INFO] Step 6800/15600; acc:  87.58; ppl:  1.28; xent: 0.25; lr: 0.00152; 2756/2237 tok/s;   1029 sec
+[2020-08-19 20:49:15,774 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_6864.pt
+[2020-08-19 20:49:21,220 INFO] Step 6900/15600; acc:  87.20; ppl:  1.30; xent: 0.26; lr: 0.00150; 2677/2175 tok/s;   1044 sec
+[2020-08-19 20:49:35,513 INFO] Step 7000/15600; acc:  87.09; ppl:  1.29; xent: 0.25; lr: 0.00149; 2735/2226 tok/s;   1058 sec
+[2020-08-19 20:49:36,513 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:49:36,585 INFO] number of examples: 9920
+[2020-08-19 20:49:49,908 INFO] Step 7100/15600; acc:  87.95; ppl:  1.28; xent: 0.24; lr: 0.00148; 2722/2204 tok/s;   1073 sec
+[2020-08-19 20:50:00,836 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_7176.pt
+[2020-08-19 20:50:04,533 INFO] Step 7200/15600; acc:  87.09; ppl:  1.29; xent: 0.25; lr: 0.00147; 2698/2182 tok/s;   1087 sec
+[2020-08-19 20:50:18,747 INFO] Step 7300/15600; acc:  87.79; ppl:  1.27; xent: 0.24; lr: 0.00146; 2777/2256 tok/s;   1101 sec
+[2020-08-19 20:50:33,031 INFO] Step 7400/15600; acc:  86.95; ppl:  1.29; xent: 0.26; lr: 0.00145; 2757/2234 tok/s;   1116 sec
+[2020-08-19 20:50:45,559 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_7488.pt
+[2020-08-19 20:50:47,660 INFO] Step 7500/15600; acc:  86.91; ppl:  1.30; xent: 0.26; lr: 0.00144; 2681/2184 tok/s;   1130 sec
+[2020-08-19 20:51:02,039 INFO] Step 7600/15600; acc:  87.13; ppl:  1.29; xent: 0.26; lr: 0.00143; 2706/2191 tok/s;   1145 sec
+[2020-08-19 20:51:15,934 INFO] Step 7700/15600; acc:  87.28; ppl:  1.29; xent: 0.25; lr: 0.00142; 2843/2318 tok/s;   1159 sec
+[2020-08-19 20:51:29,783 INFO] Step 7800/15600; acc:  87.72; ppl:  1.27; xent: 0.24; lr: 0.00142; 2849/2314 tok/s;   1173 sec
+[2020-08-19 20:51:29,784 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_7800.pt
+[2020-08-19 20:51:44,027 INFO] Step 7900/15600; acc:  87.87; ppl:  1.27; xent: 0.24; lr: 0.00141; 2755/2238 tok/s;   1187 sec
+[2020-08-19 20:51:57,828 INFO] Step 8000/15600; acc:  87.09; ppl:  1.29; xent: 0.26; lr: 0.00140; 2834/2305 tok/s;   1201 sec
+[2020-08-19 20:51:58,927 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:51:58,999 INFO] number of examples: 9920
+[2020-08-19 20:52:11,739 INFO] Step 8100/15600; acc:  88.13; ppl:  1.26; xent: 0.23; lr: 0.00139; 2814/2279 tok/s;   1214 sec
+[2020-08-19 20:52:13,388 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_8112.pt
+[2020-08-19 20:52:25,788 INFO] Step 8200/15600; acc:  87.91; ppl:  1.26; xent: 0.23; lr: 0.00138; 2813/2274 tok/s;   1229 sec
+[2020-08-19 20:52:39,612 INFO] Step 8300/15600; acc:  87.11; ppl:  1.30; xent: 0.26; lr: 0.00137; 2871/2331 tok/s;   1242 sec
+[2020-08-19 20:52:53,487 INFO] Step 8400/15600; acc:  87.52; ppl:  1.28; xent: 0.24; lr: 0.00136; 2838/2301 tok/s;   1256 sec
+[2020-08-19 20:52:56,784 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_8424.pt
+[2020-08-19 20:53:07,538 INFO] Step 8500/15600; acc:  87.59; ppl:  1.28; xent: 0.25; lr: 0.00136; 2782/2266 tok/s;   1270 sec
+[2020-08-19 20:53:21,280 INFO] Step 8600/15600; acc:  87.47; ppl:  1.28; xent: 0.25; lr: 0.00135; 2833/2294 tok/s;   1284 sec
+[2020-08-19 20:53:34,998 INFO] Step 8700/15600; acc:  86.51; ppl:  1.32; xent: 0.28; lr: 0.00134; 2880/2346 tok/s;   1298 sec
+[2020-08-19 20:53:39,933 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_8736.pt
+[2020-08-19 20:53:49,052 INFO] Step 8800/15600; acc:  85.62; ppl:  1.35; xent: 0.30; lr: 0.00133; 2805/2279 tok/s;   1312 sec
+[2020-08-19 20:54:02,763 INFO] Step 8900/15600; acc:  86.10; ppl:  1.34; xent: 0.29; lr: 0.00132; 2864/2326 tok/s;   1326 sec
+[2020-08-19 20:54:16,564 INFO] Step 9000/15600; acc:  86.09; ppl:  1.32; xent: 0.28; lr: 0.00132; 2834/2304 tok/s;   1339 sec
+[2020-08-19 20:54:17,797 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:54:17,912 INFO] number of examples: 9920
+[2020-08-19 20:54:23,318 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_9048.pt
+[2020-08-19 20:54:30,727 INFO] Step 9100/15600; acc:  87.58; ppl:  1.28; xent: 0.25; lr: 0.00131; 2766/2242 tok/s;   1353 sec
+[2020-08-19 20:54:44,472 INFO] Step 9200/15600; acc:  87.74; ppl:  1.27; xent: 0.24; lr: 0.00130; 2871/2321 tok/s;   1367 sec
+[2020-08-19 20:54:58,209 INFO] Step 9300/15600; acc:  87.65; ppl:  1.27; xent: 0.24; lr: 0.00130; 2880/2338 tok/s;   1381 sec
+[2020-08-19 20:55:06,426 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_9360.pt
+[2020-08-19 20:55:12,231 INFO] Step 9400/15600; acc:  87.76; ppl:  1.28; xent: 0.24; lr: 0.00129; 2809/2277 tok/s;   1395 sec
+[2020-08-19 20:55:26,027 INFO] Step 9500/15600; acc:  88.15; ppl:  1.26; xent: 0.23; lr: 0.00128; 2828/2303 tok/s;   1409 sec
+[2020-08-19 20:55:39,755 INFO] Step 9600/15600; acc:  87.95; ppl:  1.27; xent: 0.24; lr: 0.00128; 2838/2298 tok/s;   1422 sec
+[2020-08-19 20:55:49,606 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_9672.pt
+[2020-08-19 20:55:53,757 INFO] Step 9700/15600; acc:  88.25; ppl:  1.26; xent: 0.23; lr: 0.00127; 2820/2298 tok/s;   1437 sec
+[2020-08-19 20:56:07,451 INFO] Step 9800/15600; acc:  88.39; ppl:  1.26; xent: 0.23; lr: 0.00126; 2880/2340 tok/s;   1450 sec
+[2020-08-19 20:56:21,165 INFO] Step 9900/15600; acc:  87.12; ppl:  1.31; xent: 0.27; lr: 0.00126; 2867/2328 tok/s;   1464 sec
+[2020-08-19 20:56:32,672 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_9984.pt
+[2020-08-19 20:56:35,144 INFO] Step 10000/15600; acc:  87.25; ppl:  1.29; xent: 0.25; lr: 0.00125; 2796/2273 tok/s;   1478 sec
+[2020-08-19 20:56:35,144 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.valid.0.pt
+[2020-08-19 20:56:35,177 INFO] number of examples: 620
+[2020-08-19 20:56:36,124 INFO] Validation perplexity: 1.30392
+[2020-08-19 20:56:36,124 INFO] Validation accuracy: 89.9546
+[2020-08-19 20:56:37,546 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:56:37,618 INFO] number of examples: 9920
+[2020-08-19 20:56:49,997 INFO] Step 10100/15600; acc:  87.79; ppl:  1.28; xent: 0.25; lr: 0.00124; 2633/2134 tok/s;   1493 sec
+[2020-08-19 20:57:03,790 INFO] Step 10200/15600; acc:  87.93; ppl:  1.27; xent: 0.24; lr: 0.00124; 2867/2318 tok/s;   1507 sec
+[2020-08-19 20:57:16,930 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_10296.pt
+[2020-08-19 20:57:17,866 INFO] Step 10300/15600; acc:  87.88; ppl:  1.27; xent: 0.24; lr: 0.00123; 2808/2281 tok/s;   1521 sec
+[2020-08-19 20:57:31,601 INFO] Step 10400/15600; acc:  87.70; ppl:  1.28; xent: 0.25; lr: 0.00123; 2872/2326 tok/s;   1534 sec
+[2020-08-19 20:57:45,406 INFO] Step 10500/15600; acc:  87.84; ppl:  1.27; xent: 0.24; lr: 0.00122; 2825/2300 tok/s;   1548 sec
+[2020-08-19 20:57:59,161 INFO] Step 10600/15600; acc:  88.02; ppl:  1.26; xent: 0.23; lr: 0.00121; 2830/2291 tok/s;   1562 sec
+[2020-08-19 20:58:00,255 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_10608.pt
+[2020-08-19 20:58:13,276 INFO] Step 10700/15600; acc:  87.25; ppl:  1.30; xent: 0.26; lr: 0.00121; 2798/2279 tok/s;   1576 sec
+[2020-08-19 20:58:27,058 INFO] Step 10800/15600; acc:  88.39; ppl:  1.26; xent: 0.23; lr: 0.00120; 2863/2326 tok/s;   1590 sec
+[2020-08-19 20:58:40,758 INFO] Step 10900/15600; acc:  88.29; ppl:  1.26; xent: 0.23; lr: 0.00120; 2870/2332 tok/s;   1604 sec
+[2020-08-19 20:58:43,572 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_10920.pt
+[2020-08-19 20:58:54,822 INFO] Step 11000/15600; acc:  87.98; ppl:  1.26; xent: 0.23; lr: 0.00119; 2780/2259 tok/s;   1618 sec
+[2020-08-19 20:58:56,332 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 20:58:56,405 INFO] number of examples: 9920
+[2020-08-19 20:59:08,670 INFO] Step 11100/15600; acc:  88.44; ppl:  1.26; xent: 0.23; lr: 0.00119; 2824/2289 tok/s;   1631 sec
+[2020-08-19 20:59:22,346 INFO] Step 11200/15600; acc:  88.32; ppl:  1.26; xent: 0.23; lr: 0.00118; 2887/2334 tok/s;   1645 sec
+[2020-08-19 20:59:26,740 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_11232.pt
+[2020-08-19 20:59:36,441 INFO] Step 11300/15600; acc:  88.35; ppl:  1.26; xent: 0.23; lr: 0.00118; 2807/2282 tok/s;   1659 sec
+[2020-08-19 20:59:50,142 INFO] Step 11400/15600; acc:  88.19; ppl:  1.26; xent: 0.23; lr: 0.00117; 2879/2332 tok/s;   1673 sec
+[2020-08-19 21:00:03,981 INFO] Step 11500/15600; acc:  87.29; ppl:  1.29; xent: 0.26; lr: 0.00117; 2818/2295 tok/s;   1687 sec
+[2020-08-19 21:00:10,014 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_11544.pt
+[2020-08-19 21:00:18,094 INFO] Step 11600/15600; acc:  87.94; ppl:  1.28; xent: 0.24; lr: 0.00116; 2758/2233 tok/s;   1701 sec
+[2020-08-19 21:00:31,812 INFO] Step 11700/15600; acc:  88.41; ppl:  1.26; xent: 0.23; lr: 0.00116; 2880/2346 tok/s;   1715 sec
+[2020-08-19 21:00:45,506 INFO] Step 11800/15600; acc:  88.28; ppl:  1.26; xent: 0.23; lr: 0.00115; 2880/2340 tok/s;   1728 sec
+[2020-08-19 21:00:53,254 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_11856.pt
+[2020-08-19 21:00:59,587 INFO] Step 11900/15600; acc:  88.45; ppl:  1.27; xent: 0.24; lr: 0.00115; 2798/2274 tok/s;   1742 sec
+[2020-08-19 21:01:13,386 INFO] Step 12000/15600; acc:  87.99; ppl:  1.27; xent: 0.24; lr: 0.00114; 2834/2303 tok/s;   1756 sec
+[2020-08-19 21:01:15,036 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:01:15,111 INFO] number of examples: 9920
+[2020-08-19 21:01:27,213 INFO] Step 12100/15600; acc:  88.66; ppl:  1.25; xent: 0.22; lr: 0.00114; 2824/2290 tok/s;   1770 sec
+[2020-08-19 21:01:36,516 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_12168.pt
+[2020-08-19 21:01:41,304 INFO] Step 12200/15600; acc:  88.37; ppl:  1.26; xent: 0.23; lr: 0.00113; 2805/2267 tok/s;   1784 sec
+[2020-08-19 21:01:54,990 INFO] Step 12300/15600; acc:  88.61; ppl:  1.25; xent: 0.23; lr: 0.00113; 2889/2349 tok/s;   1798 sec
+[2020-08-19 21:02:08,729 INFO] Step 12400/15600; acc:  88.03; ppl:  1.27; xent: 0.24; lr: 0.00112; 2870/2324 tok/s;   1811 sec
+[2020-08-19 21:02:19,701 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_12480.pt
+[2020-08-19 21:02:22,739 INFO] Step 12500/15600; acc:  88.46; ppl:  1.25; xent: 0.22; lr: 0.00112; 2789/2270 tok/s;   1825 sec
+[2020-08-19 21:02:36,496 INFO] Step 12600/15600; acc:  88.28; ppl:  1.26; xent: 0.23; lr: 0.00111; 2827/2290 tok/s;   1839 sec
+[2020-08-19 21:02:50,203 INFO] Step 12700/15600; acc:  88.22; ppl:  1.27; xent: 0.24; lr: 0.00111; 2882/2348 tok/s;   1853 sec
+[2020-08-19 21:03:02,885 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_12792.pt
+[2020-08-19 21:03:04,375 INFO] Step 12800/15600; acc:  88.47; ppl:  1.26; xent: 0.23; lr: 0.00110; 2786/2262 tok/s;   1867 sec
+[2020-08-19 21:03:18,069 INFO] Step 12900/15600; acc:  88.44; ppl:  1.26; xent: 0.23; lr: 0.00110; 2870/2332 tok/s;   1881 sec
+[2020-08-19 21:03:31,756 INFO] Step 13000/15600; acc:  88.27; ppl:  1.26; xent: 0.23; lr: 0.00110; 2854/2319 tok/s;   1895 sec
+[2020-08-19 21:03:33,535 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:03:33,612 INFO] number of examples: 9920
+[2020-08-19 21:03:45,625 INFO] Step 13100/15600; acc:  88.74; ppl:  1.25; xent: 0.22; lr: 0.00109; 2815/2284 tok/s;   1908 sec
+[2020-08-19 21:03:46,168 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_13104.pt
+[2020-08-19 21:03:59,513 INFO] Step 13200/15600; acc:  88.66; ppl:  1.25; xent: 0.22; lr: 0.00109; 2852/2306 tok/s;   1922 sec
+[2020-08-19 21:04:13,155 INFO] Step 13300/15600; acc:  88.39; ppl:  1.26; xent: 0.23; lr: 0.00108; 2892/2350 tok/s;   1936 sec
+[2020-08-19 21:04:26,715 INFO] Step 13400/15600; acc:  88.51; ppl:  1.25; xent: 0.23; lr: 0.00108; 2911/2358 tok/s;   1949 sec
+[2020-08-19 21:04:28,891 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_13416.pt
+[2020-08-19 21:04:40,853 INFO] Step 13500/15600; acc:  88.68; ppl:  1.24; xent: 0.22; lr: 0.00108; 2764/2250 tok/s;   1964 sec
+[2020-08-19 21:04:54,421 INFO] Step 13600/15600; acc:  87.71; ppl:  1.29; xent: 0.25; lr: 0.00107; 2863/2319 tok/s;   1977 sec
+[2020-08-19 21:05:08,071 INFO] Step 13700/15600; acc:  87.56; ppl:  1.29; xent: 0.25; lr: 0.00107; 2896/2360 tok/s;   1991 sec
+[2020-08-19 21:05:12,668 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_13728.pt
+[2020-08-19 21:05:22,927 INFO] Step 13800/15600; acc:  87.58; ppl:  1.29; xent: 0.25; lr: 0.00106; 2810/2280 tok/s;   2006 sec
+[2020-08-19 21:05:36,512 INFO] Step 13900/15600; acc:  88.25; ppl:  1.27; xent: 0.24; lr: 0.00106; 2893/2352 tok/s;   2019 sec
+[2020-08-19 21:05:50,074 INFO] Step 14000/15600; acc:  87.84; ppl:  1.27; xent: 0.24; lr: 0.00106; 2876/2335 tok/s;   2033 sec
+[2020-08-19 21:05:51,975 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:05:52,051 INFO] number of examples: 9920
+[2020-08-19 21:05:55,642 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_14040.pt
+[2020-08-19 21:06:04,078 INFO] Step 14100/15600; acc:  88.21; ppl:  1.26; xent: 0.23; lr: 0.00105; 2789/2263 tok/s;   2047 sec
+[2020-08-19 21:06:17,670 INFO] Step 14200/15600; acc:  88.47; ppl:  1.25; xent: 0.22; lr: 0.00105; 2915/2358 tok/s;   2060 sec
+[2020-08-19 21:06:31,229 INFO] Step 14300/15600; acc:  88.64; ppl:  1.25; xent: 0.22; lr: 0.00105; 2907/2361 tok/s;   2074 sec
+[2020-08-19 21:06:38,366 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_14352.pt
+[2020-08-19 21:06:45,187 INFO] Step 14400/15600; acc:  88.31; ppl:  1.25; xent: 0.23; lr: 0.00104; 2831/2294 tok/s;   2088 sec
+[2020-08-19 21:06:58,750 INFO] Step 14500/15600; acc:  88.68; ppl:  1.24; xent: 0.22; lr: 0.00104; 2883/2347 tok/s;   2101 sec
+[2020-08-19 21:07:12,499 INFO] Step 14600/15600; acc:  88.79; ppl:  1.24; xent: 0.22; lr: 0.00103; 2824/2288 tok/s;   2115 sec
+[2020-08-19 21:07:21,156 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_14664.pt
+[2020-08-19 21:07:26,354 INFO] Step 14700/15600; acc:  89.02; ppl:  1.24; xent: 0.22; lr: 0.00103; 2856/2327 tok/s;   2129 sec
+[2020-08-19 21:07:39,976 INFO] Step 14800/15600; acc:  88.88; ppl:  1.24; xent: 0.22; lr: 0.00103; 2898/2350 tok/s;   2143 sec
+[2020-08-19 21:07:53,605 INFO] Step 14900/15600; acc:  87.32; ppl:  1.30; xent: 0.26; lr: 0.00102; 2882/2343 tok/s;   2156 sec
+[2020-08-19 21:08:03,922 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_14976.pt
+[2020-08-19 21:08:07,479 INFO] Step 15000/15600; acc:  87.45; ppl:  1.28; xent: 0.25; lr: 0.00102; 2813/2284 tok/s;   2170 sec
+[2020-08-19 21:08:09,515 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:08:09,593 INFO] number of examples: 9920
+[2020-08-19 21:08:21,177 INFO] Step 15100/15600; acc:  88.76; ppl:  1.25; xent: 0.23; lr: 0.00102; 2855/2316 tok/s;   2184 sec
+[2020-08-19 21:08:34,730 INFO] Step 15200/15600; acc:  88.16; ppl:  1.26; xent: 0.23; lr: 0.00101; 2915/2359 tok/s;   2197 sec
+[2020-08-19 21:08:46,682 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_15288.pt
+[2020-08-19 21:08:48,632 INFO] Step 15300/15600; acc:  88.48; ppl:  1.26; xent: 0.23; lr: 0.00101; 2838/2306 tok/s;   2211 sec
+[2020-08-19 21:09:02,169 INFO] Step 15400/15600; acc:  88.46; ppl:  1.25; xent: 0.23; lr: 0.00101; 2925/2368 tok/s;   2225 sec
+[2020-08-19 21:09:15,785 INFO] Step 15500/15600; acc:  88.46; ppl:  1.25; xent: 0.23; lr: 0.00100; 2868/2335 tok/s;   2239 sec
+[2020-08-19 21:09:29,365 INFO] Step 15600/15600; acc:  88.76; ppl:  1.25; xent: 0.22; lr: 0.00100; 2859/2317 tok/s;   2252 sec
+[2020-08-19 21:09:29,367 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv3/toy_model_step_15600.pt
+[2020-08-19 21:09:30,826 INFO]  * src vocab size = 20
+[2020-08-19 21:09:30,826 INFO]  * tgt vocab size = 20
+[2020-08-19 21:09:30,826 INFO] Building model...
+[2020-08-19 21:09:32,875 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(20, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(20, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=256, out_features=20, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2020-08-19 21:09:32,877 INFO] encoder: 5265920
+[2020-08-19 21:09:32,877 INFO] decoder: 6320660
+[2020-08-19 21:09:32,877 INFO] * number of parameters: 11586580
+[2020-08-19 21:09:32,882 INFO] Starting training on GPU: [0]
+[2020-08-19 21:09:32,882 INFO] Start training loop and validate every 10000 steps...
+[2020-08-19 21:09:32,882 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:09:32,946 INFO] number of examples: 9920
+[2020-08-19 21:09:47,729 INFO] Step 100/15600; acc:  51.84; ppl:  3.65; xent: 1.30; lr: 0.00014; 2652/2148 tok/s;     15 sec
+[2020-08-19 21:10:02,258 INFO] Step 200/15600; acc:  73.42; ppl:  1.83; xent: 0.61; lr: 0.00028; 2709/2193 tok/s;     29 sec
+[2020-08-19 21:10:16,755 INFO] Step 300/15600; acc:  78.36; ppl:  1.63; xent: 0.49; lr: 0.00042; 2730/2217 tok/s;     44 sec
+[2020-08-19 21:10:18,666 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_312.pt
+[2020-08-19 21:10:31,812 INFO] Step 400/15600; acc:  82.00; ppl:  1.50; xent: 0.40; lr: 0.00056; 2639/2138 tok/s;     59 sec
+[2020-08-19 21:10:46,267 INFO] Step 500/15600; acc:  83.38; ppl:  1.45; xent: 0.37; lr: 0.00070; 2716/2210 tok/s;     73 sec
+[2020-08-19 21:11:00,751 INFO] Step 600/15600; acc:  84.24; ppl:  1.42; xent: 0.35; lr: 0.00084; 2682/2174 tok/s;     88 sec
+[2020-08-19 21:11:04,205 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_624.pt
+[2020-08-19 21:11:15,595 INFO] Step 700/15600; acc:  85.60; ppl:  1.38; xent: 0.32; lr: 0.00098; 2672/2179 tok/s;    103 sec
+[2020-08-19 21:11:29,964 INFO] Step 800/15600; acc:  85.33; ppl:  1.38; xent: 0.32; lr: 0.00112; 2728/2214 tok/s;    117 sec
+[2020-08-19 21:11:44,440 INFO] Step 900/15600; acc:  86.06; ppl:  1.36; xent: 0.31; lr: 0.00126; 2723/2213 tok/s;    132 sec
+[2020-08-19 21:11:49,617 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_936.pt
+[2020-08-19 21:11:59,083 INFO] Step 1000/15600; acc:  86.28; ppl:  1.34; xent: 0.30; lr: 0.00140; 2658/2159 tok/s;    146 sec
+[2020-08-19 21:11:59,560 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:11:59,644 INFO] number of examples: 9920
+[2020-08-19 21:12:14,023 INFO] Step 1100/15600; acc:  86.24; ppl:  1.35; xent: 0.30; lr: 0.00154; 2693/2180 tok/s;    161 sec
+[2020-08-19 21:12:28,457 INFO] Step 1200/15600; acc:  86.65; ppl:  1.33; xent: 0.29; lr: 0.00168; 2730/2210 tok/s;    176 sec
+[2020-08-19 21:12:35,347 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_1248.pt
+[2020-08-19 21:12:43,102 INFO] Step 1300/15600; acc:  86.54; ppl:  1.34; xent: 0.29; lr: 0.00182; 2698/2191 tok/s;    190 sec
+[2020-08-19 21:12:57,467 INFO] Step 1400/15600; acc:  86.63; ppl:  1.33; xent: 0.29; lr: 0.00196; 2737/2218 tok/s;    205 sec
+[2020-08-19 21:13:11,987 INFO] Step 1500/15600; acc:  85.43; ppl:  1.38; xent: 0.32; lr: 0.00210; 2703/2200 tok/s;    219 sec
+[2020-08-19 21:13:20,700 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_1560.pt
+[2020-08-19 21:13:26,752 INFO] Step 1600/15600; acc:  85.34; ppl:  1.38; xent: 0.32; lr: 0.00224; 2632/2133 tok/s;    234 sec
+[2020-08-19 21:13:41,148 INFO] Step 1700/15600; acc:  84.81; ppl:  1.39; xent: 0.33; lr: 0.00238; 2760/2250 tok/s;    248 sec
+[2020-08-19 21:13:55,624 INFO] Step 1800/15600; acc:  84.31; ppl:  1.40; xent: 0.34; lr: 0.00252; 2708/2198 tok/s;    263 sec
+[2020-08-19 21:14:05,946 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_1872.pt
+[2020-08-19 21:14:10,365 INFO] Step 1900/15600; acc:  83.96; ppl:  1.42; xent: 0.35; lr: 0.00266; 2676/2175 tok/s;    277 sec
+[2020-08-19 21:14:24,707 INFO] Step 2000/15600; acc:  84.19; ppl:  1.40; xent: 0.34; lr: 0.00279; 2714/2205 tok/s;    292 sec
+[2020-08-19 21:14:24,995 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:14:25,032 INFO] number of examples: 9920
+[2020-08-19 21:14:39,227 INFO] Step 2100/15600; acc:  84.19; ppl:  1.41; xent: 0.34; lr: 0.00273; 2708/2192 tok/s;    306 sec
+[2020-08-19 21:14:51,267 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_2184.pt
+[2020-08-19 21:14:53,836 INFO] Step 2200/15600; acc:  82.97; ppl:  1.43; xent: 0.36; lr: 0.00266; 2697/2182 tok/s;    321 sec
+[2020-08-19 21:15:08,288 INFO] Step 2300/15600; acc:  84.97; ppl:  1.38; xent: 0.32; lr: 0.00261; 2733/2219 tok/s;    335 sec
+[2020-08-19 21:15:22,750 INFO] Step 2400/15600; acc:  85.14; ppl:  1.36; xent: 0.31; lr: 0.00255; 2722/2205 tok/s;    350 sec
+[2020-08-19 21:15:36,583 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_2496.pt
+[2020-08-19 21:15:37,518 INFO] Step 2500/15600; acc:  84.87; ppl:  1.37; xent: 0.32; lr: 0.00250; 2657/2164 tok/s;    365 sec
+[2020-08-19 21:15:51,919 INFO] Step 2600/15600; acc:  85.76; ppl:  1.35; xent: 0.30; lr: 0.00245; 2697/2184 tok/s;    379 sec
+[2020-08-19 21:16:06,278 INFO] Step 2700/15600; acc:  85.50; ppl:  1.36; xent: 0.31; lr: 0.00241; 2760/2250 tok/s;    393 sec
+[2020-08-19 21:16:20,739 INFO] Step 2800/15600; acc:  85.13; ppl:  1.37; xent: 0.32; lr: 0.00236; 2715/2205 tok/s;    408 sec
+[2020-08-19 21:16:21,889 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_2808.pt
+[2020-08-19 21:16:35,382 INFO] Step 2900/15600; acc:  85.74; ppl:  1.35; xent: 0.30; lr: 0.00232; 2692/2188 tok/s;    423 sec
+[2020-08-19 21:16:49,753 INFO] Step 3000/15600; acc:  83.74; ppl:  1.41; xent: 0.35; lr: 0.00228; 2710/2202 tok/s;    437 sec
+[2020-08-19 21:16:50,184 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:16:50,223 INFO] number of examples: 9920
+[2020-08-19 21:17:04,378 INFO] Step 3100/15600; acc:  85.48; ppl:  1.35; xent: 0.30; lr: 0.00224; 2687/2175 tok/s;    451 sec
+[2020-08-19 21:17:07,250 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_3120.pt
+[2020-08-19 21:17:19,042 INFO] Step 3200/15600; acc:  85.79; ppl:  1.33; xent: 0.29; lr: 0.00221; 2689/2175 tok/s;    466 sec
+[2020-08-19 21:17:33,461 INFO] Step 3300/15600; acc:  84.98; ppl:  1.37; xent: 0.32; lr: 0.00218; 2738/2224 tok/s;    481 sec
+[2020-08-19 21:17:47,805 INFO] Step 3400/15600; acc:  85.80; ppl:  1.34; xent: 0.30; lr: 0.00214; 2745/2224 tok/s;    495 sec
+[2020-08-19 21:17:52,508 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_3432.pt
+[2020-08-19 21:18:02,614 INFO] Step 3500/15600; acc:  85.88; ppl:  1.33; xent: 0.29; lr: 0.00211; 2646/2155 tok/s;    510 sec
+[2020-08-19 21:18:16,996 INFO] Step 3600/15600; acc:  86.33; ppl:  1.32; xent: 0.28; lr: 0.00208; 2702/2188 tok/s;    524 sec
+[2020-08-19 21:18:31,394 INFO] Step 3700/15600; acc:  85.95; ppl:  1.34; xent: 0.29; lr: 0.00205; 2756/2247 tok/s;    539 sec
+[2020-08-19 21:18:37,724 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_3744.pt
+[2020-08-19 21:18:46,140 INFO] Step 3800/15600; acc:  86.06; ppl:  1.33; xent: 0.29; lr: 0.00203; 2661/2162 tok/s;    553 sec
+[2020-08-19 21:19:00,509 INFO] Step 3900/15600; acc:  86.09; ppl:  1.33; xent: 0.29; lr: 0.00200; 2736/2223 tok/s;    568 sec
+[2020-08-19 21:19:14,952 INFO] Step 4000/15600; acc:  85.51; ppl:  1.35; xent: 0.30; lr: 0.00198; 2703/2196 tok/s;    582 sec
+[2020-08-19 21:19:15,524 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:19:15,563 INFO] number of examples: 9920
+[2020-08-19 21:19:23,069 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_4056.pt
+[2020-08-19 21:19:29,704 INFO] Step 4100/15600; acc:  84.02; ppl:  1.41; xent: 0.34; lr: 0.00195; 2661/2155 tok/s;    597 sec
+[2020-08-19 21:19:44,156 INFO] Step 4200/15600; acc:  85.88; ppl:  1.33; xent: 0.28; lr: 0.00193; 2729/2206 tok/s;    611 sec
+[2020-08-19 21:19:58,507 INFO] Step 4300/15600; acc:  86.16; ppl:  1.33; xent: 0.29; lr: 0.00191; 2750/2234 tok/s;    626 sec
+[2020-08-19 21:20:08,252 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_4368.pt
+[2020-08-19 21:20:13,202 INFO] Step 4400/15600; acc:  86.24; ppl:  1.32; xent: 0.28; lr: 0.00188; 2682/2174 tok/s;    640 sec
+[2020-08-19 21:20:27,624 INFO] Step 4500/15600; acc:  85.81; ppl:  1.34; xent: 0.29; lr: 0.00186; 2716/2212 tok/s;    655 sec
+[2020-08-19 21:20:42,042 INFO] Step 4600/15600; acc:  86.30; ppl:  1.33; xent: 0.28; lr: 0.00184; 2700/2187 tok/s;    669 sec
+[2020-08-19 21:20:53,595 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_4680.pt
+[2020-08-19 21:20:56,769 INFO] Step 4700/15600; acc:  86.51; ppl:  1.32; xent: 0.28; lr: 0.00182; 2691/2194 tok/s;    684 sec
+[2020-08-19 21:21:11,108 INFO] Step 4800/15600; acc:  87.29; ppl:  1.29; xent: 0.26; lr: 0.00180; 2745/2230 tok/s;    698 sec
+[2020-08-19 21:21:25,527 INFO] Step 4900/15600; acc:  87.63; ppl:  1.29; xent: 0.25; lr: 0.00179; 2722/2211 tok/s;    713 sec
+[2020-08-19 21:21:38,820 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_4992.pt
+[2020-08-19 21:21:40,420 INFO] Step 5000/15600; acc:  86.94; ppl:  1.30; xent: 0.26; lr: 0.00177; 2622/2132 tok/s;    728 sec
+[2020-08-19 21:21:41,136 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:21:41,174 INFO] number of examples: 9920
+[2020-08-19 21:21:54,823 INFO] Step 5100/15600; acc:  86.97; ppl:  1.30; xent: 0.26; lr: 0.00175; 2724/2206 tok/s;    742 sec
+[2020-08-19 21:22:09,232 INFO] Step 5200/15600; acc:  85.81; ppl:  1.34; xent: 0.29; lr: 0.00173; 2737/2211 tok/s;    756 sec
+[2020-08-19 21:22:23,504 INFO] Step 5300/15600; acc:  86.76; ppl:  1.31; xent: 0.27; lr: 0.00172; 2768/2249 tok/s;    771 sec
+[2020-08-19 21:22:25,147 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_5304.pt
+[2020-08-19 21:22:39,137 INFO] Step 5400/15600; acc:  87.10; ppl:  1.29; xent: 0.26; lr: 0.00170; 2706/2192 tok/s;    786 sec
+[2020-08-19 21:22:53,344 INFO] Step 5500/15600; acc:  86.88; ppl:  1.30; xent: 0.26; lr: 0.00169; 2759/2249 tok/s;    800 sec
+[2020-08-19 21:23:07,537 INFO] Step 5600/15600; acc:  87.14; ppl:  1.30; xent: 0.26; lr: 0.00167; 2734/2212 tok/s;    815 sec
+[2020-08-19 21:23:09,808 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_5616.pt
+[2020-08-19 21:23:22,074 INFO] Step 5700/15600; acc:  86.39; ppl:  1.32; xent: 0.28; lr: 0.00166; 2723/2220 tok/s;    829 sec
+[2020-08-19 21:23:36,256 INFO] Step 5800/15600; acc:  86.99; ppl:  1.29; xent: 0.26; lr: 0.00164; 2780/2258 tok/s;    843 sec
+[2020-08-19 21:23:50,551 INFO] Step 5900/15600; acc:  87.30; ppl:  1.29; xent: 0.26; lr: 0.00163; 2745/2230 tok/s;    858 sec
+[2020-08-19 21:23:54,521 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_5928.pt
+[2020-08-19 21:24:05,071 INFO] Step 6000/15600; acc:  84.43; ppl:  1.38; xent: 0.32; lr: 0.00161; 2690/2188 tok/s;    872 sec
+[2020-08-19 21:24:05,920 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:24:05,986 INFO] number of examples: 9920
+[2020-08-19 21:24:19,440 INFO] Step 6100/15600; acc:  86.22; ppl:  1.33; xent: 0.28; lr: 0.00160; 2731/2212 tok/s;    887 sec
+[2020-08-19 21:24:33,618 INFO] Step 6200/15600; acc:  86.77; ppl:  1.30; xent: 0.26; lr: 0.00159; 2781/2248 tok/s;    901 sec
+[2020-08-19 21:24:39,293 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_6240.pt
+[2020-08-19 21:24:48,131 INFO] Step 6300/15600; acc:  86.76; ppl:  1.31; xent: 0.27; lr: 0.00157; 2720/2209 tok/s;    915 sec
+[2020-08-19 21:25:02,384 INFO] Step 6400/15600; acc:  86.99; ppl:  1.29; xent: 0.26; lr: 0.00156; 2763/2238 tok/s;    930 sec
+[2020-08-19 21:25:16,552 INFO] Step 6500/15600; acc:  87.04; ppl:  1.29; xent: 0.25; lr: 0.00155; 2765/2254 tok/s;    944 sec
+[2020-08-19 21:25:24,067 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_6552.pt
+[2020-08-19 21:25:31,187 INFO] Step 6600/15600; acc:  86.81; ppl:  1.30; xent: 0.26; lr: 0.00154; 2656/2149 tok/s;    958 sec
+[2020-08-19 21:25:45,356 INFO] Step 6700/15600; acc:  87.29; ppl:  1.29; xent: 0.25; lr: 0.00153; 2792/2277 tok/s;    972 sec
+[2020-08-19 21:25:59,552 INFO] Step 6800/15600; acc:  87.58; ppl:  1.28; xent: 0.25; lr: 0.00152; 2776/2253 tok/s;    987 sec
+[2020-08-19 21:26:09,063 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_6864.pt
+[2020-08-19 21:26:14,613 INFO] Step 6900/15600; acc:  87.20; ppl:  1.30; xent: 0.26; lr: 0.00150; 2687/2183 tok/s;   1002 sec
+[2020-08-19 21:26:28,773 INFO] Step 7000/15600; acc:  87.09; ppl:  1.29; xent: 0.25; lr: 0.00149; 2761/2247 tok/s;   1016 sec
+[2020-08-19 21:26:29,768 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:26:29,836 INFO] number of examples: 9920
+[2020-08-19 21:26:43,203 INFO] Step 7100/15600; acc:  87.95; ppl:  1.28; xent: 0.24; lr: 0.00148; 2715/2198 tok/s;   1030 sec
+[2020-08-19 21:26:53,969 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_7176.pt
+[2020-08-19 21:26:57,683 INFO] Step 7200/15600; acc:  87.09; ppl:  1.29; xent: 0.25; lr: 0.00147; 2725/2203 tok/s;   1045 sec
+[2020-08-19 21:27:11,899 INFO] Step 7300/15600; acc:  87.79; ppl:  1.27; xent: 0.24; lr: 0.00146; 2777/2256 tok/s;   1059 sec
+[2020-08-19 21:27:26,086 INFO] Step 7400/15600; acc:  86.95; ppl:  1.29; xent: 0.26; lr: 0.00145; 2776/2249 tok/s;   1073 sec
+[2020-08-19 21:27:38,649 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_7488.pt
+[2020-08-19 21:27:40,699 INFO] Step 7500/15600; acc:  86.91; ppl:  1.30; xent: 0.26; lr: 0.00144; 2680/2183 tok/s;   1088 sec
+[2020-08-19 21:27:55,022 INFO] Step 7600/15600; acc:  87.13; ppl:  1.29; xent: 0.26; lr: 0.00143; 2717/2199 tok/s;   1102 sec
+[2020-08-19 21:28:09,219 INFO] Step 7700/15600; acc:  87.28; ppl:  1.29; xent: 0.25; lr: 0.00142; 2783/2269 tok/s;   1116 sec
+[2020-08-19 21:28:23,443 INFO] Step 7800/15600; acc:  87.72; ppl:  1.27; xent: 0.24; lr: 0.00142; 2774/2253 tok/s;   1131 sec
+[2020-08-19 21:28:23,445 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_7800.pt
+[2020-08-19 21:28:37,938 INFO] Step 7900/15600; acc:  87.87; ppl:  1.27; xent: 0.24; lr: 0.00141; 2707/2199 tok/s;   1145 sec
+[2020-08-19 21:28:52,204 INFO] Step 8000/15600; acc:  87.09; ppl:  1.29; xent: 0.26; lr: 0.00140; 2741/2230 tok/s;   1159 sec
+[2020-08-19 21:28:53,342 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:28:53,411 INFO] number of examples: 9920
+[2020-08-19 21:29:06,531 INFO] Step 8100/15600; acc:  88.13; ppl:  1.26; xent: 0.23; lr: 0.00139; 2732/2213 tok/s;   1174 sec
+[2020-08-19 21:29:08,298 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_8112.pt
+[2020-08-19 21:29:21,141 INFO] Step 8200/15600; acc:  87.91; ppl:  1.26; xent: 0.23; lr: 0.00138; 2705/2187 tok/s;   1188 sec
+[2020-08-19 21:29:35,444 INFO] Step 8300/15600; acc:  87.11; ppl:  1.30; xent: 0.26; lr: 0.00137; 2761/2241 tok/s;   1203 sec
+[2020-08-19 21:29:49,641 INFO] Step 8400/15600; acc:  87.52; ppl:  1.28; xent: 0.24; lr: 0.00136; 2774/2248 tok/s;   1217 sec
+[2020-08-19 21:29:53,060 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_8424.pt
+[2020-08-19 21:30:04,112 INFO] Step 8500/15600; acc:  87.59; ppl:  1.28; xent: 0.25; lr: 0.00136; 2701/2201 tok/s;   1231 sec
+[2020-08-19 21:30:18,316 INFO] Step 8600/15600; acc:  87.47; ppl:  1.28; xent: 0.25; lr: 0.00135; 2741/2220 tok/s;   1245 sec
+[2020-08-19 21:30:32,601 INFO] Step 8700/15600; acc:  86.51; ppl:  1.32; xent: 0.28; lr: 0.00134; 2765/2253 tok/s;   1260 sec
+[2020-08-19 21:30:37,709 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_8736.pt
+[2020-08-19 21:30:47,137 INFO] Step 8800/15600; acc:  85.62; ppl:  1.35; xent: 0.30; lr: 0.00133; 2712/2203 tok/s;   1274 sec
+[2020-08-19 21:31:01,369 INFO] Step 8900/15600; acc:  86.10; ppl:  1.34; xent: 0.29; lr: 0.00132; 2759/2241 tok/s;   1288 sec
+[2020-08-19 21:31:15,677 INFO] Step 9000/15600; acc:  86.09; ppl:  1.32; xent: 0.28; lr: 0.00132; 2733/2222 tok/s;   1303 sec
+[2020-08-19 21:31:16,959 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:31:17,030 INFO] number of examples: 9920
+[2020-08-19 21:31:22,620 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_9048.pt
+[2020-08-19 21:31:30,293 INFO] Step 9100/15600; acc:  87.58; ppl:  1.28; xent: 0.25; lr: 0.00131; 2680/2172 tok/s;   1317 sec
+[2020-08-19 21:31:44,544 INFO] Step 9200/15600; acc:  87.74; ppl:  1.27; xent: 0.24; lr: 0.00130; 2769/2239 tok/s;   1332 sec
+[2020-08-19 21:31:58,780 INFO] Step 9300/15600; acc:  87.65; ppl:  1.27; xent: 0.24; lr: 0.00130; 2779/2256 tok/s;   1346 sec
+[2020-08-19 21:32:07,396 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_9360.pt
+[2020-08-19 21:32:13,337 INFO] Step 9400/15600; acc:  87.76; ppl:  1.28; xent: 0.24; lr: 0.00129; 2705/2193 tok/s;   1360 sec
+[2020-08-19 21:32:27,606 INFO] Step 9500/15600; acc:  88.15; ppl:  1.26; xent: 0.23; lr: 0.00128; 2735/2227 tok/s;   1375 sec
+[2020-08-19 21:32:41,796 INFO] Step 9600/15600; acc:  87.95; ppl:  1.27; xent: 0.24; lr: 0.00128; 2746/2223 tok/s;   1389 sec
+[2020-08-19 21:32:52,082 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_9672.pt
+[2020-08-19 21:32:56,384 INFO] Step 9700/15600; acc:  88.25; ppl:  1.26; xent: 0.23; lr: 0.00127; 2707/2205 tok/s;   1404 sec
+[2020-08-19 21:33:10,564 INFO] Step 9800/15600; acc:  88.39; ppl:  1.26; xent: 0.23; lr: 0.00126; 2781/2260 tok/s;   1418 sec
+[2020-08-19 21:33:24,923 INFO] Step 9900/15600; acc:  87.12; ppl:  1.31; xent: 0.27; lr: 0.00126; 2738/2224 tok/s;   1432 sec
+[2020-08-19 21:33:36,838 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_9984.pt
+[2020-08-19 21:33:39,424 INFO] Step 10000/15600; acc:  87.25; ppl:  1.29; xent: 0.25; lr: 0.00125; 2695/2191 tok/s;   1447 sec
+[2020-08-19 21:33:39,424 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.valid.0.pt
+[2020-08-19 21:33:39,454 INFO] number of examples: 620
+[2020-08-19 21:33:40,434 INFO] Validation perplexity: 1.30392
+[2020-08-19 21:33:40,434 INFO] Validation accuracy: 89.9546
+[2020-08-19 21:33:41,886 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:33:42,002 INFO] number of examples: 9920
+[2020-08-19 21:33:54,818 INFO] Step 10100/15600; acc:  87.79; ppl:  1.28; xent: 0.25; lr: 0.00124; 2540/2059 tok/s;   1462 sec
+[2020-08-19 21:34:09,035 INFO] Step 10200/15600; acc:  87.93; ppl:  1.27; xent: 0.24; lr: 0.00124; 2781/2249 tok/s;   1476 sec
+[2020-08-19 21:34:22,681 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_10296.pt
+[2020-08-19 21:34:23,531 INFO] Step 10300/15600; acc:  87.88; ppl:  1.27; xent: 0.24; lr: 0.00123; 2726/2215 tok/s;   1491 sec
+[2020-08-19 21:34:37,833 INFO] Step 10400/15600; acc:  87.70; ppl:  1.28; xent: 0.25; lr: 0.00123; 2758/2234 tok/s;   1505 sec
+[2020-08-19 21:34:52,044 INFO] Step 10500/15600; acc:  87.84; ppl:  1.27; xent: 0.24; lr: 0.00122; 2744/2234 tok/s;   1519 sec
+[2020-08-19 21:35:06,365 INFO] Step 10600/15600; acc:  88.02; ppl:  1.26; xent: 0.23; lr: 0.00121; 2718/2201 tok/s;   1533 sec
+[2020-08-19 21:35:07,511 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_10608.pt
+[2020-08-19 21:35:20,978 INFO] Step 10700/15600; acc:  87.25; ppl:  1.30; xent: 0.26; lr: 0.00121; 2703/2202 tok/s;   1548 sec
+[2020-08-19 21:35:35,336 INFO] Step 10800/15600; acc:  88.39; ppl:  1.26; xent: 0.23; lr: 0.00120; 2748/2233 tok/s;   1562 sec
+[2020-08-19 21:35:49,575 INFO] Step 10900/15600; acc:  88.29; ppl:  1.26; xent: 0.23; lr: 0.00120; 2761/2244 tok/s;   1577 sec
+[2020-08-19 21:35:52,412 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_10920.pt
+[2020-08-19 21:36:04,231 INFO] Step 11000/15600; acc:  87.98; ppl:  1.26; xent: 0.23; lr: 0.00119; 2668/2167 tok/s;   1591 sec
+[2020-08-19 21:36:05,792 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:36:05,865 INFO] number of examples: 9920
+[2020-08-19 21:36:18,620 INFO] Step 11100/15600; acc:  88.44; ppl:  1.26; xent: 0.23; lr: 0.00119; 2718/2203 tok/s;   1606 sec
+[2020-08-19 21:36:32,781 INFO] Step 11200/15600; acc:  88.32; ppl:  1.26; xent: 0.23; lr: 0.00118; 2788/2254 tok/s;   1620 sec
+[2020-08-19 21:36:37,379 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_11232.pt
+[2020-08-19 21:36:47,305 INFO] Step 11300/15600; acc:  88.35; ppl:  1.26; xent: 0.23; lr: 0.00118; 2724/2215 tok/s;   1634 sec
+[2020-08-19 21:37:01,475 INFO] Step 11400/15600; acc:  88.19; ppl:  1.26; xent: 0.23; lr: 0.00117; 2783/2254 tok/s;   1649 sec
+[2020-08-19 21:37:15,718 INFO] Step 11500/15600; acc:  87.29; ppl:  1.29; xent: 0.26; lr: 0.00117; 2738/2230 tok/s;   1663 sec
+[2020-08-19 21:37:21,965 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_11544.pt
+[2020-08-19 21:37:30,404 INFO] Step 11600/15600; acc:  87.94; ppl:  1.28; xent: 0.24; lr: 0.00116; 2651/2146 tok/s;   1678 sec
+[2020-08-19 21:37:44,593 INFO] Step 11700/15600; acc:  88.41; ppl:  1.26; xent: 0.23; lr: 0.00116; 2784/2268 tok/s;   1692 sec
+[2020-08-19 21:37:58,951 INFO] Step 11800/15600; acc:  88.28; ppl:  1.26; xent: 0.23; lr: 0.00115; 2747/2232 tok/s;   1706 sec
+[2020-08-19 21:38:06,902 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_11856.pt
+[2020-08-19 21:38:13,472 INFO] Step 11900/15600; acc:  88.45; ppl:  1.27; xent: 0.24; lr: 0.00115; 2709/2201 tok/s;   1721 sec
+[2020-08-19 21:38:27,695 INFO] Step 12000/15600; acc:  87.99; ppl:  1.27; xent: 0.24; lr: 0.00114; 2750/2234 tok/s;   1735 sec
+[2020-08-19 21:38:29,400 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:38:29,479 INFO] number of examples: 9920
+[2020-08-19 21:38:42,064 INFO] Step 12100/15600; acc:  88.66; ppl:  1.25; xent: 0.22; lr: 0.00114; 2718/2204 tok/s;   1749 sec
+[2020-08-19 21:38:51,707 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_12168.pt
+[2020-08-19 21:38:56,521 INFO] Step 12200/15600; acc:  88.37; ppl:  1.26; xent: 0.23; lr: 0.00113; 2734/2209 tok/s;   1764 sec
+[2020-08-19 21:39:10,775 INFO] Step 12300/15600; acc:  88.61; ppl:  1.25; xent: 0.23; lr: 0.00113; 2774/2255 tok/s;   1778 sec
+[2020-08-19 21:39:24,960 INFO] Step 12400/15600; acc:  88.03; ppl:  1.27; xent: 0.24; lr: 0.00112; 2779/2251 tok/s;   1792 sec
+[2020-08-19 21:39:36,420 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_12480.pt
+[2020-08-19 21:39:39,572 INFO] Step 12500/15600; acc:  88.46; ppl:  1.25; xent: 0.22; lr: 0.00112; 2673/2176 tok/s;   1807 sec
+[2020-08-19 21:39:53,766 INFO] Step 12600/15600; acc:  88.28; ppl:  1.26; xent: 0.23; lr: 0.00111; 2740/2220 tok/s;   1821 sec
+[2020-08-19 21:40:07,990 INFO] Step 12700/15600; acc:  88.22; ppl:  1.27; xent: 0.24; lr: 0.00111; 2777/2263 tok/s;   1835 sec
+[2020-08-19 21:40:21,051 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_12792.pt
+[2020-08-19 21:40:22,589 INFO] Step 12800/15600; acc:  88.47; ppl:  1.26; xent: 0.23; lr: 0.00110; 2705/2196 tok/s;   1850 sec
+[2020-08-19 21:40:36,792 INFO] Step 12900/15600; acc:  88.44; ppl:  1.26; xent: 0.23; lr: 0.00110; 2768/2249 tok/s;   1864 sec
+[2020-08-19 21:40:51,058 INFO] Step 13000/15600; acc:  88.27; ppl:  1.26; xent: 0.23; lr: 0.00110; 2738/2225 tok/s;   1878 sec
+[2020-08-19 21:40:52,905 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:40:52,982 INFO] number of examples: 9920
+[2020-08-19 21:41:05,394 INFO] Step 13100/15600; acc:  88.74; ppl:  1.25; xent: 0.22; lr: 0.00109; 2724/2209 tok/s;   1893 sec
+[2020-08-19 21:41:05,960 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_13104.pt
+[2020-08-19 21:41:20,026 INFO] Step 13200/15600; acc:  88.66; ppl:  1.25; xent: 0.22; lr: 0.00109; 2708/2189 tok/s;   1907 sec
+[2020-08-19 21:41:34,230 INFO] Step 13300/15600; acc:  88.39; ppl:  1.26; xent: 0.23; lr: 0.00108; 2778/2257 tok/s;   1921 sec
+[2020-08-19 21:41:48,481 INFO] Step 13400/15600; acc:  88.51; ppl:  1.25; xent: 0.23; lr: 0.00108; 2770/2244 tok/s;   1936 sec
+[2020-08-19 21:41:50,760 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_13416.pt
+[2020-08-19 21:42:03,100 INFO] Step 13500/15600; acc:  88.68; ppl:  1.24; xent: 0.22; lr: 0.00108; 2673/2176 tok/s;   1950 sec
+[2020-08-19 21:42:17,315 INFO] Step 13600/15600; acc:  87.71; ppl:  1.29; xent: 0.25; lr: 0.00107; 2733/2214 tok/s;   1964 sec
+[2020-08-19 21:42:31,618 INFO] Step 13700/15600; acc:  87.56; ppl:  1.29; xent: 0.25; lr: 0.00107; 2771/2258 tok/s;   1979 sec
+[2020-08-19 21:42:35,596 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_13728.pt
+[2020-08-19 21:42:46,110 INFO] Step 13800/15600; acc:  87.58; ppl:  1.29; xent: 0.25; lr: 0.00106; 2726/2211 tok/s;   1993 sec
+[2020-08-19 21:43:00,350 INFO] Step 13900/15600; acc:  88.25; ppl:  1.27; xent: 0.24; lr: 0.00106; 2760/2244 tok/s;   2007 sec
+[2020-08-19 21:43:14,542 INFO] Step 14000/15600; acc:  87.84; ppl:  1.27; xent: 0.24; lr: 0.00106; 2749/2232 tok/s;   2022 sec
+[2020-08-19 21:43:16,534 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:43:16,612 INFO] number of examples: 9920
+[2020-08-19 21:43:20,472 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_14040.pt
+[2020-08-19 21:43:29,273 INFO] Step 14100/15600; acc:  88.21; ppl:  1.26; xent: 0.23; lr: 0.00105; 2652/2151 tok/s;   2036 sec
+[2020-08-19 21:43:43,518 INFO] Step 14200/15600; acc:  88.47; ppl:  1.25; xent: 0.22; lr: 0.00105; 2781/2250 tok/s;   2051 sec
+[2020-08-19 21:43:57,707 INFO] Step 14300/15600; acc:  88.64; ppl:  1.25; xent: 0.22; lr: 0.00105; 2778/2256 tok/s;   2065 sec
+[2020-08-19 21:44:05,097 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_14352.pt
+[2020-08-19 21:44:12,284 INFO] Step 14400/15600; acc:  88.31; ppl:  1.25; xent: 0.23; lr: 0.00104; 2711/2197 tok/s;   2079 sec
+[2020-08-19 21:44:26,495 INFO] Step 14500/15600; acc:  88.68; ppl:  1.24; xent: 0.22; lr: 0.00104; 2752/2240 tok/s;   2094 sec
+[2020-08-19 21:44:40,770 INFO] Step 14600/15600; acc:  88.79; ppl:  1.24; xent: 0.22; lr: 0.00103; 2720/2204 tok/s;   2108 sec
+[2020-08-19 21:44:49,853 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_14664.pt
+[2020-08-19 21:44:55,258 INFO] Step 14700/15600; acc:  89.02; ppl:  1.24; xent: 0.22; lr: 0.00103; 2731/2225 tok/s;   2122 sec
+[2020-08-19 21:45:09,511 INFO] Step 14800/15600; acc:  88.88; ppl:  1.24; xent: 0.22; lr: 0.00103; 2769/2246 tok/s;   2137 sec
+[2020-08-19 21:45:23,829 INFO] Step 14900/15600; acc:  87.32; ppl:  1.30; xent: 0.26; lr: 0.00102; 2743/2231 tok/s;   2151 sec
+[2020-08-19 21:45:34,613 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_14976.pt
+[2020-08-19 21:45:38,327 INFO] Step 15000/15600; acc:  87.45; ppl:  1.28; xent: 0.25; lr: 0.00102; 2691/2185 tok/s;   2165 sec
+[2020-08-19 21:45:40,541 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:45:40,622 INFO] number of examples: 9920
+[2020-08-19 21:45:52,783 INFO] Step 15100/15600; acc:  88.76; ppl:  1.25; xent: 0.23; lr: 0.00102; 2720/2207 tok/s;   2180 sec
+[2020-08-19 21:46:06,951 INFO] Step 15200/15600; acc:  88.16; ppl:  1.26; xent: 0.23; lr: 0.00101; 2789/2257 tok/s;   2194 sec
+[2020-08-19 21:46:19,540 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_15288.pt
+[2020-08-19 21:46:21,548 INFO] Step 15300/15600; acc:  88.48; ppl:  1.26; xent: 0.23; lr: 0.00101; 2703/2196 tok/s;   2209 sec
+[2020-08-19 21:46:35,738 INFO] Step 15400/15600; acc:  88.46; ppl:  1.25; xent: 0.23; lr: 0.00101; 2790/2259 tok/s;   2223 sec
+[2020-08-19 21:46:49,962 INFO] Step 15500/15600; acc:  88.46; ppl:  1.25; xent: 0.23; lr: 0.00100; 2746/2235 tok/s;   2237 sec
+[2020-08-19 21:47:04,189 INFO] Step 15600/15600; acc:  88.76; ppl:  1.25; xent: 0.22; lr: 0.00100; 2729/2212 tok/s;   2251 sec
+[2020-08-19 21:47:04,190 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv4/toy_model_step_15600.pt
+[2020-08-19 21:47:05,535 INFO]  * src vocab size = 20
+[2020-08-19 21:47:05,535 INFO]  * tgt vocab size = 20
+[2020-08-19 21:47:05,535 INFO] Building model...
+[2020-08-19 21:47:07,437 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(20, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(20, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=256, out_features=20, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2020-08-19 21:47:07,439 INFO] encoder: 5265920
+[2020-08-19 21:47:07,439 INFO] decoder: 6320660
+[2020-08-19 21:47:07,439 INFO] * number of parameters: 11586580
+[2020-08-19 21:47:07,445 INFO] Starting training on GPU: [0]
+[2020-08-19 21:47:07,445 INFO] Start training loop and validate every 10000 steps...
+[2020-08-19 21:47:07,445 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:47:07,510 INFO] number of examples: 9920
+[2020-08-19 21:47:22,133 INFO] Step 100/15600; acc:  51.84; ppl:  3.65; xent: 1.30; lr: 0.00014; 2681/2171 tok/s;     15 sec
+[2020-08-19 21:47:36,526 INFO] Step 200/15600; acc:  73.42; ppl:  1.83; xent: 0.61; lr: 0.00028; 2734/2214 tok/s;     29 sec
+[2020-08-19 21:47:50,855 INFO] Step 300/15600; acc:  78.36; ppl:  1.63; xent: 0.49; lr: 0.00042; 2762/2243 tok/s;     43 sec
+[2020-08-19 21:47:52,682 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_312.pt
+[2020-08-19 21:48:05,574 INFO] Step 400/15600; acc:  82.00; ppl:  1.50; xent: 0.40; lr: 0.00056; 2669/2162 tok/s;     58 sec
+[2020-08-19 21:48:19,902 INFO] Step 500/15600; acc:  83.38; ppl:  1.45; xent: 0.37; lr: 0.00070; 2740/2230 tok/s;     72 sec
+[2020-08-19 21:48:34,161 INFO] Step 600/15600; acc:  84.24; ppl:  1.42; xent: 0.35; lr: 0.00084; 2724/2208 tok/s;     87 sec
+[2020-08-19 21:48:37,572 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_624.pt
+[2020-08-19 21:48:48,836 INFO] Step 700/15600; acc:  85.60; ppl:  1.38; xent: 0.32; lr: 0.00098; 2703/2204 tok/s;    101 sec
+[2020-08-19 21:49:03,026 INFO] Step 800/15600; acc:  85.33; ppl:  1.38; xent: 0.32; lr: 0.00112; 2762/2242 tok/s;    116 sec
+[2020-08-19 21:49:17,287 INFO] Step 900/15600; acc:  86.06; ppl:  1.36; xent: 0.31; lr: 0.00126; 2765/2247 tok/s;    130 sec
+[2020-08-19 21:49:22,399 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_936.pt
+[2020-08-19 21:49:31,734 INFO] Step 1000/15600; acc:  86.28; ppl:  1.34; xent: 0.30; lr: 0.00140; 2694/2188 tok/s;    144 sec
+[2020-08-19 21:49:31,886 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:49:31,965 INFO] number of examples: 9920
+[2020-08-19 21:49:46,024 INFO] Step 1100/15600; acc:  86.24; ppl:  1.35; xent: 0.30; lr: 0.00154; 2753/2228 tok/s;    159 sec
+[2020-08-19 21:50:00,212 INFO] Step 1200/15600; acc:  86.65; ppl:  1.33; xent: 0.29; lr: 0.00168; 2777/2248 tok/s;    173 sec
+[2020-08-19 21:50:07,017 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_1248.pt
+[2020-08-19 21:50:14,744 INFO] Step 1300/15600; acc:  86.54; ppl:  1.34; xent: 0.29; lr: 0.00182; 2719/2208 tok/s;    187 sec
+[2020-08-19 21:50:29,003 INFO] Step 1400/15600; acc:  86.63; ppl:  1.33; xent: 0.29; lr: 0.00196; 2757/2235 tok/s;    202 sec
+[2020-08-19 21:50:43,190 INFO] Step 1500/15600; acc:  85.43; ppl:  1.38; xent: 0.32; lr: 0.00210; 2766/2252 tok/s;    216 sec
+[2020-08-19 21:50:51,761 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_1560.pt
+[2020-08-19 21:50:57,745 INFO] Step 1600/15600; acc:  85.34; ppl:  1.38; xent: 0.32; lr: 0.00224; 2670/2164 tok/s;    230 sec
+[2020-08-19 21:51:11,941 INFO] Step 1700/15600; acc:  84.81; ppl:  1.39; xent: 0.33; lr: 0.00238; 2792/2276 tok/s;    244 sec
+[2020-08-19 21:51:26,119 INFO] Step 1800/15600; acc:  84.31; ppl:  1.40; xent: 0.34; lr: 0.00252; 2765/2244 tok/s;    259 sec
+[2020-08-19 21:51:36,324 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_1872.pt
+[2020-08-19 21:51:40,634 INFO] Step 1900/15600; acc:  83.96; ppl:  1.42; xent: 0.35; lr: 0.00266; 2717/2209 tok/s;    273 sec
+[2020-08-19 21:51:54,813 INFO] Step 2000/15600; acc:  84.19; ppl:  1.40; xent: 0.34; lr: 0.00279; 2745/2230 tok/s;    287 sec
+[2020-08-19 21:51:55,097 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:51:55,133 INFO] number of examples: 9920
+[2020-08-19 21:52:09,220 INFO] Step 2100/15600; acc:  84.19; ppl:  1.41; xent: 0.34; lr: 0.00273; 2729/2209 tok/s;    302 sec
+[2020-08-19 21:52:21,118 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_2184.pt
+[2020-08-19 21:52:24,646 INFO] Step 2200/15600; acc:  82.97; ppl:  1.43; xent: 0.36; lr: 0.00266; 2554/2067 tok/s;    317 sec
+[2020-08-19 21:52:38,885 INFO] Step 2300/15600; acc:  84.97; ppl:  1.38; xent: 0.32; lr: 0.00261; 2774/2252 tok/s;    331 sec
+[2020-08-19 21:52:53,127 INFO] Step 2400/15600; acc:  85.14; ppl:  1.36; xent: 0.31; lr: 0.00255; 2764/2240 tok/s;    346 sec
+[2020-08-19 21:53:06,736 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_2496.pt
+[2020-08-19 21:53:07,639 INFO] Step 2500/15600; acc:  84.87; ppl:  1.37; xent: 0.32; lr: 0.00250; 2703/2202 tok/s;    360 sec
+[2020-08-19 21:53:21,921 INFO] Step 2600/15600; acc:  85.76; ppl:  1.35; xent: 0.30; lr: 0.00245; 2719/2203 tok/s;    374 sec
+[2020-08-19 21:53:36,087 INFO] Step 2700/15600; acc:  85.50; ppl:  1.36; xent: 0.31; lr: 0.00241; 2797/2281 tok/s;    389 sec
+[2020-08-19 21:53:50,399 INFO] Step 2800/15600; acc:  85.13; ppl:  1.37; xent: 0.32; lr: 0.00236; 2743/2228 tok/s;    403 sec
+[2020-08-19 21:53:51,529 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_2808.pt
+[2020-08-19 21:54:04,885 INFO] Step 2900/15600; acc:  85.74; ppl:  1.35; xent: 0.30; lr: 0.00232; 2721/2211 tok/s;    417 sec
+[2020-08-19 21:54:19,055 INFO] Step 3000/15600; acc:  83.74; ppl:  1.41; xent: 0.35; lr: 0.00228; 2748/2233 tok/s;    432 sec
+[2020-08-19 21:54:19,478 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:54:19,516 INFO] number of examples: 9920
+[2020-08-19 21:54:33,433 INFO] Step 3100/15600; acc:  85.48; ppl:  1.35; xent: 0.30; lr: 0.00224; 2733/2212 tok/s;    446 sec
+[2020-08-19 21:54:36,271 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_3120.pt
+[2020-08-19 21:54:47,895 INFO] Step 3200/15600; acc:  85.79; ppl:  1.33; xent: 0.29; lr: 0.00221; 2726/2206 tok/s;    460 sec
+[2020-08-19 21:55:02,110 INFO] Step 3300/15600; acc:  84.98; ppl:  1.37; xent: 0.32; lr: 0.00218; 2777/2255 tok/s;    475 sec
+[2020-08-19 21:55:16,271 INFO] Step 3400/15600; acc:  85.80; ppl:  1.34; xent: 0.30; lr: 0.00214; 2781/2253 tok/s;    489 sec
+[2020-08-19 21:55:20,817 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_3432.pt
+[2020-08-19 21:55:30,818 INFO] Step 3500/15600; acc:  85.88; ppl:  1.33; xent: 0.29; lr: 0.00211; 2693/2194 tok/s;    503 sec
+[2020-08-19 21:55:44,970 INFO] Step 3600/15600; acc:  86.33; ppl:  1.32; xent: 0.28; lr: 0.00208; 2746/2223 tok/s;    518 sec
+[2020-08-19 21:55:59,183 INFO] Step 3700/15600; acc:  85.95; ppl:  1.34; xent: 0.29; lr: 0.00205; 2792/2276 tok/s;    532 sec
+[2020-08-19 21:56:05,423 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_3744.pt
+[2020-08-19 21:56:13,833 INFO] Step 3800/15600; acc:  86.06; ppl:  1.33; xent: 0.29; lr: 0.00203; 2679/2176 tok/s;    546 sec
+[2020-08-19 21:56:27,971 INFO] Step 3900/15600; acc:  86.09; ppl:  1.33; xent: 0.29; lr: 0.00200; 2781/2259 tok/s;    561 sec
+[2020-08-19 21:56:42,289 INFO] Step 4000/15600; acc:  85.51; ppl:  1.35; xent: 0.30; lr: 0.00198; 2726/2216 tok/s;    575 sec
+[2020-08-19 21:56:42,860 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:56:42,899 INFO] number of examples: 9920
+[2020-08-19 21:56:50,317 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_4056.pt
+[2020-08-19 21:56:56,836 INFO] Step 4100/15600; acc:  84.02; ppl:  1.41; xent: 0.34; lr: 0.00195; 2699/2185 tok/s;    589 sec
+[2020-08-19 21:57:11,033 INFO] Step 4200/15600; acc:  85.88; ppl:  1.33; xent: 0.28; lr: 0.00193; 2778/2246 tok/s;    604 sec
+[2020-08-19 21:57:25,195 INFO] Step 4300/15600; acc:  86.16; ppl:  1.33; xent: 0.29; lr: 0.00191; 2787/2264 tok/s;    618 sec
+[2020-08-19 21:57:34,869 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_4368.pt
+[2020-08-19 21:57:39,748 INFO] Step 4400/15600; acc:  86.24; ppl:  1.32; xent: 0.28; lr: 0.00188; 2709/2195 tok/s;    632 sec
+[2020-08-19 21:57:54,016 INFO] Step 4500/15600; acc:  85.81; ppl:  1.34; xent: 0.29; lr: 0.00186; 2745/2236 tok/s;    647 sec
+[2020-08-19 21:58:08,207 INFO] Step 4600/15600; acc:  86.30; ppl:  1.33; xent: 0.28; lr: 0.00184; 2736/2216 tok/s;    661 sec
+[2020-08-19 21:58:19,549 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_4680.pt
+[2020-08-19 21:58:22,669 INFO] Step 4700/15600; acc:  86.51; ppl:  1.32; xent: 0.28; lr: 0.00182; 2740/2234 tok/s;    675 sec
+[2020-08-19 21:58:36,840 INFO] Step 4800/15600; acc:  87.29; ppl:  1.29; xent: 0.26; lr: 0.00180; 2778/2257 tok/s;    689 sec
+[2020-08-19 21:58:51,068 INFO] Step 4900/15600; acc:  87.63; ppl:  1.29; xent: 0.25; lr: 0.00179; 2759/2241 tok/s;    704 sec
+[2020-08-19 21:59:04,104 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_4992.pt
+[2020-08-19 21:59:05,612 INFO] Step 5000/15600; acc:  86.94; ppl:  1.30; xent: 0.26; lr: 0.00177; 2687/2185 tok/s;    718 sec
+[2020-08-19 21:59:06,321 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 21:59:06,358 INFO] number of examples: 9920
+[2020-08-19 21:59:19,898 INFO] Step 5100/15600; acc:  86.97; ppl:  1.30; xent: 0.26; lr: 0.00175; 2746/2224 tok/s;    732 sec
+[2020-08-19 21:59:34,145 INFO] Step 5200/15600; acc:  85.81; ppl:  1.34; xent: 0.29; lr: 0.00173; 2767/2236 tok/s;    747 sec
+[2020-08-19 21:59:48,303 INFO] Step 5300/15600; acc:  86.76; ppl:  1.31; xent: 0.27; lr: 0.00172; 2790/2268 tok/s;    761 sec
+[2020-08-19 21:59:48,873 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_5304.pt
+[2020-08-19 22:00:02,868 INFO] Step 5400/15600; acc:  87.10; ppl:  1.29; xent: 0.26; lr: 0.00170; 2704/2191 tok/s;    775 sec
+[2020-08-19 22:00:16,973 INFO] Step 5500/15600; acc:  86.88; ppl:  1.30; xent: 0.26; lr: 0.00169; 2794/2277 tok/s;    790 sec
+[2020-08-19 22:00:31,076 INFO] Step 5600/15600; acc:  87.14; ppl:  1.30; xent: 0.26; lr: 0.00167; 2752/2227 tok/s;    804 sec
+[2020-08-19 22:00:33,327 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_5616.pt
+[2020-08-19 22:00:45,484 INFO] Step 5700/15600; acc:  86.39; ppl:  1.32; xent: 0.28; lr: 0.00166; 2748/2239 tok/s;    818 sec
+[2020-08-19 22:00:59,598 INFO] Step 5800/15600; acc:  86.99; ppl:  1.29; xent: 0.26; lr: 0.00164; 2793/2269 tok/s;    832 sec
+[2020-08-19 22:01:13,659 INFO] Step 5900/15600; acc:  87.30; ppl:  1.29; xent: 0.26; lr: 0.00163; 2791/2267 tok/s;    846 sec
+[2020-08-19 22:01:17,591 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_5928.pt
+[2020-08-19 22:01:28,013 INFO] Step 6000/15600; acc:  84.43; ppl:  1.38; xent: 0.32; lr: 0.00161; 2721/2214 tok/s;    861 sec
+[2020-08-19 22:01:28,850 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 22:01:28,920 INFO] number of examples: 9920
+[2020-08-19 22:01:42,176 INFO] Step 6100/15600; acc:  86.22; ppl:  1.33; xent: 0.28; lr: 0.00160; 2770/2244 tok/s;    875 sec
+[2020-08-19 22:01:56,177 INFO] Step 6200/15600; acc:  86.77; ppl:  1.30; xent: 0.26; lr: 0.00159; 2816/2276 tok/s;    889 sec
+[2020-08-19 22:02:01,803 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_6240.pt
+[2020-08-19 22:02:10,525 INFO] Step 6300/15600; acc:  86.76; ppl:  1.31; xent: 0.27; lr: 0.00157; 2752/2235 tok/s;    903 sec
+[2020-08-19 22:02:24,523 INFO] Step 6400/15600; acc:  86.99; ppl:  1.29; xent: 0.26; lr: 0.00156; 2813/2279 tok/s;    917 sec
+[2020-08-19 22:02:38,562 INFO] Step 6500/15600; acc:  87.04; ppl:  1.29; xent: 0.25; lr: 0.00155; 2791/2275 tok/s;    931 sec
+[2020-08-19 22:02:45,877 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_6552.pt
+[2020-08-19 22:02:53,857 INFO] Step 6600/15600; acc:  86.81; ppl:  1.30; xent: 0.26; lr: 0.00154; 2541/2056 tok/s;    946 sec
+[2020-08-19 22:03:07,873 INFO] Step 6700/15600; acc:  87.29; ppl:  1.29; xent: 0.25; lr: 0.00153; 2822/2302 tok/s;    960 sec
+[2020-08-19 22:03:21,993 INFO] Step 6800/15600; acc:  87.58; ppl:  1.28; xent: 0.25; lr: 0.00152; 2791/2265 tok/s;    975 sec
+[2020-08-19 22:03:30,971 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_6864.pt
+[2020-08-19 22:03:36,326 INFO] Step 6900/15600; acc:  87.20; ppl:  1.30; xent: 0.26; lr: 0.00150; 2739/2226 tok/s;    989 sec
+[2020-08-19 22:03:50,382 INFO] Step 7000/15600; acc:  87.09; ppl:  1.29; xent: 0.25; lr: 0.00149; 2781/2263 tok/s;   1003 sec
+[2020-08-19 22:03:51,361 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 22:03:51,430 INFO] number of examples: 9920
+[2020-08-19 22:04:04,519 INFO] Step 7100/15600; acc:  87.95; ppl:  1.28; xent: 0.24; lr: 0.00148; 2772/2244 tok/s;   1017 sec
+[2020-08-19 22:04:15,198 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_7176.pt
+[2020-08-19 22:04:18,846 INFO] Step 7200/15600; acc:  87.09; ppl:  1.29; xent: 0.25; lr: 0.00147; 2754/2227 tok/s;   1031 sec
+[2020-08-19 22:04:32,952 INFO] Step 7300/15600; acc:  87.79; ppl:  1.27; xent: 0.24; lr: 0.00146; 2799/2273 tok/s;   1046 sec
+[2020-08-19 22:04:46,971 INFO] Step 7400/15600; acc:  86.95; ppl:  1.29; xent: 0.26; lr: 0.00145; 2809/2276 tok/s;   1060 sec
+[2020-08-19 22:04:59,382 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_7488.pt
+[2020-08-19 22:05:01,397 INFO] Step 7500/15600; acc:  86.91; ppl:  1.30; xent: 0.26; lr: 0.00144; 2715/2211 tok/s;   1074 sec
+[2020-08-19 22:05:15,437 INFO] Step 7600/15600; acc:  87.13; ppl:  1.29; xent: 0.26; lr: 0.00143; 2771/2243 tok/s;   1088 sec
+[2020-08-19 22:05:29,477 INFO] Step 7700/15600; acc:  87.28; ppl:  1.29; xent: 0.25; lr: 0.00142; 2814/2294 tok/s;   1102 sec
+[2020-08-19 22:05:43,512 INFO] Step 7800/15600; acc:  87.72; ppl:  1.27; xent: 0.24; lr: 0.00142; 2811/2283 tok/s;   1116 sec
+[2020-08-19 22:05:43,514 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_7800.pt
+[2020-08-19 22:05:57,911 INFO] Step 7900/15600; acc:  87.87; ppl:  1.27; xent: 0.24; lr: 0.00141; 2725/2214 tok/s;   1130 sec
+[2020-08-19 22:06:11,969 INFO] Step 8000/15600; acc:  87.09; ppl:  1.29; xent: 0.26; lr: 0.00140; 2782/2263 tok/s;   1145 sec
+[2020-08-19 22:06:13,132 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 22:06:13,202 INFO] number of examples: 9920
+[2020-08-19 22:06:26,159 INFO] Step 8100/15600; acc:  88.13; ppl:  1.26; xent: 0.23; lr: 0.00139; 2759/2235 tok/s;   1159 sec
+[2020-08-19 22:06:27,842 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_8112.pt
+[2020-08-19 22:06:40,613 INFO] Step 8200/15600; acc:  87.91; ppl:  1.26; xent: 0.23; lr: 0.00138; 2734/2210 tok/s;   1173 sec
+[2020-08-19 22:06:54,639 INFO] Step 8300/15600; acc:  87.11; ppl:  1.30; xent: 0.26; lr: 0.00137; 2816/2286 tok/s;   1187 sec
+[2020-08-19 22:07:08,698 INFO] Step 8400/15600; acc:  87.52; ppl:  1.28; xent: 0.24; lr: 0.00136; 2801/2270 tok/s;   1201 sec
+[2020-08-19 22:07:12,074 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_8424.pt
+[2020-08-19 22:07:23,036 INFO] Step 8500/15600; acc:  87.59; ppl:  1.28; xent: 0.25; lr: 0.00136; 2726/2221 tok/s;   1216 sec
+[2020-08-19 22:07:37,127 INFO] Step 8600/15600; acc:  87.47; ppl:  1.28; xent: 0.25; lr: 0.00135; 2763/2237 tok/s;   1230 sec
+[2020-08-19 22:07:51,169 INFO] Step 8700/15600; acc:  86.51; ppl:  1.32; xent: 0.28; lr: 0.00134; 2813/2292 tok/s;   1244 sec
+[2020-08-19 22:07:56,239 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_8736.pt
+[2020-08-19 22:08:05,549 INFO] Step 8800/15600; acc:  85.62; ppl:  1.35; xent: 0.30; lr: 0.00133; 2742/2227 tok/s;   1258 sec
+[2020-08-19 22:08:19,590 INFO] Step 8900/15600; acc:  86.10; ppl:  1.34; xent: 0.29; lr: 0.00132; 2797/2271 tok/s;   1272 sec
+[2020-08-19 22:08:33,623 INFO] Step 9000/15600; acc:  86.09; ppl:  1.32; xent: 0.28; lr: 0.00132; 2787/2266 tok/s;   1286 sec
+[2020-08-19 22:08:34,887 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 22:08:34,957 INFO] number of examples: 9920
+[2020-08-19 22:08:40,483 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_9048.pt
+[2020-08-19 22:08:48,172 INFO] Step 9100/15600; acc:  87.58; ppl:  1.28; xent: 0.25; lr: 0.00131; 2693/2182 tok/s;   1301 sec
+[2020-08-19 22:09:02,164 INFO] Step 9200/15600; acc:  87.74; ppl:  1.27; xent: 0.24; lr: 0.00130; 2820/2280 tok/s;   1315 sec
+[2020-08-19 22:09:16,227 INFO] Step 9300/15600; acc:  87.65; ppl:  1.27; xent: 0.24; lr: 0.00130; 2813/2284 tok/s;   1329 sec
+[2020-08-19 22:09:24,642 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_9360.pt
+[2020-08-19 22:09:30,556 INFO] Step 9400/15600; acc:  87.76; ppl:  1.28; xent: 0.24; lr: 0.00129; 2748/2228 tok/s;   1343 sec
+[2020-08-19 22:09:44,686 INFO] Step 9500/15600; acc:  88.15; ppl:  1.26; xent: 0.23; lr: 0.00128; 2761/2249 tok/s;   1357 sec
+[2020-08-19 22:09:58,744 INFO] Step 9600/15600; acc:  87.95; ppl:  1.27; xent: 0.24; lr: 0.00128; 2772/2244 tok/s;   1371 sec
+[2020-08-19 22:10:08,842 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_9672.pt
+[2020-08-19 22:10:13,099 INFO] Step 9700/15600; acc:  88.25; ppl:  1.26; xent: 0.23; lr: 0.00127; 2751/2241 tok/s;   1386 sec
+[2020-08-19 22:10:27,199 INFO] Step 9800/15600; acc:  88.39; ppl:  1.26; xent: 0.23; lr: 0.00126; 2797/2272 tok/s;   1400 sec
+[2020-08-19 22:10:41,218 INFO] Step 9900/15600; acc:  87.12; ppl:  1.31; xent: 0.27; lr: 0.00126; 2804/2278 tok/s;   1414 sec
+[2020-08-19 22:10:53,020 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_9984.pt
+[2020-08-19 22:10:55,544 INFO] Step 10000/15600; acc:  87.25; ppl:  1.29; xent: 0.25; lr: 0.00125; 2728/2218 tok/s;   1428 sec
+[2020-08-19 22:10:55,544 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.valid.0.pt
+[2020-08-19 22:10:55,548 INFO] number of examples: 620
+[2020-08-19 22:10:56,521 INFO] Validation perplexity: 1.30392
+[2020-08-19 22:10:56,522 INFO] Validation accuracy: 89.9546
+[2020-08-19 22:10:57,926 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_small/.train.0.pt
+[2020-08-19 22:10:57,998 INFO] number of examples: 9920
+[2020-08-19 22:11:10,663 INFO] Step 10100/15600; acc:  87.79; ppl:  1.28; xent: 0.25; lr: 0.00124; 2587/2096 tok/s;   1443 sec
+[2020-08-19 22:11:24,674 INFO] Step 10200/15600; acc:  87.93; ppl:  1.27; xent: 0.24; lr: 0.00124; 2822/2282 tok/s;   1457 sec
+[2020-08-19 22:11:38,191 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_small_conv5/toy_model_step_10296.pt
+[2020-08-19 22:11:39,066 INFO] Step 10300/15600; acc:  87.88; ppl:  1.27; xent: 0.24; lr: 0.00123; 2746/2231 tok/s;   1472 sec
+slurmstepd: error: *** JOB 27626685 ON gpu-e-2 CANCELLED AT 2020-08-19T22:11:50 DUE TO TIME LIMIT ***
+slurmstepd: error: task_p_post_term: rmdir(/sys/fs/cgroup/cpuset/slurm27626685/slurm27626685.4294967294_0) failed Device or resource busy

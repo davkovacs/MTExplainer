@@ -10,7 +10,7 @@
 
 #! sbatch directives begin here ###############################
 #! Name of the job:
-#SBATCH -J c_sm
+#SBATCH -J t_sB
 #! Which project should be charged (NB Wilkes2 projects end in '-GPU'):
 #SBATCH -A LEE-DPK25-SL2-GPU
 #! How many whole nodes should be allocated?
@@ -22,7 +22,7 @@
 #! Note that the job submission script will enforce no more than 3 cpus per GPU.
 #SBATCH --gres=gpu:1
 #! How much wallclock time will be required?
-#SBATCH --time=3:00:00
+#SBATCH --time=1:00:00
 #! What types of email messages do you wish to receive?
 #SBATCH --mail-type=ALL
 #! Uncomment this to prevent the job from being requeued (e.g. if
@@ -59,7 +59,7 @@ module load miniconda3-4.5.4-gcc-5.4.0-hivczbz
 source activate mol_transformer2 
 
 #! Full path to application executable: 
-application="./train.sh"
+application="./test_biased.sh"
 
 #! Run options for the application:
 options=""

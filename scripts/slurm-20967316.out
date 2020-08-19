@@ -1,0 +1,1594 @@
+Changed directory to /home/dpk25/MolecularTransformer2/scripts.
+
+JobID: 20967316
+======
+Time: Sat 21 Mar 23:10:49 GMT 2020
+Running on master node: gpu-e-64
+Current directory: /home/dpk25/MolecularTransformer2/scripts
+
+Nodes allocated:
+================
+gpu-e-64
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+./train_15k.sh 
+
+[2020-03-21 23:11:18,142 INFO]  * src vocab size = 137
+[2020-03-21 23:11:18,142 INFO]  * tgt vocab size = 137
+[2020-03-21 23:11:18,142 INFO] Building model...
+[2020-03-21 23:11:26,525 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(137, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(137, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=256, out_features=137, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2020-03-21 23:11:26,527 INFO] encoder: 5295872
+[2020-03-21 23:11:26,527 INFO] decoder: 6350729
+[2020-03-21 23:11:26,527 INFO] * number of parameters: 11646601
+[2020-03-21 23:11:26,581 INFO] Starting training on GPU: [0]
+[2020-03-21 23:11:26,581 INFO] Start training loop and validate every 10000 steps...
+[2020-03-21 23:11:26,581 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:11:26,677 INFO] number of examples: 9236
+[2020-03-21 23:11:55,879 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:11:55,933 INFO] number of examples: 9236
+[2020-03-21 23:12:24,338 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:12:24,416 INFO] number of examples: 9236
+[2020-03-21 23:12:52,809 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:12:52,893 INFO] number of examples: 9236
+[2020-03-21 23:13:21,336 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:13:21,428 INFO] number of examples: 9236
+[2020-03-21 23:13:49,848 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:13:49,944 INFO] number of examples: 9236
+[2020-03-21 23:14:14,074 INFO] Step 1000/100000; acc:  50.76; ppl:  4.89; xent: 1.59; lr: 0.00017; 22662/13926 tok/s;    167 sec
+[2020-03-21 23:14:18,393 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:14:18,441 INFO] number of examples: 9236
+[2020-03-21 23:14:46,844 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:14:46,928 INFO] number of examples: 9236
+[2020-03-21 23:15:15,390 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:15:15,478 INFO] number of examples: 9236
+[2020-03-21 23:15:43,868 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:15:43,960 INFO] number of examples: 9236
+[2020-03-21 23:16:12,634 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:16:12,683 INFO] number of examples: 9236
+[2020-03-21 23:16:41,107 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:16:41,155 INFO] number of examples: 9236
+[2020-03-21 23:17:00,942 INFO] Step 2000/100000; acc:  67.64; ppl:  2.44; xent: 0.89; lr: 0.00035; 22748/13988 tok/s;    334 sec
+[2020-03-21 23:17:09,588 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:17:09,674 INFO] number of examples: 9236
+[2020-03-21 23:17:38,057 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:17:38,147 INFO] number of examples: 9236
+[2020-03-21 23:18:06,567 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:18:06,663 INFO] number of examples: 9236
+[2020-03-21 23:18:35,052 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:18:35,101 INFO] number of examples: 9236
+[2020-03-21 23:19:03,493 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:19:03,575 INFO] number of examples: 9236
+[2020-03-21 23:19:31,955 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:19:32,043 INFO] number of examples: 9236
+[2020-03-21 23:19:47,573 INFO] Step 3000/100000; acc:  74.30; ppl:  2.01; xent: 0.70; lr: 0.00052; 22775/13986 tok/s;    501 sec
+[2020-03-21 23:20:00,748 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:20:00,840 INFO] number of examples: 9236
+[2020-03-21 23:20:29,237 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:20:29,332 INFO] number of examples: 9236
+[2020-03-21 23:20:57,677 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:20:57,725 INFO] number of examples: 9236
+[2020-03-21 23:21:25,938 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:21:26,019 INFO] number of examples: 9236
+[2020-03-21 23:21:54,040 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:21:54,125 INFO] number of examples: 9236
+[2020-03-21 23:22:21,910 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:22:21,998 INFO] number of examples: 9236
+[2020-03-21 23:22:32,999 INFO] Step 4000/100000; acc:  78.99; ppl:  1.77; xent: 0.57; lr: 0.00070; 22981/14119 tok/s;    666 sec
+[2020-03-21 23:22:33,002 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_4000.pt
+[2020-03-21 23:22:50,247 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:22:50,408 INFO] number of examples: 9236
+[2020-03-21 23:23:18,197 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:23:18,246 INFO] number of examples: 9236
+[2020-03-21 23:23:46,310 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:23:46,397 INFO] number of examples: 9236
+[2020-03-21 23:24:14,262 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:24:14,346 INFO] number of examples: 9236
+[2020-03-21 23:24:42,252 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:24:42,342 INFO] number of examples: 9236
+[2020-03-21 23:25:10,151 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:25:10,247 INFO] number of examples: 9236
+[2020-03-21 23:25:16,991 INFO] Step 5000/100000; acc:  83.21; ppl:  1.58; xent: 0.46; lr: 0.00087; 23150/14243 tok/s;    830 sec
+[2020-03-21 23:25:38,165 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:25:38,214 INFO] number of examples: 9236
+[2020-03-21 23:26:06,035 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:26:06,117 INFO] number of examples: 9236
+[2020-03-21 23:26:34,019 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:26:34,105 INFO] number of examples: 9236
+[2020-03-21 23:27:01,892 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:27:01,982 INFO] number of examples: 9236
+[2020-03-21 23:27:29,923 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:27:30,020 INFO] number of examples: 9236
+[2020-03-21 23:27:57,816 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:27:57,863 INFO] number of examples: 9236
+[2020-03-21 23:28:00,362 INFO] Step 6000/100000; acc:  87.03; ppl:  1.42; xent: 0.35; lr: 0.00105; 23231/14250 tok/s;    994 sec
+[2020-03-21 23:28:25,822 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:28:25,905 INFO] number of examples: 9236
+[2020-03-21 23:28:53,670 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:28:53,757 INFO] number of examples: 9236
+[2020-03-21 23:29:21,699 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:29:21,791 INFO] number of examples: 9236
+[2020-03-21 23:29:49,580 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:29:49,628 INFO] number of examples: 9236
+[2020-03-21 23:30:17,622 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:30:17,671 INFO] number of examples: 9236
+[2020-03-21 23:30:43,689 INFO] Step 7000/100000; acc:  89.85; ppl:  1.32; xent: 0.28; lr: 0.00122; 23238/14281 tok/s;   1157 sec
+[2020-03-21 23:30:45,480 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:30:45,562 INFO] number of examples: 9236
+[2020-03-21 23:31:13,490 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:31:13,589 INFO] number of examples: 9236
+[2020-03-21 23:31:41,575 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:31:41,722 INFO] number of examples: 9236
+[2020-03-21 23:32:09,675 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:32:09,723 INFO] number of examples: 9236
+[2020-03-21 23:32:37,552 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:32:37,631 INFO] number of examples: 9236
+[2020-03-21 23:33:05,519 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:33:05,605 INFO] number of examples: 9236
+[2020-03-21 23:33:27,415 INFO] Step 8000/100000; acc:  91.80; ppl:  1.25; xent: 0.23; lr: 0.00140; 23185/14251 tok/s;   1321 sec
+[2020-03-21 23:33:27,418 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_8000.pt
+[2020-03-21 23:33:33,723 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:33:33,812 INFO] number of examples: 9236
+[2020-03-21 23:34:01,718 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:34:01,841 INFO] number of examples: 9236
+[2020-03-21 23:34:29,648 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:34:29,697 INFO] number of examples: 9236
+[2020-03-21 23:34:57,613 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:34:57,692 INFO] number of examples: 9236
+[2020-03-21 23:35:25,462 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:35:25,551 INFO] number of examples: 9236
+[2020-03-21 23:35:53,476 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:35:53,568 INFO] number of examples: 9236
+[2020-03-21 23:36:11,131 INFO] Step 9000/100000; acc:  93.68; ppl:  1.19; xent: 0.18; lr: 0.00132; 23183/14247 tok/s;   1485 sec
+[2020-03-21 23:36:21,336 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:36:21,431 INFO] number of examples: 9236
+[2020-03-21 23:36:49,357 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:36:49,405 INFO] number of examples: 9236
+[2020-03-21 23:37:17,247 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:37:17,329 INFO] number of examples: 9236
+[2020-03-21 23:37:45,225 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:37:45,311 INFO] number of examples: 9236
+[2020-03-21 23:38:12,984 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:38:13,074 INFO] number of examples: 9236
+[2020-03-21 23:38:40,710 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:38:40,837 INFO] number of examples: 9236
+[2020-03-21 23:38:54,123 INFO] Step 10000/100000; acc:  95.32; ppl:  1.14; xent: 0.13; lr: 0.00125; 23284/14291 tok/s;   1648 sec
+[2020-03-21 23:38:54,125 INFO] Loading dataset from ../data/data/USPTO_15k/data/.valid.0.pt
+[2020-03-21 23:38:54,138 INFO] number of examples: 1327
+[2020-03-21 23:38:55,624 INFO] Validation perplexity: 1.32753
+[2020-03-21 23:38:55,624 INFO] Validation accuracy: 92.6356
+[2020-03-21 23:39:09,970 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:39:10,019 INFO] number of examples: 9236
+[2020-03-21 23:39:37,955 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:39:38,007 INFO] number of examples: 9236
+[2020-03-21 23:40:05,696 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:40:05,786 INFO] number of examples: 9236
+[2020-03-21 23:40:33,528 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:40:33,623 INFO] number of examples: 9236
+[2020-03-21 23:41:01,304 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:41:01,401 INFO] number of examples: 9236
+[2020-03-21 23:41:29,134 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:41:29,184 INFO] number of examples: 9236
+[2020-03-21 23:41:38,292 INFO] Step 11000/100000; acc:  96.36; ppl:  1.11; xent: 0.10; lr: 0.00119; 23121/14217 tok/s;   1812 sec
+[2020-03-21 23:41:56,886 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:41:56,969 INFO] number of examples: 9236
+[2020-03-21 23:42:24,673 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:42:24,762 INFO] number of examples: 9236
+[2020-03-21 23:42:52,431 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:42:52,550 INFO] number of examples: 9236
+[2020-03-21 23:43:20,295 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:43:20,395 INFO] number of examples: 9236
+[2020-03-21 23:43:48,086 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:43:48,135 INFO] number of examples: 9236
+[2020-03-21 23:44:15,837 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:44:15,923 INFO] number of examples: 9236
+[2020-03-21 23:44:20,826 INFO] Step 12000/100000; acc:  97.14; ppl:  1.08; xent: 0.08; lr: 0.00114; 23355/14359 tok/s;   1974 sec
+[2020-03-21 23:44:20,828 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_12000.pt
+[2020-03-21 23:44:43,941 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:44:44,029 INFO] number of examples: 9236
+[2020-03-21 23:45:11,703 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:45:11,798 INFO] number of examples: 9236
+[2020-03-21 23:45:39,521 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:45:39,619 INFO] number of examples: 9236
+[2020-03-21 23:46:07,295 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:46:07,343 INFO] number of examples: 9236
+[2020-03-21 23:46:35,020 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:46:35,109 INFO] number of examples: 9236
+[2020-03-21 23:47:02,857 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:47:02,962 INFO] number of examples: 9236
+[2020-03-21 23:47:03,703 INFO] Step 13000/100000; acc:  97.67; ppl:  1.07; xent: 0.07; lr: 0.00110; 23301/14301 tok/s;   2137 sec
+[2020-03-21 23:47:30,754 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:47:30,857 INFO] number of examples: 9236
+[2020-03-21 23:47:58,572 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:47:58,623 INFO] number of examples: 9236
+[2020-03-21 23:48:26,362 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:48:26,410 INFO] number of examples: 9236
+[2020-03-21 23:48:54,119 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:48:54,206 INFO] number of examples: 9236
+[2020-03-21 23:49:21,852 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:49:21,942 INFO] number of examples: 9236
+[2020-03-21 23:49:46,063 INFO] Step 14000/100000; acc:  98.06; ppl:  1.06; xent: 0.06; lr: 0.00106; 23378/14366 tok/s;   2299 sec
+[2020-03-21 23:49:49,654 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:49:49,751 INFO] number of examples: 9236
+[2020-03-21 23:50:17,393 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:50:17,441 INFO] number of examples: 9236
+[2020-03-21 23:50:45,185 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:50:45,235 INFO] number of examples: 9236
+[2020-03-21 23:51:12,969 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:51:13,057 INFO] number of examples: 9236
+[2020-03-21 23:51:40,735 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:51:40,937 INFO] number of examples: 9236
+[2020-03-21 23:52:08,631 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:52:08,729 INFO] number of examples: 9236
+[2020-03-21 23:52:28,640 INFO] Step 15000/100000; acc:  98.35; ppl:  1.05; xent: 0.05; lr: 0.00102; 23347/14355 tok/s;   2462 sec
+[2020-03-21 23:52:36,402 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:52:36,451 INFO] number of examples: 9236
+[2020-03-21 23:53:04,145 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:53:04,229 INFO] number of examples: 9236
+[2020-03-21 23:53:31,912 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:53:32,000 INFO] number of examples: 9236
+[2020-03-21 23:53:59,654 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:53:59,749 INFO] number of examples: 9236
+[2020-03-21 23:54:27,482 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:54:27,582 INFO] number of examples: 9236
+[2020-03-21 23:54:55,423 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:54:55,472 INFO] number of examples: 9236
+[2020-03-21 23:55:11,246 INFO] Step 16000/100000; acc:  98.57; ppl:  1.04; xent: 0.04; lr: 0.00099; 23340/14339 tok/s;   2625 sec
+[2020-03-21 23:55:11,248 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_16000.pt
+[2020-03-21 23:55:23,503 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:55:23,589 INFO] number of examples: 9236
+[2020-03-21 23:55:51,303 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:55:51,393 INFO] number of examples: 9236
+[2020-03-21 23:56:19,095 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:56:19,190 INFO] number of examples: 9236
+[2020-03-21 23:56:46,893 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:56:46,993 INFO] number of examples: 9236
+[2020-03-21 23:57:14,652 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:57:14,702 INFO] number of examples: 9236
+[2020-03-21 23:57:42,414 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:57:42,500 INFO] number of examples: 9236
+[2020-03-21 23:57:54,060 INFO] Step 17000/100000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00096; 23310/14314 tok/s;   2787 sec
+[2020-03-21 23:58:10,208 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:58:10,298 INFO] number of examples: 9236
+[2020-03-21 23:58:37,973 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:58:38,069 INFO] number of examples: 9236
+[2020-03-21 23:59:05,756 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:59:05,805 INFO] number of examples: 9236
+[2020-03-21 23:59:33,535 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-21 23:59:33,584 INFO] number of examples: 9236
+[2020-03-22 00:00:01,250 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:00:01,339 INFO] number of examples: 9236
+[2020-03-22 00:00:29,059 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:00:29,150 INFO] number of examples: 9236
+[2020-03-22 00:00:36,494 INFO] Step 18000/100000; acc:  98.89; ppl:  1.03; xent: 0.03; lr: 0.00093; 23367/14368 tok/s;   2950 sec
+[2020-03-22 00:00:56,858 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:00:56,956 INFO] number of examples: 9236
+[2020-03-22 00:01:24,678 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:01:24,726 INFO] number of examples: 9236
+[2020-03-22 00:01:52,512 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:01:52,561 INFO] number of examples: 9236
+[2020-03-22 00:02:20,275 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:02:20,366 INFO] number of examples: 9236
+[2020-03-22 00:02:48,305 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:02:48,399 INFO] number of examples: 9236
+[2020-03-22 00:03:16,162 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:03:16,260 INFO] number of examples: 9236
+[2020-03-22 00:03:19,388 INFO] Step 19000/100000; acc:  98.98; ppl:  1.03; xent: 0.03; lr: 0.00091; 23304/14310 tok/s;   3113 sec
+[2020-03-22 00:03:43,985 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:03:44,034 INFO] number of examples: 9236
+[2020-03-22 00:04:11,809 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:04:11,893 INFO] number of examples: 9236
+[2020-03-22 00:04:39,584 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:04:39,673 INFO] number of examples: 9236
+[2020-03-22 00:05:07,367 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:05:07,461 INFO] number of examples: 9236
+[2020-03-22 00:05:35,179 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:05:35,281 INFO] number of examples: 9236
+[2020-03-22 00:06:01,832 INFO] Step 20000/100000; acc:  99.10; ppl:  1.03; xent: 0.03; lr: 0.00088; 23363/14353 tok/s;   3275 sec
+[2020-03-22 00:06:01,833 INFO] Loading dataset from ../data/data/USPTO_15k/data/.valid.0.pt
+[2020-03-22 00:06:01,841 INFO] number of examples: 1327
+[2020-03-22 00:06:03,322 INFO] Validation perplexity: 1.3236
+[2020-03-22 00:06:03,322 INFO] Validation accuracy: 94.7119
+[2020-03-22 00:06:03,324 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_20000.pt
+[2020-03-22 00:06:04,935 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:06:05,045 INFO] number of examples: 9236
+[2020-03-22 00:06:32,809 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:06:32,859 INFO] number of examples: 9236
+[2020-03-22 00:07:00,525 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:07:00,615 INFO] number of examples: 9236
+[2020-03-22 00:07:28,327 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:07:28,419 INFO] number of examples: 9236
+[2020-03-22 00:07:56,084 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:07:56,182 INFO] number of examples: 9236
+[2020-03-22 00:08:23,885 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:08:23,934 INFO] number of examples: 9236
+[2020-03-22 00:08:46,261 INFO] Step 21000/100000; acc:  99.16; ppl:  1.02; xent: 0.02; lr: 0.00086; 23086/14193 tok/s;   3440 sec
+[2020-03-22 00:08:51,611 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:08:51,695 INFO] number of examples: 9236
+[2020-03-22 00:09:19,400 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:09:19,490 INFO] number of examples: 9236
+[2020-03-22 00:09:47,157 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:09:47,250 INFO] number of examples: 9236
+[2020-03-22 00:10:14,937 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:10:15,037 INFO] number of examples: 9236
+[2020-03-22 00:10:42,915 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:10:42,963 INFO] number of examples: 9236
+[2020-03-22 00:11:10,663 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:11:10,748 INFO] number of examples: 9236
+[2020-03-22 00:11:28,898 INFO] Step 22000/100000; acc:  99.24; ppl:  1.02; xent: 0.02; lr: 0.00084; 23337/14341 tok/s;   3602 sec
+[2020-03-22 00:11:38,434 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:11:38,523 INFO] number of examples: 9236
+[2020-03-22 00:12:06,258 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:12:06,362 INFO] number of examples: 9236
+[2020-03-22 00:12:34,038 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:12:34,141 INFO] number of examples: 9236
+[2020-03-22 00:13:01,824 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:13:01,873 INFO] number of examples: 9236
+[2020-03-22 00:13:29,548 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:13:29,634 INFO] number of examples: 9236
+[2020-03-22 00:13:57,332 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:13:57,421 INFO] number of examples: 9236
+[2020-03-22 00:14:11,358 INFO] Step 23000/100000; acc:  99.31; ppl:  1.02; xent: 0.02; lr: 0.00082; 23361/14343 tok/s;   3765 sec
+[2020-03-22 00:14:25,055 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:14:25,150 INFO] number of examples: 9236
+[2020-03-22 00:14:52,839 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:14:53,326 INFO] number of examples: 9236
+[2020-03-22 00:15:21,019 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:15:21,067 INFO] number of examples: 9236
+[2020-03-22 00:15:48,743 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:15:48,836 INFO] number of examples: 9236
+[2020-03-22 00:16:16,467 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:16:16,563 INFO] number of examples: 9236
+[2020-03-22 00:16:44,166 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:16:44,264 INFO] number of examples: 9236
+[2020-03-22 00:16:54,020 INFO] Step 24000/100000; acc:  99.35; ppl:  1.02; xent: 0.02; lr: 0.00081; 23334/14338 tok/s;   3927 sec
+[2020-03-22 00:16:54,022 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_24000.pt
+[2020-03-22 00:17:12,221 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:17:12,269 INFO] number of examples: 9236
+[2020-03-22 00:17:39,910 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:17:39,960 INFO] number of examples: 9236
+[2020-03-22 00:18:07,729 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:18:07,816 INFO] number of examples: 9236
+[2020-03-22 00:18:35,493 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:18:35,585 INFO] number of examples: 9236
+[2020-03-22 00:19:03,209 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:19:03,350 INFO] number of examples: 9236
+[2020-03-22 00:19:30,975 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:19:31,025 INFO] number of examples: 9236
+[2020-03-22 00:19:36,568 INFO] Step 25000/100000; acc:  99.39; ppl:  1.02; xent: 0.02; lr: 0.00079; 23354/14366 tok/s;   4090 sec
+[2020-03-22 00:19:58,628 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:19:58,712 INFO] number of examples: 9236
+[2020-03-22 00:20:26,319 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:20:26,416 INFO] number of examples: 9236
+[2020-03-22 00:20:54,114 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:20:54,207 INFO] number of examples: 9236
+[2020-03-22 00:21:21,888 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:21:21,990 INFO] number of examples: 9236
+[2020-03-22 00:21:49,680 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:21:49,729 INFO] number of examples: 9236
+[2020-03-22 00:22:17,385 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:22:17,469 INFO] number of examples: 9236
+[2020-03-22 00:22:18,822 INFO] Step 26000/100000; acc:  99.44; ppl:  1.02; xent: 0.02; lr: 0.00078; 23390/14352 tok/s;   4252 sec
+[2020-03-22 00:22:45,191 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:22:45,281 INFO] number of examples: 9236
+[2020-03-22 00:23:12,933 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:23:13,029 INFO] number of examples: 9236
+[2020-03-22 00:23:40,729 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:23:40,827 INFO] number of examples: 9236
+[2020-03-22 00:24:08,467 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:24:08,540 INFO] number of examples: 9236
+[2020-03-22 00:24:36,215 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:24:36,303 INFO] number of examples: 9236
+[2020-03-22 00:25:01,061 INFO] Step 27000/100000; acc:  99.48; ppl:  1.02; xent: 0.02; lr: 0.00076; 23395/14381 tok/s;   4414 sec
+[2020-03-22 00:25:03,981 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:25:04,071 INFO] number of examples: 9236
+[2020-03-22 00:25:31,753 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:25:31,852 INFO] number of examples: 9236
+[2020-03-22 00:25:59,720 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:25:59,822 INFO] number of examples: 9236
+[2020-03-22 00:26:27,563 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:26:27,610 INFO] number of examples: 9236
+[2020-03-22 00:26:55,330 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:26:55,417 INFO] number of examples: 9236
+[2020-03-22 00:27:23,082 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:27:23,174 INFO] number of examples: 9236
+[2020-03-22 00:27:43,742 INFO] Step 28000/100000; acc:  99.50; ppl:  1.01; xent: 0.01; lr: 0.00075; 23332/14343 tok/s;   4577 sec
+[2020-03-22 00:27:43,744 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_28000.pt
+[2020-03-22 00:27:51,160 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:27:51,255 INFO] number of examples: 9236
+[2020-03-22 00:28:18,928 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:28:19,029 INFO] number of examples: 9236
+[2020-03-22 00:28:46,683 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:28:46,732 INFO] number of examples: 9236
+[2020-03-22 00:29:14,438 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:29:14,524 INFO] number of examples: 9236
+[2020-03-22 00:29:42,182 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:29:42,274 INFO] number of examples: 9236
+[2020-03-22 00:30:09,922 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:30:10,025 INFO] number of examples: 9236
+[2020-03-22 00:30:26,422 INFO] Step 29000/100000; acc:  99.52; ppl:  1.01; xent: 0.01; lr: 0.00073; 23331/14343 tok/s;   4740 sec
+[2020-03-22 00:30:37,712 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:30:37,760 INFO] number of examples: 9236
+[2020-03-22 00:31:05,463 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:31:05,512 INFO] number of examples: 9236
+[2020-03-22 00:31:33,205 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:31:33,293 INFO] number of examples: 9236
+[2020-03-22 00:32:00,954 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:32:01,047 INFO] number of examples: 9236
+[2020-03-22 00:32:28,738 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:32:28,838 INFO] number of examples: 9236
+[2020-03-22 00:32:56,482 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:32:56,789 INFO] number of examples: 9236
+[2020-03-22 00:33:08,972 INFO] Step 30000/100000; acc:  99.56; ppl:  1.01; xent: 0.01; lr: 0.00072; 23348/14323 tok/s;   4902 sec
+[2020-03-22 00:33:08,973 INFO] Loading dataset from ../data/data/USPTO_15k/data/.valid.0.pt
+[2020-03-22 00:33:09,021 INFO] number of examples: 1327
+[2020-03-22 00:33:10,506 INFO] Validation perplexity: 1.34186
+[2020-03-22 00:33:10,506 INFO] Validation accuracy: 95.1463
+[2020-03-22 00:33:26,020 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:33:26,070 INFO] number of examples: 9236
+[2020-03-22 00:33:53,930 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:33:54,016 INFO] number of examples: 9236
+[2020-03-22 00:34:21,693 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:34:21,788 INFO] number of examples: 9236
+[2020-03-22 00:34:49,459 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:34:49,555 INFO] number of examples: 9236
+[2020-03-22 00:35:17,226 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:35:17,274 INFO] number of examples: 9236
+[2020-03-22 00:35:45,007 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:35:45,370 INFO] number of examples: 9236
+[2020-03-22 00:35:53,328 INFO] Step 31000/100000; acc:  99.57; ppl:  1.01; xent: 0.01; lr: 0.00071; 23093/14199 tok/s;   5067 sec
+[2020-03-22 00:36:13,016 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:36:13,103 INFO] number of examples: 9236
+[2020-03-22 00:36:40,791 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:36:40,885 INFO] number of examples: 9236
+[2020-03-22 00:37:08,551 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:37:08,655 INFO] number of examples: 9236
+[2020-03-22 00:37:36,309 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:37:36,357 INFO] number of examples: 9236
+[2020-03-22 00:38:04,061 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:38:04,145 INFO] number of examples: 9236
+[2020-03-22 00:38:31,820 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:38:31,909 INFO] number of examples: 9236
+[2020-03-22 00:38:35,681 INFO] Step 32000/100000; acc:  99.60; ppl:  1.01; xent: 0.01; lr: 0.00070; 23381/14366 tok/s;   5229 sec
+[2020-03-22 00:38:35,683 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_32000.pt
+[2020-03-22 00:38:59,927 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:39:00,021 INFO] number of examples: 9236
+[2020-03-22 00:39:27,684 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:39:27,782 INFO] number of examples: 9236
+[2020-03-22 00:39:55,490 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:39:55,540 INFO] number of examples: 9236
+[2020-03-22 00:40:23,226 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:40:23,310 INFO] number of examples: 9236
+[2020-03-22 00:40:51,009 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:40:51,108 INFO] number of examples: 9236
+[2020-03-22 00:41:18,315 INFO] Step 33000/100000; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00069; 23336/14333 tok/s;   5392 sec
+[2020-03-22 00:41:18,798 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:41:18,891 INFO] number of examples: 9236
+[2020-03-22 00:41:46,805 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:41:46,906 INFO] number of examples: 9236
+[2020-03-22 00:42:14,595 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:42:14,643 INFO] number of examples: 9236
+[2020-03-22 00:42:42,325 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:42:42,411 INFO] number of examples: 9236
+[2020-03-22 00:43:10,121 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:43:10,209 INFO] number of examples: 9236
+[2020-03-22 00:43:37,912 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:43:38,008 INFO] number of examples: 9236
+[2020-03-22 00:44:00,992 INFO] Step 34000/100000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00068; 23335/14342 tok/s;   5554 sec
+[2020-03-22 00:44:05,719 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:44:05,819 INFO] number of examples: 9236
+[2020-03-22 00:44:33,475 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:44:33,535 INFO] number of examples: 9236
+[2020-03-22 00:45:01,206 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:45:01,295 INFO] number of examples: 9236
+[2020-03-22 00:45:28,997 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:45:29,088 INFO] number of examples: 9236
+[2020-03-22 00:45:56,742 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:45:56,841 INFO] number of examples: 9236
+[2020-03-22 00:46:24,528 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:46:24,576 INFO] number of examples: 9236
+[2020-03-22 00:46:43,446 INFO] Step 35000/100000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00067; 23365/14363 tok/s;   5717 sec
+[2020-03-22 00:46:52,311 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:46:52,376 INFO] number of examples: 9236
+[2020-03-22 00:47:20,047 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:47:20,134 INFO] number of examples: 9236
+[2020-03-22 00:47:47,805 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:47:47,897 INFO] number of examples: 9236
+[2020-03-22 00:48:15,568 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:48:15,667 INFO] number of examples: 9236
+[2020-03-22 00:48:43,353 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:48:43,403 INFO] number of examples: 9236
+[2020-03-22 00:49:11,217 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:49:11,267 INFO] number of examples: 9236
+[2020-03-22 00:49:25,952 INFO] Step 36000/100000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00066; 23353/14342 tok/s;   5879 sec
+[2020-03-22 00:49:25,954 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_36000.pt
+[2020-03-22 00:49:39,364 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:49:39,452 INFO] number of examples: 9236
+[2020-03-22 00:50:07,142 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:50:07,235 INFO] number of examples: 9236
+[2020-03-22 00:50:34,935 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:50:35,036 INFO] number of examples: 9236
+[2020-03-22 00:51:02,783 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:51:02,831 INFO] number of examples: 9236
+[2020-03-22 00:51:30,525 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:51:30,610 INFO] number of examples: 9236
+[2020-03-22 00:51:58,331 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:51:58,421 INFO] number of examples: 9236
+[2020-03-22 00:52:08,828 INFO] Step 37000/100000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00065; 23302/14320 tok/s;   6042 sec
+[2020-03-22 00:52:26,091 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:52:26,187 INFO] number of examples: 9236
+[2020-03-22 00:52:53,908 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:52:54,006 INFO] number of examples: 9236
+[2020-03-22 00:53:21,693 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:53:21,757 INFO] number of examples: 9236
+[2020-03-22 00:53:49,483 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:53:49,569 INFO] number of examples: 9236
+[2020-03-22 00:54:17,236 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:54:17,324 INFO] number of examples: 9236
+[2020-03-22 00:54:44,977 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:54:45,074 INFO] number of examples: 9236
+[2020-03-22 00:54:51,269 INFO] Step 38000/100000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00064; 23370/14375 tok/s;   6205 sec
+[2020-03-22 00:55:12,756 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:55:12,868 INFO] number of examples: 9236
+[2020-03-22 00:55:40,543 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:55:40,591 INFO] number of examples: 9236
+[2020-03-22 00:56:08,221 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:56:09,119 INFO] number of examples: 9236
+[2020-03-22 00:56:36,807 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:56:36,899 INFO] number of examples: 9236
+[2020-03-22 00:57:04,711 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:57:04,809 INFO] number of examples: 9236
+[2020-03-22 00:57:32,551 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:57:32,600 INFO] number of examples: 9236
+[2020-03-22 00:57:34,652 INFO] Step 39000/100000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00063; 23230/14249 tok/s;   6368 sec
+[2020-03-22 00:58:00,316 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:58:00,365 INFO] number of examples: 9236
+[2020-03-22 00:58:28,072 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:58:28,159 INFO] number of examples: 9236
+[2020-03-22 00:58:55,825 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:58:55,916 INFO] number of examples: 9236
+[2020-03-22 00:59:23,570 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:59:23,672 INFO] number of examples: 9236
+[2020-03-22 00:59:51,359 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 00:59:51,407 INFO] number of examples: 9236
+[2020-03-22 01:00:16,883 INFO] Step 40000/100000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00062; 23394/14374 tok/s;   6530 sec
+[2020-03-22 01:00:16,884 INFO] Loading dataset from ../data/data/USPTO_15k/data/.valid.0.pt
+[2020-03-22 01:00:16,893 INFO] number of examples: 1327
+[2020-03-22 01:00:18,373 INFO] Validation perplexity: 1.36739
+[2020-03-22 01:00:18,373 INFO] Validation accuracy: 95.3529
+[2020-03-22 01:00:18,375 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_40000.pt
+[2020-03-22 01:00:20,962 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:00:21,011 INFO] number of examples: 9236
+[2020-03-22 01:00:48,749 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:00:48,836 INFO] number of examples: 9236
+[2020-03-22 01:01:16,579 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:01:16,671 INFO] number of examples: 9236
+[2020-03-22 01:01:44,460 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:01:44,557 INFO] number of examples: 9236
+[2020-03-22 01:02:12,328 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:02:12,377 INFO] number of examples: 9236
+[2020-03-22 01:02:40,136 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:02:40,185 INFO] number of examples: 9236
+[2020-03-22 01:03:01,437 INFO] Step 41000/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00062; 23069/14190 tok/s;   6695 sec
+[2020-03-22 01:03:07,925 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:03:08,014 INFO] number of examples: 9236
+[2020-03-22 01:03:35,742 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:03:35,839 INFO] number of examples: 9236
+[2020-03-22 01:04:03,573 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:04:03,674 INFO] number of examples: 9236
+[2020-03-22 01:04:31,370 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:04:31,419 INFO] number of examples: 9236
+[2020-03-22 01:04:59,414 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:04:59,464 INFO] number of examples: 9236
+[2020-03-22 01:05:27,188 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:05:27,277 INFO] number of examples: 9236
+[2020-03-22 01:05:44,299 INFO] Step 42000/100000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00061; 23306/14321 tok/s;   6858 sec
+[2020-03-22 01:05:54,975 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:05:55,163 INFO] number of examples: 9236
+[2020-03-22 01:06:22,849 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:06:22,947 INFO] number of examples: 9236
+[2020-03-22 01:06:50,629 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:06:50,677 INFO] number of examples: 9236
+[2020-03-22 01:07:18,392 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:07:18,478 INFO] number of examples: 9236
+[2020-03-22 01:07:46,152 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:07:46,241 INFO] number of examples: 9236
+[2020-03-22 01:08:13,938 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:08:14,032 INFO] number of examples: 9236
+[2020-03-22 01:08:26,848 INFO] Step 43000/100000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00060; 23348/14327 tok/s;   7020 sec
+[2020-03-22 01:08:41,674 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:08:41,774 INFO] number of examples: 9236
+[2020-03-22 01:09:09,458 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:09:09,507 INFO] number of examples: 9236
+[2020-03-22 01:09:37,173 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:09:37,259 INFO] number of examples: 9236
+[2020-03-22 01:10:04,940 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:10:05,038 INFO] number of examples: 9236
+[2020-03-22 01:10:32,728 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:10:32,825 INFO] number of examples: 9236
+[2020-03-22 01:11:00,489 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:11:00,591 INFO] number of examples: 9236
+[2020-03-22 01:11:09,243 INFO] Step 44000/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00060; 23372/14371 tok/s;   7183 sec
+[2020-03-22 01:11:09,245 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_44000.pt
+[2020-03-22 01:11:28,637 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:11:28,686 INFO] number of examples: 9236
+[2020-03-22 01:11:56,369 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:11:56,454 INFO] number of examples: 9236
+[2020-03-22 01:12:24,115 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:12:24,205 INFO] number of examples: 9236
+[2020-03-22 01:12:52,096 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:12:52,192 INFO] number of examples: 9236
+[2020-03-22 01:13:19,860 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:13:19,963 INFO] number of examples: 9236
+[2020-03-22 01:13:47,654 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:13:47,703 INFO] number of examples: 9236
+[2020-03-22 01:13:52,119 INFO] Step 45000/100000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00059; 23306/14331 tok/s;   7346 sec
+[2020-03-22 01:14:15,397 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:14:15,483 INFO] number of examples: 9236
+[2020-03-22 01:14:43,143 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:14:43,285 INFO] number of examples: 9236
+[2020-03-22 01:15:10,976 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:15:11,073 INFO] number of examples: 9236
+[2020-03-22 01:15:38,713 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:15:38,762 INFO] number of examples: 9236
+[2020-03-22 01:16:06,532 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:16:06,581 INFO] number of examples: 9236
+[2020-03-22 01:16:34,213 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:16:34,301 INFO] number of examples: 9236
+[2020-03-22 01:16:34,515 INFO] Step 46000/100000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00058; 23370/14344 tok/s;   7508 sec
+[2020-03-22 01:17:01,948 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:17:02,042 INFO] number of examples: 9236
+[2020-03-22 01:17:29,657 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:17:29,758 INFO] number of examples: 9236
+[2020-03-22 01:17:57,443 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:17:57,496 INFO] number of examples: 9236
+[2020-03-22 01:18:25,193 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:18:25,277 INFO] number of examples: 9236
+[2020-03-22 01:18:52,970 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:18:53,060 INFO] number of examples: 9236
+[2020-03-22 01:19:16,689 INFO] Step 47000/100000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00058; 23405/14383 tok/s;   7670 sec
+[2020-03-22 01:19:20,737 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:19:20,831 INFO] number of examples: 9236
+[2020-03-22 01:19:48,509 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:19:48,610 INFO] number of examples: 9236
+[2020-03-22 01:20:16,403 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:20:16,453 INFO] number of examples: 9236
+[2020-03-22 01:20:44,222 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:20:44,334 INFO] number of examples: 9236
+[2020-03-22 01:21:12,014 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:21:12,104 INFO] number of examples: 9236
+[2020-03-22 01:21:39,817 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:21:39,912 INFO] number of examples: 9236
+[2020-03-22 01:21:59,327 INFO] Step 48000/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00057; 23339/14350 tok/s;   7833 sec
+[2020-03-22 01:21:59,329 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_48000.pt
+[2020-03-22 01:22:07,889 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:22:07,991 INFO] number of examples: 9236
+[2020-03-22 01:22:35,709 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:22:35,759 INFO] number of examples: 9236
+[2020-03-22 01:23:03,405 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:23:03,491 INFO] number of examples: 9236
+[2020-03-22 01:23:31,200 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:23:31,290 INFO] number of examples: 9236
+[2020-03-22 01:23:58,928 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:23:59,022 INFO] number of examples: 9236
+[2020-03-22 01:24:26,716 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:24:26,824 INFO] number of examples: 9236
+[2020-03-22 01:24:42,097 INFO] Step 49000/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00056; 23317/14323 tok/s;   7996 sec
+[2020-03-22 01:24:54,504 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:24:54,552 INFO] number of examples: 9236
+[2020-03-22 01:25:22,211 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:25:22,296 INFO] number of examples: 9236
+[2020-03-22 01:25:49,985 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:25:50,076 INFO] number of examples: 9236
+[2020-03-22 01:26:17,736 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:26:17,831 INFO] number of examples: 9236
+[2020-03-22 01:26:45,498 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:26:45,547 INFO] number of examples: 9236
+[2020-03-22 01:27:13,235 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:27:13,295 INFO] number of examples: 9236
+[2020-03-22 01:27:24,325 INFO] Step 50000/100000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00056; 23394/14373 tok/s;   8158 sec
+[2020-03-22 01:27:24,326 INFO] Loading dataset from ../data/data/USPTO_15k/data/.valid.0.pt
+[2020-03-22 01:27:24,334 INFO] number of examples: 1327
+[2020-03-22 01:27:25,818 INFO] Validation perplexity: 1.36352
+[2020-03-22 01:27:25,819 INFO] Validation accuracy: 95.3882
+[2020-03-22 01:27:42,454 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:27:42,539 INFO] number of examples: 9236
+[2020-03-22 01:28:10,369 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:28:10,459 INFO] number of examples: 9236
+[2020-03-22 01:28:38,159 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:28:38,253 INFO] number of examples: 9236
+[2020-03-22 01:29:05,921 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:29:06,020 INFO] number of examples: 9236
+[2020-03-22 01:29:33,681 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:29:33,730 INFO] number of examples: 9236
+[2020-03-22 01:30:01,397 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:30:01,484 INFO] number of examples: 9236
+[2020-03-22 01:30:08,356 INFO] Step 51000/100000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00055; 23146/14235 tok/s;   8322 sec
+[2020-03-22 01:30:29,173 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:30:29,263 INFO] number of examples: 9236
+[2020-03-22 01:30:56,921 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:30:57,018 INFO] number of examples: 9236
+[2020-03-22 01:31:24,716 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:31:24,765 INFO] number of examples: 9236
+[2020-03-22 01:31:52,486 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:31:52,535 INFO] number of examples: 9236
+[2020-03-22 01:32:20,231 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:32:20,319 INFO] number of examples: 9236
+[2020-03-22 01:32:48,005 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:32:48,097 INFO] number of examples: 9236
+[2020-03-22 01:32:50,746 INFO] Step 52000/100000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00055; 23371/14340 tok/s;   8484 sec
+[2020-03-22 01:32:50,748 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_52000.pt
+[2020-03-22 01:33:16,117 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:33:16,214 INFO] number of examples: 9236
+[2020-03-22 01:33:43,884 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:33:43,932 INFO] number of examples: 9236
+[2020-03-22 01:34:11,669 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:34:11,718 INFO] number of examples: 9236
+[2020-03-22 01:34:39,414 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:34:39,505 INFO] number of examples: 9236
+[2020-03-22 01:35:07,191 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:35:07,282 INFO] number of examples: 9236
+[2020-03-22 01:35:33,329 INFO] Step 53000/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00054; 23344/14345 tok/s;   8647 sec
+[2020-03-22 01:35:34,949 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:35:35,048 INFO] number of examples: 9236
+[2020-03-22 01:36:02,939 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:36:02,988 INFO] number of examples: 9236
+[2020-03-22 01:36:30,721 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:36:30,805 INFO] number of examples: 9236
+[2020-03-22 01:36:58,484 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:36:58,573 INFO] number of examples: 9236
+[2020-03-22 01:37:26,270 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:37:26,364 INFO] number of examples: 9236
+[2020-03-22 01:37:54,007 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:37:54,112 INFO] number of examples: 9236
+[2020-03-22 01:38:15,975 INFO] Step 54000/100000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00054; 23339/14346 tok/s;   8809 sec
+[2020-03-22 01:38:21,804 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:38:21,854 INFO] number of examples: 9236
+[2020-03-22 01:38:49,556 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:38:49,641 INFO] number of examples: 9236
+[2020-03-22 01:39:17,297 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:39:17,386 INFO] number of examples: 9236
+[2020-03-22 01:39:45,016 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:39:45,111 INFO] number of examples: 9236
+[2020-03-22 01:40:12,786 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:40:12,886 INFO] number of examples: 9236
+[2020-03-22 01:40:40,556 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:40:40,605 INFO] number of examples: 9236
+[2020-03-22 01:40:58,309 INFO] Step 55000/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00053; 23381/14373 tok/s;   8972 sec
+[2020-03-22 01:41:08,319 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:41:08,405 INFO] number of examples: 9236
+[2020-03-22 01:41:36,097 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:41:36,187 INFO] number of examples: 9236
+[2020-03-22 01:42:03,876 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:42:03,975 INFO] number of examples: 9236
+[2020-03-22 01:42:31,643 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:42:31,746 INFO] number of examples: 9236
+[2020-03-22 01:42:59,460 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:42:59,508 INFO] number of examples: 9236
+[2020-03-22 01:43:27,171 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:43:27,258 INFO] number of examples: 9236
+[2020-03-22 01:43:40,908 INFO] Step 56000/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00053; 23340/14322 tok/s;   9134 sec
+[2020-03-22 01:43:40,910 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_56000.pt
+[2020-03-22 01:43:55,472 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:43:55,566 INFO] number of examples: 9236
+[2020-03-22 01:44:23,264 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:44:23,360 INFO] number of examples: 9236
+[2020-03-22 01:44:51,033 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:44:51,176 INFO] number of examples: 9236
+[2020-03-22 01:45:18,889 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:45:18,937 INFO] number of examples: 9236
+[2020-03-22 01:45:46,650 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:45:46,737 INFO] number of examples: 9236
+[2020-03-22 01:46:14,435 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:46:14,527 INFO] number of examples: 9236
+[2020-03-22 01:46:23,803 INFO] Step 57000/100000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00052; 23301/14329 tok/s;   9297 sec
+[2020-03-22 01:46:42,204 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:46:42,321 INFO] number of examples: 9236
+[2020-03-22 01:47:09,977 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:47:10,026 INFO] number of examples: 9236
+[2020-03-22 01:47:37,790 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:47:37,839 INFO] number of examples: 9236
+[2020-03-22 01:48:05,523 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:48:05,612 INFO] number of examples: 9236
+[2020-03-22 01:48:33,325 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:48:33,417 INFO] number of examples: 9236
+[2020-03-22 01:49:01,062 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:49:01,161 INFO] number of examples: 9236
+[2020-03-22 01:49:06,213 INFO] Step 58000/100000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00052; 23373/14371 tok/s;   9460 sec
+[2020-03-22 01:49:28,858 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:49:28,909 INFO] number of examples: 9236
+[2020-03-22 01:49:56,547 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:49:56,631 INFO] number of examples: 9236
+[2020-03-22 01:50:24,277 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:50:24,367 INFO] number of examples: 9236
+[2020-03-22 01:50:52,055 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:50:52,154 INFO] number of examples: 9236
+[2020-03-22 01:51:19,951 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:51:20,055 INFO] number of examples: 9236
+[2020-03-22 01:51:47,834 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:51:47,884 INFO] number of examples: 9236
+[2020-03-22 01:51:48,753 INFO] Step 59000/100000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00051; 23349/14329 tok/s;   9622 sec
+[2020-03-22 01:52:15,563 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:52:15,648 INFO] number of examples: 9236
+[2020-03-22 01:52:43,357 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:52:43,446 INFO] number of examples: 9236
+[2020-03-22 01:53:11,092 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:53:11,187 INFO] number of examples: 9236
+[2020-03-22 01:53:38,850 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:53:38,954 INFO] number of examples: 9236
+[2020-03-22 01:54:06,667 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:54:06,715 INFO] number of examples: 9236
+[2020-03-22 01:54:30,966 INFO] Step 60000/100000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00051; 23400/14381 tok/s;   9784 sec
+[2020-03-22 01:54:30,968 INFO] Loading dataset from ../data/data/USPTO_15k/data/.valid.0.pt
+[2020-03-22 01:54:31,019 INFO] number of examples: 1327
+[2020-03-22 01:54:32,501 INFO] Validation perplexity: 1.36874
+[2020-03-22 01:54:32,501 INFO] Validation accuracy: 95.6177
+[2020-03-22 01:54:32,502 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_60000.pt
+[2020-03-22 01:54:36,186 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:54:36,235 INFO] number of examples: 9236
+[2020-03-22 01:55:03,922 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:55:04,010 INFO] number of examples: 9236
+[2020-03-22 01:55:31,680 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:55:31,775 INFO] number of examples: 9236
+[2020-03-22 01:55:59,448 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:55:59,546 INFO] number of examples: 9236
+[2020-03-22 01:56:27,214 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:56:27,264 INFO] number of examples: 9236
+[2020-03-22 01:56:54,972 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:56:55,021 INFO] number of examples: 9236
+[2020-03-22 01:57:15,149 INFO] Step 61000/100000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00051; 23118/14211 tok/s;   9949 sec
+[2020-03-22 01:57:22,749 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:57:22,841 INFO] number of examples: 9236
+[2020-03-22 01:57:50,486 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:57:50,581 INFO] number of examples: 9236
+[2020-03-22 01:58:18,266 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:58:18,367 INFO] number of examples: 9236
+[2020-03-22 01:58:46,056 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:58:46,104 INFO] number of examples: 9236
+[2020-03-22 01:59:13,958 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:59:14,044 INFO] number of examples: 9236
+[2020-03-22 01:59:41,720 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 01:59:41,810 INFO] number of examples: 9236
+[2020-03-22 01:59:57,688 INFO] Step 62000/100000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00050; 23350/14350 tok/s;  10111 sec
+[2020-03-22 02:00:09,462 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:00:09,556 INFO] number of examples: 9236
+[2020-03-22 02:00:37,252 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:00:37,351 INFO] number of examples: 9236
+[2020-03-22 02:01:05,023 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:01:05,072 INFO] number of examples: 9236
+[2020-03-22 02:01:32,886 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:01:32,971 INFO] number of examples: 9236
+[2020-03-22 02:02:00,748 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:02:00,840 INFO] number of examples: 9236
+[2020-03-22 02:02:28,607 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:02:28,708 INFO] number of examples: 9236
+[2020-03-22 02:02:40,430 INFO] Step 63000/100000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00050; 23322/14315 tok/s;  10274 sec
+[2020-03-22 02:02:56,408 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:02:56,512 INFO] number of examples: 9236
+[2020-03-22 02:03:24,250 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:03:24,299 INFO] number of examples: 9236
+[2020-03-22 02:03:52,002 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:03:52,089 INFO] number of examples: 9236
+[2020-03-22 02:04:19,810 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:04:19,902 INFO] number of examples: 9236
+[2020-03-22 02:04:47,567 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:04:47,670 INFO] number of examples: 9236
+[2020-03-22 02:05:15,390 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:05:15,438 INFO] number of examples: 9236
+[2020-03-22 02:05:22,974 INFO] Step 64000/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00049; 23351/14361 tok/s;  10436 sec
+[2020-03-22 02:05:22,976 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_64000.pt
+[2020-03-22 02:05:43,512 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:05:43,560 INFO] number of examples: 9236
+[2020-03-22 02:06:11,271 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:06:11,359 INFO] number of examples: 9236
+[2020-03-22 02:06:39,026 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:06:39,118 INFO] number of examples: 9236
+[2020-03-22 02:07:07,056 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:07:07,161 INFO] number of examples: 9236
+[2020-03-22 02:07:34,821 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:07:34,870 INFO] number of examples: 9236
+[2020-03-22 02:08:02,606 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:08:02,655 INFO] number of examples: 9236
+[2020-03-22 02:08:05,941 INFO] Step 65000/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00049; 23293/14301 tok/s;  10599 sec
+[2020-03-22 02:08:30,337 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:08:30,429 INFO] number of examples: 9236
+[2020-03-22 02:08:58,122 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:08:58,220 INFO] number of examples: 9236
+[2020-03-22 02:09:25,916 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:09:26,015 INFO] number of examples: 9236
+[2020-03-22 02:09:53,671 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:09:53,719 INFO] number of examples: 9236
+[2020-03-22 02:10:21,415 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:10:21,500 INFO] number of examples: 9236
+[2020-03-22 02:10:48,190 INFO] Step 66000/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00049; 23391/14372 tok/s;  10762 sec
+[2020-03-22 02:10:49,164 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:10:49,256 INFO] number of examples: 9236
+[2020-03-22 02:11:16,976 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:11:17,070 INFO] number of examples: 9236
+[2020-03-22 02:11:44,741 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:11:44,841 INFO] number of examples: 9236
+[2020-03-22 02:12:12,545 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:12:12,594 INFO] number of examples: 9236
+[2020-03-22 02:12:40,277 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:12:40,363 INFO] number of examples: 9236
+[2020-03-22 02:13:08,035 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:13:08,125 INFO] number of examples: 9236
+[2020-03-22 02:13:30,657 INFO] Step 67000/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00048; 23365/14362 tok/s;  10924 sec
+[2020-03-22 02:13:35,843 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:13:35,940 INFO] number of examples: 9236
+[2020-03-22 02:14:03,610 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:14:03,710 INFO] number of examples: 9236
+[2020-03-22 02:14:31,448 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:14:31,499 INFO] number of examples: 9236
+[2020-03-22 02:14:59,377 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:14:59,462 INFO] number of examples: 9236
+[2020-03-22 02:15:27,123 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:15:27,216 INFO] number of examples: 9236
+[2020-03-22 02:15:54,920 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:15:55,043 INFO] number of examples: 9236
+[2020-03-22 02:16:13,344 INFO] Step 68000/100000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00048; 23331/14342 tok/s;  11087 sec
+[2020-03-22 02:16:13,346 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_68000.pt
+[2020-03-22 02:16:23,016 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:16:23,117 INFO] number of examples: 9236
+[2020-03-22 02:16:50,780 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:16:50,829 INFO] number of examples: 9236
+[2020-03-22 02:17:18,473 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:17:18,559 INFO] number of examples: 9236
+[2020-03-22 02:17:46,182 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:17:46,278 INFO] number of examples: 9236
+[2020-03-22 02:18:13,901 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:18:13,999 INFO] number of examples: 9236
+[2020-03-22 02:18:41,704 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:18:41,753 INFO] number of examples: 9236
+[2020-03-22 02:18:55,919 INFO] Step 69000/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00048; 23344/14332 tok/s;  11249 sec
+[2020-03-22 02:19:09,473 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:19:09,522 INFO] number of examples: 9236
+[2020-03-22 02:19:37,200 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:19:37,286 INFO] number of examples: 9236
+[2020-03-22 02:20:04,964 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:20:05,058 INFO] number of examples: 9236
+[2020-03-22 02:20:32,727 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:20:32,826 INFO] number of examples: 9236
+[2020-03-22 02:21:00,513 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:21:00,562 INFO] number of examples: 9236
+[2020-03-22 02:21:28,288 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:21:28,336 INFO] number of examples: 9236
+[2020-03-22 02:21:38,256 INFO] Step 70000/100000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00047; 23382/14368 tok/s;  11412 sec
+[2020-03-22 02:21:38,257 INFO] Loading dataset from ../data/data/USPTO_15k/data/.valid.0.pt
+[2020-03-22 02:21:38,264 INFO] number of examples: 1327
+[2020-03-22 02:21:39,745 INFO] Validation perplexity: 1.38152
+[2020-03-22 02:21:39,745 INFO] Validation accuracy: 95.6989
+[2020-03-22 02:21:57,501 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:21:57,595 INFO] number of examples: 9236
+[2020-03-22 02:22:25,462 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:22:25,555 INFO] number of examples: 9236
+[2020-03-22 02:22:53,278 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:22:53,378 INFO] number of examples: 9236
+[2020-03-22 02:23:21,038 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:23:21,092 INFO] number of examples: 9236
+[2020-03-22 02:23:48,817 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:23:48,866 INFO] number of examples: 9236
+[2020-03-22 02:24:16,516 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:24:16,603 INFO] number of examples: 9236
+[2020-03-22 02:24:22,341 INFO] Step 71000/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00047; 23135/14230 tok/s;  11576 sec
+[2020-03-22 02:24:44,269 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:24:44,362 INFO] number of examples: 9236
+[2020-03-22 02:25:12,029 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:25:12,128 INFO] number of examples: 9236
+[2020-03-22 02:25:39,836 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:25:39,885 INFO] number of examples: 9236
+[2020-03-22 02:26:07,612 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:26:07,660 INFO] number of examples: 9236
+[2020-03-22 02:26:35,392 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:26:35,481 INFO] number of examples: 9236
+[2020-03-22 02:27:03,155 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:27:03,249 INFO] number of examples: 9236
+[2020-03-22 02:27:04,765 INFO] Step 72000/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00047; 23365/14336 tok/s;  11738 sec
+[2020-03-22 02:27:04,767 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_72000.pt
+[2020-03-22 02:27:31,231 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:27:31,332 INFO] number of examples: 9236
+[2020-03-22 02:27:59,031 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:27:59,080 INFO] number of examples: 9236
+[2020-03-22 02:28:26,844 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:28:26,893 INFO] number of examples: 9236
+[2020-03-22 02:28:54,589 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:28:54,678 INFO] number of examples: 9236
+[2020-03-22 02:29:22,342 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:29:22,445 INFO] number of examples: 9236
+[2020-03-22 02:29:47,368 INFO] Step 73000/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00046; 23343/14351 tok/s;  11901 sec
+[2020-03-22 02:29:50,116 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:29:50,215 INFO] number of examples: 9236
+[2020-03-22 02:30:18,068 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:30:18,116 INFO] number of examples: 9236
+[2020-03-22 02:30:45,777 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:30:45,863 INFO] number of examples: 9236
+[2020-03-22 02:31:13,569 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:31:13,660 INFO] number of examples: 9236
+[2020-03-22 02:31:41,301 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:31:41,400 INFO] number of examples: 9236
+[2020-03-22 02:32:09,092 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:32:09,191 INFO] number of examples: 9236
+[2020-03-22 02:32:29,867 INFO] Step 74000/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00046; 23358/14358 tok/s;  12063 sec
+[2020-03-22 02:32:36,825 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:32:36,876 INFO] number of examples: 9236
+[2020-03-22 02:33:04,570 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:33:04,654 INFO] number of examples: 9236
+[2020-03-22 02:33:32,313 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:33:32,403 INFO] number of examples: 9236
+[2020-03-22 02:34:00,078 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:34:00,184 INFO] number of examples: 9236
+[2020-03-22 02:34:27,882 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:34:27,982 INFO] number of examples: 9236
+[2020-03-22 02:34:55,638 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:34:55,686 INFO] number of examples: 9236
+[2020-03-22 02:35:12,275 INFO] Step 75000/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00046; 23371/14368 tok/s;  12226 sec
+[2020-03-22 02:35:23,400 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:35:23,486 INFO] number of examples: 9236
+[2020-03-22 02:35:51,148 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:35:51,240 INFO] number of examples: 9236
+[2020-03-22 02:36:18,950 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:36:19,049 INFO] number of examples: 9236
+[2020-03-22 02:36:46,707 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:36:46,756 INFO] number of examples: 9236
+[2020-03-22 02:37:14,542 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:37:14,592 INFO] number of examples: 9236
+[2020-03-22 02:37:42,238 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:37:42,329 INFO] number of examples: 9236
+[2020-03-22 02:37:54,726 INFO] Step 76000/100000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00045; 23362/14331 tok/s;  12388 sec
+[2020-03-22 02:37:54,729 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_76000.pt
+[2020-03-22 02:38:10,503 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:38:10,595 INFO] number of examples: 9236
+[2020-03-22 02:38:38,295 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:38:38,391 INFO] number of examples: 9236
+[2020-03-22 02:39:06,071 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:39:06,121 INFO] number of examples: 9236
+[2020-03-22 02:39:33,828 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:39:33,878 INFO] number of examples: 9236
+[2020-03-22 02:40:01,594 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:40:01,683 INFO] number of examples: 9236
+[2020-03-22 02:40:29,349 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:40:29,458 INFO] number of examples: 9236
+[2020-03-22 02:40:37,593 INFO] Step 77000/100000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00045; 23304/14325 tok/s;  12551 sec
+[2020-03-22 02:40:57,138 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:40:57,237 INFO] number of examples: 9236
+[2020-03-22 02:41:24,912 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:41:24,960 INFO] number of examples: 9236
+[2020-03-22 02:41:52,689 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:41:52,774 INFO] number of examples: 9236
+[2020-03-22 02:42:20,459 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:42:20,550 INFO] number of examples: 9236
+[2020-03-22 02:42:48,219 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:42:48,312 INFO] number of examples: 9236
+[2020-03-22 02:43:15,972 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:43:16,072 INFO] number of examples: 9236
+[2020-03-22 02:43:19,995 INFO] Step 78000/100000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00045; 23373/14364 tok/s;  12713 sec
+[2020-03-22 02:43:43,749 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:43:43,798 INFO] number of examples: 9236
+[2020-03-22 02:44:11,460 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:44:11,548 INFO] number of examples: 9236
+[2020-03-22 02:44:39,216 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:44:39,305 INFO] number of examples: 9236
+[2020-03-22 02:45:06,999 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:45:07,125 INFO] number of examples: 9236
+[2020-03-22 02:45:34,831 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:45:34,932 INFO] number of examples: 9236
+[2020-03-22 02:46:02,506 INFO] Step 79000/100000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00044; 23354/14346 tok/s;  12876 sec
+[2020-03-22 02:46:02,831 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:46:02,880 INFO] number of examples: 9236
+[2020-03-22 02:46:30,529 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:46:30,619 INFO] number of examples: 9236
+[2020-03-22 02:46:58,281 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:46:58,373 INFO] number of examples: 9236
+[2020-03-22 02:47:26,024 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:47:26,120 INFO] number of examples: 9236
+[2020-03-22 02:47:53,788 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:47:53,944 INFO] number of examples: 9236
+[2020-03-22 02:48:21,665 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:48:21,716 INFO] number of examples: 9236
+[2020-03-22 02:48:44,893 INFO] Step 80000/100000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00044; 23376/14370 tok/s;  13038 sec
+[2020-03-22 02:48:44,894 INFO] Loading dataset from ../data/data/USPTO_15k/data/.valid.0.pt
+[2020-03-22 02:48:44,902 INFO] number of examples: 1327
+[2020-03-22 02:48:46,384 INFO] Validation perplexity: 1.38235
+[2020-03-22 02:48:46,384 INFO] Validation accuracy: 95.7307
+[2020-03-22 02:48:46,386 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_80000.pt
+[2020-03-22 02:48:51,219 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:48:51,304 INFO] number of examples: 9236
+[2020-03-22 02:49:18,958 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:49:19,049 INFO] number of examples: 9236
+[2020-03-22 02:49:46,742 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:49:46,837 INFO] number of examples: 9236
+[2020-03-22 02:50:14,490 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:50:14,589 INFO] number of examples: 9236
+[2020-03-22 02:50:42,289 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:50:42,339 INFO] number of examples: 9236
+[2020-03-22 02:51:10,007 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:51:10,093 INFO] number of examples: 9236
+[2020-03-22 02:51:29,080 INFO] Step 81000/100000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00044; 23118/14207 tok/s;  13202 sec
+[2020-03-22 02:51:37,804 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:51:37,895 INFO] number of examples: 9236
+[2020-03-22 02:52:05,553 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:52:05,650 INFO] number of examples: 9236
+[2020-03-22 02:52:33,402 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:52:33,503 INFO] number of examples: 9236
+[2020-03-22 02:53:01,180 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:53:01,230 INFO] number of examples: 9236
+[2020-03-22 02:53:29,068 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:53:29,161 INFO] number of examples: 9236
+[2020-03-22 02:53:56,898 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:53:56,998 INFO] number of examples: 9236
+[2020-03-22 02:54:11,771 INFO] Step 82000/100000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00044; 23327/14328 tok/s;  13365 sec
+[2020-03-22 02:54:24,671 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:54:24,767 INFO] number of examples: 9236
+[2020-03-22 02:54:52,477 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:54:52,527 INFO] number of examples: 9236
+[2020-03-22 02:55:20,277 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:55:20,327 INFO] number of examples: 9236
+[2020-03-22 02:55:48,028 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:55:48,115 INFO] number of examples: 9236
+[2020-03-22 02:56:15,766 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:56:15,861 INFO] number of examples: 9236
+[2020-03-22 02:56:43,523 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:56:43,630 INFO] number of examples: 9236
+[2020-03-22 02:56:54,176 INFO] Step 83000/100000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00043; 23370/14362 tok/s;  13528 sec
+[2020-03-22 02:57:11,371 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:57:11,419 INFO] number of examples: 9236
+[2020-03-22 02:57:39,079 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:57:39,164 INFO] number of examples: 9236
+[2020-03-22 02:58:06,868 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:58:06,956 INFO] number of examples: 9236
+[2020-03-22 02:58:34,617 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:58:34,712 INFO] number of examples: 9236
+[2020-03-22 02:59:02,386 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:59:02,489 INFO] number of examples: 9236
+[2020-03-22 02:59:30,185 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:59:30,234 INFO] number of examples: 9236
+[2020-03-22 02:59:36,589 INFO] Step 84000/100000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00043; 23383/14380 tok/s;  13690 sec
+[2020-03-22 02:59:36,591 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_84000.pt
+[2020-03-22 02:59:58,210 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 02:59:58,293 INFO] number of examples: 9236
+[2020-03-22 03:00:26,024 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:00:26,115 INFO] number of examples: 9236
+[2020-03-22 03:00:53,823 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:00:53,917 INFO] number of examples: 9236
+[2020-03-22 03:01:21,852 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:01:21,952 INFO] number of examples: 9236
+[2020-03-22 03:01:49,752 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:01:49,800 INFO] number of examples: 9236
+[2020-03-22 03:02:17,574 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:02:17,659 INFO] number of examples: 9236
+[2020-03-22 03:02:19,816 INFO] Step 85000/100000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00043; 23252/14265 tok/s;  13853 sec
+[2020-03-22 03:02:45,383 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:02:45,473 INFO] number of examples: 9236
+[2020-03-22 03:03:13,152 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:03:13,255 INFO] number of examples: 9236
+[2020-03-22 03:03:40,968 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:03:41,073 INFO] number of examples: 9236
+[2020-03-22 03:04:08,749 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:04:08,798 INFO] number of examples: 9236
+[2020-03-22 03:04:36,469 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:04:36,555 INFO] number of examples: 9236
+[2020-03-22 03:05:02,107 INFO] Step 86000/100000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00043; 23385/14371 tok/s;  14016 sec
+[2020-03-22 03:05:04,210 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:05:04,301 INFO] number of examples: 9236
+[2020-03-22 03:05:31,976 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:05:32,073 INFO] number of examples: 9236
+[2020-03-22 03:05:59,807 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:05:59,857 INFO] number of examples: 9236
+[2020-03-22 03:06:27,582 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:06:27,630 INFO] number of examples: 9236
+[2020-03-22 03:06:55,348 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:06:55,437 INFO] number of examples: 9236
+[2020-03-22 03:07:23,103 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:07:23,196 INFO] number of examples: 9236
+[2020-03-22 03:07:44,665 INFO] Step 87000/100000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00042; 23352/14360 tok/s;  14178 sec
+[2020-03-22 03:07:50,968 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:07:51,066 INFO] number of examples: 9236
+[2020-03-22 03:08:18,755 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:08:18,804 INFO] number of examples: 9236
+[2020-03-22 03:08:46,558 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:08:46,606 INFO] number of examples: 9236
+[2020-03-22 03:09:14,505 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:09:14,593 INFO] number of examples: 9236
+[2020-03-22 03:09:42,257 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:09:42,351 INFO] number of examples: 9236
+[2020-03-22 03:10:10,047 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:10:10,147 INFO] number of examples: 9236
+[2020-03-22 03:10:27,320 INFO] Step 88000/100000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00042; 23334/14337 tok/s;  14341 sec
+[2020-03-22 03:10:27,328 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_88000.pt
+[2020-03-22 03:10:38,138 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:10:38,187 INFO] number of examples: 9236
+[2020-03-22 03:11:05,913 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:11:05,997 INFO] number of examples: 9236
+[2020-03-22 03:11:33,641 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:11:33,733 INFO] number of examples: 9236
+[2020-03-22 03:12:01,427 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:12:01,525 INFO] number of examples: 9236
+[2020-03-22 03:12:29,188 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:12:29,286 INFO] number of examples: 9236
+[2020-03-22 03:12:56,961 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:12:57,011 INFO] number of examples: 9236
+[2020-03-22 03:13:09,996 INFO] Step 89000/100000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00042; 23330/14317 tok/s;  14503 sec
+[2020-03-22 03:13:24,668 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:13:24,755 INFO] number of examples: 9236
+[2020-03-22 03:13:52,417 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:13:52,506 INFO] number of examples: 9236
+[2020-03-22 03:14:20,179 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:14:20,274 INFO] number of examples: 9236
+[2020-03-22 03:14:47,977 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:14:48,077 INFO] number of examples: 9236
+[2020-03-22 03:15:15,727 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:15:15,775 INFO] number of examples: 9236
+[2020-03-22 03:15:43,494 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:15:43,580 INFO] number of examples: 9236
+[2020-03-22 03:15:52,342 INFO] Step 90000/100000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00042; 23380/14377 tok/s;  14666 sec
+[2020-03-22 03:15:52,343 INFO] Loading dataset from ../data/data/USPTO_15k/data/.valid.0.pt
+[2020-03-22 03:15:52,351 INFO] number of examples: 1327
+[2020-03-22 03:15:53,832 INFO] Validation perplexity: 1.40005
+[2020-03-22 03:15:53,832 INFO] Validation accuracy: 95.646
+[2020-03-22 03:16:12,722 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:16:12,812 INFO] number of examples: 9236
+[2020-03-22 03:16:40,469 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:16:40,566 INFO] number of examples: 9236
+[2020-03-22 03:17:08,409 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:17:08,514 INFO] number of examples: 9236
+[2020-03-22 03:17:36,148 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:17:36,198 INFO] number of examples: 9236
+[2020-03-22 03:18:03,842 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:18:03,927 INFO] number of examples: 9236
+[2020-03-22 03:18:31,595 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:18:31,686 INFO] number of examples: 9236
+[2020-03-22 03:18:36,280 INFO] Step 91000/100000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00041; 23155/14240 tok/s;  14830 sec
+[2020-03-22 03:18:59,408 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:18:59,502 INFO] number of examples: 9236
+[2020-03-22 03:19:27,191 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:19:27,291 INFO] number of examples: 9236
+[2020-03-22 03:19:54,975 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:19:55,024 INFO] number of examples: 9236
+[2020-03-22 03:20:22,748 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:20:22,836 INFO] number of examples: 9236
+[2020-03-22 03:20:50,692 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:20:50,782 INFO] number of examples: 9236
+[2020-03-22 03:21:18,466 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:21:18,561 INFO] number of examples: 9236
+[2020-03-22 03:21:18,939 INFO] Step 92000/100000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00041; 23332/14318 tok/s;  14992 sec
+[2020-03-22 03:21:18,941 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_92000.pt
+[2020-03-22 03:21:46,595 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:21:46,695 INFO] number of examples: 9236
+[2020-03-22 03:22:14,371 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:22:14,420 INFO] number of examples: 9236
+[2020-03-22 03:22:42,093 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:22:42,177 INFO] number of examples: 9236
+[2020-03-22 03:23:09,861 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:23:09,953 INFO] number of examples: 9236
+[2020-03-22 03:23:37,623 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:23:37,717 INFO] number of examples: 9236
+[2020-03-22 03:24:01,496 INFO] Step 93000/100000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00041; 23349/14350 tok/s;  15155 sec
+[2020-03-22 03:24:05,411 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:24:05,514 INFO] number of examples: 9236
+[2020-03-22 03:24:33,311 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:24:33,364 INFO] number of examples: 9236
+[2020-03-22 03:25:01,075 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:25:01,161 INFO] number of examples: 9236
+[2020-03-22 03:25:28,871 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:25:28,963 INFO] number of examples: 9236
+[2020-03-22 03:25:56,626 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:25:56,728 INFO] number of examples: 9236
+[2020-03-22 03:26:24,427 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:26:24,476 INFO] number of examples: 9236
+[2020-03-22 03:26:44,116 INFO] Step 94000/100000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00041; 23340/14351 tok/s;  15318 sec
+[2020-03-22 03:26:52,182 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:26:52,232 INFO] number of examples: 9236
+[2020-03-22 03:27:19,928 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:27:20,016 INFO] number of examples: 9236
+[2020-03-22 03:27:47,666 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:27:47,759 INFO] number of examples: 9236
+[2020-03-22 03:28:15,404 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:28:15,506 INFO] number of examples: 9236
+[2020-03-22 03:28:43,211 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:28:43,260 INFO] number of examples: 9236
+[2020-03-22 03:29:10,966 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:29:11,016 INFO] number of examples: 9236
+[2020-03-22 03:29:26,446 INFO] Step 95000/100000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00041; 23380/14363 tok/s;  15480 sec
+[2020-03-22 03:29:38,717 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:29:38,806 INFO] number of examples: 9236
+[2020-03-22 03:30:06,448 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:30:06,544 INFO] number of examples: 9236
+[2020-03-22 03:30:34,222 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:30:34,320 INFO] number of examples: 9236
+[2020-03-22 03:31:01,966 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:31:02,016 INFO] number of examples: 9236
+[2020-03-22 03:31:29,707 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:31:29,793 INFO] number of examples: 9236
+[2020-03-22 03:31:57,467 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:31:57,557 INFO] number of examples: 9236
+[2020-03-22 03:32:08,775 INFO] Step 96000/100000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00040; 23380/14360 tok/s;  15642 sec
+[2020-03-22 03:32:08,777 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_96000.pt
+[2020-03-22 03:32:25,702 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:32:25,798 INFO] number of examples: 9236
+[2020-03-22 03:32:53,487 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:32:53,589 INFO] number of examples: 9236
+[2020-03-22 03:33:21,311 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:33:21,361 INFO] number of examples: 9236
+[2020-03-22 03:33:49,089 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:33:49,174 INFO] number of examples: 9236
+[2020-03-22 03:34:16,883 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:34:16,973 INFO] number of examples: 9236
+[2020-03-22 03:34:44,644 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:34:44,744 INFO] number of examples: 9236
+[2020-03-22 03:34:51,756 INFO] Step 97000/100000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00040; 23293/14324 tok/s;  15805 sec
+[2020-03-22 03:35:12,464 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:35:12,568 INFO] number of examples: 9236
+[2020-03-22 03:35:40,251 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:35:40,300 INFO] number of examples: 9236
+[2020-03-22 03:36:07,995 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:36:08,082 INFO] number of examples: 9236
+[2020-03-22 03:36:35,783 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:36:35,874 INFO] number of examples: 9236
+[2020-03-22 03:37:03,596 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:37:03,694 INFO] number of examples: 9236
+[2020-03-22 03:37:31,368 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:37:31,471 INFO] number of examples: 9236
+[2020-03-22 03:37:34,284 INFO] Step 98000/100000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00040; 23352/14335 tok/s;  15968 sec
+[2020-03-22 03:37:59,186 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:37:59,235 INFO] number of examples: 9236
+[2020-03-22 03:38:26,918 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:38:27,005 INFO] number of examples: 9236
+[2020-03-22 03:38:54,696 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:38:54,788 INFO] number of examples: 9236
+[2020-03-22 03:39:22,454 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:39:22,551 INFO] number of examples: 9236
+[2020-03-22 03:39:50,205 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:39:50,256 INFO] number of examples: 9236
+[2020-03-22 03:40:16,660 INFO] Step 99000/100000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00040; 23372/14358 tok/s;  16130 sec
+[2020-03-22 03:40:18,120 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:40:18,169 INFO] number of examples: 9236
+[2020-03-22 03:40:45,886 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:40:45,974 INFO] number of examples: 9236
+[2020-03-22 03:41:13,661 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:41:13,754 INFO] number of examples: 9236
+[2020-03-22 03:41:41,465 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:41:41,565 INFO] number of examples: 9236
+[2020-03-22 03:42:09,232 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:42:09,282 INFO] number of examples: 9236
+[2020-03-22 03:42:36,978 INFO] Loading dataset from ../data/data/USPTO_15k/data/.train.0.pt
+[2020-03-22 03:42:37,061 INFO] number of examples: 9236
+[2020-03-22 03:42:59,052 INFO] Step 100000/100000; acc:  99.93; ppl:  1.00; xent: 0.00; lr: 0.00040; 23376/14370 tok/s;  16292 sec
+[2020-03-22 03:42:59,053 INFO] Loading dataset from ../data/data/USPTO_15k/data/.valid.0.pt
+[2020-03-22 03:42:59,061 INFO] number of examples: 1327
+[2020-03-22 03:43:00,542 INFO] Validation perplexity: 1.4044
+[2020-03-22 03:43:00,542 INFO] Validation accuracy: 95.6689
+[2020-03-22 03:43:00,544 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/MolecularTransformer2_models/checkpoints/USPTO_15k/model_step_100000.pt

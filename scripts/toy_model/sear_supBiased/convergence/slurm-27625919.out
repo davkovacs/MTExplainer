@@ -1,0 +1,306 @@
+Changed directory to /home/dpk25/MolecularTransformer2/scripts/toy_model/sear_supBiased/convergence.
+
+JobID: 27625919
+======
+Time: Wed 19 Aug 18:19:30 BST 2020
+Running on master node: gpu-e-43
+Current directory: /home/dpk25/MolecularTransformer2/scripts/toy_model/sear_supBiased/convergence
+
+Nodes allocated:
+================
+gpu-e-43
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+./train.sh 
+
+[2020-08-19 18:19:36,594 INFO]  * src vocab size = 18
+[2020-08-19 18:19:36,594 INFO]  * tgt vocab size = 18
+[2020-08-19 18:19:36,594 INFO] Building model...
+[2020-08-19 18:19:42,702 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(18, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(18, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=256, out_features=18, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2020-08-19 18:19:42,704 INFO] encoder: 5265408
+[2020-08-19 18:19:42,704 INFO] decoder: 6320146
+[2020-08-19 18:19:42,704 INFO] * number of parameters: 11585554
+[2020-08-19 18:19:42,709 INFO] Starting training on GPU: [0]
+[2020-08-19 18:19:42,709 INFO] Start training loop and validate every 10000 steps...
+[2020-08-19 18:19:42,709 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-19 18:19:42,773 INFO] number of examples: 4848
+[2020-08-19 18:19:54,208 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_76.pt
+[2020-08-19 18:20:05,518 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_152.pt
+[2020-08-19 18:20:16,676 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_228.pt
+[2020-08-19 18:20:27,788 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_304.pt
+[2020-08-19 18:20:39,006 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_380.pt
+[2020-08-19 18:20:50,051 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_456.pt
+[2020-08-19 18:20:51,597 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-19 18:20:51,636 INFO] number of examples: 4848
+[2020-08-19 18:21:01,362 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_532.pt
+[2020-08-19 18:21:12,617 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_608.pt
+[2020-08-19 18:21:23,915 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_684.pt
+[2020-08-19 18:21:34,924 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_760.pt
+[2020-08-19 18:21:45,987 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_836.pt
+[2020-08-19 18:21:56,979 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_912.pt
+[2020-08-19 18:21:59,577 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-19 18:21:59,595 INFO] number of examples: 4848
+[2020-08-19 18:22:08,072 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_988.pt
+[2020-08-19 18:22:10,112 INFO] Step 1000/ 2500; acc:  80.29; ppl:  1.57; xent: 0.45; lr: 0.00140; 2710/2182 tok/s;    147 sec
+[2020-08-19 18:22:19,098 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_1064.pt
+[2020-08-19 18:22:30,147 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_1140.pt
+[2020-08-19 18:22:41,374 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_1216.pt
+[2020-08-19 18:22:52,389 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_1292.pt
+[2020-08-19 18:23:03,554 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_1368.pt
+[2020-08-19 18:23:07,234 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-19 18:23:07,270 INFO] number of examples: 4848
+[2020-08-19 18:23:14,562 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_1444.pt
+[2020-08-19 18:23:25,532 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_1520.pt
+[2020-08-19 18:23:36,515 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_1596.pt
+[2020-08-19 18:23:47,420 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_1672.pt
+[2020-08-19 18:23:58,341 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_1748.pt
+[2020-08-19 18:24:09,225 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_1824.pt
+[2020-08-19 18:24:15,452 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-19 18:24:15,470 INFO] number of examples: 4848
+[2020-08-19 18:24:21,547 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_1900.pt
+[2020-08-19 18:24:32,512 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_1976.pt
+[2020-08-19 18:24:36,298 INFO] Step 2000/ 2500; acc:  85.24; ppl:  1.37; xent: 0.31; lr: 0.00279; 2736/2203 tok/s;    294 sec
+[2020-08-19 18:24:43,634 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_2052.pt
+[2020-08-19 18:24:54,526 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_2128.pt
+[2020-08-19 18:25:05,338 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_2204.pt
+[2020-08-19 18:25:16,344 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_2280.pt
+[2020-08-19 18:25:22,537 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-19 18:25:22,574 INFO] number of examples: 4848
+[2020-08-19 18:25:27,451 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_2356.pt
+[2020-08-19 18:25:38,471 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_2432.pt
+[2020-08-19 18:25:48,612 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased_conv/toy_model_step_2500.pt

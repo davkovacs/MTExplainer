@@ -1,0 +1,1447 @@
+Changed directory to /home/dpk25/MolecularTransformer2/scripts/toy_model.
+
+JobID: 27033477
+======
+Time: Mon  3 Aug 10:46:34 BST 2020
+Running on master node: gpu-e-11
+Current directory: /home/dpk25/MolecularTransformer2/scripts/toy_model
+
+Nodes allocated:
+================
+gpu-e-11
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+./train.sh 
+
+[2020-08-03 10:46:40,955 INFO]  * src vocab size = 21
+[2020-08-03 10:46:40,955 INFO]  * tgt vocab size = 21
+[2020-08-03 10:46:40,955 INFO] Building model...
+[2020-08-03 10:46:47,974 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(21, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(21, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=256, out_features=21, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2020-08-03 10:46:47,976 INFO] encoder: 5266176
+[2020-08-03 10:46:47,976 INFO] decoder: 6320917
+[2020-08-03 10:46:47,976 INFO] * number of parameters: 11587093
+[2020-08-03 10:46:48,005 INFO] Starting training on GPU: [0]
+[2020-08-03 10:46:48,005 INFO] Start training loop and validate every 10000 steps...
+[2020-08-03 10:46:48,005 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:46:48,044 INFO] number of examples: 5061
+[2020-08-03 10:47:10,089 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:47:10,136 INFO] number of examples: 5061
+[2020-08-03 10:47:31,263 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:47:31,285 INFO] number of examples: 5061
+[2020-08-03 10:47:52,354 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:47:52,404 INFO] number of examples: 5061
+[2020-08-03 10:48:13,550 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:48:13,572 INFO] number of examples: 5061
+[2020-08-03 10:48:34,481 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:48:34,504 INFO] number of examples: 5061
+[2020-08-03 10:48:55,520 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:48:55,566 INFO] number of examples: 5061
+[2020-08-03 10:49:16,602 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:49:16,624 INFO] number of examples: 5061
+[2020-08-03 10:49:19,499 INFO] Step 1000/75000; acc:  74.43; ppl:  2.03; xent: 0.71; lr: 0.00076; 12282/9423 tok/s;    151 sec
+[2020-08-03 10:49:37,836 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:49:37,888 INFO] number of examples: 5061
+[2020-08-03 10:49:58,947 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:49:58,969 INFO] number of examples: 5061
+[2020-08-03 10:50:19,966 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:50:19,989 INFO] number of examples: 5061
+[2020-08-03 10:50:41,030 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:50:41,074 INFO] number of examples: 5061
+[2020-08-03 10:51:02,078 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:51:02,100 INFO] number of examples: 5061
+[2020-08-03 10:51:22,926 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:51:22,976 INFO] number of examples: 5061
+[2020-08-03 10:51:43,852 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:51:43,875 INFO] number of examples: 5061
+[2020-08-03 10:51:49,409 INFO] Step 2000/75000; acc:  84.47; ppl:  1.47; xent: 0.39; lr: 0.00152; 12411/9525 tok/s;    301 sec
+[2020-08-03 10:52:04,705 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:52:04,756 INFO] number of examples: 5061
+[2020-08-03 10:52:25,738 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:52:25,761 INFO] number of examples: 5061
+[2020-08-03 10:52:46,558 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:52:46,582 INFO] number of examples: 5061
+[2020-08-03 10:53:07,392 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:53:07,438 INFO] number of examples: 5061
+[2020-08-03 10:53:28,238 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:53:28,261 INFO] number of examples: 5061
+[2020-08-03 10:53:49,230 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:53:49,280 INFO] number of examples: 5061
+[2020-08-03 10:54:10,096 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:54:10,119 INFO] number of examples: 5061
+[2020-08-03 10:54:18,337 INFO] Step 3000/75000; acc:  87.20; ppl:  1.38; xent: 0.32; lr: 0.00228; 12493/9590 tok/s;    450 sec
+[2020-08-03 10:54:30,944 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:54:30,967 INFO] number of examples: 5061
+[2020-08-03 10:54:51,756 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:54:51,800 INFO] number of examples: 5061
+[2020-08-03 10:55:12,739 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:55:12,763 INFO] number of examples: 5061
+[2020-08-03 10:55:33,579 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:55:33,628 INFO] number of examples: 5061
+[2020-08-03 10:55:54,428 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:55:54,451 INFO] number of examples: 5061
+[2020-08-03 10:56:15,294 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:56:15,344 INFO] number of examples: 5061
+[2020-08-03 10:56:36,285 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:56:36,309 INFO] number of examples: 5061
+[2020-08-03 10:56:47,158 INFO] Step 4000/75000; acc:  89.90; ppl:  1.30; xent: 0.26; lr: 0.00198; 12500/9586 tok/s;    599 sec
+[2020-08-03 10:56:57,079 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:56:57,102 INFO] number of examples: 5061
+[2020-08-03 10:57:17,875 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:57:17,920 INFO] number of examples: 5061
+[2020-08-03 10:57:38,699 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:57:38,723 INFO] number of examples: 5061
+[2020-08-03 10:57:59,659 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:57:59,707 INFO] number of examples: 5061
+[2020-08-03 10:58:20,492 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:58:20,515 INFO] number of examples: 5061
+[2020-08-03 10:58:41,336 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:58:41,359 INFO] number of examples: 5061
+[2020-08-03 10:59:02,122 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:59:02,172 INFO] number of examples: 5061
+[2020-08-03 10:59:15,814 INFO] Step 5000/75000; acc:  92.87; ppl:  1.20; xent: 0.18; lr: 0.00177; 12516/9604 tok/s;    748 sec
+[2020-08-03 10:59:15,816 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_9k/toy_model_step_5000.pt
+[2020-08-03 10:59:23,406 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:59:23,429 INFO] number of examples: 5061
+[2020-08-03 10:59:43,982 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 10:59:44,027 INFO] number of examples: 5061
+[2020-08-03 11:00:04,569 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:00:04,593 INFO] number of examples: 5061
+[2020-08-03 11:00:25,166 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:00:25,215 INFO] number of examples: 5061
+[2020-08-03 11:00:45,932 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:00:45,955 INFO] number of examples: 5061
+[2020-08-03 11:01:06,533 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:01:06,557 INFO] number of examples: 5061
+[2020-08-03 11:01:27,175 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:01:27,219 INFO] number of examples: 5061
+[2020-08-03 11:01:43,433 INFO] Step 6000/75000; acc:  94.88; ppl:  1.14; xent: 0.13; lr: 0.00161; 12603/9675 tok/s;    895 sec
+[2020-08-03 11:01:47,822 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:01:47,845 INFO] number of examples: 5061
+[2020-08-03 11:02:08,605 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:02:08,653 INFO] number of examples: 5061
+[2020-08-03 11:02:29,187 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:02:29,210 INFO] number of examples: 5061
+[2020-08-03 11:02:49,832 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:02:49,857 INFO] number of examples: 5061
+[2020-08-03 11:03:10,420 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:03:10,443 INFO] number of examples: 5061
+[2020-08-03 11:03:31,153 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:03:31,177 INFO] number of examples: 5061
+[2020-08-03 11:03:51,681 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:03:51,728 INFO] number of examples: 5061
+[2020-08-03 11:04:10,491 INFO] Step 7000/75000; acc:  96.25; ppl:  1.10; xent: 0.10; lr: 0.00149; 12653/9708 tok/s;   1042 sec
+[2020-08-03 11:04:12,267 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:04:12,290 INFO] number of examples: 5061
+[2020-08-03 11:04:32,837 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:04:32,897 INFO] number of examples: 5061
+[2020-08-03 11:04:53,552 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:04:53,575 INFO] number of examples: 5061
+[2020-08-03 11:05:14,094 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:05:14,118 INFO] number of examples: 5061
+[2020-08-03 11:05:34,626 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:05:34,671 INFO] number of examples: 5061
+[2020-08-03 11:05:55,217 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:05:55,241 INFO] number of examples: 5061
+[2020-08-03 11:06:15,918 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:06:15,966 INFO] number of examples: 5061
+[2020-08-03 11:06:36,523 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:06:36,546 INFO] number of examples: 5061
+[2020-08-03 11:06:37,453 INFO] Step 8000/75000; acc:  97.17; ppl:  1.08; xent: 0.07; lr: 0.00140; 12660/9715 tok/s;   1189 sec
+[2020-08-03 11:06:56,906 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:06:56,929 INFO] number of examples: 5061
+[2020-08-03 11:07:16,967 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:07:16,990 INFO] number of examples: 5061
+[2020-08-03 11:07:37,247 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:07:37,268 INFO] number of examples: 5061
+[2020-08-03 11:07:57,300 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:07:57,346 INFO] number of examples: 5061
+[2020-08-03 11:08:17,427 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:08:17,450 INFO] number of examples: 5061
+[2020-08-03 11:08:37,499 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:08:37,547 INFO] number of examples: 5061
+[2020-08-03 11:08:57,936 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:08:57,958 INFO] number of examples: 5061
+[2020-08-03 11:09:01,547 INFO] Step 9000/75000; acc:  97.77; ppl:  1.06; xent: 0.06; lr: 0.00132; 12911/9910 tok/s;   1334 sec
+[2020-08-03 11:09:18,968 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:09:18,991 INFO] number of examples: 5061
+[2020-08-03 11:09:40,092 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:09:40,141 INFO] number of examples: 5061
+[2020-08-03 11:10:01,243 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:10:01,267 INFO] number of examples: 5061
+[2020-08-03 11:10:22,497 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:10:22,549 INFO] number of examples: 5061
+[2020-08-03 11:10:43,636 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:10:43,659 INFO] number of examples: 5061
+[2020-08-03 11:11:04,740 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:11:04,763 INFO] number of examples: 5061
+[2020-08-03 11:11:25,906 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:11:25,929 INFO] number of examples: 5061
+[2020-08-03 11:11:32,426 INFO] Step 10000/75000; acc:  98.24; ppl:  1.05; xent: 0.05; lr: 0.00125; 12332/9463 tok/s;   1484 sec
+[2020-08-03 11:11:32,427 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.valid.0.pt
+[2020-08-03 11:11:32,441 INFO] number of examples: 1689
+[2020-08-03 11:11:35,228 INFO] Validation perplexity: 1.09584
+[2020-08-03 11:11:35,228 INFO] Validation accuracy: 97.3801
+[2020-08-03 11:11:35,229 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_9k/toy_model_step_10000.pt
+[2020-08-03 11:11:50,287 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:11:50,310 INFO] number of examples: 5061
+[2020-08-03 11:12:11,341 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:12:11,397 INFO] number of examples: 5061
+[2020-08-03 11:12:32,484 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:12:32,506 INFO] number of examples: 5061
+[2020-08-03 11:12:53,617 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:12:53,671 INFO] number of examples: 5061
+[2020-08-03 11:13:14,899 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:13:14,924 INFO] number of examples: 5061
+[2020-08-03 11:13:35,992 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:13:36,051 INFO] number of examples: 5061
+[2020-08-03 11:13:57,136 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:13:57,159 INFO] number of examples: 5061
+[2020-08-03 11:14:06,386 INFO] Step 11000/75000; acc:  98.55; ppl:  1.04; xent: 0.04; lr: 0.00119; 12085/9272 tok/s;   1638 sec
+[2020-08-03 11:14:18,301 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:14:18,326 INFO] number of examples: 5061
+[2020-08-03 11:14:39,562 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:14:39,615 INFO] number of examples: 5061
+[2020-08-03 11:15:00,719 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:15:00,743 INFO] number of examples: 5061
+[2020-08-03 11:15:21,832 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:15:21,890 INFO] number of examples: 5061
+[2020-08-03 11:15:42,993 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:15:43,017 INFO] number of examples: 5061
+[2020-08-03 11:16:04,279 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:16:04,303 INFO] number of examples: 5061
+[2020-08-03 11:16:25,421 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:16:25,445 INFO] number of examples: 5061
+[2020-08-03 11:16:37,339 INFO] Step 12000/75000; acc:  98.81; ppl:  1.03; xent: 0.03; lr: 0.00114; 12325/9456 tok/s;   1789 sec
+[2020-08-03 11:16:46,533 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:16:46,557 INFO] number of examples: 5061
+[2020-08-03 11:17:07,653 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:17:07,707 INFO] number of examples: 5061
+[2020-08-03 11:17:28,669 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:17:28,690 INFO] number of examples: 5061
+[2020-08-03 11:17:48,931 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:17:48,989 INFO] number of examples: 5061
+[2020-08-03 11:18:10,453 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:18:10,829 INFO] number of examples: 5061
+[2020-08-03 11:18:31,224 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:18:31,247 INFO] number of examples: 5061
+[2020-08-03 11:18:51,442 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:18:51,491 INFO] number of examples: 5061
+[2020-08-03 11:19:05,380 INFO] Step 13000/75000; acc:  98.99; ppl:  1.03; xent: 0.03; lr: 0.00110; 12568/9644 tok/s;   1937 sec
+[2020-08-03 11:19:11,512 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:19:11,534 INFO] number of examples: 5061
+[2020-08-03 11:19:31,567 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:19:31,618 INFO] number of examples: 5061
+[2020-08-03 11:19:51,671 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:19:51,694 INFO] number of examples: 5061
+[2020-08-03 11:20:12,469 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:20:12,492 INFO] number of examples: 5061
+[2020-08-03 11:20:33,748 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:20:33,797 INFO] number of examples: 5061
+[2020-08-03 11:20:55,084 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:20:55,108 INFO] number of examples: 5061
+[2020-08-03 11:21:16,152 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:21:16,205 INFO] number of examples: 5061
+[2020-08-03 11:21:32,767 INFO] Step 14000/75000; acc:  99.14; ppl:  1.02; xent: 0.02; lr: 0.00106; 12624/9689 tok/s;   2085 sec
+[2020-08-03 11:21:36,345 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:21:36,368 INFO] number of examples: 5061
+[2020-08-03 11:21:56,367 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:21:56,420 INFO] number of examples: 5061
+[2020-08-03 11:22:16,450 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:22:16,472 INFO] number of examples: 5061
+[2020-08-03 11:22:36,518 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:22:36,540 INFO] number of examples: 5061
+[2020-08-03 11:22:56,687 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:22:56,735 INFO] number of examples: 5061
+[2020-08-03 11:23:16,766 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:23:16,789 INFO] number of examples: 5061
+[2020-08-03 11:23:36,799 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:23:36,850 INFO] number of examples: 5061
+[2020-08-03 11:23:56,037 INFO] Step 15000/75000; acc:  99.24; ppl:  1.02; xent: 0.02; lr: 0.00102; 12986/9966 tok/s;   2228 sec
+[2020-08-03 11:23:56,039 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_9k/toy_model_step_15000.pt
+[2020-08-03 11:23:57,246 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:23:57,269 INFO] number of examples: 5061
+[2020-08-03 11:24:17,697 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:24:17,754 INFO] number of examples: 5061
+[2020-08-03 11:24:38,624 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:24:38,647 INFO] number of examples: 5061
+[2020-08-03 11:24:59,306 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:24:59,330 INFO] number of examples: 5061
+[2020-08-03 11:25:20,172 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:25:20,241 INFO] number of examples: 5061
+[2020-08-03 11:25:41,568 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:25:41,591 INFO] number of examples: 5061
+[2020-08-03 11:26:02,605 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:26:02,664 INFO] number of examples: 5061
+[2020-08-03 11:26:23,397 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:26:23,420 INFO] number of examples: 5061
+[2020-08-03 11:26:25,235 INFO] Step 16000/75000; acc:  99.34; ppl:  1.02; xent: 0.02; lr: 0.00099; 12472/9570 tok/s;   2377 sec
+[2020-08-03 11:26:44,215 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:26:44,239 INFO] number of examples: 5061
+[2020-08-03 11:27:05,110 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:27:05,159 INFO] number of examples: 5061
+[2020-08-03 11:27:25,880 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:27:25,904 INFO] number of examples: 5061
+[2020-08-03 11:27:46,992 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:27:47,051 INFO] number of examples: 5061
+[2020-08-03 11:28:08,079 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:28:08,103 INFO] number of examples: 5061
+[2020-08-03 11:28:28,592 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:28:28,645 INFO] number of examples: 5061
+[2020-08-03 11:28:48,670 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:28:48,694 INFO] number of examples: 5061
+[2020-08-03 11:28:52,998 INFO] Step 17000/75000; acc:  99.42; ppl:  1.02; xent: 0.02; lr: 0.00096; 12591/9662 tok/s;   2525 sec
+[2020-08-03 11:29:08,661 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:29:08,683 INFO] number of examples: 5061
+[2020-08-03 11:29:28,785 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:29:28,847 INFO] number of examples: 5061
+[2020-08-03 11:29:49,956 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:29:49,979 INFO] number of examples: 5061
+[2020-08-03 11:30:10,973 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:30:11,030 INFO] number of examples: 5061
+[2020-08-03 11:30:32,079 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:30:32,103 INFO] number of examples: 5061
+[2020-08-03 11:30:53,116 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:30:53,139 INFO] number of examples: 5061
+[2020-08-03 11:31:14,328 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:31:14,380 INFO] number of examples: 5061
+[2020-08-03 11:31:21,607 INFO] Step 18000/75000; acc:  99.48; ppl:  1.02; xent: 0.01; lr: 0.00093; 12520/9610 tok/s;   2674 sec
+[2020-08-03 11:31:35,436 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:31:35,459 INFO] number of examples: 5061
+[2020-08-03 11:31:56,550 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:31:56,605 INFO] number of examples: 5061
+[2020-08-03 11:32:17,657 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:32:17,681 INFO] number of examples: 5061
+[2020-08-03 11:32:38,868 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:32:38,929 INFO] number of examples: 5061
+[2020-08-03 11:32:59,978 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:33:00,002 INFO] number of examples: 5061
+[2020-08-03 11:33:21,022 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:33:21,045 INFO] number of examples: 5061
+[2020-08-03 11:33:42,094 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:33:42,147 INFO] number of examples: 5061
+[2020-08-03 11:33:52,245 INFO] Step 19000/75000; acc:  99.52; ppl:  1.01; xent: 0.01; lr: 0.00091; 12351/9475 tok/s;   2824 sec
+[2020-08-03 11:34:03,346 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:34:03,369 INFO] number of examples: 5061
+[2020-08-03 11:34:24,390 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:34:24,450 INFO] number of examples: 5061
+[2020-08-03 11:34:45,447 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:34:45,471 INFO] number of examples: 5061
+[2020-08-03 11:35:06,552 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:35:06,575 INFO] number of examples: 5061
+[2020-08-03 11:35:27,799 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:35:27,852 INFO] number of examples: 5061
+[2020-08-03 11:35:48,910 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:35:48,933 INFO] number of examples: 5061
+[2020-08-03 11:36:09,671 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:36:09,725 INFO] number of examples: 5061
+[2020-08-03 11:36:22,484 INFO] Step 20000/75000; acc:  99.56; ppl:  1.01; xent: 0.01; lr: 0.00088; 12383/9500 tok/s;   2974 sec
+[2020-08-03 11:36:22,485 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.valid.0.pt
+[2020-08-03 11:36:22,493 INFO] number of examples: 1689
+[2020-08-03 11:36:25,297 INFO] Validation perplexity: 1.09268
+[2020-08-03 11:36:25,297 INFO] Validation accuracy: 98.141
+[2020-08-03 11:36:25,299 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_9k/toy_model_step_20000.pt
+[2020-08-03 11:36:33,848 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:36:33,872 INFO] number of examples: 5061
+[2020-08-03 11:36:55,045 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:36:55,099 INFO] number of examples: 5061
+[2020-08-03 11:37:16,128 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:37:16,152 INFO] number of examples: 5061
+[2020-08-03 11:37:37,240 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:37:37,299 INFO] number of examples: 5061
+[2020-08-03 11:37:58,344 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:37:58,367 INFO] number of examples: 5061
+[2020-08-03 11:38:19,581 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:38:19,605 INFO] number of examples: 5061
+[2020-08-03 11:38:40,686 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:38:40,752 INFO] number of examples: 5061
+[2020-08-03 11:38:56,257 INFO] Step 21000/75000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00086; 12099/9285 tok/s;   3128 sec
+[2020-08-03 11:39:01,807 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:39:01,831 INFO] number of examples: 5061
+[2020-08-03 11:39:22,858 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:39:22,914 INFO] number of examples: 5061
+[2020-08-03 11:39:44,093 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:39:44,117 INFO] number of examples: 5061
+[2020-08-03 11:40:05,179 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:40:05,201 INFO] number of examples: 5061
+[2020-08-03 11:40:26,315 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:40:26,339 INFO] number of examples: 5061
+[2020-08-03 11:40:47,400 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:40:47,424 INFO] number of examples: 5061
+[2020-08-03 11:41:08,601 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:41:08,660 INFO] number of examples: 5061
+[2020-08-03 11:41:26,848 INFO] Step 22000/75000; acc:  99.64; ppl:  1.01; xent: 0.01; lr: 0.00084; 12355/9484 tok/s;   3279 sec
+[2020-08-03 11:41:29,704 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:41:29,728 INFO] number of examples: 5061
+[2020-08-03 11:41:50,825 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:41:50,884 INFO] number of examples: 5061
+[2020-08-03 11:42:11,977 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:42:12,001 INFO] number of examples: 5061
+[2020-08-03 11:42:33,204 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:42:33,227 INFO] number of examples: 5061
+[2020-08-03 11:42:54,311 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:42:54,365 INFO] number of examples: 5061
+[2020-08-03 11:43:15,449 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:43:15,474 INFO] number of examples: 5061
+[2020-08-03 11:43:36,524 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:43:36,581 INFO] number of examples: 5061
+[2020-08-03 11:43:57,677 INFO] Step 23000/75000; acc:  99.66; ppl:  1.01; xent: 0.01; lr: 0.00082; 12336/9467 tok/s;   3430 sec
+[2020-08-03 11:43:57,832 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:43:57,864 INFO] number of examples: 5061
+[2020-08-03 11:44:18,960 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:44:18,984 INFO] number of examples: 5061
+[2020-08-03 11:44:40,079 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:44:40,130 INFO] number of examples: 5061
+[2020-08-03 11:45:01,181 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:45:01,205 INFO] number of examples: 5061
+[2020-08-03 11:45:22,432 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:45:22,491 INFO] number of examples: 5061
+[2020-08-03 11:45:43,532 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:45:43,556 INFO] number of examples: 5061
+[2020-08-03 11:46:04,629 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:46:04,690 INFO] number of examples: 5061
+[2020-08-03 11:46:25,785 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:46:25,808 INFO] number of examples: 5061
+[2020-08-03 11:46:28,540 INFO] Step 24000/75000; acc:  99.69; ppl:  1.01; xent: 0.01; lr: 0.00081; 12333/9463 tok/s;   3581 sec
+[2020-08-03 11:46:47,032 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:46:47,055 INFO] number of examples: 5061
+[2020-08-03 11:47:08,107 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:47:08,160 INFO] number of examples: 5061
+[2020-08-03 11:47:29,222 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:47:29,246 INFO] number of examples: 5061
+[2020-08-03 11:47:50,313 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:47:50,370 INFO] number of examples: 5061
+[2020-08-03 11:48:11,512 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:48:11,536 INFO] number of examples: 5061
+[2020-08-03 11:48:32,619 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:48:32,642 INFO] number of examples: 5061
+[2020-08-03 11:48:53,741 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:48:53,764 INFO] number of examples: 5061
+[2020-08-03 11:48:59,182 INFO] Step 25000/75000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00079; 12350/9478 tok/s;   3731 sec
+[2020-08-03 11:48:59,183 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_9k/toy_model_step_25000.pt
+[2020-08-03 11:49:15,155 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:49:15,179 INFO] number of examples: 5061
+[2020-08-03 11:49:36,438 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:49:36,494 INFO] number of examples: 5061
+[2020-08-03 11:49:57,574 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:49:57,598 INFO] number of examples: 5061
+[2020-08-03 11:50:18,653 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:50:18,712 INFO] number of examples: 5061
+[2020-08-03 11:50:39,781 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:50:39,805 INFO] number of examples: 5061
+[2020-08-03 11:51:01,030 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:51:01,054 INFO] number of examples: 5061
+[2020-08-03 11:51:22,165 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:51:22,217 INFO] number of examples: 5061
+[2020-08-03 11:51:30,365 INFO] Step 26000/75000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00078; 12307/9446 tok/s;   3882 sec
+[2020-08-03 11:51:43,296 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:51:43,320 INFO] number of examples: 5061
+[2020-08-03 11:52:04,398 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:52:04,454 INFO] number of examples: 5061
+[2020-08-03 11:52:25,674 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:52:25,698 INFO] number of examples: 5061
+[2020-08-03 11:52:46,807 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:52:46,872 INFO] number of examples: 5061
+[2020-08-03 11:53:07,952 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:53:07,975 INFO] number of examples: 5061
+[2020-08-03 11:53:29,064 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:53:29,088 INFO] number of examples: 5061
+[2020-08-03 11:53:50,309 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:53:50,366 INFO] number of examples: 5061
+[2020-08-03 11:54:01,210 INFO] Step 27000/75000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00076; 12333/9459 tok/s;   4033 sec
+[2020-08-03 11:54:11,427 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:54:11,450 INFO] number of examples: 5061
+[2020-08-03 11:54:32,572 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:54:32,631 INFO] number of examples: 5061
+[2020-08-03 11:54:53,702 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:54:53,725 INFO] number of examples: 5061
+[2020-08-03 11:55:14,916 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:55:14,940 INFO] number of examples: 5061
+[2020-08-03 11:55:36,055 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:55:36,110 INFO] number of examples: 5061
+[2020-08-03 11:55:57,172 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:55:57,195 INFO] number of examples: 5061
+[2020-08-03 11:56:18,337 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:56:18,393 INFO] number of examples: 5061
+[2020-08-03 11:56:32,110 INFO] Step 28000/75000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00075; 12329/9461 tok/s;   4184 sec
+[2020-08-03 11:56:39,633 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:56:39,657 INFO] number of examples: 5061
+[2020-08-03 11:57:00,766 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:57:00,826 INFO] number of examples: 5061
+[2020-08-03 11:57:21,895 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:57:21,919 INFO] number of examples: 5061
+[2020-08-03 11:57:43,001 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:57:43,025 INFO] number of examples: 5061
+[2020-08-03 11:58:04,309 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:58:04,366 INFO] number of examples: 5061
+[2020-08-03 11:58:25,357 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:58:25,381 INFO] number of examples: 5061
+[2020-08-03 11:58:46,511 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:58:46,571 INFO] number of examples: 5061
+[2020-08-03 11:59:02,951 INFO] Step 29000/75000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00073; 12334/9467 tok/s;   4335 sec
+[2020-08-03 11:59:07,602 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:59:07,626 INFO] number of examples: 5061
+[2020-08-03 11:59:28,835 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:59:28,858 INFO] number of examples: 5061
+[2020-08-03 11:59:49,947 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 11:59:50,000 INFO] number of examples: 5061
+[2020-08-03 12:00:11,077 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:00:11,101 INFO] number of examples: 5061
+[2020-08-03 12:00:32,205 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:00:32,262 INFO] number of examples: 5061
+[2020-08-03 12:00:53,488 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:00:53,512 INFO] number of examples: 5061
+[2020-08-03 12:01:14,597 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:01:14,657 INFO] number of examples: 5061
+[2020-08-03 12:01:33,758 INFO] Step 30000/75000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00072; 12338/9468 tok/s;   4486 sec
+[2020-08-03 12:01:33,759 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.valid.0.pt
+[2020-08-03 12:01:33,768 INFO] number of examples: 1689
+[2020-08-03 12:01:36,593 INFO] Validation perplexity: 1.10082
+[2020-08-03 12:01:36,593 INFO] Validation accuracy: 98.2594
+[2020-08-03 12:01:36,595 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_9k/toy_model_step_30000.pt
+[2020-08-03 12:01:38,914 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:01:38,941 INFO] number of examples: 5061
+[2020-08-03 12:02:00,031 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:02:00,099 INFO] number of examples: 5061
+[2020-08-03 12:02:21,360 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:02:21,383 INFO] number of examples: 5061
+[2020-08-03 12:02:42,455 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:02:42,479 INFO] number of examples: 5061
+[2020-08-03 12:03:03,571 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:03:03,622 INFO] number of examples: 5061
+[2020-08-03 12:03:24,498 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:03:24,521 INFO] number of examples: 5061
+[2020-08-03 12:03:45,770 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:03:45,830 INFO] number of examples: 5061
+[2020-08-03 12:04:06,927 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:04:06,951 INFO] number of examples: 5061
+[2020-08-03 12:04:07,736 INFO] Step 31000/75000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00071; 12084/9272 tok/s;   4640 sec
+[2020-08-03 12:04:28,078 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:04:28,101 INFO] number of examples: 5061
+[2020-08-03 12:04:49,218 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:04:49,270 INFO] number of examples: 5061
+[2020-08-03 12:05:10,480 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:05:10,504 INFO] number of examples: 5061
+[2020-08-03 12:05:31,574 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:05:31,630 INFO] number of examples: 5061
+[2020-08-03 12:05:52,717 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:05:52,740 INFO] number of examples: 5061
+[2020-08-03 12:06:13,795 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:06:13,855 INFO] number of examples: 5061
+[2020-08-03 12:06:34,926 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:06:34,950 INFO] number of examples: 5061
+[2020-08-03 12:06:38,426 INFO] Step 32000/75000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00070; 12346/9477 tok/s;   4790 sec
+[2020-08-03 12:06:56,001 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:06:56,025 INFO] number of examples: 5061
+[2020-08-03 12:07:17,089 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:07:17,145 INFO] number of examples: 5061
+[2020-08-03 12:07:38,216 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:07:38,239 INFO] number of examples: 5061
+[2020-08-03 12:07:59,443 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:07:59,499 INFO] number of examples: 5061
+[2020-08-03 12:08:20,269 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:08:20,293 INFO] number of examples: 5061
+[2020-08-03 12:08:41,356 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:08:41,380 INFO] number of examples: 5061
+[2020-08-03 12:09:02,430 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:09:02,482 INFO] number of examples: 5061
+[2020-08-03 12:09:08,678 INFO] Step 33000/75000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00069; 12383/9502 tok/s;   4941 sec
+[2020-08-03 12:09:23,235 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:09:23,258 INFO] number of examples: 5061
+[2020-08-03 12:09:43,835 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:09:43,891 INFO] number of examples: 5061
+[2020-08-03 12:10:04,875 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:10:04,899 INFO] number of examples: 5061
+[2020-08-03 12:10:25,793 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:10:25,855 INFO] number of examples: 5061
+[2020-08-03 12:10:46,905 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:10:46,928 INFO] number of examples: 5061
+[2020-08-03 12:11:08,049 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:11:08,072 INFO] number of examples: 5061
+[2020-08-03 12:11:28,992 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:11:29,045 INFO] number of examples: 5061
+[2020-08-03 12:11:37,891 INFO] Step 34000/75000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00068; 12469/9567 tok/s;   5090 sec
+[2020-08-03 12:11:49,658 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:11:49,681 INFO] number of examples: 5061
+[2020-08-03 12:12:10,424 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:12:10,479 INFO] number of examples: 5061
+[2020-08-03 12:12:31,328 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:12:31,352 INFO] number of examples: 5061
+[2020-08-03 12:12:52,437 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:12:52,461 INFO] number of examples: 5061
+[2020-08-03 12:13:13,513 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:13:13,573 INFO] number of examples: 5061
+[2020-08-03 12:13:34,811 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:13:34,834 INFO] number of examples: 5061
+[2020-08-03 12:13:55,894 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:13:55,949 INFO] number of examples: 5061
+[2020-08-03 12:14:07,711 INFO] Step 35000/75000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00067; 12418/9528 tok/s;   5240 sec
+[2020-08-03 12:14:07,713 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_9k/toy_model_step_35000.pt
+[2020-08-03 12:14:17,329 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:14:17,353 INFO] number of examples: 5061
+[2020-08-03 12:14:38,482 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:14:38,542 INFO] number of examples: 5061
+[2020-08-03 12:14:59,778 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:14:59,801 INFO] number of examples: 5061
+[2020-08-03 12:15:20,894 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:15:20,919 INFO] number of examples: 5061
+[2020-08-03 12:15:42,009 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:15:42,063 INFO] number of examples: 5061
+[2020-08-03 12:16:03,153 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:16:03,177 INFO] number of examples: 5061
+[2020-08-03 12:16:24,452 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:16:24,510 INFO] number of examples: 5061
+[2020-08-03 12:16:38,982 INFO] Step 36000/75000; acc:  99.84; ppl:  1.01; xent: 0.01; lr: 0.00066; 12299/9436 tok/s;   5391 sec
+[2020-08-03 12:16:45,582 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:16:45,605 INFO] number of examples: 5061
+[2020-08-03 12:17:06,698 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:17:06,765 INFO] number of examples: 5061
+[2020-08-03 12:17:27,810 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:17:27,834 INFO] number of examples: 5061
+[2020-08-03 12:17:49,069 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:17:49,126 INFO] number of examples: 5061
+[2020-08-03 12:18:10,215 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:18:10,269 INFO] number of examples: 5061
+[2020-08-03 12:18:31,344 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:18:31,367 INFO] number of examples: 5061
+[2020-08-03 12:18:52,446 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:18:52,507 INFO] number of examples: 5061
+[2020-08-03 12:19:09,918 INFO] Step 37000/75000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00065; 12326/9461 tok/s;   5542 sec
+[2020-08-03 12:19:13,856 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:19:13,880 INFO] number of examples: 5061
+[2020-08-03 12:19:35,187 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:19:35,212 INFO] number of examples: 5061
+[2020-08-03 12:19:56,520 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:19:56,579 INFO] number of examples: 5061
+[2020-08-03 12:20:17,941 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:20:17,965 INFO] number of examples: 5061
+[2020-08-03 12:20:39,437 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:20:39,494 INFO] number of examples: 5061
+[2020-08-03 12:21:00,806 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:21:00,829 INFO] number of examples: 5061
+[2020-08-03 12:21:22,161 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:21:22,222 INFO] number of examples: 5061
+[2020-08-03 12:21:42,501 INFO] Step 38000/75000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00064; 12194/9358 tok/s;   5694 sec
+[2020-08-03 12:21:43,569 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:21:43,595 INFO] number of examples: 5061
+[2020-08-03 12:22:05,092 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:22:05,115 INFO] number of examples: 5061
+[2020-08-03 12:22:26,438 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:22:26,494 INFO] number of examples: 5061
+[2020-08-03 12:22:47,772 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:22:47,795 INFO] number of examples: 5061
+[2020-08-03 12:23:09,088 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:23:09,148 INFO] number of examples: 5061
+[2020-08-03 12:23:30,504 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:23:30,528 INFO] number of examples: 5061
+[2020-08-03 12:23:51,784 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:23:51,808 INFO] number of examples: 5061
+[2020-08-03 12:24:13,096 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:24:13,150 INFO] number of examples: 5061
+[2020-08-03 12:24:14,852 INFO] Step 39000/75000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00063; 12213/9372 tok/s;   5847 sec
+[2020-08-03 12:24:34,455 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:24:34,479 INFO] number of examples: 5061
+[2020-08-03 12:24:55,922 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:24:55,982 INFO] number of examples: 5061
+[2020-08-03 12:25:17,267 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:25:17,290 INFO] number of examples: 5061
+[2020-08-03 12:25:38,597 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:25:38,661 INFO] number of examples: 5061
+[2020-08-03 12:25:59,959 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:25:59,983 INFO] number of examples: 5061
+[2020-08-03 12:26:21,472 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:26:21,496 INFO] number of examples: 5061
+[2020-08-03 12:26:42,753 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:26:42,808 INFO] number of examples: 5061
+[2020-08-03 12:26:47,230 INFO] Step 40000/75000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00062; 12210/9369 tok/s;   5999 sec
+[2020-08-03 12:26:47,231 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.valid.0.pt
+[2020-08-03 12:26:47,240 INFO] number of examples: 1689
+[2020-08-03 12:26:50,053 INFO] Validation perplexity: 1.10384
+[2020-08-03 12:26:50,053 INFO] Validation accuracy: 98.3687
+[2020-08-03 12:26:50,055 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_9k/toy_model_step_40000.pt
+[2020-08-03 12:27:07,372 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:27:07,395 INFO] number of examples: 5061
+[2020-08-03 12:27:28,681 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:27:28,740 INFO] number of examples: 5061
+[2020-08-03 12:27:50,119 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:27:50,142 INFO] number of examples: 5061
+[2020-08-03 12:28:11,363 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:28:11,422 INFO] number of examples: 5061
+[2020-08-03 12:28:32,604 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:28:32,629 INFO] number of examples: 5061
+[2020-08-03 12:28:53,892 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:28:53,915 INFO] number of examples: 5061
+[2020-08-03 12:29:15,294 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:29:15,351 INFO] number of examples: 5061
+[2020-08-03 12:29:22,506 INFO] Step 41000/75000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00062; 11983/9197 tok/s;   6155 sec
+[2020-08-03 12:29:36,630 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:29:36,665 INFO] number of examples: 5061
+[2020-08-03 12:29:57,939 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:29:57,998 INFO] number of examples: 5061
+[2020-08-03 12:30:19,330 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:30:19,354 INFO] number of examples: 5061
+[2020-08-03 12:30:40,846 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:30:40,908 INFO] number of examples: 5061
+[2020-08-03 12:31:02,131 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:31:02,155 INFO] number of examples: 5061
+[2020-08-03 12:31:23,441 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:31:23,465 INFO] number of examples: 5061
+[2020-08-03 12:31:44,772 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:31:44,826 INFO] number of examples: 5061
+[2020-08-03 12:31:54,862 INFO] Step 42000/75000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00061; 12212/9369 tok/s;   6307 sec
+[2020-08-03 12:32:06,217 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:32:06,240 INFO] number of examples: 5061
+[2020-08-03 12:32:27,517 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:32:27,575 INFO] number of examples: 5061
+[2020-08-03 12:32:48,847 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:32:48,872 INFO] number of examples: 5061
+[2020-08-03 12:33:10,138 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:33:10,161 INFO] number of examples: 5061
+[2020-08-03 12:33:31,494 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:33:31,548 INFO] number of examples: 5061
+[2020-08-03 12:33:52,818 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:33:52,842 INFO] number of examples: 5061
+[2020-08-03 12:34:14,095 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:34:14,152 INFO] number of examples: 5061
+[2020-08-03 12:34:26,944 INFO] Step 43000/75000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00060; 12233/9384 tok/s;   6459 sec
+[2020-08-03 12:34:35,467 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:34:35,497 INFO] number of examples: 5061
+[2020-08-03 12:34:56,921 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:34:56,990 INFO] number of examples: 5061
+[2020-08-03 12:35:18,326 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:35:18,349 INFO] number of examples: 5061
+[2020-08-03 12:35:39,640 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:35:39,664 INFO] number of examples: 5061
+[2020-08-03 12:36:00,944 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:36:00,999 INFO] number of examples: 5061
+[2020-08-03 12:36:22,506 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:36:22,531 INFO] number of examples: 5061
+[2020-08-03 12:36:43,849 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:36:43,913 INFO] number of examples: 5061
+[2020-08-03 12:36:59,414 INFO] Step 44000/75000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00060; 12203/9364 tok/s;   6611 sec
+[2020-08-03 12:37:05,198 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:37:05,222 INFO] number of examples: 5061
+[2020-08-03 12:37:26,551 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:37:26,575 INFO] number of examples: 5061
+[2020-08-03 12:37:48,096 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:37:48,119 INFO] number of examples: 5061
+[2020-08-03 12:38:09,483 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:38:09,507 INFO] number of examples: 5061
+[2020-08-03 12:38:30,751 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:38:30,809 INFO] number of examples: 5061
+[2020-08-03 12:38:52,128 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:38:52,153 INFO] number of examples: 5061
+[2020-08-03 12:39:13,625 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:39:13,687 INFO] number of examples: 5061
+[2020-08-03 12:39:32,001 INFO] Step 45000/75000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00059; 12193/9360 tok/s;   6764 sec
+[2020-08-03 12:39:32,003 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_9k/toy_model_step_45000.pt
+[2020-08-03 12:39:35,394 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:39:35,418 INFO] number of examples: 5061
+[2020-08-03 12:39:56,755 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:39:56,779 INFO] number of examples: 5061
+[2020-08-03 12:40:18,107 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:40:18,161 INFO] number of examples: 5061
+[2020-08-03 12:40:39,623 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:40:39,647 INFO] number of examples: 5061
+[2020-08-03 12:41:01,001 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:41:01,059 INFO] number of examples: 5061
+[2020-08-03 12:41:22,292 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:41:22,316 INFO] number of examples: 5061
+[2020-08-03 12:41:43,654 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:41:43,714 INFO] number of examples: 5061
+[2020-08-03 12:42:04,850 INFO] Step 46000/75000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00058; 12173/9343 tok/s;   6917 sec
+[2020-08-03 12:42:05,154 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:42:05,177 INFO] number of examples: 5061
+[2020-08-03 12:42:26,481 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:42:26,505 INFO] number of examples: 5061
+[2020-08-03 12:42:47,832 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:42:47,888 INFO] number of examples: 5061
+[2020-08-03 12:43:09,211 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:43:09,235 INFO] number of examples: 5061
+[2020-08-03 12:43:30,749 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:43:30,810 INFO] number of examples: 5061
+[2020-08-03 12:43:52,156 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:43:52,179 INFO] number of examples: 5061
+[2020-08-03 12:44:13,514 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:44:13,537 INFO] number of examples: 5061
+[2020-08-03 12:44:34,870 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:44:34,932 INFO] number of examples: 5061
+[2020-08-03 12:44:37,543 INFO] Step 47000/75000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00058; 12185/9349 tok/s;   7070 sec
+[2020-08-03 12:44:56,415 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:44:56,439 INFO] number of examples: 5061
+[2020-08-03 12:45:17,771 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:45:17,830 INFO] number of examples: 5061
+[2020-08-03 12:45:39,159 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:45:39,183 INFO] number of examples: 5061
+[2020-08-03 12:46:00,518 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:46:00,580 INFO] number of examples: 5061
+[2020-08-03 12:46:22,074 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:46:22,098 INFO] number of examples: 5061
+[2020-08-03 12:46:43,386 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:46:43,410 INFO] number of examples: 5061
+[2020-08-03 12:47:04,769 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:47:04,825 INFO] number of examples: 5061
+[2020-08-03 12:47:10,162 INFO] Step 48000/75000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00057; 12190/9354 tok/s;   7222 sec
+[2020-08-03 12:47:26,145 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:47:26,169 INFO] number of examples: 5061
+[2020-08-03 12:47:47,670 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:47:47,729 INFO] number of examples: 5061
+[2020-08-03 12:48:09,006 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:48:09,029 INFO] number of examples: 5061
+[2020-08-03 12:48:30,303 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:48:30,327 INFO] number of examples: 5061
+[2020-08-03 12:48:51,631 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:48:51,685 INFO] number of examples: 5061
+[2020-08-03 12:49:13,136 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:49:13,159 INFO] number of examples: 5061
+[2020-08-03 12:49:34,437 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:49:34,495 INFO] number of examples: 5061
+[2020-08-03 12:49:42,583 INFO] Step 49000/75000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00056; 12207/9371 tok/s;   7375 sec
+[2020-08-03 12:49:55,777 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:49:55,800 INFO] number of examples: 5061
+[2020-08-03 12:50:17,122 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:50:17,184 INFO] number of examples: 5061
+[2020-08-03 12:50:38,682 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:50:38,707 INFO] number of examples: 5061
+[2020-08-03 12:51:00,061 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:51:00,085 INFO] number of examples: 5061
+[2020-08-03 12:51:21,412 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:51:21,466 INFO] number of examples: 5061
+[2020-08-03 12:51:42,830 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:51:42,853 INFO] number of examples: 5061
+[2020-08-03 12:52:04,324 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:52:04,384 INFO] number of examples: 5061
+[2020-08-03 12:52:15,206 INFO] Step 50000/75000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00056; 12190/9349 tok/s;   7527 sec
+[2020-08-03 12:52:15,207 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.valid.0.pt
+[2020-08-03 12:52:15,216 INFO] number of examples: 1689
+[2020-08-03 12:52:18,027 INFO] Validation perplexity: 1.10831
+[2020-08-03 12:52:18,027 INFO] Validation accuracy: 98.3762
+[2020-08-03 12:52:18,028 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_9k/toy_model_step_50000.pt
+[2020-08-03 12:52:28,952 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:52:28,975 INFO] number of examples: 5061
+[2020-08-03 12:52:50,278 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:52:50,340 INFO] number of examples: 5061
+[2020-08-03 12:53:11,636 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:53:11,660 INFO] number of examples: 5061
+[2020-08-03 12:53:33,139 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:53:33,162 INFO] number of examples: 5061
+[2020-08-03 12:53:54,516 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:53:54,568 INFO] number of examples: 5061
+[2020-08-03 12:54:15,861 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:54:15,885 INFO] number of examples: 5061
+[2020-08-03 12:54:36,726 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:54:36,787 INFO] number of examples: 5061
+[2020-08-03 12:54:49,738 INFO] Step 51000/75000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00055; 12039/9238 tok/s;   7682 sec
+[2020-08-03 12:54:57,129 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:54:57,152 INFO] number of examples: 5061
+[2020-08-03 12:55:17,270 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:55:17,336 INFO] number of examples: 5061
+[2020-08-03 12:55:37,540 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:55:37,563 INFO] number of examples: 5061
+[2020-08-03 12:55:57,751 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:55:57,774 INFO] number of examples: 5061
+[2020-08-03 12:56:18,165 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:56:18,217 INFO] number of examples: 5061
+[2020-08-03 12:56:38,474 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:56:38,496 INFO] number of examples: 5061
+[2020-08-03 12:56:58,725 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:56:58,779 INFO] number of examples: 5061
+[2020-08-03 12:57:14,383 INFO] Step 52000/75000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00055; 12862/9872 tok/s;   7826 sec
+[2020-08-03 12:57:18,975 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:57:18,999 INFO] number of examples: 5061
+[2020-08-03 12:57:39,420 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:57:39,443 INFO] number of examples: 5061
+[2020-08-03 12:57:59,624 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:57:59,676 INFO] number of examples: 5061
+[2020-08-03 12:58:19,848 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:58:19,870 INFO] number of examples: 5061
+[2020-08-03 12:58:40,075 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:58:40,128 INFO] number of examples: 5061
+[2020-08-03 12:59:00,507 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:59:00,530 INFO] number of examples: 5061
+[2020-08-03 12:59:20,752 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:59:20,808 INFO] number of examples: 5061
+[2020-08-03 12:59:38,961 INFO] Step 53000/75000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00054; 12869/9877 tok/s;   7971 sec
+[2020-08-03 12:59:40,984 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 12:59:41,008 INFO] number of examples: 5061
+[2020-08-03 13:00:01,278 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:00:01,301 INFO] number of examples: 5061
+[2020-08-03 13:00:21,737 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:00:21,791 INFO] number of examples: 5061
+[2020-08-03 13:00:42,071 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:00:42,095 INFO] number of examples: 5061
+[2020-08-03 13:01:02,401 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:01:02,456 INFO] number of examples: 5061
+[2020-08-03 13:01:22,799 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:01:22,822 INFO] number of examples: 5061
+[2020-08-03 13:01:43,249 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:01:43,272 INFO] number of examples: 5061
+[2020-08-03 13:02:03,664 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:02:03,687 INFO] number of examples: 5061
+[2020-08-03 13:02:04,300 INFO] Step 54000/75000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00054; 12803/9823 tok/s;   8116 sec
+[2020-08-03 13:02:24,016 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:02:24,039 INFO] number of examples: 5061
+[2020-08-03 13:02:44,294 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:02:44,344 INFO] number of examples: 5061
+[2020-08-03 13:03:04,745 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:03:04,768 INFO] number of examples: 5061
+[2020-08-03 13:03:25,079 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:03:25,151 INFO] number of examples: 5061
+[2020-08-03 13:03:45,375 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:03:45,399 INFO] number of examples: 5061
+[2020-08-03 13:04:05,643 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:04:05,668 INFO] number of examples: 5061
+[2020-08-03 13:04:26,208 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:04:26,259 INFO] number of examples: 5061
+[2020-08-03 13:04:29,510 INFO] Step 55000/75000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00053; 12812/9834 tok/s;   8262 sec
+[2020-08-03 13:04:29,512 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_9k/toy_model_step_55000.pt
+[2020-08-03 13:04:47,185 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:04:47,208 INFO] number of examples: 5061
+[2020-08-03 13:05:07,950 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:05:08,004 INFO] number of examples: 5061
+[2020-08-03 13:05:28,932 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:05:28,955 INFO] number of examples: 5061
+[2020-08-03 13:05:50,066 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:05:50,090 INFO] number of examples: 5061
+[2020-08-03 13:06:11,102 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:06:11,125 INFO] number of examples: 5061
+[2020-08-03 13:06:32,046 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:06:32,072 INFO] number of examples: 5061
+[2020-08-03 13:06:53,361 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:06:53,416 INFO] number of examples: 5061
+[2020-08-03 13:06:59,699 INFO] Step 56000/75000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00053; 12389/9507 tok/s;   8412 sec
+[2020-08-03 13:07:14,982 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:07:15,007 INFO] number of examples: 5061
+[2020-08-03 13:07:36,366 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:07:36,431 INFO] number of examples: 5061
+[2020-08-03 13:07:57,735 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:07:57,758 INFO] number of examples: 5061
+[2020-08-03 13:08:19,000 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:08:19,025 INFO] number of examples: 5061
+[2020-08-03 13:08:40,087 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:08:40,140 INFO] number of examples: 5061
+[2020-08-03 13:09:00,942 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:09:00,965 INFO] number of examples: 5061
+[2020-08-03 13:09:21,640 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:09:21,693 INFO] number of examples: 5061
+[2020-08-03 13:09:30,470 INFO] Step 57000/75000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00052; 12340/9468 tok/s;   8562 sec
+[2020-08-03 13:09:42,507 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:09:42,529 INFO] number of examples: 5061
+[2020-08-03 13:10:03,589 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:10:03,613 INFO] number of examples: 5061
+[2020-08-03 13:10:24,254 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:10:24,278 INFO] number of examples: 5061
+[2020-08-03 13:10:45,148 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:10:45,173 INFO] number of examples: 5061
+[2020-08-03 13:11:06,086 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:11:06,140 INFO] number of examples: 5061
+[2020-08-03 13:11:27,151 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:11:27,176 INFO] number of examples: 5061
+[2020-08-03 13:11:47,920 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:11:47,978 INFO] number of examples: 5061
+[2020-08-03 13:11:59,468 INFO] Step 58000/75000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00052; 12486/9580 tok/s;   8711 sec
+[2020-08-03 13:12:08,783 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:12:08,807 INFO] number of examples: 5061
+[2020-08-03 13:12:29,614 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:12:29,636 INFO] number of examples: 5061
+[2020-08-03 13:12:50,473 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:12:50,523 INFO] number of examples: 5061
+[2020-08-03 13:13:11,321 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:13:11,346 INFO] number of examples: 5061
+[2020-08-03 13:13:32,326 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:13:32,383 INFO] number of examples: 5061
+[2020-08-03 13:13:52,781 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:13:52,805 INFO] number of examples: 5061
+[2020-08-03 13:14:13,456 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:14:13,478 INFO] number of examples: 5061
+[2020-08-03 13:14:27,608 INFO] Step 59000/75000; acc:  99.93; ppl:  1.00; xent: 0.00; lr: 0.00051; 12559/9636 tok/s;   8860 sec
+[2020-08-03 13:14:34,176 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:14:34,199 INFO] number of examples: 5061
+[2020-08-03 13:14:54,848 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:14:54,872 INFO] number of examples: 5061
+[2020-08-03 13:15:15,712 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:15:15,766 INFO] number of examples: 5061
+[2020-08-03 13:15:36,771 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:15:36,795 INFO] number of examples: 5061
+[2020-08-03 13:15:57,678 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:15:57,737 INFO] number of examples: 5061
+[2020-08-03 13:16:18,661 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:16:18,683 INFO] number of examples: 5061
+[2020-08-03 13:16:39,483 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:16:39,506 INFO] number of examples: 5061
+[2020-08-03 13:16:56,441 INFO] Step 60000/75000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00051; 12501/9596 tok/s;   9008 sec
+[2020-08-03 13:16:56,442 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.valid.0.pt
+[2020-08-03 13:16:56,477 INFO] number of examples: 1689
+[2020-08-03 13:16:59,223 INFO] Validation perplexity: 1.10676
+[2020-08-03 13:16:59,224 INFO] Validation accuracy: 98.4152
+[2020-08-03 13:16:59,225 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_9k/toy_model_step_60000.pt
+[2020-08-03 13:17:03,803 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:17:03,826 INFO] number of examples: 5061
+[2020-08-03 13:17:24,522 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:17:24,545 INFO] number of examples: 5061
+[2020-08-03 13:17:45,300 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:17:45,355 INFO] number of examples: 5061
+[2020-08-03 13:18:06,134 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:18:06,157 INFO] number of examples: 5061
+[2020-08-03 13:18:27,078 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:18:27,137 INFO] number of examples: 5061
+[2020-08-03 13:18:47,947 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:18:47,971 INFO] number of examples: 5061
+[2020-08-03 13:19:08,804 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:19:08,828 INFO] number of examples: 5061
+[2020-08-03 13:19:28,534 INFO] Step 61000/75000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00051; 12233/9387 tok/s;   9161 sec
+[2020-08-03 13:19:29,735 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:19:29,786 INFO] number of examples: 5061
+[2020-08-03 13:19:50,659 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:19:50,682 INFO] number of examples: 5061
+[2020-08-03 13:20:11,328 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:20:11,382 INFO] number of examples: 5061
+[2020-08-03 13:20:32,084 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:20:32,108 INFO] number of examples: 5061
+[2020-08-03 13:20:52,872 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:20:52,931 INFO] number of examples: 5061
+[2020-08-03 13:21:13,710 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:21:13,735 INFO] number of examples: 5061
+[2020-08-03 13:21:34,637 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:21:34,660 INFO] number of examples: 5061
+[2020-08-03 13:21:55,557 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:21:55,610 INFO] number of examples: 5061
+[2020-08-03 13:21:57,132 INFO] Step 62000/75000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00050; 12521/9609 tok/s;   9309 sec
+[2020-08-03 13:22:16,583 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:22:16,605 INFO] number of examples: 5061
+[2020-08-03 13:22:37,565 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:22:37,630 INFO] number of examples: 5061
+[2020-08-03 13:22:58,571 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:22:58,684 INFO] number of examples: 5061
+[2020-08-03 13:23:19,524 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:23:19,547 INFO] number of examples: 5061
+[2020-08-03 13:23:40,443 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:23:40,493 INFO] number of examples: 5061
+[2020-08-03 13:24:01,462 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:24:01,485 INFO] number of examples: 5061
+[2020-08-03 13:24:22,494 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:24:22,548 INFO] number of examples: 5061
+[2020-08-03 13:24:26,723 INFO] Step 63000/75000; acc:  99.93; ppl:  1.00; xent: 0.00; lr: 0.00050; 12437/9542 tok/s;   9459 sec
+[2020-08-03 13:24:42,905 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:24:42,928 INFO] number of examples: 5061
+[2020-08-03 13:25:03,145 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:25:03,201 INFO] number of examples: 5061
+[2020-08-03 13:25:23,481 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:25:23,505 INFO] number of examples: 5061
+[2020-08-03 13:25:43,757 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:25:43,780 INFO] number of examples: 5061
+[2020-08-03 13:26:04,030 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:26:04,080 INFO] number of examples: 5061
+[2020-08-03 13:26:24,357 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:26:24,381 INFO] number of examples: 5061
+[2020-08-03 13:26:44,796 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:26:44,861 INFO] number of examples: 5061
+[2020-08-03 13:26:51,440 INFO] Step 64000/75000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00049; 12857/9868 tok/s;   9603 sec
+[2020-08-03 13:27:04,730 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:27:04,752 INFO] number of examples: 5061
+[2020-08-03 13:27:24,949 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:27:24,972 INFO] number of examples: 5061
+[2020-08-03 13:27:45,251 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:27:45,275 INFO] number of examples: 5061
+[2020-08-03 13:28:05,661 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:28:05,685 INFO] number of examples: 5061
+[2020-08-03 13:28:25,935 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:28:25,988 INFO] number of examples: 5061
+[2020-08-03 13:28:45,752 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:28:45,784 INFO] number of examples: 5061
+[2020-08-03 13:29:04,976 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:29:05,030 INFO] number of examples: 5061
+[2020-08-03 13:29:13,928 INFO] Step 65000/75000; acc:  99.93; ppl:  1.00; xent: 0.00; lr: 0.00049; 13058/10018 tok/s;   9746 sec
+[2020-08-03 13:29:13,930 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_9k/toy_model_step_65000.pt
+[2020-08-03 13:29:24,684 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:29:24,708 INFO] number of examples: 5061
+[2020-08-03 13:29:44,930 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:29:44,954 INFO] number of examples: 5061
+[2020-08-03 13:30:05,200 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:30:05,249 INFO] number of examples: 5061
+[2020-08-03 13:30:25,142 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:30:25,166 INFO] number of examples: 5061
+[2020-08-03 13:30:45,545 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:30:45,598 INFO] number of examples: 5061
+[2020-08-03 13:31:05,859 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:31:05,882 INFO] number of examples: 5061
+[2020-08-03 13:31:25,750 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:31:25,775 INFO] number of examples: 5061
+[2020-08-03 13:31:37,786 INFO] Step 66000/75000; acc:  99.93; ppl:  1.00; xent: 0.00; lr: 0.00049; 12932/9922 tok/s;   9890 sec
+[2020-08-03 13:31:46,040 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:31:46,064 INFO] number of examples: 5061
+[2020-08-03 13:32:06,470 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:32:06,493 INFO] number of examples: 5061
+[2020-08-03 13:32:26,695 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:32:26,746 INFO] number of examples: 5061
+[2020-08-03 13:32:46,938 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:32:46,961 INFO] number of examples: 5061
+[2020-08-03 13:33:07,244 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:33:07,300 INFO] number of examples: 5061
+[2020-08-03 13:33:27,855 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:33:27,877 INFO] number of examples: 5061
+[2020-08-03 13:33:48,127 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:33:48,149 INFO] number of examples: 5061
+[2020-08-03 13:34:02,831 INFO] Step 67000/75000; acc:  99.93; ppl:  1.00; xent: 0.00; lr: 0.00048; 12828/9843 tok/s;  10035 sec
+[2020-08-03 13:34:08,549 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:34:08,600 INFO] number of examples: 5061
+[2020-08-03 13:34:29,371 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:34:29,394 INFO] number of examples: 5061
+[2020-08-03 13:34:50,220 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:34:50,273 INFO] number of examples: 5061
+[2020-08-03 13:35:10,978 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:35:11,000 INFO] number of examples: 5061
+[2020-08-03 13:35:31,753 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:35:31,776 INFO] number of examples: 5061
+[2020-08-03 13:35:52,570 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:35:52,593 INFO] number of examples: 5061
+[2020-08-03 13:36:13,947 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:36:13,971 INFO] number of examples: 5061
+[2020-08-03 13:36:32,119 INFO] Step 68000/75000; acc:  99.94; ppl:  1.00; xent: 0.00; lr: 0.00048; 12462/9565 tok/s;  10184 sec
+[2020-08-03 13:36:35,322 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:36:35,376 INFO] number of examples: 5061
+[2020-08-03 13:36:56,713 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:36:56,738 INFO] number of examples: 5061
+[2020-08-03 13:37:18,087 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:37:18,150 INFO] number of examples: 5061
+[2020-08-03 13:37:39,634 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:37:39,659 INFO] number of examples: 5061
+[2020-08-03 13:38:00,964 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:38:00,988 INFO] number of examples: 5061
+[2020-08-03 13:38:22,305 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:38:22,377 INFO] number of examples: 5061
+[2020-08-03 13:38:43,679 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:38:43,703 INFO] number of examples: 5061
+[2020-08-03 13:39:04,719 INFO] Step 69000/75000; acc:  99.94; ppl:  1.00; xent: 0.00; lr: 0.00048; 12193/9358 tok/s;  10337 sec
+[2020-08-03 13:39:05,177 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:39:05,235 INFO] number of examples: 5061
+[2020-08-03 13:39:26,551 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:39:26,575 INFO] number of examples: 5061
+[2020-08-03 13:39:47,804 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:39:47,827 INFO] number of examples: 5061
+[2020-08-03 13:40:09,156 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:40:09,180 INFO] number of examples: 5061
+[2020-08-03 13:40:30,333 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:40:30,357 INFO] number of examples: 5061
+[2020-08-03 13:40:51,552 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:40:51,608 INFO] number of examples: 5061
+[2020-08-03 13:41:12,562 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:41:12,587 INFO] number of examples: 5061
+[2020-08-03 13:41:33,456 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:41:33,514 INFO] number of examples: 5061
+[2020-08-03 13:41:35,946 INFO] Step 70000/75000; acc:  99.93; ppl:  1.00; xent: 0.00; lr: 0.00047; 12303/9440 tok/s;  10488 sec
+[2020-08-03 13:41:35,947 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.valid.0.pt
+[2020-08-03 13:41:35,956 INFO] number of examples: 1689
+[2020-08-03 13:41:38,768 INFO] Validation perplexity: 1.11035
+[2020-08-03 13:41:38,768 INFO] Validation accuracy: 98.4466
+[2020-08-03 13:41:38,770 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_9k/toy_model_step_70000.pt
+[2020-08-03 13:41:57,813 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:41:57,880 INFO] number of examples: 5061
+[2020-08-03 13:42:18,976 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:42:19,032 INFO] number of examples: 5061
+[2020-08-03 13:42:39,957 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:42:39,979 INFO] number of examples: 5061
+[2020-08-03 13:43:01,073 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:43:01,096 INFO] number of examples: 5061
+[2020-08-03 13:43:22,102 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:43:22,155 INFO] number of examples: 5061
+[2020-08-03 13:43:43,472 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:43:43,610 INFO] number of examples: 5061
+[2020-08-03 13:44:04,872 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:44:04,927 INFO] number of examples: 5061
+[2020-08-03 13:44:10,125 INFO] Step 71000/75000; acc:  99.94; ppl:  1.00; xent: 0.00; lr: 0.00047; 12067/9259 tok/s;  10642 sec
+[2020-08-03 13:44:26,214 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:44:26,238 INFO] number of examples: 5061
+[2020-08-03 13:44:47,393 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:44:47,416 INFO] number of examples: 5061
+[2020-08-03 13:45:07,821 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:45:07,875 INFO] number of examples: 5061
+[2020-08-03 13:45:28,372 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:45:28,395 INFO] number of examples: 5061
+[2020-08-03 13:45:49,064 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:45:49,117 INFO] number of examples: 5061
+[2020-08-03 13:46:10,183 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:46:10,207 INFO] number of examples: 5061
+[2020-08-03 13:46:30,690 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:46:30,749 INFO] number of examples: 5061
+[2020-08-03 13:46:38,470 INFO] Step 72000/75000; acc:  99.94; ppl:  1.00; xent: 0.00; lr: 0.00047; 12543/9627 tok/s;  10790 sec
+[2020-08-03 13:46:51,380 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:46:51,403 INFO] number of examples: 5061
+[2020-08-03 13:47:11,683 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:47:11,704 INFO] number of examples: 5061
+[2020-08-03 13:47:32,115 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:47:32,165 INFO] number of examples: 5061
+[2020-08-03 13:47:52,345 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:47:52,369 INFO] number of examples: 5061
+[2020-08-03 13:48:12,705 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:48:12,757 INFO] number of examples: 5061
+[2020-08-03 13:48:33,046 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:48:33,069 INFO] number of examples: 5061
+[2020-08-03 13:48:53,303 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:48:53,326 INFO] number of examples: 5061
+[2020-08-03 13:49:03,462 INFO] Step 73000/75000; acc:  99.94; ppl:  1.00; xent: 0.00; lr: 0.00046; 12832/9842 tok/s;  10935 sec
+[2020-08-03 13:49:13,597 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:49:13,620 INFO] number of examples: 5061
+[2020-08-03 13:49:33,802 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:49:33,825 INFO] number of examples: 5061
+[2020-08-03 13:49:53,989 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:49:54,038 INFO] number of examples: 5061
+[2020-08-03 13:50:14,522 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:50:14,545 INFO] number of examples: 5061
+[2020-08-03 13:50:34,862 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:50:34,915 INFO] number of examples: 5061
+[2020-08-03 13:50:55,265 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:50:55,289 INFO] number of examples: 5061
+[2020-08-03 13:51:15,631 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:51:15,654 INFO] number of examples: 5061
+[2020-08-03 13:51:28,633 INFO] Step 74000/75000; acc:  99.94; ppl:  1.00; xent: 0.00; lr: 0.00046; 12815/9834 tok/s;  11081 sec
+[2020-08-03 13:51:36,169 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:51:36,220 INFO] number of examples: 5061
+[2020-08-03 13:51:56,508 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:51:56,532 INFO] number of examples: 5061
+[2020-08-03 13:52:16,859 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:52:16,910 INFO] number of examples: 5061
+[2020-08-03 13:52:37,157 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:52:37,180 INFO] number of examples: 5061
+[2020-08-03 13:52:57,525 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:52:57,548 INFO] number of examples: 5061
+[2020-08-03 13:53:18,085 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:53:18,108 INFO] number of examples: 5061
+[2020-08-03 13:53:38,522 INFO] Loading dataset from /home/dpk25/MolecularTransformer2/experiments/toy_model/data_9k/.train.0.pt
+[2020-08-03 13:53:38,546 INFO] number of examples: 5061
+[2020-08-03 13:53:54,221 INFO] Step 75000/75000; acc:  99.94; ppl:  1.00; xent: 0.00; lr: 0.00046; 12779/9808 tok/s;  11226 sec
+[2020-08-03 13:53:54,223 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_9k/toy_model_step_75000.pt

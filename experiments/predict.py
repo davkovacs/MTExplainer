@@ -1,6 +1,7 @@
 from __future__ import print_function
 from rdkit import Chem
 
+smiles='B.C1CCOC1.CC(C)(C)C1=CCCc2occc21'
 def smi_tokenizer(smi):
     """
     Tokenize a SMILES molecule or reaction
@@ -12,5 +13,6 @@ def smi_tokenizer(smi):
     assert smi == ''.join(tokens)
     return ' '.join(tokens)
 
-m = Chem.MolToSmiles(Chem.MolFromSmiles('CNC.Nc1cccc(F)c1F'))
+m = Chem.MolToSmiles(Chem.MolFromSmiles(smiles))
 print(smi_tokenizer(m))
+

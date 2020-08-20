@@ -1,0 +1,20 @@
+Changed directory to /home/dpk25/MolecularTransformer2/scripts/toy_model/sear_small.
+
+JobID: 27582586
+======
+Time: Tue 18 Aug 19:51:45 BST 2020
+Running on master node: gpu-e-46
+Current directory: /home/dpk25/MolecularTransformer2/scripts/toy_model/sear_small
+
+Nodes allocated:
+================
+gpu-e-46
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+./test_preds.sh 
+
+[2020-08-18 19:51:48,670 INFO] Translating shard 0.
+PRED AVG SCORE: -0.1167, PRED PPL: 1.1238

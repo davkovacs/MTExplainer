@@ -1,0 +1,421 @@
+Changed directory to /home/dpk25/MolecularTransformer2/scripts/pistachio.
+
+JobID: 26314321
+======
+Time: Thu 23 Jul 16:51:50 BST 2020
+Running on master node: gpu-e-80
+Current directory: /home/dpk25/MolecularTransformer2/scripts/pistachio
+
+Nodes allocated:
+================
+gpu-e-80
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+./train.sh 
+
+[2020-07-23 16:52:17,580 INFO] Loading checkpoint from /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_690000.pt
+[2020-07-23 16:52:17,677 INFO] Loading vocab from checkpoint at /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_690000.pt.
+[2020-07-23 16:52:17,677 INFO]  * src vocab size = 527
+[2020-07-23 16:52:17,677 INFO]  * tgt vocab size = 527
+[2020-07-23 16:52:17,677 INFO] Building model...
+[2020-07-23 16:52:24,727 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(527, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(527, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=256, out_features=527, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2020-07-23 16:52:24,729 INFO] encoder: 5395712
+[2020-07-23 16:52:24,729 INFO] decoder: 6450959
+[2020-07-23 16:52:24,729 INFO] * number of parameters: 11846671
+[2020-07-23 16:52:24,817 INFO] Starting training on GPU: [0]
+[2020-07-23 16:52:24,817 INFO] Start training loop and validate every 10000 steps...
+[2020-07-23 16:52:24,817 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-23 16:52:30,674 INFO] number of examples: 399990
+[2020-07-23 16:58:05,810 INFO] Step 691000/750000; acc:  98.72; ppl:  1.04; xent: 0.04; lr: 0.00015; 43770/25697 tok/s;    341 sec
+[2020-07-23 17:03:38,574 INFO] Step 692000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 44946/26289 tok/s;    674 sec
+[2020-07-23 17:03:53,118 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-23 17:04:01,182 INFO] number of examples: 399998
+[2020-07-23 17:09:20,419 INFO] Step 693000/750000; acc:  98.70; ppl:  1.04; xent: 0.04; lr: 0.00015; 43828/25796 tok/s;   1016 sec
+[2020-07-23 17:14:54,696 INFO] Step 694000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 44710/26247 tok/s;   1350 sec
+[2020-07-23 17:15:23,176 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-23 17:15:29,183 INFO] number of examples: 399994
+[2020-07-23 17:20:35,291 INFO] Step 695000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 43821/25713 tok/s;   1690 sec
+[2020-07-23 17:26:04,711 INFO] Step 696000/750000; acc:  98.69; ppl:  1.04; xent: 0.04; lr: 0.00015; 45465/26600 tok/s;   2020 sec
+[2020-07-23 17:26:45,187 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-23 17:26:51,997 INFO] number of examples: 399989
+[2020-07-23 17:31:41,982 INFO] Step 697000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 44307/26034 tok/s;   2357 sec
+[2020-07-23 17:37:11,399 INFO] Step 698000/750000; acc:  98.69; ppl:  1.04; xent: 0.04; lr: 0.00015; 45353/26574 tok/s;   2687 sec
+[2020-07-23 17:38:07,358 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-23 17:38:15,520 INFO] number of examples: 399987
+[2020-07-23 17:42:48,697 INFO] Step 699000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 44379/25974 tok/s;   3024 sec
+[2020-07-23 17:48:18,194 INFO] Step 700000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 45404/26626 tok/s;   3353 sec
+[2020-07-23 17:48:18,195 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-23 17:48:19,232 INFO] number of examples: 118770
+[2020-07-23 17:50:41,191 INFO] Validation perplexity: 1.04885
+[2020-07-23 17:50:41,191 INFO] Validation accuracy: 98.6642
+[2020-07-23 17:50:41,194 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_700000.pt
+[2020-07-23 17:51:49,981 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-23 17:51:51,759 INFO] number of examples: 19078
+[2020-07-23 17:52:26,019 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-23 17:52:31,461 INFO] number of examples: 399990
+[2020-07-23 17:56:19,277 INFO] Step 701000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 30955/18158 tok/s;   3834 sec
+[2020-07-23 18:01:45,915 INFO] Step 702000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 45735/26820 tok/s;   4161 sec
+[2020-07-23 18:03:40,254 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-23 18:03:47,828 INFO] number of examples: 399998
+[2020-07-23 18:07:19,754 INFO] Step 703000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 44900/26326 tok/s;   4495 sec
+[2020-07-23 18:12:46,948 INFO] Step 704000/750000; acc:  98.72; ppl:  1.04; xent: 0.04; lr: 0.00015; 45719/26883 tok/s;   4822 sec
+[2020-07-23 18:14:55,134 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-23 18:15:00,801 INFO] number of examples: 399994
+[2020-07-23 18:18:20,985 INFO] Step 705000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 44740/26272 tok/s;   5156 sec
+[2020-07-23 18:23:48,712 INFO] Step 706000/750000; acc:  98.70; ppl:  1.04; xent: 0.04; lr: 0.00015; 45665/26764 tok/s;   5484 sec
+[2020-07-23 18:26:08,801 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-23 18:26:14,675 INFO] number of examples: 399989
+[2020-07-23 18:29:22,389 INFO] Step 707000/750000; acc:  98.74; ppl:  1.04; xent: 0.04; lr: 0.00015; 44788/26306 tok/s;   5818 sec
+[2020-07-23 18:34:50,093 INFO] Step 708000/750000; acc:  98.70; ppl:  1.04; xent: 0.04; lr: 0.00015; 45594/26720 tok/s;   6145 sec
+[2020-07-23 18:37:26,751 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-23 18:37:34,516 INFO] number of examples: 399987
+[2020-07-23 18:40:26,964 INFO] Step 709000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 44295/25975 tok/s;   6482 sec
+[2020-07-23 18:45:53,783 INFO] Step 710000/750000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00015; 45833/26888 tok/s;   6809 sec
+[2020-07-23 18:45:53,784 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-23 18:45:54,423 INFO] number of examples: 118770
+[2020-07-23 18:48:16,059 INFO] Validation perplexity: 1.04862
+[2020-07-23 18:48:16,060 INFO] Validation accuracy: 98.6686
+[2020-07-23 18:48:16,063 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_710000.pt
+[2020-07-23 18:51:05,820 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-23 18:51:05,923 INFO] number of examples: 19078
+[2020-07-23 18:51:40,247 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-23 18:51:46,173 INFO] number of examples: 399990
+[2020-07-23 18:53:52,969 INFO] Step 711000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 31104/18221 tok/s;   7288 sec
+[2020-07-23 18:59:20,095 INFO] Step 712000/750000; acc:  98.72; ppl:  1.04; xent: 0.04; lr: 0.00015; 45670/26754 tok/s;   7615 sec
+[2020-07-23 19:02:55,044 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-23 19:03:02,372 INFO] number of examples: 399998
+[2020-07-23 19:04:54,453 INFO] Step 713000/750000; acc:  98.72; ppl:  1.04; xent: 0.04; lr: 0.00015; 44804/26249 tok/s;   7950 sec
+[2020-07-23 19:10:20,525 INFO] Step 714000/750000; acc:  98.72; ppl:  1.04; xent: 0.04; lr: 0.00015; 45856/26968 tok/s;   8276 sec
+[2020-07-23 19:14:09,586 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-23 19:14:15,005 INFO] number of examples: 399994
+[2020-07-23 19:15:55,067 INFO] Step 715000/750000; acc:  98.72; ppl:  1.04; xent: 0.04; lr: 0.00015; 44694/26295 tok/s;   8610 sec
+[2020-07-23 19:21:23,229 INFO] Step 716000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 45534/26633 tok/s;   8938 sec
+[2020-07-23 19:25:23,312 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-23 19:25:30,640 INFO] number of examples: 399989
+[2020-07-23 19:26:57,508 INFO] Step 717000/750000; acc:  98.72; ppl:  1.04; xent: 0.04; lr: 0.00015; 44758/26306 tok/s;   9273 sec
+[2020-07-23 19:32:25,587 INFO] Step 718000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 45577/26674 tok/s;   9601 sec
+[2020-07-23 19:36:42,802 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-23 19:36:50,466 INFO] number of examples: 399987
+[2020-07-23 19:38:03,449 INFO] Step 719000/750000; acc:  98.70; ppl:  1.04; xent: 0.04; lr: 0.00015; 44128/25891 tok/s;   9939 sec
+[2020-07-23 19:43:28,852 INFO] Step 720000/750000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00015; 46045/27016 tok/s;  10264 sec
+[2020-07-23 19:43:28,854 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-23 19:43:29,499 INFO] number of examples: 118770
+[2020-07-23 19:45:51,099 INFO] Validation perplexity: 1.04878
+[2020-07-23 19:45:51,099 INFO] Validation accuracy: 98.6684
+[2020-07-23 19:45:51,102 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_720000.pt
+[2020-07-23 19:50:21,882 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-23 19:50:23,556 INFO] number of examples: 19078
+[2020-07-23 19:50:57,899 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-23 19:51:03,446 INFO] number of examples: 399990
+[2020-07-23 19:51:29,902 INFO] Step 721000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 31015/18159 tok/s;  10745 sec
+[2020-07-23 19:56:57,229 INFO] Step 722000/750000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00015; 45622/26812 tok/s;  11072 sec
+[2020-07-23 20:02:12,110 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-23 20:02:19,677 INFO] number of examples: 399998
+[2020-07-23 20:02:32,352 INFO] Step 723000/750000; acc:  98.72; ppl:  1.04; xent: 0.04; lr: 0.00015; 44657/26123 tok/s;  11408 sec
+[2020-07-23 20:07:57,953 INFO] Step 724000/750000; acc:  98.72; ppl:  1.04; xent: 0.04; lr: 0.00015; 46001/27059 tok/s;  11733 sec
+[2020-07-23 20:13:25,607 INFO] Step 725000/750000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00015; 45545/26749 tok/s;  12061 sec
+[2020-07-23 20:13:26,999 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-23 20:13:32,697 INFO] number of examples: 399994
+[2020-07-23 20:18:59,313 INFO] Step 726000/750000; acc:  98.72; ppl:  1.04; xent: 0.04; lr: 0.00015; 44846/26325 tok/s;  12394 sec
+[2020-07-23 20:24:26,280 INFO] Step 727000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 45750/26775 tok/s;  12721 sec
+[2020-07-23 20:24:40,675 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-23 20:24:46,531 INFO] number of examples: 399989
+[2020-07-23 20:30:00,552 INFO] Step 728000/750000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00015; 44733/26305 tok/s;  13056 sec
+[2020-07-23 20:35:29,310 INFO] Step 729000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 45420/26590 tok/s;  13384 sec
+[2020-07-23 20:35:59,128 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-23 20:36:06,467 INFO] number of examples: 399987
+[2020-07-23 20:41:04,258 INFO] Step 730000/750000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00015; 44701/26223 tok/s;  13719 sec
+[2020-07-23 20:41:04,259 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-23 20:41:06,593 INFO] number of examples: 118770
+[2020-07-23 20:43:28,232 INFO] Validation perplexity: 1.04867
+[2020-07-23 20:43:28,232 INFO] Validation accuracy: 98.6688
+[2020-07-23 20:43:28,235 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_730000.pt
+[2020-07-23 20:48:57,805 INFO] Step 731000/750000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00015; 31569/18502 tok/s;  14193 sec
+[2020-07-23 20:49:39,964 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-23 20:49:40,087 INFO] number of examples: 19078
+[2020-07-23 20:50:14,415 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-23 20:50:20,616 INFO] number of examples: 399990
+[2020-07-23 20:54:34,157 INFO] Step 732000/750000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00015; 44312/26019 tok/s;  14529 sec
+[2020-07-23 21:00:01,175 INFO] Step 733000/750000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00015; 45657/26695 tok/s;  14856 sec
+[2020-07-23 21:01:29,659 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-23 21:01:37,228 INFO] number of examples: 399998
+[2020-07-23 21:05:35,040 INFO] Step 734000/750000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00015; 44901/26387 tok/s;  15190 sec
+[2020-07-23 21:11:02,333 INFO] Step 735000/750000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00015; 45684/26795 tok/s;  15518 sec
+[2020-07-23 21:12:44,653 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-23 21:12:50,437 INFO] number of examples: 399994
+[2020-07-23 21:16:36,480 INFO] Step 736000/750000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00015; 44740/26292 tok/s;  15852 sec
+[2020-07-23 21:22:04,660 INFO] Step 737000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 45592/26677 tok/s;  16180 sec
+[2020-07-23 21:23:58,819 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-23 21:24:04,678 INFO] number of examples: 399989
+[2020-07-23 21:27:38,685 INFO] Step 738000/750000; acc:  98.74; ppl:  1.04; xent: 0.04; lr: 0.00015; 44765/26312 tok/s;  16514 sec
+[2020-07-23 21:33:06,451 INFO] Step 739000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 45612/26835 tok/s;  16842 sec
+[2020-07-23 21:35:17,006 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-23 21:35:24,543 INFO] number of examples: 399987
+[2020-07-23 21:38:42,770 INFO] Step 740000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00015; 44331/25883 tok/s;  17178 sec
+[2020-07-23 21:38:42,771 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-23 21:38:43,382 INFO] number of examples: 118770
+[2020-07-23 21:41:05,018 INFO] Validation perplexity: 1.04879
+[2020-07-23 21:41:05,019 INFO] Validation accuracy: 98.6705
+[2020-07-23 21:41:05,022 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_740000.pt
+[2020-07-23 21:46:32,666 INFO] Step 741000/750000; acc:  98.74; ppl:  1.04; xent: 0.04; lr: 0.00015; 31883/18740 tok/s;  17648 sec
+[2020-07-23 21:48:56,080 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-23 21:48:57,763 INFO] number of examples: 19078
+[2020-07-23 21:49:32,076 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-23 21:49:37,602 INFO] number of examples: 399990
+[2020-07-23 21:52:10,549 INFO] Step 742000/750000; acc:  98.72; ppl:  1.04; xent: 0.04; lr: 0.00015; 44087/25812 tok/s;  17986 sec
+[2020-07-23 21:57:37,177 INFO] Step 743000/750000; acc:  98.74; ppl:  1.04; xent: 0.04; lr: 0.00015; 45758/26812 tok/s;  18312 sec
+[2020-07-23 22:00:46,320 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-23 22:00:53,821 INFO] number of examples: 399998
+[2020-07-23 22:03:11,552 INFO] Step 744000/750000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00014; 44816/26247 tok/s;  18647 sec
+[2020-07-23 22:08:38,450 INFO] Step 745000/750000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00014; 45716/26887 tok/s;  18974 sec
+[2020-07-23 22:12:01,823 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-23 22:12:07,484 INFO] number of examples: 399994
+[2020-07-23 22:14:13,509 INFO] Step 746000/750000; acc:  98.74; ppl:  1.04; xent: 0.04; lr: 0.00014; 44641/26236 tok/s;  19309 sec
+[2020-07-23 22:19:41,481 INFO] Step 747000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00014; 45557/26719 tok/s;  19637 sec
+[2020-07-23 22:23:15,568 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-23 22:23:23,650 INFO] number of examples: 399989
+[2020-07-23 22:25:16,564 INFO] Step 748000/750000; acc:  98.74; ppl:  1.04; xent: 0.04; lr: 0.00014; 44648/26217 tok/s;  19972 sec
+[2020-07-23 22:30:44,637 INFO] Step 749000/750000; acc:  98.71; ppl:  1.04; xent: 0.04; lr: 0.00014; 45591/26674 tok/s;  20300 sec
+[2020-07-23 22:34:36,075 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-23 22:34:42,350 INFO] number of examples: 399987
+[2020-07-23 22:36:20,688 INFO] Step 750000/750000; acc:  98.73; ppl:  1.04; xent: 0.04; lr: 0.00014; 44385/26098 tok/s;  20636 sec
+[2020-07-23 22:36:20,689 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-23 22:36:21,346 INFO] number of examples: 118770
+[2020-07-23 22:38:42,934 INFO] Validation perplexity: 1.04838
+[2020-07-23 22:38:42,934 INFO] Validation accuracy: 98.6764
+[2020-07-23 22:38:42,937 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_750000.pt

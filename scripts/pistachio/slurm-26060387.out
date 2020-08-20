@@ -1,0 +1,1237 @@
+Changed directory to /home/dpk25/MolecularTransformer2/scripts/pistachio.
+
+JobID: 26060387
+======
+Time: Fri 17 Jul 16:24:57 BST 2020
+Running on master node: gpu-e-4
+Current directory: /home/dpk25/MolecularTransformer2/scripts/pistachio
+
+Nodes allocated:
+================
+gpu-e-4
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+./train.sh 
+
+[2020-07-17 16:25:03,626 INFO]  * src vocab size = 527
+[2020-07-17 16:25:03,626 INFO]  * tgt vocab size = 527
+[2020-07-17 16:25:03,626 INFO] Building model...
+[2020-07-17 16:25:10,101 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(527, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(527, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=256, out_features=527, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2020-07-17 16:25:10,103 INFO] encoder: 5395712
+[2020-07-17 16:25:10,103 INFO] decoder: 6450959
+[2020-07-17 16:25:10,103 INFO] * number of parameters: 11846671
+[2020-07-17 16:25:10,107 INFO] Starting training on GPU: [0]
+[2020-07-17 16:25:10,107 INFO] Start training loop and validate every 10000 steps...
+[2020-07-17 16:25:10,107 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-17 16:25:31,361 INFO] number of examples: 399990
+[2020-07-17 16:31:03,663 INFO] Step 1000/500000; acc:  49.93; ppl:  6.18; xent: 1.82; lr: 0.00017; 42215/24784 tok/s;    354 sec
+[2020-07-17 16:36:33,275 INFO] Step 2000/500000; acc:  68.18; ppl:  2.50; xent: 0.91; lr: 0.00035; 45376/26540 tok/s;    683 sec
+[2020-07-17 16:36:47,674 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-17 16:36:53,933 INFO] number of examples: 399998
+[2020-07-17 16:42:09,401 INFO] Step 3000/500000; acc:  76.15; ppl:  1.98; xent: 0.69; lr: 0.00052; 44573/26235 tok/s;   1019 sec
+[2020-07-17 16:47:39,676 INFO] Step 4000/500000; acc:  84.77; ppl:  1.58; xent: 0.45; lr: 0.00070; 45252/26565 tok/s;   1350 sec
+[2020-07-17 16:48:07,812 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-17 16:48:25,034 INFO] number of examples: 399994
+[2020-07-17 16:53:27,517 INFO] Step 5000/500000; acc:  88.36; ppl:  1.42; xent: 0.35; lr: 0.00087; 42908/25177 tok/s;   1697 sec
+[2020-07-17 16:58:56,738 INFO] Step 6000/500000; acc:  90.65; ppl:  1.33; xent: 0.29; lr: 0.00105; 45493/26616 tok/s;   2027 sec
+[2020-07-17 16:59:37,277 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-17 16:59:42,846 INFO] number of examples: 399989
+[2020-07-17 17:04:34,974 INFO] Step 7000/500000; acc:  92.13; ppl:  1.28; xent: 0.24; lr: 0.00122; 44180/25960 tok/s;   2365 sec
+[2020-07-17 17:10:06,680 INFO] Step 8000/500000; acc:  93.01; ppl:  1.24; xent: 0.22; lr: 0.00140; 45040/26391 tok/s;   2697 sec
+[2020-07-17 17:11:03,033 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-17 17:11:11,707 INFO] number of examples: 399987
+[2020-07-17 17:15:46,880 INFO] Step 9000/500000; acc:  93.90; ppl:  1.21; xent: 0.19; lr: 0.00132; 44000/25753 tok/s;   3037 sec
+[2020-07-17 17:21:19,094 INFO] Step 10000/500000; acc:  94.60; ppl:  1.19; xent: 0.17; lr: 0.00125; 45033/26408 tok/s;   3369 sec
+[2020-07-17 17:21:19,095 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-17 17:21:24,543 INFO] number of examples: 118770
+[2020-07-17 17:23:48,735 INFO] Validation perplexity: 1.14234
+[2020-07-17 17:23:48,736 INFO] Validation accuracy: 95.8627
+[2020-07-17 17:23:48,739 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_10000.pt
+[2020-07-17 17:25:03,394 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-17 17:25:04,942 INFO] number of examples: 19078
+[2020-07-17 17:25:39,595 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-17 17:25:45,713 INFO] number of examples: 399990
+[2020-07-17 17:29:36,464 INFO] Step 11000/500000; acc:  94.98; ppl:  1.17; xent: 0.16; lr: 0.00119; 29941/17563 tok/s;   3866 sec
+[2020-07-17 17:35:07,057 INFO] Step 12000/500000; acc:  95.40; ppl:  1.16; xent: 0.15; lr: 0.00114; 45187/26499 tok/s;   4197 sec
+[2020-07-17 17:37:02,744 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-17 17:37:10,291 INFO] number of examples: 399998
+[2020-07-17 17:40:44,987 INFO] Step 13000/500000; acc:  95.64; ppl:  1.15; xent: 0.14; lr: 0.00110; 44356/26007 tok/s;   4535 sec
+[2020-07-17 17:46:16,420 INFO] Step 14000/500000; acc:  95.91; ppl:  1.14; xent: 0.13; lr: 0.00106; 45134/26539 tok/s;   4866 sec
+[2020-07-17 17:48:26,292 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-17 17:48:33,871 INFO] number of examples: 399994
+[2020-07-17 17:51:56,734 INFO] Step 15000/500000; acc:  96.04; ppl:  1.14; xent: 0.13; lr: 0.00102; 43915/25787 tok/s;   5207 sec
+[2020-07-17 17:57:28,446 INFO] Step 16000/500000; acc:  96.19; ppl:  1.13; xent: 0.12; lr: 0.00099; 45117/26443 tok/s;   5538 sec
+[2020-07-17 17:59:50,301 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-17 17:59:56,518 INFO] number of examples: 399989
+[2020-07-17 18:03:06,833 INFO] Step 17000/500000; acc:  96.38; ppl:  1.12; xent: 0.12; lr: 0.00096; 44164/25940 tok/s;   5877 sec
+[2020-07-17 18:08:38,651 INFO] Step 18000/500000; acc:  96.41; ppl:  1.12; xent: 0.12; lr: 0.00093; 45029/26389 tok/s;   6209 sec
+[2020-07-17 18:11:17,235 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-17 18:11:25,055 INFO] number of examples: 399987
+[2020-07-17 18:14:19,711 INFO] Step 19000/500000; acc:  96.53; ppl:  1.12; xent: 0.11; lr: 0.00091; 43751/25656 tok/s;   6550 sec
+[2020-07-17 18:19:48,979 INFO] Step 20000/500000; acc:  96.66; ppl:  1.11; xent: 0.11; lr: 0.00088; 45492/26688 tok/s;   6879 sec
+[2020-07-17 18:19:48,980 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-17 18:19:51,479 INFO] number of examples: 118770
+[2020-07-17 18:22:14,596 INFO] Validation perplexity: 1.09266
+[2020-07-17 18:22:14,596 INFO] Validation accuracy: 97.2951
+[2020-07-17 18:22:14,600 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_20000.pt
+[2020-07-17 18:25:05,412 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-17 18:25:05,517 INFO] number of examples: 19078
+[2020-07-17 18:25:40,038 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-17 18:25:45,599 INFO] number of examples: 399990
+[2020-07-17 18:27:53,272 INFO] Step 21000/500000; acc:  96.72; ppl:  1.11; xent: 0.11; lr: 0.00086; 30776/18029 tok/s;   7363 sec
+[2020-07-17 18:33:23,035 INFO] Step 22000/500000; acc:  96.79; ppl:  1.11; xent: 0.10; lr: 0.00084; 45305/26540 tok/s;   7693 sec
+[2020-07-17 18:37:00,104 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-17 18:37:07,723 INFO] number of examples: 399998
+[2020-07-17 18:39:00,947 INFO] Step 23000/500000; acc:  96.87; ppl:  1.11; xent: 0.10; lr: 0.00082; 44333/25973 tok/s;   8031 sec
+[2020-07-17 18:44:30,420 INFO] Step 24000/500000; acc:  96.94; ppl:  1.10; xent: 0.10; lr: 0.00081; 45382/26690 tok/s;   8360 sec
+[2020-07-17 18:48:21,838 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-17 18:48:29,714 INFO] number of examples: 399994
+[2020-07-17 18:50:10,851 INFO] Step 25000/500000; acc:  96.98; ppl:  1.10; xent: 0.10; lr: 0.00079; 43920/25840 tok/s;   8701 sec
+[2020-07-17 18:55:42,212 INFO] Step 26000/500000; acc:  96.98; ppl:  1.10; xent: 0.10; lr: 0.00078; 45094/26376 tok/s;   9032 sec
+[2020-07-17 18:59:44,642 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-17 18:59:51,107 INFO] number of examples: 399989
+[2020-07-17 19:01:18,954 INFO] Step 27000/500000; acc:  97.09; ppl:  1.10; xent: 0.09; lr: 0.00076; 44430/26114 tok/s;   9369 sec
+[2020-07-17 19:06:50,588 INFO] Step 28000/500000; acc:  97.08; ppl:  1.10; xent: 0.09; lr: 0.00075; 45088/26388 tok/s;   9700 sec
+[2020-07-17 19:11:10,656 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-17 19:11:16,975 INFO] number of examples: 399987
+[2020-07-17 19:12:30,826 INFO] Step 29000/500000; acc:  97.15; ppl:  1.10; xent: 0.09; lr: 0.00073; 43820/25711 tok/s;  10041 sec
+[2020-07-17 19:17:59,562 INFO] Step 30000/500000; acc:  97.20; ppl:  1.10; xent: 0.09; lr: 0.00072; 45578/26742 tok/s;  10369 sec
+[2020-07-17 19:17:59,563 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-17 19:18:02,700 INFO] number of examples: 118770
+[2020-07-17 19:20:26,625 INFO] Validation perplexity: 1.08007
+[2020-07-17 19:20:26,625 INFO] Validation accuracy: 97.6662
+[2020-07-17 19:20:26,628 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_30000.pt
+[2020-07-17 19:25:20,786 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-17 19:25:20,898 INFO] number of examples: 19078
+[2020-07-17 19:25:55,650 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-17 19:26:01,450 INFO] number of examples: 399990
+[2020-07-17 19:26:28,245 INFO] Step 31000/500000; acc:  97.22; ppl:  1.09; xent: 0.09; lr: 0.00071; 29330/17172 tok/s;  10878 sec
+[2020-07-17 19:31:58,883 INFO] Step 32000/500000; acc:  97.27; ppl:  1.09; xent: 0.09; lr: 0.00070; 45165/26544 tok/s;  11209 sec
+[2020-07-17 19:37:16,947 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-17 19:37:24,712 INFO] number of examples: 399998
+[2020-07-17 19:37:37,597 INFO] Step 33000/500000; acc:  97.27; ppl:  1.09; xent: 0.09; lr: 0.00069; 44183/25846 tok/s;  11547 sec
+[2020-07-17 19:43:06,525 INFO] Step 34000/500000; acc:  97.32; ppl:  1.09; xent: 0.09; lr: 0.00068; 45535/26785 tok/s;  11876 sec
+[2020-07-17 19:48:37,580 INFO] Step 35000/500000; acc:  97.36; ppl:  1.09; xent: 0.09; lr: 0.00067; 45077/26474 tok/s;  12207 sec
+[2020-07-17 19:48:38,974 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-17 19:48:44,827 INFO] number of examples: 399994
+[2020-07-17 19:54:14,983 INFO] Step 36000/500000; acc:  97.36; ppl:  1.09; xent: 0.09; lr: 0.00066; 44355/26036 tok/s;  12545 sec
+[2020-07-17 19:59:45,501 INFO] Step 37000/500000; acc:  97.38; ppl:  1.09; xent: 0.09; lr: 0.00065; 45259/26487 tok/s;  12875 sec
+[2020-07-17 20:00:00,045 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-17 20:00:08,168 INFO] number of examples: 399989
+[2020-07-17 20:05:25,730 INFO] Step 38000/500000; acc:  97.43; ppl:  1.09; xent: 0.08; lr: 0.00064; 43950/25845 tok/s;  13216 sec
+[2020-07-17 20:10:57,836 INFO] Step 39000/500000; acc:  97.43; ppl:  1.09; xent: 0.08; lr: 0.00063; 44962/26322 tok/s;  13548 sec
+[2020-07-17 20:11:27,929 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-17 20:11:34,035 INFO] number of examples: 399987
+[2020-07-17 20:16:34,649 INFO] Step 40000/500000; acc:  97.47; ppl:  1.09; xent: 0.08; lr: 0.00062; 44453/26078 tok/s;  13885 sec
+[2020-07-17 20:16:34,651 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-17 20:16:37,382 INFO] number of examples: 118770
+[2020-07-17 20:19:01,224 INFO] Validation perplexity: 1.07258
+[2020-07-17 20:19:01,224 INFO] Validation accuracy: 97.8902
+[2020-07-17 20:19:01,227 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_40000.pt
+[2020-07-17 20:24:34,254 INFO] Step 41000/500000; acc:  97.49; ppl:  1.08; xent: 0.08; lr: 0.00062; 31170/18268 tok/s;  14364 sec
+[2020-07-17 20:25:16,824 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-17 20:25:16,962 INFO] number of examples: 19078
+[2020-07-17 20:25:51,689 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-17 20:25:58,362 INFO] number of examples: 399990
+[2020-07-17 20:30:14,390 INFO] Step 42000/500000; acc:  97.51; ppl:  1.08; xent: 0.08; lr: 0.00061; 43819/25730 tok/s;  14704 sec
+[2020-07-17 20:35:44,773 INFO] Step 43000/500000; acc:  97.53; ppl:  1.08; xent: 0.08; lr: 0.00060; 45192/26423 tok/s;  15035 sec
+[2020-07-17 20:37:14,186 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-17 20:37:21,775 INFO] number of examples: 399998
+[2020-07-17 20:41:22,318 INFO] Step 44000/500000; acc:  97.55; ppl:  1.08; xent: 0.08; lr: 0.00060; 44411/26099 tok/s;  15372 sec
+[2020-07-17 20:46:53,109 INFO] Step 45000/500000; acc:  97.58; ppl:  1.08; xent: 0.08; lr: 0.00059; 45201/26512 tok/s;  15703 sec
+[2020-07-17 20:48:36,511 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-17 20:48:51,387 INFO] number of examples: 399994
+[2020-07-17 20:52:39,732 INFO] Step 46000/500000; acc:  97.59; ppl:  1.08; xent: 0.08; lr: 0.00058; 43130/25346 tok/s;  16050 sec
+[2020-07-17 20:58:11,171 INFO] Step 47000/500000; acc:  97.58; ppl:  1.08; xent: 0.08; lr: 0.00058; 45144/26415 tok/s;  16381 sec
+[2020-07-17 21:00:06,425 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-17 21:00:14,360 INFO] number of examples: 399989
+[2020-07-17 21:03:50,951 INFO] Step 48000/500000; acc:  97.65; ppl:  1.08; xent: 0.08; lr: 0.00057; 44007/25867 tok/s;  16721 sec
+[2020-07-17 21:09:22,233 INFO] Step 49000/500000; acc:  97.62; ppl:  1.08; xent: 0.08; lr: 0.00056; 45128/26550 tok/s;  17052 sec
+[2020-07-17 21:11:34,235 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-17 21:11:42,513 INFO] number of examples: 399987
+[2020-07-17 21:15:02,842 INFO] Step 50000/500000; acc:  97.62; ppl:  1.08; xent: 0.08; lr: 0.00056; 43773/25556 tok/s;  17393 sec
+[2020-07-17 21:15:02,843 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-17 21:15:05,650 INFO] number of examples: 118770
+[2020-07-17 21:17:29,220 INFO] Validation perplexity: 1.06818
+[2020-07-17 21:17:29,220 INFO] Validation accuracy: 98.0124
+[2020-07-17 21:17:29,224 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_50000.pt
+[2020-07-17 21:23:00,238 INFO] Step 51000/500000; acc:  97.68; ppl:  1.08; xent: 0.08; lr: 0.00055; 31382/18445 tok/s;  17870 sec
+[2020-07-17 21:25:25,117 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-17 21:25:25,246 INFO] number of examples: 19078
+[2020-07-17 21:25:59,803 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-17 21:26:14,265 INFO] number of examples: 399990
+[2020-07-17 21:28:48,162 INFO] Step 52000/500000; acc:  97.66; ppl:  1.08; xent: 0.08; lr: 0.00055; 42815/25068 tok/s;  18218 sec
+[2020-07-17 21:34:16,909 INFO] Step 53000/500000; acc:  97.71; ppl:  1.08; xent: 0.07; lr: 0.00054; 45463/26640 tok/s;  18547 sec
+[2020-07-17 21:37:27,236 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-17 21:37:33,255 INFO] number of examples: 399998
+[2020-07-17 21:39:51,909 INFO] Step 54000/500000; acc:  97.71; ppl:  1.08; xent: 0.07; lr: 0.00054; 44732/26198 tok/s;  18882 sec
+[2020-07-17 21:45:20,643 INFO] Step 55000/500000; acc:  97.71; ppl:  1.08; xent: 0.07; lr: 0.00053; 45460/26737 tok/s;  19211 sec
+[2020-07-17 21:48:45,291 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-17 21:48:52,847 INFO] number of examples: 399994
+[2020-07-17 21:50:59,823 INFO] Step 56000/500000; acc:  97.75; ppl:  1.08; xent: 0.07; lr: 0.00053; 44099/25917 tok/s;  19550 sec
+[2020-07-17 21:56:29,951 INFO] Step 57000/500000; acc:  97.71; ppl:  1.08; xent: 0.07; lr: 0.00052; 45262/26546 tok/s;  19880 sec
+[2020-07-17 22:00:05,430 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-17 22:00:11,681 INFO] number of examples: 399989
+[2020-07-17 22:02:05,501 INFO] Step 58000/500000; acc:  97.77; ppl:  1.08; xent: 0.07; lr: 0.00052; 44586/26181 tok/s;  20215 sec
+[2020-07-17 22:07:35,835 INFO] Step 59000/500000; acc:  97.74; ppl:  1.08; xent: 0.07; lr: 0.00051; 45279/26492 tok/s;  20546 sec
+[2020-07-17 22:11:28,649 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-17 22:11:36,909 INFO] number of examples: 399987
+[2020-07-17 22:13:15,977 INFO] Step 60000/500000; acc:  97.77; ppl:  1.08; xent: 0.07; lr: 0.00051; 43851/25785 tok/s;  20886 sec
+[2020-07-17 22:13:15,980 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-17 22:13:16,628 INFO] number of examples: 118770
+[2020-07-17 22:15:39,756 INFO] Validation perplexity: 1.06565
+[2020-07-17 22:15:39,757 INFO] Validation accuracy: 98.0998
+[2020-07-17 22:15:39,760 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_60000.pt
+[2020-07-17 22:21:16,027 INFO] Step 61000/500000; acc:  97.78; ppl:  1.07; xent: 0.07; lr: 0.00051; 31185/18240 tok/s;  21366 sec
+[2020-07-17 22:25:22,390 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-17 22:25:22,528 INFO] number of examples: 19078
+[2020-07-17 22:25:57,085 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-17 22:26:03,373 INFO] number of examples: 399990
+[2020-07-17 22:26:55,979 INFO] Step 62000/500000; acc:  97.80; ppl:  1.07; xent: 0.07; lr: 0.00050; 43897/25768 tok/s;  21706 sec
+[2020-07-17 22:32:25,290 INFO] Step 63000/500000; acc:  97.81; ppl:  1.07; xent: 0.07; lr: 0.00050; 45303/26494 tok/s;  22035 sec
+[2020-07-17 22:37:16,292 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-17 22:37:24,159 INFO] number of examples: 399998
+[2020-07-17 22:38:02,689 INFO] Step 64000/500000; acc:  97.83; ppl:  1.07; xent: 0.07; lr: 0.00049; 44441/26058 tok/s;  22373 sec
+[2020-07-17 22:43:33,115 INFO] Step 65000/500000; acc:  97.83; ppl:  1.07; xent: 0.07; lr: 0.00049; 45254/26656 tok/s;  22703 sec
+[2020-07-17 22:48:40,239 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-17 22:48:46,327 INFO] number of examples: 399994
+[2020-07-17 22:49:12,219 INFO] Step 66000/500000; acc:  97.84; ppl:  1.07; xent: 0.07; lr: 0.00049; 44053/25778 tok/s;  23042 sec
+[2020-07-17 22:54:43,571 INFO] Step 67000/500000; acc:  97.82; ppl:  1.07; xent: 0.07; lr: 0.00048; 45101/26514 tok/s;  23373 sec
+[2020-07-17 23:00:03,001 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-17 23:00:09,444 INFO] number of examples: 399989
+[2020-07-17 23:00:22,362 INFO] Step 68000/500000; acc:  97.85; ppl:  1.07; xent: 0.07; lr: 0.00048; 44186/25885 tok/s;  23712 sec
+[2020-07-17 23:05:54,064 INFO] Step 69000/500000; acc:  97.87; ppl:  1.07; xent: 0.07; lr: 0.00048; 45097/26509 tok/s;  24044 sec
+[2020-07-17 23:11:27,578 INFO] Step 70000/500000; acc:  97.85; ppl:  1.07; xent: 0.07; lr: 0.00047; 44704/26191 tok/s;  24377 sec
+[2020-07-17 23:11:27,580 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-17 23:11:30,319 INFO] number of examples: 118770
+[2020-07-17 23:13:54,970 INFO] Validation perplexity: 1.06383
+[2020-07-17 23:13:54,982 INFO] Validation accuracy: 98.1577
+[2020-07-17 23:13:54,985 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_70000.pt
+[2020-07-17 23:14:00,882 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-17 23:14:10,972 INFO] number of examples: 399987
+[2020-07-17 23:19:38,387 INFO] Step 71000/500000; acc:  97.87; ppl:  1.07; xent: 0.07; lr: 0.00047; 30563/17924 tok/s;  24868 sec
+[2020-07-17 23:25:12,093 INFO] Step 72000/500000; acc:  97.89; ppl:  1.07; xent: 0.07; lr: 0.00047; 44804/26299 tok/s;  25202 sec
+[2020-07-17 23:25:28,600 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-17 23:25:29,642 INFO] number of examples: 19078
+[2020-07-17 23:26:04,407 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-17 23:26:12,932 INFO] number of examples: 399990
+[2020-07-17 23:30:55,775 INFO] Step 73000/500000; acc:  97.89; ppl:  1.07; xent: 0.07; lr: 0.00046; 43324/25397 tok/s;  25546 sec
+[2020-07-17 23:36:26,969 INFO] Step 74000/500000; acc:  97.91; ppl:  1.07; xent: 0.07; lr: 0.00046; 45144/26422 tok/s;  25877 sec
+[2020-07-17 23:37:30,285 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-17 23:37:37,922 INFO] number of examples: 399998
+[2020-07-17 23:42:04,735 INFO] Step 75000/500000; acc:  97.91; ppl:  1.07; xent: 0.07; lr: 0.00046; 44348/26084 tok/s;  26215 sec
+[2020-07-17 23:47:35,571 INFO] Step 76000/500000; acc:  97.92; ppl:  1.07; xent: 0.07; lr: 0.00045; 45192/26474 tok/s;  26545 sec
+[2020-07-17 23:48:53,326 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-17 23:49:03,726 INFO] number of examples: 399994
+[2020-07-17 23:53:18,660 INFO] Step 77000/500000; acc:  97.93; ppl:  1.07; xent: 0.07; lr: 0.00045; 43524/25616 tok/s;  26889 sec
+[2020-07-17 23:58:50,843 INFO] Step 78000/500000; acc:  97.91; ppl:  1.07; xent: 0.07; lr: 0.00045; 45070/26306 tok/s;  27221 sec
+[2020-07-18 00:00:20,388 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 00:00:28,661 INFO] number of examples: 399989
+[2020-07-18 00:04:31,631 INFO] Step 79000/500000; acc:  97.97; ppl:  1.07; xent: 0.07; lr: 0.00044; 43913/25838 tok/s;  27562 sec
+[2020-07-18 00:10:03,190 INFO] Step 80000/500000; acc:  97.93; ppl:  1.07; xent: 0.07; lr: 0.00044; 45025/26422 tok/s;  27893 sec
+[2020-07-18 00:10:03,191 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 00:10:06,866 INFO] number of examples: 118770
+[2020-07-18 00:12:31,607 INFO] Validation perplexity: 1.06229
+[2020-07-18 00:12:31,607 INFO] Validation accuracy: 98.2102
+[2020-07-18 00:12:31,611 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_80000.pt
+[2020-07-18 00:14:18,357 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 00:14:26,499 INFO] number of examples: 399987
+[2020-07-18 00:18:13,540 INFO] Step 81000/500000; acc:  97.93; ppl:  1.07; xent: 0.07; lr: 0.00044; 30463/17858 tok/s;  28383 sec
+[2020-07-18 00:23:45,068 INFO] Step 82000/500000; acc:  97.98; ppl:  1.07; xent: 0.07; lr: 0.00044; 45113/26446 tok/s;  28715 sec
+[2020-07-18 00:25:44,123 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 00:25:49,197 INFO] number of examples: 19078
+[2020-07-18 00:26:23,962 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 00:26:35,780 INFO] number of examples: 399990
+[2020-07-18 00:29:37,171 INFO] Step 83000/500000; acc:  97.96; ppl:  1.07; xent: 0.07; lr: 0.00043; 42361/24852 tok/s;  29067 sec
+[2020-07-18 00:35:07,777 INFO] Step 84000/500000; acc:  97.98; ppl:  1.07; xent: 0.07; lr: 0.00043; 45213/26435 tok/s;  29398 sec
+[2020-07-18 00:37:53,122 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 00:37:58,983 INFO] number of examples: 399998
+[2020-07-18 00:40:44,806 INFO] Step 85000/500000; acc:  97.98; ppl:  1.07; xent: 0.07; lr: 0.00043; 44435/26156 tok/s;  29735 sec
+[2020-07-18 00:46:16,002 INFO] Step 86000/500000; acc:  97.99; ppl:  1.07; xent: 0.07; lr: 0.00043; 45144/26471 tok/s;  30066 sec
+[2020-07-18 00:49:15,380 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 00:49:22,928 INFO] number of examples: 399994
+[2020-07-18 00:51:57,060 INFO] Step 87000/500000; acc:  98.00; ppl:  1.07; xent: 0.07; lr: 0.00042; 43831/25716 tok/s;  30407 sec
+[2020-07-18 00:57:28,758 INFO] Step 88000/500000; acc:  97.97; ppl:  1.07; xent: 0.07; lr: 0.00042; 45061/26473 tok/s;  30739 sec
+[2020-07-18 01:00:39,581 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 01:00:47,889 INFO] number of examples: 399989
+[2020-07-18 01:03:08,839 INFO] Step 89000/500000; acc:  98.02; ppl:  1.07; xent: 0.06; lr: 0.00042; 43963/25763 tok/s;  31079 sec
+[2020-07-18 01:08:41,093 INFO] Step 90000/500000; acc:  98.01; ppl:  1.07; xent: 0.06; lr: 0.00042; 45036/26423 tok/s;  31411 sec
+[2020-07-18 01:08:41,094 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 01:08:41,783 INFO] number of examples: 118770
+[2020-07-18 01:11:06,054 INFO] Validation perplexity: 1.05988
+[2020-07-18 01:11:06,054 INFO] Validation accuracy: 98.2707
+[2020-07-18 01:11:06,057 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_90000.pt
+[2020-07-18 01:14:34,439 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 01:14:42,563 INFO] number of examples: 399987
+[2020-07-18 01:16:48,246 INFO] Step 91000/500000; acc:  98.00; ppl:  1.07; xent: 0.07; lr: 0.00041; 30626/17959 tok/s;  31898 sec
+[2020-07-18 01:22:18,696 INFO] Step 92000/500000; acc:  98.01; ppl:  1.07; xent: 0.06; lr: 0.00041; 45282/26546 tok/s;  32229 sec
+[2020-07-18 01:26:00,012 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 01:26:00,149 INFO] number of examples: 19078
+[2020-07-18 01:26:34,868 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 01:26:40,837 INFO] number of examples: 399990
+[2020-07-18 01:28:00,100 INFO] Step 93000/500000; acc:  98.03; ppl:  1.07; xent: 0.06; lr: 0.00041; 43701/25630 tok/s;  32570 sec
+[2020-07-18 01:33:32,014 INFO] Step 94000/500000; acc:  98.04; ppl:  1.07; xent: 0.06; lr: 0.00041; 44951/26347 tok/s;  32902 sec
+[2020-07-18 01:37:58,337 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 01:38:04,258 INFO] number of examples: 399998
+[2020-07-18 01:39:08,459 INFO] Step 95000/500000; acc:  98.04; ppl:  1.07; xent: 0.06; lr: 0.00041; 44579/26076 tok/s;  33238 sec
+[2020-07-18 01:44:38,887 INFO] Step 96000/500000; acc:  98.04; ppl:  1.07; xent: 0.06; lr: 0.00040; 45303/26606 tok/s;  33569 sec
+[2020-07-18 01:49:19,801 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 01:49:27,498 INFO] number of examples: 399994
+[2020-07-18 01:50:19,585 INFO] Step 97000/500000; acc:  98.05; ppl:  1.07; xent: 0.06; lr: 0.00040; 43833/25712 tok/s;  33909 sec
+[2020-07-18 01:55:51,154 INFO] Step 98000/500000; acc:  98.04; ppl:  1.07; xent: 0.06; lr: 0.00040; 45044/26516 tok/s;  34241 sec
+[2020-07-18 02:00:44,364 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 02:00:50,635 INFO] number of examples: 399989
+[2020-07-18 02:01:29,650 INFO] Step 99000/500000; acc:  98.06; ppl:  1.07; xent: 0.06; lr: 0.00040; 44223/25899 tok/s;  34580 sec
+[2020-07-18 02:07:01,279 INFO] Step 100000/500000; acc:  98.06; ppl:  1.07; xent: 0.06; lr: 0.00040; 45119/26496 tok/s;  34911 sec
+[2020-07-18 02:07:01,281 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 02:07:04,323 INFO] number of examples: 118770
+[2020-07-18 02:09:28,582 INFO] Validation perplexity: 1.05979
+[2020-07-18 02:09:28,582 INFO] Validation accuracy: 98.2996
+[2020-07-18 02:09:28,585 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_100000.pt
+[2020-07-18 02:14:39,342 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 02:14:50,371 INFO] number of examples: 399987
+[2020-07-18 02:15:15,045 INFO] Step 101000/500000; acc:  98.05; ppl:  1.07; xent: 0.06; lr: 0.00039; 30163/17653 tok/s;  35405 sec
+[2020-07-18 02:20:44,171 INFO] Step 102000/500000; acc:  98.06; ppl:  1.06; xent: 0.06; lr: 0.00039; 45558/26724 tok/s;  35734 sec
+[2020-07-18 02:26:07,965 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 02:26:08,106 INFO] number of examples: 19078
+[2020-07-18 02:26:18,963 INFO] Step 103000/500000; acc:  98.08; ppl:  1.06; xent: 0.06; lr: 0.00039; 44638/26214 tok/s;  36069 sec
+[2020-07-18 02:26:42,851 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 02:26:47,763 INFO] number of examples: 399990
+[2020-07-18 02:31:56,898 INFO] Step 104000/500000; acc:  98.08; ppl:  1.06; xent: 0.06; lr: 0.00039; 44125/25918 tok/s;  36407 sec
+[2020-07-18 02:37:27,679 INFO] Step 105000/500000; acc:  98.09; ppl:  1.06; xent: 0.06; lr: 0.00039; 45181/26398 tok/s;  36738 sec
+[2020-07-18 02:38:05,165 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 02:38:12,591 INFO] number of examples: 399998
+[2020-07-18 02:43:05,516 INFO] Step 106000/500000; acc:  98.09; ppl:  1.06; xent: 0.06; lr: 0.00038; 44349/26094 tok/s;  37075 sec
+[2020-07-18 02:48:36,822 INFO] Step 107000/500000; acc:  98.11; ppl:  1.06; xent: 0.06; lr: 0.00038; 45161/26527 tok/s;  37407 sec
+[2020-07-18 02:49:28,593 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 02:49:36,507 INFO] number of examples: 399994
+[2020-07-18 02:54:18,151 INFO] Step 108000/500000; acc:  98.10; ppl:  1.06; xent: 0.06; lr: 0.00038; 43717/25649 tok/s;  37748 sec
+[2020-07-18 02:59:49,985 INFO] Step 109000/500000; acc:  98.08; ppl:  1.06; xent: 0.06; lr: 0.00038; 45118/26434 tok/s;  38080 sec
+[2020-07-18 03:00:53,401 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 03:00:59,914 INFO] number of examples: 399989
+[2020-07-18 03:05:29,569 INFO] Step 110000/500000; acc:  98.12; ppl:  1.06; xent: 0.06; lr: 0.00038; 44065/25836 tok/s;  38419 sec
+[2020-07-18 03:05:29,570 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 03:05:30,242 INFO] number of examples: 118770
+[2020-07-18 03:07:54,850 INFO] Validation perplexity: 1.05778
+[2020-07-18 03:07:54,850 INFO] Validation accuracy: 98.3277
+[2020-07-18 03:07:54,853 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_110000.pt
+[2020-07-18 03:13:27,877 INFO] Step 111000/500000; acc:  98.09; ppl:  1.06; xent: 0.06; lr: 0.00038; 31216/18302 tok/s;  38898 sec
+[2020-07-18 03:14:47,716 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 03:14:55,586 INFO] number of examples: 399987
+[2020-07-18 03:19:08,588 INFO] Step 112000/500000; acc:  98.10; ppl:  1.06; xent: 0.06; lr: 0.00037; 43874/25717 tok/s;  39238 sec
+[2020-07-18 03:24:40,484 INFO] Step 113000/500000; acc:  98.13; ppl:  1.06; xent: 0.06; lr: 0.00037; 45070/26456 tok/s;  39570 sec
+[2020-07-18 03:26:13,011 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 03:26:13,147 INFO] number of examples: 19078
+[2020-07-18 03:26:47,879 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 03:26:53,418 INFO] number of examples: 399990
+[2020-07-18 03:30:21,070 INFO] Step 114000/500000; acc:  98.12; ppl:  1.06; xent: 0.06; lr: 0.00037; 43750/25661 tok/s;  39911 sec
+[2020-07-18 03:35:51,844 INFO] Step 115000/500000; acc:  98.14; ppl:  1.06; xent: 0.06; lr: 0.00037; 45171/26440 tok/s;  40242 sec
+[2020-07-18 03:38:11,021 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 03:38:18,347 INFO] number of examples: 399998
+[2020-07-18 03:41:29,657 INFO] Step 116000/500000; acc:  98.13; ppl:  1.06; xent: 0.06; lr: 0.00037; 44376/26031 tok/s;  40580 sec
+[2020-07-18 03:47:00,719 INFO] Step 117000/500000; acc:  98.14; ppl:  1.06; xent: 0.06; lr: 0.00037; 45135/26507 tok/s;  40911 sec
+[2020-07-18 03:49:33,621 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 03:49:41,316 INFO] number of examples: 399994
+[2020-07-18 03:52:41,758 INFO] Step 118000/500000; acc:  98.14; ppl:  1.06; xent: 0.06; lr: 0.00036; 43828/25773 tok/s;  41252 sec
+[2020-07-18 03:58:13,444 INFO] Step 119000/500000; acc:  98.12; ppl:  1.06; xent: 0.06; lr: 0.00036; 45145/26452 tok/s;  41583 sec
+[2020-07-18 04:00:58,333 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 04:01:04,670 INFO] number of examples: 399989
+[2020-07-18 04:03:51,812 INFO] Step 120000/500000; acc:  98.17; ppl:  1.06; xent: 0.06; lr: 0.00036; 44137/25866 tok/s;  41922 sec
+[2020-07-18 04:03:51,813 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 04:03:54,842 INFO] number of examples: 118770
+[2020-07-18 04:06:19,572 INFO] Validation perplexity: 1.05717
+[2020-07-18 04:06:19,573 INFO] Validation accuracy: 98.3542
+[2020-07-18 04:06:19,576 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_120000.pt
+[2020-07-18 04:11:54,842 INFO] Step 121000/500000; acc:  98.13; ppl:  1.06; xent: 0.06; lr: 0.00036; 30971/18173 tok/s;  42405 sec
+[2020-07-18 04:14:57,045 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 04:15:07,846 INFO] number of examples: 399987
+[2020-07-18 04:17:40,269 INFO] Step 122000/500000; acc:  98.12; ppl:  1.06; xent: 0.06; lr: 0.00036; 43160/25323 tok/s;  42750 sec
+[2020-07-18 04:23:12,228 INFO] Step 123000/500000; acc:  98.16; ppl:  1.06; xent: 0.06; lr: 0.00036; 45130/26478 tok/s;  43082 sec
+[2020-07-18 04:26:28,159 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 04:26:28,412 INFO] number of examples: 19078
+[2020-07-18 04:27:03,299 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 04:27:09,286 INFO] number of examples: 399990
+[2020-07-18 04:28:55,010 INFO] Step 124000/500000; acc:  98.16; ppl:  1.06; xent: 0.06; lr: 0.00035; 43507/25502 tok/s;  43425 sec
+[2020-07-18 04:34:28,132 INFO] Step 125000/500000; acc:  98.17; ppl:  1.06; xent: 0.06; lr: 0.00035; 44827/26290 tok/s;  43758 sec
+[2020-07-18 04:38:29,809 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 04:38:37,944 INFO] number of examples: 399998
+[2020-07-18 04:40:09,067 INFO] Step 126000/500000; acc:  98.17; ppl:  1.06; xent: 0.06; lr: 0.00035; 43966/25748 tok/s;  44099 sec
+[2020-07-18 04:45:41,351 INFO] Step 127000/500000; acc:  98.18; ppl:  1.06; xent: 0.06; lr: 0.00035; 44992/26418 tok/s;  44431 sec
+[2020-07-18 04:49:58,143 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 04:50:04,914 INFO] number of examples: 399994
+[2020-07-18 04:51:23,695 INFO] Step 128000/500000; acc:  98.17; ppl:  1.06; xent: 0.06; lr: 0.00035; 43678/25699 tok/s;  44774 sec
+[2020-07-18 04:56:56,945 INFO] Step 129000/500000; acc:  98.16; ppl:  1.06; xent: 0.06; lr: 0.00035; 44829/26245 tok/s;  45107 sec
+[2020-07-18 05:01:24,792 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 05:01:30,951 INFO] number of examples: 399989
+[2020-07-18 05:02:36,399 INFO] Step 130000/500000; acc:  98.18; ppl:  1.06; xent: 0.06; lr: 0.00035; 44071/25855 tok/s;  45446 sec
+[2020-07-18 05:02:36,401 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 05:02:39,705 INFO] number of examples: 118770
+[2020-07-18 05:05:05,076 INFO] Validation perplexity: 1.05622
+[2020-07-18 05:05:05,076 INFO] Validation accuracy: 98.3832
+[2020-07-18 05:05:05,079 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_130000.pt
+[2020-07-18 05:10:38,907 INFO] Step 131000/500000; acc:  98.19; ppl:  1.06; xent: 0.06; lr: 0.00035; 30994/18197 tok/s;  45929 sec
+[2020-07-18 05:15:24,128 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 05:15:35,464 INFO] number of examples: 399987
+[2020-07-18 05:16:26,572 INFO] Step 132000/500000; acc:  98.17; ppl:  1.06; xent: 0.06; lr: 0.00034; 42865/25113 tok/s;  46276 sec
+[2020-07-18 05:21:57,721 INFO] Step 133000/500000; acc:  98.19; ppl:  1.06; xent: 0.06; lr: 0.00034; 45265/26532 tok/s;  46608 sec
+[2020-07-18 05:26:56,254 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 05:26:56,397 INFO] number of examples: 19078
+[2020-07-18 05:27:31,295 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 05:27:38,251 INFO] number of examples: 399990
+[2020-07-18 05:27:42,141 INFO] Step 134000/500000; acc:  98.20; ppl:  1.06; xent: 0.06; lr: 0.00034; 43341/25418 tok/s;  46952 sec
+[2020-07-18 05:33:15,000 INFO] Step 135000/500000; acc:  98.20; ppl:  1.06; xent: 0.06; lr: 0.00034; 44851/26332 tok/s;  47285 sec
+[2020-07-18 05:38:47,187 INFO] Step 136000/500000; acc:  98.20; ppl:  1.06; xent: 0.06; lr: 0.00034; 45008/26340 tok/s;  47617 sec
+[2020-07-18 05:38:58,736 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 05:39:06,961 INFO] number of examples: 399998
+[2020-07-18 05:44:27,716 INFO] Step 137000/500000; acc:  98.20; ppl:  1.06; xent: 0.06; lr: 0.00034; 44024/25914 tok/s;  47958 sec
+[2020-07-18 05:50:00,692 INFO] Step 138000/500000; acc:  98.22; ppl:  1.06; xent: 0.06; lr: 0.00034; 44850/26346 tok/s;  48291 sec
+[2020-07-18 05:50:25,983 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 05:50:32,225 INFO] number of examples: 399994
+[2020-07-18 05:55:41,425 INFO] Step 139000/500000; acc:  98.20; ppl:  1.06; xent: 0.06; lr: 0.00034; 43826/25714 tok/s;  48631 sec
+[2020-07-18 06:01:14,443 INFO] Step 140000/500000; acc:  98.20; ppl:  1.06; xent: 0.06; lr: 0.00033; 44976/26320 tok/s;  48964 sec
+[2020-07-18 06:01:14,445 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 06:01:17,662 INFO] number of examples: 118770
+[2020-07-18 06:03:42,428 INFO] Validation perplexity: 1.05601
+[2020-07-18 06:03:42,429 INFO] Validation accuracy: 98.3952
+[2020-07-18 06:03:42,432 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_140000.pt
+[2020-07-18 06:04:20,493 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 06:04:32,169 INFO] number of examples: 399989
+[2020-07-18 06:09:28,917 INFO] Step 141000/500000; acc:  98.22; ppl:  1.06; xent: 0.06; lr: 0.00033; 30229/17742 tok/s;  49459 sec
+[2020-07-18 06:15:02,838 INFO] Step 142000/500000; acc:  98.20; ppl:  1.06; xent: 0.06; lr: 0.00033; 44722/26213 tok/s;  49793 sec
+[2020-07-18 06:15:56,579 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 06:16:03,289 INFO] number of examples: 399987
+[2020-07-18 06:20:43,793 INFO] Step 143000/500000; acc:  98.21; ppl:  1.06; xent: 0.06; lr: 0.00033; 43926/25708 tok/s;  50134 sec
+[2020-07-18 06:26:18,628 INFO] Step 144000/500000; acc:  98.22; ppl:  1.06; xent: 0.06; lr: 0.00033; 44667/26216 tok/s;  50469 sec
+[2020-07-18 06:27:25,303 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 06:27:25,460 INFO] number of examples: 19078
+[2020-07-18 06:28:00,341 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 06:28:05,641 INFO] number of examples: 399990
+[2020-07-18 06:32:01,285 INFO] Step 145000/500000; acc:  98.23; ppl:  1.06; xent: 0.06; lr: 0.00033; 43463/25482 tok/s;  50811 sec
+[2020-07-18 06:37:34,099 INFO] Step 146000/500000; acc:  98.23; ppl:  1.06; xent: 0.06; lr: 0.00033; 44876/26302 tok/s;  51144 sec
+[2020-07-18 06:39:27,619 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 06:39:35,880 INFO] number of examples: 399998
+[2020-07-18 06:43:14,440 INFO] Step 147000/500000; acc:  98.22; ppl:  1.06; xent: 0.06; lr: 0.00033; 44020/25840 tok/s;  51484 sec
+[2020-07-18 06:48:47,203 INFO] Step 148000/500000; acc:  98.24; ppl:  1.06; xent: 0.06; lr: 0.00032; 44980/26425 tok/s;  51817 sec
+[2020-07-18 06:50:54,560 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 06:51:00,537 INFO] number of examples: 399994
+[2020-07-18 06:54:27,765 INFO] Step 149000/500000; acc:  98.23; ppl:  1.06; xent: 0.06; lr: 0.00032; 43875/25787 tok/s;  52158 sec
+[2020-07-18 07:00:01,662 INFO] Step 150000/500000; acc:  98.21; ppl:  1.06; xent: 0.06; lr: 0.00032; 44814/26237 tok/s;  52492 sec
+[2020-07-18 07:00:01,664 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 07:00:04,401 INFO] number of examples: 118770
+[2020-07-18 07:02:29,114 INFO] Validation perplexity: 1.05478
+[2020-07-18 07:02:29,114 INFO] Validation accuracy: 98.4223
+[2020-07-18 07:02:29,117 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_150000.pt
+[2020-07-18 07:04:49,146 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 07:04:59,169 INFO] number of examples: 399989
+[2020-07-18 07:08:13,357 INFO] Step 151000/500000; acc:  98.27; ppl:  1.06; xent: 0.06; lr: 0.00032; 30402/17861 tok/s;  52983 sec
+[2020-07-18 07:13:46,604 INFO] Step 152000/500000; acc:  98.22; ppl:  1.06; xent: 0.06; lr: 0.00032; 44847/26283 tok/s;  53316 sec
+[2020-07-18 07:16:22,964 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 07:16:31,253 INFO] number of examples: 399987
+[2020-07-18 07:19:29,834 INFO] Step 153000/500000; acc:  98.23; ppl:  1.06; xent: 0.06; lr: 0.00032; 43454/25489 tok/s;  53660 sec
+[2020-07-18 07:25:02,394 INFO] Step 154000/500000; acc:  98.27; ppl:  1.06; xent: 0.06; lr: 0.00032; 45052/26419 tok/s;  53992 sec
+[2020-07-18 07:27:51,611 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 07:27:51,744 INFO] number of examples: 19078
+[2020-07-18 07:28:26,636 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 07:28:31,899 INFO] number of examples: 399990
+[2020-07-18 07:30:44,305 INFO] Step 155000/500000; acc:  98.25; ppl:  1.06; xent: 0.06; lr: 0.00032; 43582/25528 tok/s;  54334 sec
+[2020-07-18 07:36:16,804 INFO] Step 156000/500000; acc:  98.26; ppl:  1.06; xent: 0.06; lr: 0.00032; 44921/26339 tok/s;  54667 sec
+[2020-07-18 07:39:52,423 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 07:40:00,356 INFO] number of examples: 399998
+[2020-07-18 07:41:57,373 INFO] Step 157000/500000; acc:  98.26; ppl:  1.06; xent: 0.06; lr: 0.00032; 43997/25759 tok/s;  55007 sec
+[2020-07-18 07:47:28,889 INFO] Step 158000/500000; acc:  98.27; ppl:  1.06; xent: 0.06; lr: 0.00031; 45107/26538 tok/s;  55339 sec
+[2020-07-18 07:51:18,797 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 07:51:26,812 INFO] number of examples: 399994
+[2020-07-18 07:53:11,750 INFO] Step 159000/500000; acc:  98.27; ppl:  1.06; xent: 0.06; lr: 0.00031; 43624/25643 tok/s;  55682 sec
+[2020-07-18 07:58:45,513 INFO] Step 160000/500000; acc:  98.25; ppl:  1.06; xent: 0.06; lr: 0.00031; 44750/26204 tok/s;  56015 sec
+[2020-07-18 07:58:45,514 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 07:58:46,226 INFO] number of examples: 118770
+[2020-07-18 08:01:11,007 INFO] Validation perplexity: 1.0546
+[2020-07-18 08:01:11,008 INFO] Validation accuracy: 98.4352
+[2020-07-18 08:01:11,011 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_160000.pt
+[2020-07-18 08:05:15,142 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 08:05:23,589 INFO] number of examples: 399989
+[2020-07-18 08:06:55,083 INFO] Step 161000/500000; acc:  98.28; ppl:  1.06; xent: 0.06; lr: 0.00031; 30569/17962 tok/s;  56505 sec
+[2020-07-18 08:12:28,753 INFO] Step 162000/500000; acc:  98.26; ppl:  1.06; xent: 0.06; lr: 0.00031; 44829/26228 tok/s;  56839 sec
+[2020-07-18 08:16:47,514 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 08:16:55,770 INFO] number of examples: 399987
+[2020-07-18 08:18:13,270 INFO] Step 163000/500000; acc:  98.26; ppl:  1.06; xent: 0.06; lr: 0.00031; 43252/25375 tok/s;  57183 sec
+[2020-07-18 08:23:44,577 INFO] Step 164000/500000; acc:  98.27; ppl:  1.06; xent: 0.06; lr: 0.00031; 45214/26528 tok/s;  57514 sec
+[2020-07-18 08:28:17,265 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 08:28:17,407 INFO] number of examples: 19078
+[2020-07-18 08:28:52,294 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 08:28:59,511 INFO] number of examples: 399990
+[2020-07-18 08:29:29,606 INFO] Step 165000/500000; acc:  98.27; ppl:  1.06; xent: 0.06; lr: 0.00031; 43247/25331 tok/s;  57859 sec
+[2020-07-18 08:35:03,209 INFO] Step 166000/500000; acc:  98.29; ppl:  1.06; xent: 0.06; lr: 0.00031; 44769/26291 tok/s;  58193 sec
+[2020-07-18 08:40:21,298 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 08:40:28,090 INFO] number of examples: 399998
+[2020-07-18 08:40:44,014 INFO] Step 167000/500000; acc:  98.28; ppl:  1.06; xent: 0.06; lr: 0.00031; 43923/25715 tok/s;  58534 sec
+[2020-07-18 08:46:15,066 INFO] Step 168000/500000; acc:  98.28; ppl:  1.06; xent: 0.06; lr: 0.00030; 45241/26613 tok/s;  58865 sec
+[2020-07-18 08:51:46,623 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 08:51:54,484 INFO] number of examples: 399994
+[2020-07-18 08:51:57,401 INFO] Step 169000/500000; acc:  98.29; ppl:  1.06; xent: 0.06; lr: 0.00030; 43603/25593 tok/s;  59207 sec
+[2020-07-18 08:57:30,527 INFO] Step 170000/500000; acc:  98.28; ppl:  1.06; xent: 0.06; lr: 0.00030; 44901/26352 tok/s;  59540 sec
+[2020-07-18 08:57:30,529 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 08:57:33,843 INFO] number of examples: 118770
+[2020-07-18 08:59:59,154 INFO] Validation perplexity: 1.05414
+[2020-07-18 08:59:59,154 INFO] Validation accuracy: 98.4497
+[2020-07-18 08:59:59,157 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_170000.pt
+[2020-07-18 09:05:33,447 INFO] Step 171000/500000; acc:  98.27; ppl:  1.06; xent: 0.06; lr: 0.00030; 30987/18149 tok/s;  60023 sec
+[2020-07-18 09:05:45,045 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 09:05:53,544 INFO] number of examples: 399989
+[2020-07-18 09:11:16,128 INFO] Step 172000/500000; acc:  98.29; ppl:  1.06; xent: 0.06; lr: 0.00030; 43616/25637 tok/s;  60366 sec
+[2020-07-18 09:16:50,325 INFO] Step 173000/500000; acc:  98.28; ppl:  1.06; xent: 0.06; lr: 0.00030; 44712/26165 tok/s;  60700 sec
+[2020-07-18 09:17:17,570 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 09:17:26,026 INFO] number of examples: 399987
+[2020-07-18 09:22:31,898 INFO] Step 174000/500000; acc:  98.29; ppl:  1.06; xent: 0.06; lr: 0.00030; 43828/25715 tok/s;  61042 sec
+[2020-07-18 09:28:06,930 INFO] Step 175000/500000; acc:  98.30; ppl:  1.06; xent: 0.06; lr: 0.00030; 44607/26137 tok/s;  61377 sec
+[2020-07-18 09:28:46,820 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 09:28:46,960 INFO] number of examples: 19078
+[2020-07-18 09:29:21,855 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 09:29:27,907 INFO] number of examples: 399990
+[2020-07-18 09:33:48,881 INFO] Step 176000/500000; acc:  98.31; ppl:  1.06; xent: 0.05; lr: 0.00030; 43586/25624 tok/s;  61719 sec
+[2020-07-18 09:39:21,491 INFO] Step 177000/500000; acc:  98.30; ppl:  1.06; xent: 0.06; lr: 0.00030; 44902/26247 tok/s;  62051 sec
+[2020-07-18 09:40:48,486 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 09:40:56,624 INFO] number of examples: 399998
+[2020-07-18 09:45:01,515 INFO] Step 178000/500000; acc:  98.30; ppl:  1.06; xent: 0.06; lr: 0.00030; 44072/25871 tok/s;  62391 sec
+[2020-07-18 09:50:34,103 INFO] Step 179000/500000; acc:  98.31; ppl:  1.06; xent: 0.05; lr: 0.00030; 44971/26410 tok/s;  62724 sec
+[2020-07-18 09:52:15,191 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 09:52:21,190 INFO] number of examples: 399994
+[2020-07-18 09:56:14,045 INFO] Step 180000/500000; acc:  98.31; ppl:  1.06; xent: 0.05; lr: 0.00029; 43956/25813 tok/s;  63064 sec
+[2020-07-18 09:56:14,046 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 09:56:17,052 INFO] number of examples: 118770
+[2020-07-18 09:58:41,793 INFO] Validation perplexity: 1.05439
+[2020-07-18 09:58:41,793 INFO] Validation accuracy: 98.4586
+[2020-07-18 09:58:41,796 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_180000.pt
+[2020-07-18 10:04:16,578 INFO] Step 181000/500000; acc:  98.29; ppl:  1.06; xent: 0.06; lr: 0.00029; 31026/18144 tok/s;  63546 sec
+[2020-07-18 10:06:09,876 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 10:06:21,281 INFO] number of examples: 399989
+[2020-07-18 10:10:02,160 INFO] Step 182000/500000; acc:  98.33; ppl:  1.06; xent: 0.05; lr: 0.00029; 43265/25445 tok/s;  63892 sec
+[2020-07-18 10:15:35,422 INFO] Step 183000/500000; acc:  98.30; ppl:  1.06; xent: 0.06; lr: 0.00029; 44845/26370 tok/s;  64225 sec
+[2020-07-18 10:17:45,195 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 10:17:53,700 INFO] number of examples: 399987
+[2020-07-18 10:21:18,738 INFO] Step 184000/500000; acc:  98.29; ppl:  1.06; xent: 0.06; lr: 0.00029; 43430/25383 tok/s;  64569 sec
+[2020-07-18 10:26:52,430 INFO] Step 185000/500000; acc:  98.34; ppl:  1.06; xent: 0.05; lr: 0.00029; 44894/26369 tok/s;  64902 sec
+[2020-07-18 10:29:15,472 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 10:29:15,819 INFO] number of examples: 19078
+[2020-07-18 10:29:50,683 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 10:29:58,065 INFO] number of examples: 399990
+[2020-07-18 10:32:36,664 INFO] Step 186000/500000; acc:  98.31; ppl:  1.06; xent: 0.05; lr: 0.00029; 43284/25368 tok/s;  65247 sec
+[2020-07-18 10:38:09,570 INFO] Step 187000/500000; acc:  98.33; ppl:  1.06; xent: 0.05; lr: 0.00029; 44897/26293 tok/s;  65579 sec
+[2020-07-18 10:41:19,917 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 10:41:26,166 INFO] number of examples: 399998
+[2020-07-18 10:43:49,455 INFO] Step 188000/500000; acc:  98.32; ppl:  1.06; xent: 0.05; lr: 0.00029; 44073/25823 tok/s;  65919 sec
+[2020-07-18 10:49:22,358 INFO] Step 189000/500000; acc:  98.32; ppl:  1.06; xent: 0.05; lr: 0.00029; 44904/26403 tok/s;  66252 sec
+[2020-07-18 10:52:48,453 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 10:52:58,067 INFO] number of examples: 399994
+[2020-07-18 10:55:10,079 INFO] Step 190000/500000; acc:  98.34; ppl:  1.06; xent: 0.05; lr: 0.00029; 43013/25287 tok/s;  66600 sec
+[2020-07-18 10:55:10,081 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 10:55:13,655 INFO] number of examples: 118770
+[2020-07-18 10:57:38,683 INFO] Validation perplexity: 1.05381
+[2020-07-18 10:57:38,683 INFO] Validation accuracy: 98.4763
+[2020-07-18 10:57:38,687 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_190000.pt
+[2020-07-18 11:03:13,590 INFO] Step 191000/500000; acc:  98.31; ppl:  1.06; xent: 0.05; lr: 0.00029; 30908/18120 tok/s;  67083 sec
+[2020-07-18 11:06:48,693 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 11:07:00,331 INFO] number of examples: 399989
+[2020-07-18 11:08:58,602 INFO] Step 192000/500000; acc:  98.34; ppl:  1.06; xent: 0.05; lr: 0.00029; 43358/25440 tok/s;  67428 sec
+[2020-07-18 11:14:33,029 INFO] Step 193000/500000; acc:  98.31; ppl:  1.06; xent: 0.05; lr: 0.00028; 44729/26192 tok/s;  67763 sec
+[2020-07-18 11:18:25,833 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 11:18:32,213 INFO] number of examples: 399987
+[2020-07-18 11:20:15,630 INFO] Step 194000/500000; acc:  98.32; ppl:  1.06; xent: 0.05; lr: 0.00028; 43510/25606 tok/s;  68106 sec
+[2020-07-18 11:25:47,793 INFO] Step 195000/500000; acc:  98.34; ppl:  1.06; xent: 0.05; lr: 0.00028; 45082/26343 tok/s;  68438 sec
+[2020-07-18 11:29:54,368 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 11:29:54,508 INFO] number of examples: 19078
+[2020-07-18 11:30:29,487 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 11:30:36,500 INFO] number of examples: 399990
+[2020-07-18 11:31:33,206 INFO] Step 196000/500000; acc:  98.34; ppl:  1.06; xent: 0.05; lr: 0.00028; 43205/25362 tok/s;  68783 sec
+[2020-07-18 11:37:06,583 INFO] Step 197000/500000; acc:  98.35; ppl:  1.06; xent: 0.05; lr: 0.00028; 44757/26204 tok/s;  69116 sec
+[2020-07-18 11:41:58,469 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 11:42:06,416 INFO] number of examples: 399998
+[2020-07-18 11:42:48,347 INFO] Step 198000/500000; acc:  98.34; ppl:  1.06; xent: 0.05; lr: 0.00028; 43869/25691 tok/s;  69458 sec
+[2020-07-18 11:48:20,632 INFO] Step 199000/500000; acc:  98.34; ppl:  1.06; xent: 0.05; lr: 0.00028; 44998/26487 tok/s;  69791 sec
+[2020-07-18 11:53:26,369 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 11:53:34,278 INFO] number of examples: 399994
+[2020-07-18 11:54:03,499 INFO] Step 200000/500000; acc:  98.35; ppl:  1.05; xent: 0.05; lr: 0.00028; 43590/25534 tok/s;  70133 sec
+[2020-07-18 11:54:03,500 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 11:54:06,847 INFO] number of examples: 118770
+[2020-07-18 11:56:32,269 INFO] Validation perplexity: 1.05372
+[2020-07-18 11:56:32,269 INFO] Validation accuracy: 98.4762
+[2020-07-18 11:56:32,272 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_200000.pt
+[2020-07-18 12:02:06,348 INFO] Step 201000/500000; acc:  98.33; ppl:  1.06; xent: 0.05; lr: 0.00028; 30941/18178 tok/s;  70616 sec
+[2020-07-18 12:07:25,130 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 12:07:33,801 INFO] number of examples: 399989
+[2020-07-18 12:07:50,044 INFO] Step 202000/500000; acc:  98.35; ppl:  1.06; xent: 0.05; lr: 0.00028; 43562/25530 tok/s;  70960 sec
+[2020-07-18 12:13:23,610 INFO] Step 203000/500000; acc:  98.35; ppl:  1.05; xent: 0.05; lr: 0.00028; 44839/26345 tok/s;  71294 sec
+[2020-07-18 12:18:59,141 INFO] Step 204000/500000; acc:  98.33; ppl:  1.06; xent: 0.05; lr: 0.00028; 44405/26026 tok/s;  71629 sec
+[2020-07-18 12:18:59,151 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 12:19:07,671 INFO] number of examples: 399987
+[2020-07-18 12:24:40,543 INFO] Step 205000/500000; acc:  98.35; ppl:  1.06; xent: 0.05; lr: 0.00028; 43966/25794 tok/s;  71970 sec
+[2020-07-18 12:30:16,939 INFO] Step 206000/500000; acc:  98.36; ppl:  1.05; xent: 0.05; lr: 0.00028; 44452/26056 tok/s;  72307 sec
+[2020-07-18 12:30:30,424 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 12:30:30,579 INFO] number of examples: 19078
+[2020-07-18 12:31:05,562 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 12:31:12,006 INFO] number of examples: 399990
+[2020-07-18 12:36:00,172 INFO] Step 207000/500000; acc:  98.35; ppl:  1.05; xent: 0.05; lr: 0.00027; 43365/25455 tok/s;  72650 sec
+[2020-07-18 12:41:34,021 INFO] Step 208000/500000; acc:  98.37; ppl:  1.05; xent: 0.05; lr: 0.00027; 44804/26208 tok/s;  72984 sec
+[2020-07-18 12:42:34,720 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 12:42:40,985 INFO] number of examples: 399998
+[2020-07-18 12:47:12,590 INFO] Step 209000/500000; acc:  98.36; ppl:  1.05; xent: 0.05; lr: 0.00027; 44248/26035 tok/s;  73322 sec
+[2020-07-18 12:52:45,510 INFO] Step 210000/500000; acc:  98.36; ppl:  1.05; xent: 0.05; lr: 0.00027; 44885/26305 tok/s;  73655 sec
+[2020-07-18 12:52:45,512 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 12:52:48,526 INFO] number of examples: 118770
+[2020-07-18 12:55:13,614 INFO] Validation perplexity: 1.05293
+[2020-07-18 12:55:13,615 INFO] Validation accuracy: 98.4947
+[2020-07-18 12:55:13,618 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_210000.pt
+[2020-07-18 12:56:29,273 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 12:56:40,773 INFO] number of examples: 399994
+[2020-07-18 13:01:00,899 INFO] Step 211000/500000; acc:  98.37; ppl:  1.05; xent: 0.05; lr: 0.00027; 30157/17741 tok/s;  74151 sec
+[2020-07-18 13:06:35,847 INFO] Step 212000/500000; acc:  98.34; ppl:  1.06; xent: 0.05; lr: 0.00027; 44690/26090 tok/s;  74486 sec
+[2020-07-18 13:08:03,059 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 13:08:11,371 INFO] number of examples: 399989
+[2020-07-18 13:12:18,948 INFO] Step 213000/500000; acc:  98.39; ppl:  1.05; xent: 0.05; lr: 0.00027; 43602/25657 tok/s;  74829 sec
+[2020-07-18 13:17:52,745 INFO] Step 214000/500000; acc:  98.34; ppl:  1.06; xent: 0.05; lr: 0.00027; 44744/26234 tok/s;  75163 sec
+[2020-07-18 13:19:36,429 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 13:19:42,642 INFO] number of examples: 399987
+[2020-07-18 13:23:34,365 INFO] Step 215000/500000; acc:  98.36; ppl:  1.05; xent: 0.05; lr: 0.00027; 43729/25635 tok/s;  75504 sec
+[2020-07-18 13:29:08,651 INFO] Step 216000/500000; acc:  98.39; ppl:  1.05; xent: 0.05; lr: 0.00027; 44743/26236 tok/s;  75839 sec
+[2020-07-18 13:31:05,179 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 13:31:05,327 INFO] number of examples: 19078
+[2020-07-18 13:31:40,358 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 13:31:46,454 INFO] number of examples: 399990
+[2020-07-18 13:34:52,311 INFO] Step 217000/500000; acc:  98.37; ppl:  1.05; xent: 0.05; lr: 0.00027; 43391/25457 tok/s;  76182 sec
+[2020-07-18 13:40:25,491 INFO] Step 218000/500000; acc:  98.39; ppl:  1.05; xent: 0.05; lr: 0.00027; 44853/26231 tok/s;  76515 sec
+[2020-07-18 13:43:09,068 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 13:43:16,467 INFO] number of examples: 399998
+[2020-07-18 13:46:06,302 INFO] Step 219000/500000; acc:  98.37; ppl:  1.05; xent: 0.05; lr: 0.00027; 43958/25861 tok/s;  76856 sec
+[2020-07-18 13:51:39,281 INFO] Step 220000/500000; acc:  98.38; ppl:  1.05; xent: 0.05; lr: 0.00027; 44889/26339 tok/s;  77189 sec
+[2020-07-18 13:51:39,283 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 13:51:42,118 INFO] number of examples: 118770
+[2020-07-18 13:54:07,850 INFO] Validation perplexity: 1.0532
+[2020-07-18 13:54:07,850 INFO] Validation accuracy: 98.5005
+[2020-07-18 13:54:07,853 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_220000.pt
+[2020-07-18 13:57:05,923 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 13:57:13,607 INFO] number of examples: 399994
+[2020-07-18 13:59:52,240 INFO] Step 221000/500000; acc:  98.39; ppl:  1.05; xent: 0.05; lr: 0.00027; 30328/17783 tok/s;  77682 sec
+[2020-07-18 14:05:25,467 INFO] Step 222000/500000; acc:  98.35; ppl:  1.05; xent: 0.05; lr: 0.00027; 44866/26339 tok/s;  78015 sec
+[2020-07-18 14:08:34,157 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 14:08:41,888 INFO] number of examples: 399989
+[2020-07-18 14:11:06,205 INFO] Step 223000/500000; acc:  98.40; ppl:  1.05; xent: 0.05; lr: 0.00026; 43878/25734 tok/s;  78356 sec
+[2020-07-18 14:16:38,597 INFO] Step 224000/500000; acc:  98.38; ppl:  1.05; xent: 0.05; lr: 0.00026; 44989/26386 tok/s;  78688 sec
+[2020-07-18 14:20:01,477 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 14:20:09,144 INFO] number of examples: 399987
+[2020-07-18 14:22:16,863 INFO] Step 225000/500000; acc:  98.37; ppl:  1.05; xent: 0.05; lr: 0.00026; 44133/25891 tok/s;  79027 sec
+[2020-07-18 14:27:48,836 INFO] Step 226000/500000; acc:  98.38; ppl:  1.05; xent: 0.05; lr: 0.00026; 45068/26433 tok/s;  79359 sec
+[2020-07-18 14:31:27,717 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 14:31:27,861 INFO] number of examples: 19078
+[2020-07-18 14:32:02,827 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 14:32:08,655 INFO] number of examples: 399990
+[2020-07-18 14:33:31,131 INFO] Step 227000/500000; acc:  98.39; ppl:  1.05; xent: 0.05; lr: 0.00026; 43597/25562 tok/s;  79701 sec
+[2020-07-18 14:39:03,908 INFO] Step 228000/500000; acc:  98.39; ppl:  1.05; xent: 0.05; lr: 0.00026; 44830/26272 tok/s;  80034 sec
+[2020-07-18 14:43:27,899 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 14:43:35,840 INFO] number of examples: 399998
+[2020-07-18 14:44:43,026 INFO] Step 229000/500000; acc:  98.39; ppl:  1.05; xent: 0.05; lr: 0.00026; 44222/25853 tok/s;  80373 sec
+[2020-07-18 14:50:16,562 INFO] Step 230000/500000; acc:  98.40; ppl:  1.05; xent: 0.05; lr: 0.00026; 44882/26411 tok/s;  80706 sec
+[2020-07-18 14:50:16,564 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 14:50:17,256 INFO] number of examples: 118770
+[2020-07-18 14:52:43,593 INFO] Validation perplexity: 1.05267
+[2020-07-18 14:52:43,593 INFO] Validation accuracy: 98.5091
+[2020-07-18 14:52:43,597 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_230000.pt
+[2020-07-18 14:57:26,476 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 14:57:34,347 INFO] number of examples: 399994
+[2020-07-18 14:58:30,122 INFO] Step 231000/500000; acc:  98.40; ppl:  1.05; xent: 0.05; lr: 0.00026; 30248/17713 tok/s;  81200 sec
+[2020-07-18 15:04:04,812 INFO] Step 232000/500000; acc:  98.38; ppl:  1.05; xent: 0.05; lr: 0.00026; 44650/26273 tok/s;  81535 sec
+[2020-07-18 15:08:57,692 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 15:09:04,147 INFO] number of examples: 399989
+[2020-07-18 15:09:46,297 INFO] Step 233000/500000; acc:  98.39; ppl:  1.05; xent: 0.05; lr: 0.00026; 43803/25704 tok/s;  81876 sec
+[2020-07-18 15:15:20,236 INFO] Step 234000/500000; acc:  98.40; ppl:  1.05; xent: 0.05; lr: 0.00026; 44808/26310 tok/s;  82210 sec
+[2020-07-18 15:20:29,259 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 15:20:35,413 INFO] number of examples: 399987
+[2020-07-18 15:21:03,236 INFO] Step 235000/500000; acc:  98.37; ppl:  1.05; xent: 0.05; lr: 0.00026; 43440/25416 tok/s;  82553 sec
+[2020-07-18 15:26:35,244 INFO] Step 236000/500000; acc:  98.40; ppl:  1.05; xent: 0.05; lr: 0.00026; 45160/26485 tok/s;  82885 sec
+[2020-07-18 15:31:55,091 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 15:31:55,372 INFO] number of examples: 19078
+[2020-07-18 15:32:09,128 INFO] Step 237000/500000; acc:  98.40; ppl:  1.05; xent: 0.05; lr: 0.00026; 44757/26270 tok/s;  83219 sec
+[2020-07-18 15:32:29,759 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 15:32:37,251 INFO] number of examples: 399990
+[2020-07-18 15:37:47,245 INFO] Step 238000/500000; acc:  98.41; ppl:  1.05; xent: 0.05; lr: 0.00026; 44099/25909 tok/s;  83557 sec
+[2020-07-18 15:43:23,656 INFO] Step 239000/500000; acc:  98.41; ppl:  1.05; xent: 0.05; lr: 0.00026; 44414/25947 tok/s;  83894 sec
+[2020-07-18 15:43:58,873 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 15:44:06,507 INFO] number of examples: 399998
+[2020-07-18 15:49:06,471 INFO] Step 240000/500000; acc:  98.40; ppl:  1.05; xent: 0.05; lr: 0.00026; 43718/25710 tok/s;  84236 sec
+[2020-07-18 15:49:06,472 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 15:49:09,547 INFO] number of examples: 118770
+[2020-07-18 15:51:36,579 INFO] Validation perplexity: 1.05172
+[2020-07-18 15:51:36,579 INFO] Validation accuracy: 98.5191
+[2020-07-18 15:51:36,583 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_240000.pt
+[2020-07-18 15:57:15,160 INFO] Step 241000/500000; acc:  98.42; ppl:  1.05; xent: 0.05; lr: 0.00025; 30618/17979 tok/s;  84725 sec
+[2020-07-18 15:58:04,531 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 15:58:20,644 INFO] number of examples: 399994
+[2020-07-18 16:03:09,634 INFO] Step 242000/500000; acc:  98.41; ppl:  1.05; xent: 0.05; lr: 0.00025; 42101/24706 tok/s;  85080 sec
+[2020-07-18 16:08:46,590 INFO] Step 243000/500000; acc:  98.40; ppl:  1.05; xent: 0.05; lr: 0.00025; 44431/26025 tok/s;  85416 sec
+[2020-07-18 16:09:47,966 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 16:09:54,559 INFO] number of examples: 399989
+[2020-07-18 16:14:30,149 INFO] Step 244000/500000; acc:  98.43; ppl:  1.05; xent: 0.05; lr: 0.00025; 43558/25541 tok/s;  85760 sec
+[2020-07-18 16:20:06,180 INFO] Step 245000/500000; acc:  98.40; ppl:  1.05; xent: 0.05; lr: 0.00025; 44440/26054 tok/s;  86096 sec
+[2020-07-18 16:21:23,778 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 16:21:30,107 INFO] number of examples: 399987
+[2020-07-18 16:25:49,924 INFO] Step 246000/500000; acc:  98.40; ppl:  1.05; xent: 0.05; lr: 0.00025; 43493/25496 tok/s;  86440 sec
+[2020-07-18 16:31:26,144 INFO] Step 247000/500000; acc:  98.43; ppl:  1.05; xent: 0.05; lr: 0.00025; 44480/26117 tok/s;  86776 sec
+[2020-07-18 16:32:56,661 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 16:32:56,805 INFO] number of examples: 19078
+[2020-07-18 16:33:31,946 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 16:33:38,885 INFO] number of examples: 399990
+[2020-07-18 16:37:12,119 INFO] Step 248000/500000; acc:  98.41; ppl:  1.05; xent: 0.05; lr: 0.00025; 43077/25288 tok/s;  87122 sec
+[2020-07-18 16:42:47,349 INFO] Step 249000/500000; acc:  98.42; ppl:  1.05; xent: 0.05; lr: 0.00025; 44555/26074 tok/s;  87457 sec
+[2020-07-18 16:45:05,179 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 16:45:12,869 INFO] number of examples: 399998
+[2020-07-18 16:48:29,052 INFO] Step 250000/500000; acc:  98.41; ppl:  1.05; xent: 0.05; lr: 0.00025; 43869/25725 tok/s;  87799 sec
+[2020-07-18 16:48:29,055 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 16:48:32,262 INFO] number of examples: 118770
+[2020-07-18 16:50:58,619 INFO] Validation perplexity: 1.05178
+[2020-07-18 16:50:58,620 INFO] Validation accuracy: 98.5264
+[2020-07-18 16:50:58,623 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_250000.pt
+[2020-07-18 16:56:37,186 INFO] Step 251000/500000; acc:  98.43; ppl:  1.05; xent: 0.05; lr: 0.00025; 30616/17979 tok/s;  88287 sec
+[2020-07-18 16:59:08,747 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 16:59:16,473 INFO] number of examples: 399994
+[2020-07-18 17:02:22,366 INFO] Step 252000/500000; acc:  98.42; ppl:  1.05; xent: 0.05; lr: 0.00025; 43281/25448 tok/s;  88632 sec
+[2020-07-18 17:07:58,668 INFO] Step 253000/500000; acc:  98.40; ppl:  1.05; xent: 0.05; lr: 0.00025; 44557/26082 tok/s;  88969 sec
+[2020-07-18 17:10:42,848 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 17:10:50,560 INFO] number of examples: 399989
+[2020-07-18 17:13:42,424 INFO] Step 254000/500000; acc:  98.44; ppl:  1.05; xent: 0.05; lr: 0.00025; 43446/25485 tok/s;  89312 sec
+[2020-07-18 17:19:17,461 INFO] Step 255000/500000; acc:  98.41; ppl:  1.05; xent: 0.05; lr: 0.00025; 44643/26183 tok/s;  89647 sec
+[2020-07-18 17:22:18,296 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 17:22:26,222 INFO] number of examples: 399987
+[2020-07-18 17:25:03,128 INFO] Step 256000/500000; acc:  98.41; ppl:  1.05; xent: 0.05; lr: 0.00025; 43132/25311 tok/s;  89993 sec
+[2020-07-18 17:30:36,381 INFO] Step 257000/500000; acc:  98.44; ppl:  1.05; xent: 0.05; lr: 0.00025; 44954/26344 tok/s;  90326 sec
+[2020-07-18 17:33:48,898 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 17:33:49,142 INFO] number of examples: 19078
+[2020-07-18 17:34:23,944 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 17:34:30,848 INFO] number of examples: 399990
+[2020-07-18 17:36:19,309 INFO] Step 258000/500000; acc:  98.43; ppl:  1.05; xent: 0.05; lr: 0.00025; 43497/25517 tok/s;  90669 sec
+[2020-07-18 17:41:51,631 INFO] Step 259000/500000; acc:  98.43; ppl:  1.05; xent: 0.05; lr: 0.00025; 44924/26358 tok/s;  91002 sec
+[2020-07-18 17:45:48,787 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 17:45:56,253 INFO] number of examples: 399998
+[2020-07-18 17:47:29,227 INFO] Step 260000/500000; acc:  98.43; ppl:  1.05; xent: 0.05; lr: 0.00025; 44380/25997 tok/s;  91339 sec
+[2020-07-18 17:47:29,229 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 17:47:32,744 INFO] number of examples: 118770
+[2020-07-18 17:49:56,307 INFO] Validation perplexity: 1.05148
+[2020-07-18 17:49:56,307 INFO] Validation accuracy: 98.5321
+[2020-07-18 17:49:56,310 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_260000.pt
+[2020-07-18 17:55:25,588 INFO] Step 261000/500000; acc:  98.44; ppl:  1.05; xent: 0.05; lr: 0.00024; 31394/18437 tok/s;  91815 sec
+[2020-07-18 17:59:37,561 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 17:59:47,397 INFO] number of examples: 399994
+[2020-07-18 18:01:09,304 INFO] Step 262000/500000; acc:  98.44; ppl:  1.05; xent: 0.05; lr: 0.00024; 43505/25606 tok/s;  92159 sec
+[2020-07-18 18:06:42,086 INFO] Step 263000/500000; acc:  98.42; ppl:  1.05; xent: 0.05; lr: 0.00024; 44886/26258 tok/s;  92492 sec
+[2020-07-18 18:11:06,427 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 18:11:14,735 INFO] number of examples: 399989
+[2020-07-18 18:12:22,631 INFO] Step 264000/500000; acc:  98.44; ppl:  1.05; xent: 0.05; lr: 0.00024; 43931/25787 tok/s;  92833 sec
+[2020-07-18 18:17:55,149 INFO] Step 265000/500000; acc:  98.43; ppl:  1.05; xent: 0.05; lr: 0.00024; 44971/26389 tok/s;  93165 sec
+[2020-07-18 18:22:38,361 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 18:22:44,641 INFO] number of examples: 399987
+[2020-07-18 18:23:38,819 INFO] Step 266000/500000; acc:  98.42; ppl:  1.05; xent: 0.05; lr: 0.00024; 43382/25419 tok/s;  93509 sec
+[2020-07-18 18:29:11,987 INFO] Step 267000/500000; acc:  98.44; ppl:  1.05; xent: 0.05; lr: 0.00024; 44980/26374 tok/s;  93842 sec
+[2020-07-18 18:34:10,344 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 18:34:10,497 INFO] number of examples: 19078
+[2020-07-18 18:34:45,697 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 18:34:53,379 INFO] number of examples: 399990
+[2020-07-18 18:35:00,415 INFO] Step 268000/500000; acc:  98.44; ppl:  1.05; xent: 0.05; lr: 0.00024; 42841/25106 tok/s;  94190 sec
+[2020-07-18 18:40:37,075 INFO] Step 269000/500000; acc:  98.45; ppl:  1.05; xent: 0.05; lr: 0.00024; 44334/26035 tok/s;  94527 sec
+[2020-07-18 18:46:13,141 INFO] Step 270000/500000; acc:  98.45; ppl:  1.05; xent: 0.05; lr: 0.00024; 44519/26041 tok/s;  94863 sec
+[2020-07-18 18:46:13,142 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 18:46:16,527 INFO] number of examples: 118770
+[2020-07-18 18:48:42,634 INFO] Validation perplexity: 1.05213
+[2020-07-18 18:48:42,634 INFO] Validation accuracy: 98.5306
+[2020-07-18 18:48:42,637 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_270000.pt
+[2020-07-18 18:48:51,597 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 18:49:00,694 INFO] number of examples: 399998
+[2020-07-18 18:54:25,778 INFO] Step 271000/500000; acc:  98.44; ppl:  1.05; xent: 0.05; lr: 0.00024; 30424/17925 tok/s;  95356 sec
+[2020-07-18 18:59:59,052 INFO] Step 272000/500000; acc:  98.46; ppl:  1.05; xent: 0.05; lr: 0.00024; 44787/26297 tok/s;  95689 sec
+[2020-07-18 19:00:21,266 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 19:00:29,200 INFO] number of examples: 399994
+[2020-07-18 19:05:41,598 INFO] Step 273000/500000; acc:  98.44; ppl:  1.05; xent: 0.05; lr: 0.00024; 43619/25600 tok/s;  96031 sec
+[2020-07-18 19:11:14,088 INFO] Step 274000/500000; acc:  98.44; ppl:  1.05; xent: 0.05; lr: 0.00024; 45013/26346 tok/s;  96364 sec
+[2020-07-18 19:11:48,910 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 19:11:55,488 INFO] number of examples: 399989
+[2020-07-18 19:16:54,767 INFO] Step 275000/500000; acc:  98.45; ppl:  1.05; xent: 0.05; lr: 0.00024; 43906/25776 tok/s;  96705 sec
+[2020-07-18 19:22:28,233 INFO] Step 276000/500000; acc:  98.43; ppl:  1.05; xent: 0.05; lr: 0.00024; 44776/26224 tok/s;  97038 sec
+[2020-07-18 19:23:19,413 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 19:23:28,368 INFO] number of examples: 399987
+[2020-07-18 19:28:13,930 INFO] Step 277000/500000; acc:  98.45; ppl:  1.05; xent: 0.05; lr: 0.00024; 43303/25360 tok/s;  97384 sec
+[2020-07-18 19:33:50,993 INFO] Step 278000/500000; acc:  98.46; ppl:  1.05; xent: 0.05; lr: 0.00024; 44376/26030 tok/s;  97721 sec
+[2020-07-18 19:34:55,136 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 19:34:55,288 INFO] number of examples: 19078
+[2020-07-18 19:35:30,524 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 19:35:36,142 INFO] number of examples: 399990
+[2020-07-18 19:39:36,327 INFO] Step 279000/500000; acc:  98.46; ppl:  1.05; xent: 0.05; lr: 0.00024; 43144/25311 tok/s;  98066 sec
+[2020-07-18 19:45:11,966 INFO] Step 280000/500000; acc:  98.45; ppl:  1.05; xent: 0.05; lr: 0.00024; 44487/26066 tok/s;  98402 sec
+[2020-07-18 19:45:11,967 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 19:45:15,501 INFO] number of examples: 118770
+[2020-07-18 19:47:42,767 INFO] Validation perplexity: 1.05155
+[2020-07-18 19:47:42,768 INFO] Validation accuracy: 98.5456
+[2020-07-18 19:47:42,771 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_280000.pt
+[2020-07-18 19:49:34,597 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 19:49:43,954 INFO] number of examples: 399998
+[2020-07-18 19:53:32,741 INFO] Step 281000/500000; acc:  98.45; ppl:  1.05; xent: 0.05; lr: 0.00024; 29911/17562 tok/s;  98903 sec
+[2020-07-18 19:59:08,764 INFO] Step 282000/500000; acc:  98.47; ppl:  1.05; xent: 0.05; lr: 0.00024; 44564/26163 tok/s;  99239 sec
+[2020-07-18 20:01:14,443 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 20:01:24,228 INFO] number of examples: 399994
+[2020-07-18 20:04:56,572 INFO] Step 283000/500000; acc:  98.46; ppl:  1.05; xent: 0.05; lr: 0.00023; 42958/25270 tok/s;  99586 sec
+[2020-07-18 20:10:33,910 INFO] Step 284000/500000; acc:  98.44; ppl:  1.05; xent: 0.05; lr: 0.00023; 44348/25932 tok/s;  99924 sec
+[2020-07-18 20:12:52,249 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 20:12:59,422 INFO] number of examples: 399989
+[2020-07-18 20:16:19,176 INFO] Step 285000/500000; acc:  98.48; ppl:  1.05; xent: 0.05; lr: 0.00023; 43307/25453 tok/s; 100269 sec
+[2020-07-18 20:21:56,647 INFO] Step 286000/500000; acc:  98.44; ppl:  1.05; xent: 0.05; lr: 0.00023; 44295/25956 tok/s; 100607 sec
+[2020-07-18 20:24:31,997 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 20:24:38,736 INFO] number of examples: 399987
+[2020-07-18 20:27:42,770 INFO] Step 287000/500000; acc:  98.45; ppl:  1.05; xent: 0.05; lr: 0.00023; 43088/25251 tok/s; 100953 sec
+[2020-07-18 20:33:19,786 INFO] Step 288000/500000; acc:  98.48; ppl:  1.05; xent: 0.05; lr: 0.00023; 44428/26093 tok/s; 101290 sec
+[2020-07-18 20:36:08,050 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 20:36:08,202 INFO] number of examples: 19078
+[2020-07-18 20:36:43,527 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 20:36:51,334 INFO] number of examples: 399990
+[2020-07-18 20:39:08,644 INFO] Step 289000/500000; acc:  98.46; ppl:  1.05; xent: 0.05; lr: 0.00023; 42736/25024 tok/s; 101639 sec
+[2020-07-18 20:44:45,748 INFO] Step 290000/500000; acc:  98.47; ppl:  1.05; xent: 0.05; lr: 0.00023; 44302/25976 tok/s; 101976 sec
+[2020-07-18 20:44:45,750 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 20:44:49,109 INFO] number of examples: 118770
+[2020-07-18 20:47:16,773 INFO] Validation perplexity: 1.05094
+[2020-07-18 20:47:16,774 INFO] Validation accuracy: 98.554
+[2020-07-18 20:47:16,777 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_290000.pt
+[2020-07-18 20:50:52,163 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 20:51:05,354 INFO] number of examples: 399998
+[2020-07-18 20:53:07,105 INFO] Step 291000/500000; acc:  98.47; ppl:  1.05; xent: 0.05; lr: 0.00023; 29898/17510 tok/s; 102477 sec
+[2020-07-18 20:58:43,087 INFO] Step 292000/500000; acc:  98.46; ppl:  1.05; xent: 0.05; lr: 0.00023; 44484/26181 tok/s; 102813 sec
+[2020-07-18 21:02:33,073 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 21:02:42,090 INFO] number of examples: 399994
+[2020-07-18 21:04:31,321 INFO] Step 293000/500000; acc:  98.47; ppl:  1.05; xent: 0.05; lr: 0.00023; 42958/25238 tok/s; 103161 sec
+[2020-07-18 21:10:08,899 INFO] Step 294000/500000; acc:  98.46; ppl:  1.05; xent: 0.05; lr: 0.00023; 44243/25905 tok/s; 103499 sec
+[2020-07-18 21:14:09,690 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 21:14:17,122 INFO] number of examples: 399989
+[2020-07-18 21:15:52,829 INFO] Step 295000/500000; acc:  98.47; ppl:  1.05; xent: 0.05; lr: 0.00023; 43521/25595 tok/s; 103843 sec
+[2020-07-18 21:21:29,943 INFO] Step 296000/500000; acc:  98.46; ppl:  1.05; xent: 0.05; lr: 0.00023; 44373/25926 tok/s; 104180 sec
+[2020-07-18 21:25:48,405 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 21:25:55,431 INFO] number of examples: 399987
+[2020-07-18 21:27:16,657 INFO] Step 297000/500000; acc:  98.46; ppl:  1.05; xent: 0.05; lr: 0.00023; 42976/25240 tok/s; 104527 sec
+[2020-07-18 21:32:50,481 INFO] Step 298000/500000; acc:  98.48; ppl:  1.05; xent: 0.05; lr: 0.00023; 44860/26281 tok/s; 104860 sec
+[2020-07-18 21:37:22,194 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 21:37:22,336 INFO] number of examples: 19078
+[2020-07-18 21:37:57,568 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 21:38:03,985 INFO] number of examples: 399990
+[2020-07-18 21:38:37,461 INFO] Step 299000/500000; acc:  98.47; ppl:  1.05; xent: 0.05; lr: 0.00023; 43017/25233 tok/s; 105207 sec
+[2020-07-18 21:44:13,428 INFO] Step 300000/500000; acc:  98.48; ppl:  1.05; xent: 0.05; lr: 0.00023; 44449/26081 tok/s; 105543 sec
+[2020-07-18 21:44:13,429 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 21:44:16,821 INFO] number of examples: 118770
+[2020-07-18 21:46:44,087 INFO] Validation perplexity: 1.05122
+[2020-07-18 21:46:44,088 INFO] Validation accuracy: 98.5612
+[2020-07-18 21:46:44,091 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_300000.pt
+[2020-07-18 21:52:12,413 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 21:52:25,422 INFO] number of examples: 399998
+[2020-07-18 21:52:44,820 INFO] Step 301000/500000; acc:  98.48; ppl:  1.05; xent: 0.05; lr: 0.00023; 29277/17136 tok/s; 106055 sec
+[2020-07-18 21:58:19,271 INFO] Step 302000/500000; acc:  98.47; ppl:  1.05; xent: 0.05; lr: 0.00023; 44779/26359 tok/s; 106389 sec
+[2020-07-18 22:03:51,413 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 22:03:58,040 INFO] number of examples: 399994
+[2020-07-18 22:04:04,190 INFO] Step 303000/500000; acc:  98.48; ppl:  1.05; xent: 0.05; lr: 0.00023; 43280/25380 tok/s; 106734 sec
+[2020-07-18 22:09:41,586 INFO] Step 304000/500000; acc:  98.47; ppl:  1.05; xent: 0.05; lr: 0.00023; 44314/26031 tok/s; 107071 sec
+[2020-07-18 22:15:19,532 INFO] Step 305000/500000; acc:  98.47; ppl:  1.05; xent: 0.05; lr: 0.00023; 44295/25945 tok/s; 107409 sec
+[2020-07-18 22:15:28,306 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 22:15:37,633 INFO] number of examples: 399989
+[2020-07-18 22:21:07,489 INFO] Step 306000/500000; acc:  98.49; ppl:  1.05; xent: 0.05; lr: 0.00023; 42956/25246 tok/s; 107757 sec
+[2020-07-18 22:26:45,695 INFO] Step 307000/500000; acc:  98.47; ppl:  1.05; xent: 0.05; lr: 0.00023; 44171/25860 tok/s; 108096 sec
+[2020-07-18 22:27:10,221 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 22:27:19,709 INFO] number of examples: 399987
+[2020-07-18 22:32:32,458 INFO] Step 308000/500000; acc:  98.48; ppl:  1.05; xent: 0.05; lr: 0.00023; 43170/25305 tok/s; 108442 sec
+[2020-07-18 22:38:11,817 INFO] Step 309000/500000; acc:  98.49; ppl:  1.05; xent: 0.05; lr: 0.00022; 44054/25836 tok/s; 108782 sec
+[2020-07-18 22:38:49,192 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 22:38:49,348 INFO] number of examples: 19078
+[2020-07-18 22:39:24,561 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 22:39:30,382 INFO] number of examples: 399990
+[2020-07-18 22:43:57,907 INFO] Step 310000/500000; acc:  98.49; ppl:  1.05; xent: 0.05; lr: 0.00022; 43062/25295 tok/s; 109128 sec
+[2020-07-18 22:43:57,908 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 22:44:01,486 INFO] number of examples: 118770
+[2020-07-18 22:46:28,273 INFO] Validation perplexity: 1.05125
+[2020-07-18 22:46:28,274 INFO] Validation accuracy: 98.5681
+[2020-07-18 22:46:28,277 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_310000.pt
+[2020-07-18 22:52:02,591 INFO] Step 311000/500000; acc:  98.48; ppl:  1.05; xent: 0.05; lr: 0.00022; 30809/18003 tok/s; 109612 sec
+[2020-07-18 22:53:26,642 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 22:53:35,750 INFO] number of examples: 399998
+[2020-07-18 22:57:44,137 INFO] Step 312000/500000; acc:  98.48; ppl:  1.05; xent: 0.05; lr: 0.00022; 43852/25774 tok/s; 109954 sec
+[2020-07-18 23:03:18,248 INFO] Step 313000/500000; acc:  98.50; ppl:  1.05; xent: 0.05; lr: 0.00022; 44776/26303 tok/s; 110288 sec
+[2020-07-18 23:04:56,753 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-18 23:05:05,050 INFO] number of examples: 399994
+[2020-07-18 23:09:00,832 INFO] Step 314000/500000; acc:  98.49; ppl:  1.05; xent: 0.05; lr: 0.00022; 43621/25595 tok/s; 110631 sec
+[2020-07-18 23:14:34,216 INFO] Step 315000/500000; acc:  98.47; ppl:  1.05; xent: 0.05; lr: 0.00022; 44915/26282 tok/s; 110964 sec
+[2020-07-18 23:16:24,278 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-18 23:16:30,881 INFO] number of examples: 399989
+[2020-07-18 23:20:14,758 INFO] Step 316000/500000; acc:  98.51; ppl:  1.05; xent: 0.05; lr: 0.00022; 43899/25814 tok/s; 111305 sec
+[2020-07-18 23:25:48,175 INFO] Step 317000/500000; acc:  98.48; ppl:  1.05; xent: 0.05; lr: 0.00022; 44840/26338 tok/s; 111638 sec
+[2020-07-18 23:27:54,737 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-18 23:28:03,062 INFO] number of examples: 399987
+[2020-07-18 23:31:30,489 INFO] Step 318000/500000; acc:  98.47; ppl:  1.05; xent: 0.05; lr: 0.00022; 43560/25503 tok/s; 111980 sec
+[2020-07-18 23:37:03,029 INFO] Step 319000/500000; acc:  98.51; ppl:  1.05; xent: 0.05; lr: 0.00022; 45041/26417 tok/s; 112313 sec
+[2020-07-18 23:39:22,654 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-18 23:39:22,791 INFO] number of examples: 19078
+[2020-07-18 23:39:57,600 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-18 23:40:05,608 INFO] number of examples: 399990
+[2020-07-18 23:42:47,178 INFO] Step 320000/500000; acc:  98.48; ppl:  1.05; xent: 0.05; lr: 0.00022; 43288/25376 tok/s; 112657 sec
+[2020-07-18 23:42:47,180 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-18 23:42:47,871 INFO] number of examples: 118770
+[2020-07-18 23:45:12,735 INFO] Validation perplexity: 1.05092
+[2020-07-18 23:45:12,736 INFO] Validation accuracy: 98.5684
+[2020-07-18 23:45:12,739 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_320000.pt
+[2020-07-18 23:50:45,343 INFO] Step 321000/500000; acc:  98.50; ppl:  1.05; xent: 0.05; lr: 0.00022; 31257/18313 tok/s; 113135 sec
+[2020-07-18 23:53:51,691 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-18 23:53:59,934 INFO] number of examples: 399998
+[2020-07-18 23:56:26,019 INFO] Step 322000/500000; acc:  98.49; ppl:  1.05; xent: 0.05; lr: 0.00022; 43982/25782 tok/s; 113476 sec
+[2020-07-19 00:01:57,959 INFO] Step 323000/500000; acc:  98.49; ppl:  1.05; xent: 0.05; lr: 0.00022; 45028/26459 tok/s; 113808 sec
+[2020-07-19 00:05:18,116 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-19 00:05:26,312 INFO] number of examples: 399994
+[2020-07-19 00:07:40,563 INFO] Step 324000/500000; acc:  98.51; ppl:  1.05; xent: 0.05; lr: 0.00022; 43653/25643 tok/s; 114150 sec
+[2020-07-19 00:13:14,398 INFO] Step 325000/500000; acc:  98.48; ppl:  1.05; xent: 0.05; lr: 0.00022; 44772/26267 tok/s; 114484 sec
+[2020-07-19 00:16:45,904 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-19 00:16:52,644 INFO] number of examples: 399989
+[2020-07-19 00:18:53,329 INFO] Step 326000/500000; acc:  98.51; ppl:  1.05; xent: 0.05; lr: 0.00022; 44135/25883 tok/s; 114823 sec
+[2020-07-19 00:24:26,458 INFO] Step 327000/500000; acc:  98.48; ppl:  1.05; xent: 0.05; lr: 0.00022; 44879/26293 tok/s; 115156 sec
+[2020-07-19 00:28:15,617 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-19 00:28:24,908 INFO] number of examples: 399987
+[2020-07-19 00:30:11,154 INFO] Step 328000/500000; acc:  98.49; ppl:  1.05; xent: 0.05; lr: 0.00022; 43276/25476 tok/s; 115501 sec
+[2020-07-19 00:35:42,203 INFO] Step 329000/500000; acc:  98.50; ppl:  1.05; xent: 0.05; lr: 0.00022; 45235/26446 tok/s; 115832 sec
+[2020-07-19 00:39:45,323 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-19 00:39:45,469 INFO] number of examples: 19078
+[2020-07-19 00:40:20,289 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-19 00:40:25,550 INFO] number of examples: 399990
+[2020-07-19 00:41:25,017 INFO] Step 330000/500000; acc:  98.50; ppl:  1.05; xent: 0.05; lr: 0.00022; 43524/25512 tok/s; 116175 sec
+[2020-07-19 00:41:25,018 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-19 00:41:28,089 INFO] number of examples: 118770
+[2020-07-19 00:43:52,792 INFO] Validation perplexity: 1.05101
+[2020-07-19 00:43:52,793 INFO] Validation accuracy: 98.5787
+[2020-07-19 00:43:52,796 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_330000.pt
+[2020-07-19 00:49:25,703 INFO] Step 331000/500000; acc:  98.50; ppl:  1.05; xent: 0.05; lr: 0.00022; 31037/18191 tok/s; 116656 sec
+[2020-07-19 00:54:13,563 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-19 00:54:25,204 INFO] number of examples: 399998
+[2020-07-19 00:55:09,964 INFO] Step 332000/500000; acc:  98.50; ppl:  1.05; xent: 0.05; lr: 0.00022; 43557/25510 tok/s; 117000 sec
+[2020-07-19 01:00:41,230 INFO] Step 333000/500000; acc:  98.50; ppl:  1.05; xent: 0.05; lr: 0.00022; 45145/26552 tok/s; 117331 sec
+[2020-07-19 01:05:43,148 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-19 01:05:51,372 INFO] number of examples: 399994
+[2020-07-19 01:06:23,457 INFO] Step 334000/500000; acc:  98.52; ppl:  1.05; xent: 0.05; lr: 0.00022; 43665/25591 tok/s; 117673 sec
+[2020-07-19 01:11:55,768 INFO] Step 335000/500000; acc:  98.49; ppl:  1.05; xent: 0.05; lr: 0.00022; 44948/26414 tok/s; 118006 sec
+[2020-07-19 01:17:10,235 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-19 01:17:16,973 INFO] number of examples: 399989
+[2020-07-19 01:17:36,076 INFO] Step 336000/500000; acc:  98.51; ppl:  1.05; xent: 0.05; lr: 0.00022; 44008/25783 tok/s; 118346 sec
+[2020-07-19 01:23:07,544 INFO] Step 337000/500000; acc:  98.51; ppl:  1.05; xent: 0.05; lr: 0.00022; 45118/26519 tok/s; 118677 sec
+[2020-07-19 01:28:34,912 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-19 01:28:43,664 INFO] number of examples: 399987
+[2020-07-19 01:28:47,879 INFO] Step 338000/500000; acc:  98.49; ppl:  1.05; xent: 0.05; lr: 0.00022; 43787/25639 tok/s; 119018 sec
+[2020-07-19 01:34:12,847 INFO] Step 339000/500000; acc:  98.51; ppl:  1.05; xent: 0.05; lr: 0.00021; 46164/27103 tok/s; 119343 sec
+[2020-07-19 01:39:41,544 INFO] Step 340000/500000; acc:  98.52; ppl:  1.05; xent: 0.05; lr: 0.00021; 45498/26669 tok/s; 119671 sec
+[2020-07-19 01:39:41,546 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-19 01:39:42,183 INFO] number of examples: 118770
+[2020-07-19 01:42:03,670 INFO] Validation perplexity: 1.05046
+[2020-07-19 01:42:03,670 INFO] Validation accuracy: 98.5823
+[2020-07-19 01:42:03,673 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_340000.pt
+[2020-07-19 01:42:14,199 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-19 01:42:14,298 INFO] number of examples: 19078
+[2020-07-19 01:42:48,552 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-19 01:42:55,389 INFO] number of examples: 399990
+[2020-07-19 01:47:40,006 INFO] Step 341000/500000; acc:  98.50; ppl:  1.05; xent: 0.05; lr: 0.00021; 31111/18266 tok/s; 120150 sec
+[2020-07-19 01:53:06,407 INFO] Step 342000/500000; acc:  98.52; ppl:  1.05; xent: 0.05; lr: 0.00021; 45816/26796 tok/s; 120476 sec
+[2020-07-19 01:54:03,016 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-19 01:54:10,808 INFO] number of examples: 399998
+[2020-07-19 01:58:39,313 INFO] Step 343000/500000; acc:  98.51; ppl:  1.05; xent: 0.05; lr: 0.00021; 44998/26473 tok/s; 120809 sec
+[2020-07-19 02:04:05,117 INFO] Step 344000/500000; acc:  98.51; ppl:  1.05; xent: 0.05; lr: 0.00021; 45890/26920 tok/s; 121135 sec
+[2020-07-19 02:05:15,804 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-19 02:05:21,729 INFO] number of examples: 399994
+[2020-07-19 02:09:39,017 INFO] Step 345000/500000; acc:  98.52; ppl:  1.05; xent: 0.05; lr: 0.00021; 44734/26271 tok/s; 121469 sec
+[2020-07-19 02:15:06,530 INFO] Step 346000/500000; acc:  98.50; ppl:  1.05; xent: 0.05; lr: 0.00021; 45695/26720 tok/s; 121796 sec
+[2020-07-19 02:16:28,996 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-19 02:16:34,868 INFO] number of examples: 399989
+[2020-07-19 02:20:39,826 INFO] Step 347000/500000; acc:  98.54; ppl:  1.05; xent: 0.05; lr: 0.00021; 44906/26382 tok/s; 122130 sec
+[2020-07-19 02:26:06,270 INFO] Step 348000/500000; acc:  98.49; ppl:  1.05; xent: 0.05; lr: 0.00021; 45713/26809 tok/s; 122456 sec
+[2020-07-19 02:27:44,690 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-19 02:27:52,134 INFO] number of examples: 399987
+[2020-07-19 02:31:41,464 INFO] Step 349000/500000; acc:  98.51; ppl:  1.05; xent: 0.05; lr: 0.00021; 44593/26141 tok/s; 122791 sec
+[2020-07-19 02:37:08,252 INFO] Step 350000/500000; acc:  98.54; ppl:  1.05; xent: 0.05; lr: 0.00021; 45753/26843 tok/s; 123118 sec
+[2020-07-19 02:37:08,253 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-19 02:37:08,894 INFO] number of examples: 118770
+[2020-07-19 02:39:30,287 INFO] Validation perplexity: 1.04997
+[2020-07-19 02:39:30,288 INFO] Validation accuracy: 98.5905
+[2020-07-19 02:39:30,290 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_350000.pt
+[2020-07-19 02:41:21,660 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-19 02:41:23,278 INFO] number of examples: 19078
+[2020-07-19 02:41:57,489 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-19 02:42:03,038 INFO] number of examples: 399990
+[2020-07-19 02:45:07,431 INFO] Step 351000/500000; acc:  98.52; ppl:  1.05; xent: 0.05; lr: 0.00021; 31128/18256 tok/s; 123597 sec
+[2020-07-19 02:50:33,130 INFO] Step 352000/500000; acc:  98.53; ppl:  1.05; xent: 0.05; lr: 0.00021; 45893/26837 tok/s; 123923 sec
+[2020-07-19 02:53:10,063 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-19 02:53:17,505 INFO] number of examples: 399998
+[2020-07-19 02:56:06,251 INFO] Step 353000/500000; acc:  98.52; ppl:  1.05; xent: 0.05; lr: 0.00021; 44965/26458 tok/s; 124256 sec
+[2020-07-19 03:01:33,254 INFO] Step 354000/500000; acc:  98.52; ppl:  1.05; xent: 0.05; lr: 0.00021; 45703/26814 tok/s; 124583 sec
+[2020-07-19 03:04:26,057 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-19 03:04:34,025 INFO] number of examples: 399994
+[2020-07-19 03:07:12,849 INFO] Step 355000/500000; acc:  98.53; ppl:  1.05; xent: 0.05; lr: 0.00021; 44029/25833 tok/s; 124923 sec
+[2020-07-19 03:12:39,383 INFO] Step 356000/500000; acc:  98.50; ppl:  1.05; xent: 0.05; lr: 0.00021; 45801/26881 tok/s; 125249 sec
+[2020-07-19 03:15:41,403 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-19 03:15:47,664 INFO] number of examples: 399989
+[2020-07-19 03:18:12,060 INFO] Step 357000/500000; acc:  98.54; ppl:  1.05; xent: 0.05; lr: 0.00021; 44931/26331 tok/s; 125582 sec
+[2020-07-19 03:23:38,495 INFO] Step 358000/500000; acc:  98.52; ppl:  1.05; xent: 0.05; lr: 0.00021; 45818/26886 tok/s; 125908 sec
+[2020-07-19 03:26:57,515 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.4.pt
+[2020-07-19 03:27:03,370 INFO] number of examples: 399987
+[2020-07-19 03:29:12,819 INFO] Step 359000/500000; acc:  98.51; ppl:  1.05; xent: 0.05; lr: 0.00021; 44634/26192 tok/s; 126243 sec
+[2020-07-19 03:34:38,176 INFO] Step 360000/500000; acc:  98.52; ppl:  1.05; xent: 0.05; lr: 0.00021; 46004/26971 tok/s; 126568 sec
+[2020-07-19 03:34:38,177 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.valid.0.pt
+[2020-07-19 03:34:40,967 INFO] number of examples: 118770
+[2020-07-19 03:37:02,755 INFO] Validation perplexity: 1.05
+[2020-07-19 03:37:02,756 INFO] Validation accuracy: 98.5937
+[2020-07-19 03:37:02,758 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/pistachio/checkpoints/pist_model_step_360000.pt
+[2020-07-19 03:40:35,270 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.5.pt
+[2020-07-19 03:40:35,376 INFO] number of examples: 19078
+[2020-07-19 03:41:09,687 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.0.pt
+[2020-07-19 03:41:15,283 INFO] number of examples: 399990
+[2020-07-19 03:42:39,121 INFO] Step 361000/500000; acc:  98.53; ppl:  1.05; xent: 0.05; lr: 0.00021; 31024/18190 tok/s; 127049 sec
+[2020-07-19 03:48:05,758 INFO] Step 362000/500000; acc:  98.53; ppl:  1.05; xent: 0.05; lr: 0.00021; 45667/26773 tok/s; 127376 sec
+[2020-07-19 03:52:22,393 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.1.pt
+[2020-07-19 03:52:29,958 INFO] number of examples: 399998
+[2020-07-19 03:53:38,935 INFO] Step 363000/500000; acc:  98.53; ppl:  1.05; xent: 0.05; lr: 0.00021; 45023/26303 tok/s; 127709 sec
+[2020-07-19 03:59:04,474 INFO] Step 364000/500000; acc:  98.53; ppl:  1.05; xent: 0.05; lr: 0.00021; 45964/27052 tok/s; 128034 sec
+[2020-07-19 04:03:35,340 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.2.pt
+[2020-07-19 04:03:40,883 INFO] number of examples: 399994
+[2020-07-19 04:04:38,076 INFO] Step 365000/500000; acc:  98.54; ppl:  1.05; xent: 0.05; lr: 0.00021; 44748/26222 tok/s; 128368 sec
+[2020-07-19 04:10:04,717 INFO] Step 366000/500000; acc:  98.52; ppl:  1.05; xent: 0.05; lr: 0.00021; 45779/26929 tok/s; 128695 sec
+[2020-07-19 04:14:47,797 INFO] Loading dataset from /home/dpk25/rds/hpc-work/pistachio/.train.3.pt
+[2020-07-19 04:14:55,409 INFO] number of examples: 399989
+[2020-07-19 04:15:39,382 INFO] Step 367000/500000; acc:  98.53; ppl:  1.05; xent: 0.05; lr: 0.00021; 44689/26227 tok/s; 129029 sec
+[2020-07-19 04:21:06,071 INFO] Step 368000/500000; acc:  98.54; ppl:  1.05; xent: 0.05; lr: 0.00021; 45798/26855 tok/s; 129356 sec
+slurmstepd: error: *** JOB 26060387 ON gpu-e-4 CANCELLED AT 2020-07-19T04:25:06 DUE TO TIME LIMIT ***
+slurmstepd: error: task_p_post_term: rmdir(/sys/fs/cgroup/cpuset/slurm26060387/slurm26060387.4294967294_0) failed Device or resource busy

@@ -1,0 +1,577 @@
+Changed directory to /home/dpk25/MolecularTransformer2/scripts/toy_model/data_big.
+
+JobID: 27500107
+======
+Time: Fri 14 Aug 22:44:56 BST 2020
+Running on master node: gpu-e-46
+Current directory: /home/dpk25/MolecularTransformer2/scripts/toy_model/data_big
+
+Nodes allocated:
+================
+gpu-e-46
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+./train.sh 
+
+[2020-08-14 22:45:03,132 INFO]  * src vocab size = 22
+[2020-08-14 22:45:03,133 INFO]  * tgt vocab size = 22
+[2020-08-14 22:45:03,133 INFO] Building model...
+[2020-08-14 22:45:10,725 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(22, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(22, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=256, out_features=22, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2020-08-14 22:45:10,727 INFO] encoder: 5266432
+[2020-08-14 22:45:10,728 INFO] decoder: 6321174
+[2020-08-14 22:45:10,728 INFO] * number of parameters: 11587606
+[2020-08-14 22:45:10,733 INFO] Starting training on GPU: [0]
+[2020-08-14 22:45:10,733 INFO] Start training loop and validate every 10000 steps...
+[2020-08-14 22:45:10,733 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-14 22:45:11,506 INFO] number of examples: 72000
+[2020-08-14 22:47:50,258 INFO] Step 1000/125000; acc:  70.65; ppl:  2.32; xent: 0.84; lr: 0.00035; 11682/9074 tok/s;    160 sec
+[2020-08-14 22:50:28,940 INFO] Step 2000/125000; acc:  82.17; ppl:  1.56; xent: 0.45; lr: 0.00071; 11750/9159 tok/s;    318 sec
+[2020-08-14 22:50:42,660 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-14 22:50:43,701 INFO] number of examples: 72000
+[2020-08-14 22:53:08,473 INFO] Step 3000/125000; acc:  85.47; ppl:  1.44; xent: 0.36; lr: 0.00106; 11676/9073 tok/s;    478 sec
+[2020-08-14 22:55:46,651 INFO] Step 4000/125000; acc:  87.89; ppl:  1.36; xent: 0.31; lr: 0.00141; 11788/9196 tok/s;    636 sec
+[2020-08-14 22:56:14,407 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-14 22:56:15,458 INFO] number of examples: 72000
+[2020-08-14 22:58:27,246 INFO] Step 5000/125000; acc:  90.41; ppl:  1.28; xent: 0.25; lr: 0.00177; 11601/9008 tok/s;    797 sec
+[2020-08-14 22:58:27,249 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_5000.pt
+[2020-08-14 23:01:06,122 INFO] Step 6000/125000; acc:  93.29; ppl:  1.20; xent: 0.18; lr: 0.00161; 11741/9159 tok/s;    955 sec
+[2020-08-14 23:01:47,877 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-14 23:01:48,749 INFO] number of examples: 72000
+[2020-08-14 23:03:46,332 INFO] Step 7000/125000; acc:  95.51; ppl:  1.13; xent: 0.12; lr: 0.00149; 11625/9020 tok/s;   1116 sec
+[2020-08-14 23:06:25,436 INFO] Step 8000/125000; acc:  96.60; ppl:  1.10; xent: 0.09; lr: 0.00140; 11722/9143 tok/s;   1275 sec
+[2020-08-14 23:07:20,440 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-14 23:07:21,465 INFO] number of examples: 72000
+[2020-08-14 23:08:57,356 INFO] Step 9000/125000; acc:  97.39; ppl:  1.08; xent: 0.07; lr: 0.00132; 12258/9511 tok/s;   1427 sec
+[2020-08-14 23:11:25,868 INFO] Step 10000/125000; acc:  97.81; ppl:  1.06; xent: 0.06; lr: 0.00125; 12563/9801 tok/s;   1575 sec
+[2020-08-14 23:11:25,869 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.valid.0.pt
+[2020-08-14 23:11:25,967 INFO] number of examples: 9000
+[2020-08-14 23:11:40,898 INFO] Validation perplexity: 1.03714
+[2020-08-14 23:11:40,898 INFO] Validation accuracy: 98.7207
+[2020-08-14 23:11:40,899 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_10000.pt
+[2020-08-14 23:12:47,606 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-14 23:12:48,735 INFO] number of examples: 72000
+[2020-08-14 23:14:13,421 INFO] Step 11000/125000; acc:  98.18; ppl:  1.05; xent: 0.05; lr: 0.00119; 11115/8621 tok/s;   1743 sec
+[2020-08-14 23:16:44,732 INFO] Step 12000/125000; acc:  98.40; ppl:  1.05; xent: 0.05; lr: 0.00114; 12326/9626 tok/s;   1894 sec
+[2020-08-14 23:18:04,471 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-14 23:18:05,640 INFO] number of examples: 72000
+[2020-08-14 23:19:17,724 INFO] Step 13000/125000; acc:  98.60; ppl:  1.04; xent: 0.04; lr: 0.00110; 12174/9443 tok/s;   2047 sec
+[2020-08-14 23:21:48,653 INFO] Step 14000/125000; acc:  98.74; ppl:  1.04; xent: 0.04; lr: 0.00106; 12355/9642 tok/s;   2198 sec
+[2020-08-14 23:23:18,706 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-14 23:23:19,604 INFO] number of examples: 72000
+[2020-08-14 23:24:15,693 INFO] Step 15000/125000; acc:  98.85; ppl:  1.03; xent: 0.03; lr: 0.00102; 12667/9834 tok/s;   2345 sec
+[2020-08-14 23:24:15,762 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_15000.pt
+[2020-08-14 23:26:43,513 INFO] Step 16000/125000; acc:  98.96; ppl:  1.03; xent: 0.03; lr: 0.00099; 12619/9845 tok/s;   2493 sec
+[2020-08-14 23:28:27,975 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-14 23:28:29,188 INFO] number of examples: 72000
+[2020-08-14 23:29:14,643 INFO] Step 17000/125000; acc:  99.04; ppl:  1.03; xent: 0.03; lr: 0.00096; 12327/9569 tok/s;   2644 sec
+[2020-08-14 23:31:44,914 INFO] Step 18000/125000; acc:  99.10; ppl:  1.03; xent: 0.03; lr: 0.00093; 12404/9670 tok/s;   2794 sec
+[2020-08-14 23:33:40,707 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-14 23:33:41,646 INFO] number of examples: 72000
+[2020-08-14 23:34:13,956 INFO] Step 19000/125000; acc:  99.17; ppl:  1.02; xent: 0.02; lr: 0.00091; 12503/9722 tok/s;   2943 sec
+[2020-08-14 23:36:44,499 INFO] Step 20000/125000; acc:  99.21; ppl:  1.02; xent: 0.02; lr: 0.00088; 12383/9643 tok/s;   3094 sec
+[2020-08-14 23:36:44,500 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.valid.0.pt
+[2020-08-14 23:36:44,543 INFO] number of examples: 9000
+[2020-08-14 23:36:59,390 INFO] Validation perplexity: 1.01376
+[2020-08-14 23:36:59,411 INFO] Validation accuracy: 99.532
+[2020-08-14 23:36:59,412 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_20000.pt
+[2020-08-14 23:39:08,762 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-14 23:39:09,939 INFO] number of examples: 72000
+[2020-08-14 23:39:29,101 INFO] Step 21000/125000; acc:  99.29; ppl:  1.02; xent: 0.02; lr: 0.00086; 11323/8802 tok/s;   3258 sec
+[2020-08-14 23:41:53,614 INFO] Step 22000/125000; acc:  99.30; ppl:  1.02; xent: 0.02; lr: 0.00084; 12895/10033 tok/s;   3403 sec
+[2020-08-14 23:44:16,215 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-14 23:44:17,449 INFO] number of examples: 72000
+[2020-08-14 23:44:23,542 INFO] Step 23000/125000; acc:  99.35; ppl:  1.02; xent: 0.02; lr: 0.00082; 12434/9685 tok/s;   3553 sec
+[2020-08-14 23:46:51,272 INFO] Step 24000/125000; acc:  99.38; ppl:  1.02; xent: 0.02; lr: 0.00081; 12612/9801 tok/s;   3701 sec
+[2020-08-14 23:49:21,778 INFO] Step 25000/125000; acc:  99.41; ppl:  1.02; xent: 0.02; lr: 0.00079; 12389/9650 tok/s;   3851 sec
+[2020-08-14 23:49:21,780 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_25000.pt
+[2020-08-14 23:49:29,599 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-14 23:49:30,552 INFO] number of examples: 72000
+[2020-08-14 23:51:48,190 INFO] Step 26000/125000; acc:  99.46; ppl:  1.02; xent: 0.02; lr: 0.00078; 12724/9888 tok/s;   3997 sec
+[2020-08-14 23:54:11,537 INFO] Step 27000/125000; acc:  99.45; ppl:  1.02; xent: 0.02; lr: 0.00076; 13007/10137 tok/s;   4141 sec
+[2020-08-14 23:54:31,147 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-14 23:54:32,390 INFO] number of examples: 72000
+[2020-08-14 23:56:36,546 INFO] Step 28000/125000; acc:  99.51; ppl:  1.01; xent: 0.01; lr: 0.00075; 12849/9990 tok/s;   4286 sec
+[2020-08-14 23:59:00,078 INFO] Step 29000/125000; acc:  99.51; ppl:  1.01; xent: 0.01; lr: 0.00073; 12994/10137 tok/s;   4429 sec
+[2020-08-14 23:59:32,349 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-14 23:59:33,342 INFO] number of examples: 72000
+[2020-08-15 00:01:24,837 INFO] Step 30000/125000; acc:  99.54; ppl:  1.01; xent: 0.01; lr: 0.00072; 12868/9983 tok/s;   4574 sec
+[2020-08-15 00:01:24,838 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.valid.0.pt
+[2020-08-15 00:01:24,881 INFO] number of examples: 9000
+[2020-08-15 00:01:39,015 INFO] Validation perplexity: 1.00933
+[2020-08-15 00:01:39,066 INFO] Validation accuracy: 99.7036
+[2020-08-15 00:01:39,067 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_30000.pt
+[2020-08-15 00:04:03,416 INFO] Step 31000/125000; acc:  99.54; ppl:  1.01; xent: 0.01; lr: 0.00071; 11760/9177 tok/s;   4733 sec
+[2020-08-15 00:04:48,261 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 00:04:49,158 INFO] number of examples: 72000
+[2020-08-15 00:06:28,280 INFO] Step 32000/125000; acc:  99.58; ppl:  1.01; xent: 0.01; lr: 0.00070; 12856/9966 tok/s;   4878 sec
+[2020-08-15 00:08:51,599 INFO] Step 33000/125000; acc:  99.58; ppl:  1.01; xent: 0.01; lr: 0.00069; 13018/10158 tok/s;   5021 sec
+[2020-08-15 00:09:48,913 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 00:09:50,069 INFO] number of examples: 72000
+[2020-08-15 00:11:16,661 INFO] Step 34000/125000; acc:  99.61; ppl:  1.01; xent: 0.01; lr: 0.00068; 12836/9963 tok/s;   5166 sec
+[2020-08-15 00:13:40,490 INFO] Step 35000/125000; acc:  99.62; ppl:  1.01; xent: 0.01; lr: 0.00067; 12971/10128 tok/s;   5310 sec
+[2020-08-15 00:13:40,492 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_35000.pt
+[2020-08-15 00:14:50,515 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 00:14:51,764 INFO] number of examples: 72000
+[2020-08-15 00:16:05,622 INFO] Step 36000/125000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00066; 12830/9946 tok/s;   5455 sec
+[2020-08-15 00:18:28,836 INFO] Step 37000/125000; acc:  99.63; ppl:  1.01; xent: 0.01; lr: 0.00065; 13022/10166 tok/s;   5598 sec
+[2020-08-15 00:19:51,062 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 00:19:52,034 INFO] number of examples: 72000
+[2020-08-15 00:20:53,454 INFO] Step 38000/125000; acc:  99.65; ppl:  1.01; xent: 0.01; lr: 0.00064; 12880/10000 tok/s;   5743 sec
+[2020-08-15 00:23:16,987 INFO] Step 39000/125000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00063; 12991/10135 tok/s;   5886 sec
+[2020-08-15 00:24:52,264 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 00:24:53,202 INFO] number of examples: 72000
+[2020-08-15 00:25:42,059 INFO] Step 40000/125000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00062; 12840/9967 tok/s;   6031 sec
+[2020-08-15 00:25:42,084 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.valid.0.pt
+[2020-08-15 00:25:42,129 INFO] number of examples: 9000
+[2020-08-15 00:25:56,258 INFO] Validation perplexity: 1.00703
+[2020-08-15 00:25:56,258 INFO] Validation accuracy: 99.7851
+[2020-08-15 00:25:56,259 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_40000.pt
+[2020-08-15 00:28:20,250 INFO] Step 41000/125000; acc:  99.68; ppl:  1.01; xent: 0.01; lr: 0.00062; 11785/9185 tok/s;   6190 sec
+[2020-08-15 00:30:08,084 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 00:30:09,287 INFO] number of examples: 72000
+[2020-08-15 00:30:45,382 INFO] Step 42000/125000; acc:  99.71; ppl:  1.01; xent: 0.01; lr: 0.00061; 12840/9979 tok/s;   6335 sec
+[2020-08-15 00:33:08,632 INFO] Step 43000/125000; acc:  99.70; ppl:  1.01; xent: 0.01; lr: 0.00060; 13013/10139 tok/s;   6478 sec
+[2020-08-15 00:35:08,830 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 00:35:09,733 INFO] number of examples: 72000
+[2020-08-15 00:35:33,417 INFO] Step 44000/125000; acc:  99.72; ppl:  1.01; xent: 0.01; lr: 0.00060; 12871/10008 tok/s;   6623 sec
+[2020-08-15 00:37:57,498 INFO] Step 45000/125000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00059; 12937/10072 tok/s;   6767 sec
+[2020-08-15 00:37:57,500 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_45000.pt
+[2020-08-15 00:40:10,642 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 00:40:11,836 INFO] number of examples: 72000
+[2020-08-15 00:40:22,915 INFO] Step 46000/125000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00058; 12817/9976 tok/s;   6912 sec
+[2020-08-15 00:42:46,339 INFO] Step 47000/125000; acc:  99.73; ppl:  1.01; xent: 0.01; lr: 0.00058; 12989/10098 tok/s;   7056 sec
+[2020-08-15 00:45:09,887 INFO] Step 48000/125000; acc:  99.74; ppl:  1.01; xent: 0.01; lr: 0.00057; 12989/10116 tok/s;   7199 sec
+[2020-08-15 00:45:11,609 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 00:45:12,527 INFO] number of examples: 72000
+[2020-08-15 00:47:34,497 INFO] Step 49000/125000; acc:  99.75; ppl:  1.01; xent: 0.01; lr: 0.00056; 12884/10012 tok/s;   7344 sec
+[2020-08-15 00:49:57,943 INFO] Step 50000/125000; acc:  99.76; ppl:  1.01; xent: 0.01; lr: 0.00056; 12998/10132 tok/s;   7487 sec
+[2020-08-15 00:49:57,945 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.valid.0.pt
+[2020-08-15 00:49:57,992 INFO] number of examples: 9000
+[2020-08-15 00:50:12,209 INFO] Validation perplexity: 1.00663
+[2020-08-15 00:50:12,209 INFO] Validation accuracy: 99.8081
+[2020-08-15 00:50:12,210 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_50000.pt
+[2020-08-15 00:50:26,784 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 00:50:27,921 INFO] number of examples: 72000
+[2020-08-15 00:52:37,330 INFO] Step 51000/125000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00055; 11689/9081 tok/s;   7647 sec
+[2020-08-15 00:55:00,819 INFO] Step 52000/125000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00055; 12994/10137 tok/s;   7790 sec
+[2020-08-15 00:55:27,558 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 00:55:28,742 INFO] number of examples: 72000
+[2020-08-15 00:57:25,503 INFO] Step 53000/125000; acc:  99.78; ppl:  1.01; xent: 0.01; lr: 0.00054; 12877/9996 tok/s;   7935 sec
+[2020-08-15 00:59:49,010 INFO] Step 54000/125000; acc:  99.77; ppl:  1.01; xent: 0.01; lr: 0.00054; 12998/10141 tok/s;   8078 sec
+[2020-08-15 01:00:28,495 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 01:00:29,408 INFO] number of examples: 72000
+[2020-08-15 01:02:13,751 INFO] Step 55000/125000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00053; 12868/9984 tok/s;   8223 sec
+[2020-08-15 01:02:13,752 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_55000.pt
+[2020-08-15 01:04:37,885 INFO] Step 56000/125000; acc:  99.79; ppl:  1.01; xent: 0.01; lr: 0.00053; 12939/10091 tok/s;   8367 sec
+[2020-08-15 01:05:29,816 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 01:05:31,014 INFO] number of examples: 72000
+[2020-08-15 01:07:02,728 INFO] Step 57000/125000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00052; 12858/9978 tok/s;   8512 sec
+[2020-08-15 01:09:26,192 INFO] Step 58000/125000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00052; 13004/10149 tok/s;   8655 sec
+[2020-08-15 01:10:30,758 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 01:10:31,669 INFO] number of examples: 72000
+[2020-08-15 01:11:50,894 INFO] Step 59000/125000; acc:  99.80; ppl:  1.01; xent: 0.01; lr: 0.00051; 12869/9981 tok/s;   8800 sec
+[2020-08-15 01:14:14,338 INFO] Step 60000/125000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00051; 13002/10153 tok/s;   8944 sec
+[2020-08-15 01:14:14,340 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.valid.0.pt
+[2020-08-15 01:14:14,381 INFO] number of examples: 9000
+[2020-08-15 01:14:28,512 INFO] Validation perplexity: 1.00546
+[2020-08-15 01:14:28,513 INFO] Validation accuracy: 99.8526
+[2020-08-15 01:14:28,514 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_60000.pt
+[2020-08-15 01:15:45,714 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 01:15:46,858 INFO] number of examples: 72000
+[2020-08-15 01:16:53,509 INFO] Step 61000/125000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00051; 11702/9078 tok/s;   9103 sec
+[2020-08-15 01:19:16,718 INFO] Step 62000/125000; acc:  99.81; ppl:  1.01; xent: 0.01; lr: 0.00050; 13020/10162 tok/s;   9246 sec
+[2020-08-15 01:20:46,311 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 01:20:47,504 INFO] number of examples: 72000
+[2020-08-15 01:21:41,701 INFO] Step 63000/125000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00050; 12848/9972 tok/s;   9391 sec
+[2020-08-15 01:24:04,904 INFO] Step 64000/125000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00049; 13020/10158 tok/s;   9534 sec
+[2020-08-15 01:25:46,943 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 01:25:47,871 INFO] number of examples: 72000
+[2020-08-15 01:26:29,516 INFO] Step 65000/125000; acc:  99.83; ppl:  1.01; xent: 0.01; lr: 0.00049; 12884/10001 tok/s;   9679 sec
+[2020-08-15 01:26:29,518 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_65000.pt
+[2020-08-15 01:28:53,126 INFO] Step 66000/125000; acc:  99.82; ppl:  1.01; xent: 0.01; lr: 0.00049; 12978/10120 tok/s;   9822 sec
+[2020-08-15 01:30:47,873 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 01:30:48,750 INFO] number of examples: 72000
+[2020-08-15 01:31:17,860 INFO] Step 67000/125000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00048; 12876/10007 tok/s;   9967 sec
+[2020-08-15 01:33:40,952 INFO] Step 68000/125000; acc:  99.83; ppl:  1.00; xent: 0.00; lr: 0.00048; 13029/10146 tok/s;  10110 sec
+[2020-08-15 01:35:47,855 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 01:35:48,956 INFO] number of examples: 72000
+[2020-08-15 01:36:05,523 INFO] Step 69000/125000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00048; 12892/10027 tok/s;  10255 sec
+[2020-08-15 01:38:29,133 INFO] Step 70000/125000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00047; 12974/10091 tok/s;  10398 sec
+[2020-08-15 01:38:29,135 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.valid.0.pt
+[2020-08-15 01:38:29,423 INFO] number of examples: 9000
+[2020-08-15 01:38:43,526 INFO] Validation perplexity: 1.00552
+[2020-08-15 01:38:43,526 INFO] Validation accuracy: 99.8479
+[2020-08-15 01:38:43,527 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_70000.pt
+[2020-08-15 01:41:03,779 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 01:41:04,652 INFO] number of examples: 72000
+[2020-08-15 01:41:08,589 INFO] Step 71000/125000; acc:  99.84; ppl:  1.00; xent: 0.00; lr: 0.00047; 11691/9108 tok/s;  10558 sec
+[2020-08-15 01:43:31,671 INFO] Step 72000/125000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00047; 13022/10121 tok/s;  10701 sec
+[2020-08-15 01:45:54,908 INFO] Step 73000/125000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00046; 13016/10136 tok/s;  10844 sec
+[2020-08-15 01:46:03,788 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 01:46:04,917 INFO] number of examples: 72000
+[2020-08-15 01:48:19,845 INFO] Step 74000/125000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00046; 12854/9986 tok/s;  10989 sec
+[2020-08-15 01:50:43,561 INFO] Step 75000/125000; acc:  99.85; ppl:  1.00; xent: 0.00; lr: 0.00046; 12973/10118 tok/s;  11133 sec
+[2020-08-15 01:50:44,362 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_75000.pt
+[2020-08-15 01:51:06,434 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 01:51:07,652 INFO] number of examples: 72000
+[2020-08-15 01:53:09,786 INFO] Step 76000/125000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00045; 12812/9959 tok/s;  11279 sec
+[2020-08-15 01:55:33,192 INFO] Step 77000/125000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00045; 13004/10144 tok/s;  11422 sec
+[2020-08-15 01:56:07,172 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 01:56:08,113 INFO] number of examples: 72000
+[2020-08-15 01:57:57,970 INFO] Step 78000/125000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00045; 12867/9982 tok/s;  11567 sec
+[2020-08-15 02:00:21,535 INFO] Step 79000/125000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00044; 12990/10134 tok/s;  11711 sec
+[2020-08-15 02:01:08,294 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 02:01:09,201 INFO] number of examples: 72000
+[2020-08-15 02:02:46,802 INFO] Step 80000/125000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00044; 12821/9940 tok/s;  11856 sec
+[2020-08-15 02:02:46,803 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.valid.0.pt
+[2020-08-15 02:02:47,151 INFO] number of examples: 9000
+[2020-08-15 02:03:01,412 INFO] Validation perplexity: 1.0052
+[2020-08-15 02:03:01,412 INFO] Validation accuracy: 99.8626
+[2020-08-15 02:03:01,414 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_80000.pt
+[2020-08-15 02:05:25,407 INFO] Step 81000/125000; acc:  99.86; ppl:  1.00; xent: 0.00; lr: 0.00044; 11762/9179 tok/s;  12015 sec
+[2020-08-15 02:06:24,446 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 02:06:25,521 INFO] number of examples: 72000
+[2020-08-15 02:07:50,224 INFO] Step 82000/125000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00044; 12857/9977 tok/s;  12159 sec
+[2020-08-15 02:10:13,650 INFO] Step 83000/125000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00043; 13008/10156 tok/s;  12303 sec
+[2020-08-15 02:11:25,366 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 02:11:26,502 INFO] number of examples: 72000
+[2020-08-15 02:12:38,467 INFO] Step 84000/125000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00043; 12859/9973 tok/s;  12448 sec
+[2020-08-15 02:15:01,726 INFO] Step 85000/125000; acc:  99.87; ppl:  1.00; xent: 0.00; lr: 0.00043; 13017/10158 tok/s;  12591 sec
+[2020-08-15 02:15:01,728 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_85000.pt
+[2020-08-15 02:16:26,134 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 02:16:27,510 INFO] number of examples: 72000
+[2020-08-15 02:17:26,862 INFO] Step 86000/125000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00043; 12834/9970 tok/s;  12736 sec
+[2020-08-15 02:19:50,118 INFO] Step 87000/125000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00042; 13016/10151 tok/s;  12879 sec
+[2020-08-15 02:21:26,820 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 02:21:27,758 INFO] number of examples: 72000
+[2020-08-15 02:22:14,627 INFO] Step 88000/125000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00042; 12890/10006 tok/s;  13024 sec
+[2020-08-15 02:24:37,868 INFO] Step 89000/125000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00042; 13014/10143 tok/s;  13167 sec
+[2020-08-15 02:26:27,355 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 02:26:28,253 INFO] number of examples: 72000
+[2020-08-15 02:27:02,743 INFO] Step 90000/125000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00042; 12861/9998 tok/s;  13312 sec
+[2020-08-15 02:27:02,744 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.valid.0.pt
+[2020-08-15 02:27:03,084 INFO] number of examples: 9000
+[2020-08-15 02:27:17,279 INFO] Validation perplexity: 1.00509
+[2020-08-15 02:27:17,279 INFO] Validation accuracy: 99.869
+[2020-08-15 02:27:17,280 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_90000.pt
+[2020-08-15 02:29:41,116 INFO] Step 91000/125000; acc:  99.88; ppl:  1.00; xent: 0.00; lr: 0.00041; 11770/9169 tok/s;  13470 sec
+[2020-08-15 02:31:43,306 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 02:31:44,385 INFO] number of examples: 72000
+[2020-08-15 02:32:06,281 INFO] Step 92000/125000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00041; 12840/9980 tok/s;  13616 sec
+[2020-08-15 02:34:29,297 INFO] Step 93000/125000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00041; 13031/10150 tok/s;  13759 sec
+[2020-08-15 02:36:43,804 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 02:36:44,942 INFO] number of examples: 72000
+[2020-08-15 02:36:54,319 INFO] Step 94000/125000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00041; 12852/10003 tok/s;  13904 sec
+[2020-08-15 02:39:17,627 INFO] Step 95000/125000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00041; 13000/10106 tok/s;  14047 sec
+[2020-08-15 02:39:17,629 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_95000.pt
+[2020-08-15 02:41:41,484 INFO] Step 96000/125000; acc:  99.89; ppl:  1.00; xent: 0.00; lr: 0.00040; 12963/10096 tok/s;  14191 sec
+[2020-08-15 02:41:45,060 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 02:41:46,286 INFO] number of examples: 72000
+[2020-08-15 02:44:06,312 INFO] Step 97000/125000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00040; 12863/9994 tok/s;  14336 sec
+[2020-08-15 02:46:29,559 INFO] Step 98000/125000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00040; 13015/10150 tok/s;  14479 sec
+[2020-08-15 02:46:45,621 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 02:46:46,623 INFO] number of examples: 72000
+[2020-08-15 02:48:54,243 INFO] Step 99000/125000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00040; 12878/10002 tok/s;  14624 sec
+[2020-08-15 02:51:17,872 INFO] Step 100000/125000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00040; 12981/10128 tok/s;  14767 sec
+[2020-08-15 02:51:17,873 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.valid.0.pt
+[2020-08-15 02:51:17,915 INFO] number of examples: 9000
+[2020-08-15 02:51:32,016 INFO] Validation perplexity: 1.00493
+[2020-08-15 02:51:32,016 INFO] Validation accuracy: 99.8726
+[2020-08-15 02:51:32,017 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_100000.pt
+[2020-08-15 02:52:01,116 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 02:52:02,359 INFO] number of examples: 72000
+[2020-08-15 02:53:57,247 INFO] Step 101000/125000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00039; 11689/9073 tok/s;  14927 sec
+[2020-08-15 02:56:20,575 INFO] Step 102000/125000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00039; 13016/10156 tok/s;  15070 sec
+[2020-08-15 02:57:01,638 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 02:57:02,592 INFO] number of examples: 72000
+[2020-08-15 02:58:45,099 INFO] Step 103000/125000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00039; 12885/9994 tok/s;  15214 sec
+[2020-08-15 03:01:08,482 INFO] Step 104000/125000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00039; 13009/10146 tok/s;  15358 sec
+[2020-08-15 03:02:02,298 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 03:02:03,206 INFO] number of examples: 72000
+[2020-08-15 03:03:33,106 INFO] Step 105000/125000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00039; 12877/9994 tok/s;  15502 sec
+[2020-08-15 03:03:33,108 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_105000.pt
+[2020-08-15 03:05:56,745 INFO] Step 106000/125000; acc:  99.90; ppl:  1.00; xent: 0.00; lr: 0.00038; 12987/10138 tok/s;  15646 sec
+[2020-08-15 03:07:02,888 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 03:07:04,108 INFO] number of examples: 72000
+[2020-08-15 03:08:21,562 INFO] Step 107000/125000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00038; 12859/9974 tok/s;  15791 sec
+[2020-08-15 03:10:44,953 INFO] Step 108000/125000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00038; 13007/10153 tok/s;  15934 sec
+[2020-08-15 03:12:03,850 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 03:12:04,808 INFO] number of examples: 72000
+[2020-08-15 03:13:09,556 INFO] Step 109000/125000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00038; 12881/9994 tok/s;  16079 sec
+[2020-08-15 03:15:32,848 INFO] Step 110000/125000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00038; 13012/10156 tok/s;  16222 sec
+[2020-08-15 03:15:32,850 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.valid.0.pt
+[2020-08-15 03:15:32,938 INFO] number of examples: 9000
+[2020-08-15 03:15:47,028 INFO] Validation perplexity: 1.00469
+[2020-08-15 03:15:47,029 INFO] Validation accuracy: 99.884
+[2020-08-15 03:15:47,030 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_110000.pt
+[2020-08-15 03:17:18,396 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 03:17:19,610 INFO] number of examples: 72000
+[2020-08-15 03:18:11,954 INFO] Step 111000/125000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00038; 11707/9087 tok/s;  16381 sec
+[2020-08-15 03:20:35,208 INFO] Step 112000/125000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00037; 13015/10150 tok/s;  16524 sec
+[2020-08-15 03:22:19,153 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 03:22:20,087 INFO] number of examples: 72000
+[2020-08-15 03:22:59,799 INFO] Step 113000/125000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00037; 12886/10005 tok/s;  16669 sec
+[2020-08-15 03:25:22,843 INFO] Step 114000/125000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00037; 13030/10159 tok/s;  16812 sec
+[2020-08-15 03:27:19,238 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 03:27:20,128 INFO] number of examples: 72000
+[2020-08-15 03:27:47,469 INFO] Step 115000/125000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00037; 12885/10018 tok/s;  16957 sec
+[2020-08-15 03:27:47,470 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_115000.pt
+[2020-08-15 03:30:11,117 INFO] Step 116000/125000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00037; 12978/10103 tok/s;  17100 sec
+[2020-08-15 03:32:20,124 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 03:32:21,331 INFO] number of examples: 72000
+[2020-08-15 03:32:35,985 INFO] Step 117000/125000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00037; 12866/10008 tok/s;  17245 sec
+[2020-08-15 03:34:59,117 INFO] Step 118000/125000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00036; 13016/10123 tok/s;  17388 sec
+[2020-08-15 03:37:20,702 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 03:37:21,942 INFO] number of examples: 72000
+[2020-08-15 03:37:24,182 INFO] Step 119000/125000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00036; 12851/10011 tok/s;  17533 sec
+[2020-08-15 03:39:47,563 INFO] Step 120000/125000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00036; 12996/10100 tok/s;  17677 sec
+[2020-08-15 03:39:47,564 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.valid.0.pt
+[2020-08-15 03:39:47,607 INFO] number of examples: 9000
+[2020-08-15 03:40:01,763 INFO] Validation perplexity: 1.0049
+[2020-08-15 03:40:01,780 INFO] Validation accuracy: 99.884
+[2020-08-15 03:40:01,781 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_120000.pt
+[2020-08-15 03:42:25,583 INFO] Step 121000/125000; acc:  99.91; ppl:  1.00; xent: 0.00; lr: 0.00036; 11799/9193 tok/s;  17835 sec
+[2020-08-15 03:42:36,408 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 03:42:37,341 INFO] number of examples: 72000
+[2020-08-15 03:44:50,406 INFO] Step 122000/125000; acc:  99.93; ppl:  1.00; xent: 0.00; lr: 0.00036; 12864/9993 tok/s;  17980 sec
+[2020-08-15 03:47:13,851 INFO] Step 123000/125000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00036; 12999/10139 tok/s;  18123 sec
+[2020-08-15 03:47:37,126 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_big/.train.0.pt
+[2020-08-15 03:47:38,005 INFO] number of examples: 72000
+[2020-08-15 03:49:38,504 INFO] Step 124000/125000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00035; 12881/10008 tok/s;  18268 sec
+[2020-08-15 03:52:02,014 INFO] Step 125000/125000; acc:  99.92; ppl:  1.00; xent: 0.00; lr: 0.00035; 12996/10141 tok/s;  18411 sec
+[2020-08-15 03:52:02,015 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/reduction_big/toy_model_step_125000.pt

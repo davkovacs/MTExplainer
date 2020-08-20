@@ -1,0 +1,555 @@
+Changed directory to /home/dpk25/MolecularTransformer2/scripts/toy_model/sear_supBiased.
+
+JobID: 27576229
+======
+Time: Tue 18 Aug 16:31:57 BST 2020
+Running on master node: gpu-e-46
+Current directory: /home/dpk25/MolecularTransformer2/scripts/toy_model/sear_supBiased
+
+Nodes allocated:
+================
+gpu-e-46
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+./train.sh 
+
+[2020-08-18 16:32:07,279 INFO]  * src vocab size = 18
+[2020-08-18 16:32:07,280 INFO]  * tgt vocab size = 18
+[2020-08-18 16:32:07,280 INFO] Building model...
+[2020-08-18 16:32:14,508 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(18, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(18, 256, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=256, out_features=256, bias=True)
+          (linear_values): Linear(in_features=256, out_features=256, bias=True)
+          (linear_query): Linear(in_features=256, out_features=256, bias=True)
+          (softmax): Softmax(dim=-1)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (final_linear): Linear(in_features=256, out_features=256, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=256, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=256, bias=True)
+          (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1, inplace=False)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1, inplace=False)
+        )
+        (layer_norm_1): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (layer_norm): LayerNorm((256,), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=256, out_features=18, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2020-08-18 16:32:14,510 INFO] encoder: 5265408
+[2020-08-18 16:32:14,510 INFO] decoder: 6320146
+[2020-08-18 16:32:14,510 INFO] * number of parameters: 11585554
+[2020-08-18 16:32:14,515 INFO] Starting training on GPU: [0]
+[2020-08-18 16:32:14,515 INFO] Start training loop and validate every 10000 steps...
+[2020-08-18 16:32:14,515 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:32:14,555 INFO] number of examples: 4848
+[2020-08-18 16:33:29,493 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:33:29,553 INFO] number of examples: 4848
+[2020-08-18 16:34:43,791 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:34:43,813 INFO] number of examples: 4848
+[2020-08-18 16:34:55,408 INFO] Step 1000/50000; acc:  80.29; ppl:  1.57; xent: 0.45; lr: 0.00140; 2483/1999 tok/s;    161 sec
+[2020-08-18 16:35:58,045 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:35:58,067 INFO] number of examples: 4848
+[2020-08-18 16:37:12,582 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:37:12,604 INFO] number of examples: 4848
+[2020-08-18 16:37:35,509 INFO] Step 2000/50000; acc:  85.24; ppl:  1.37; xent: 0.31; lr: 0.00279; 2498/2011 tok/s;    321 sec
+[2020-08-18 16:38:29,462 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:38:29,484 INFO] number of examples: 4848
+[2020-08-18 16:39:43,745 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:39:43,804 INFO] number of examples: 4848
+[2020-08-18 16:40:18,204 INFO] Step 3000/50000; acc:  84.53; ppl:  1.39; xent: 0.33; lr: 0.00228; 2502/2014 tok/s;    484 sec
+[2020-08-18 16:40:57,979 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:40:58,001 INFO] number of examples: 4848
+[2020-08-18 16:42:12,311 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:42:12,376 INFO] number of examples: 4848
+[2020-08-18 16:42:58,168 INFO] Step 4000/50000; acc:  86.84; ppl:  1.31; xent: 0.27; lr: 0.00198; 2502/2015 tok/s;    644 sec
+[2020-08-18 16:43:26,618 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:43:26,641 INFO] number of examples: 4848
+[2020-08-18 16:44:40,002 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:44:40,024 INFO] number of examples: 4848
+[2020-08-18 16:45:36,795 INFO] Step 5000/50000; acc:  86.33; ppl:  1.32; xent: 0.28; lr: 0.00177; 2524/2032 tok/s;    802 sec
+[2020-08-18 16:45:36,797 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased/toy_model_step_5000.pt
+[2020-08-18 16:46:29,770 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:46:29,828 INFO] number of examples: 4848
+[2020-08-18 16:47:43,020 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:47:43,043 INFO] number of examples: 4848
+[2020-08-18 16:48:50,440 INFO] Step 6000/50000; acc:  86.68; ppl:  1.30; xent: 0.26; lr: 0.00161; 2067/1664 tok/s;    996 sec
+[2020-08-18 16:48:55,932 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:48:55,994 INFO] number of examples: 4848
+[2020-08-18 16:50:09,056 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:50:09,078 INFO] number of examples: 4848
+[2020-08-18 16:51:22,191 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:51:22,214 INFO] number of examples: 4848
+[2020-08-18 16:51:28,086 INFO] Step 7000/50000; acc:  86.67; ppl:  1.31; xent: 0.27; lr: 0.00149; 2538/2044 tok/s;   1154 sec
+[2020-08-18 16:52:35,446 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:52:35,502 INFO] number of examples: 4848
+[2020-08-18 16:53:48,487 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:53:48,511 INFO] number of examples: 4848
+[2020-08-18 16:54:05,607 INFO] Step 8000/50000; acc:  87.00; ppl:  1.29; xent: 0.26; lr: 0.00140; 2538/2044 tok/s;   1311 sec
+[2020-08-18 16:55:01,568 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:55:01,623 INFO] number of examples: 4848
+[2020-08-18 16:56:14,665 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:56:14,687 INFO] number of examples: 4848
+[2020-08-18 16:56:42,991 INFO] Step 9000/50000; acc:  87.07; ppl:  1.30; xent: 0.26; lr: 0.00132; 2542/2047 tok/s;   1468 sec
+[2020-08-18 16:57:27,460 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:57:27,523 INFO] number of examples: 4848
+[2020-08-18 16:58:39,873 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:58:39,895 INFO] number of examples: 4848
+[2020-08-18 16:59:19,027 INFO] Step 10000/50000; acc:  87.80; ppl:  1.27; xent: 0.24; lr: 0.00125; 2566/2066 tok/s;   1625 sec
+[2020-08-18 16:59:19,029 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.valid.0.pt
+[2020-08-18 16:59:19,055 INFO] number of examples: 303
+[2020-08-18 16:59:19,571 INFO] Validation perplexity: 1.29986
+[2020-08-18 16:59:19,571 INFO] Validation accuracy: 89.8656
+[2020-08-18 16:59:19,573 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased/toy_model_step_10000.pt
+[2020-08-18 16:59:52,839 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 16:59:52,861 INFO] number of examples: 4848
+[2020-08-18 17:01:05,261 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:01:05,324 INFO] number of examples: 4848
+[2020-08-18 17:01:55,846 INFO] Step 11000/50000; acc:  88.27; ppl:  1.26; xent: 0.23; lr: 0.00119; 2551/2055 tok/s;   1781 sec
+[2020-08-18 17:02:18,001 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:02:18,024 INFO] number of examples: 4848
+[2020-08-18 17:03:30,472 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:03:30,548 INFO] number of examples: 4848
+[2020-08-18 17:04:32,031 INFO] Step 12000/50000; acc:  88.82; ppl:  1.25; xent: 0.22; lr: 0.00114; 2564/2064 tok/s;   1938 sec
+[2020-08-18 17:04:42,950 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:04:42,973 INFO] number of examples: 4848
+[2020-08-18 17:05:55,359 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:05:55,381 INFO] number of examples: 4848
+[2020-08-18 17:07:07,911 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:07:07,968 INFO] number of examples: 4848
+[2020-08-18 17:07:08,165 INFO] Step 13000/50000; acc:  88.46; ppl:  1.26; xent: 0.23; lr: 0.00110; 2564/2064 tok/s;   2094 sec
+[2020-08-18 17:08:20,388 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:08:20,411 INFO] number of examples: 4848
+[2020-08-18 17:09:32,786 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:09:32,847 INFO] number of examples: 4848
+[2020-08-18 17:09:44,293 INFO] Step 14000/50000; acc:  88.39; ppl:  1.26; xent: 0.23; lr: 0.00106; 2558/2060 tok/s;   2250 sec
+[2020-08-18 17:10:45,216 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:10:45,239 INFO] number of examples: 4848
+[2020-08-18 17:11:57,703 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:11:57,771 INFO] number of examples: 4848
+[2020-08-18 17:12:20,221 INFO] Step 15000/50000; acc:  88.97; ppl:  1.24; xent: 0.22; lr: 0.00102; 2565/2066 tok/s;   2406 sec
+[2020-08-18 17:12:20,223 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased/toy_model_step_15000.pt
+[2020-08-18 17:13:10,282 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:13:10,304 INFO] number of examples: 4848
+[2020-08-18 17:14:22,646 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:14:22,668 INFO] number of examples: 4848
+[2020-08-18 17:14:55,559 INFO] Step 16000/50000; acc:  89.03; ppl:  1.24; xent: 0.22; lr: 0.00099; 2578/2075 tok/s;   2561 sec
+[2020-08-18 17:15:34,172 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:15:34,234 INFO] number of examples: 4848
+[2020-08-18 17:16:46,601 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:16:46,623 INFO] number of examples: 4848
+[2020-08-18 17:17:31,380 INFO] Step 17000/50000; acc:  89.42; ppl:  1.23; xent: 0.21; lr: 0.00096; 2568/2069 tok/s;   2717 sec
+[2020-08-18 17:17:58,886 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:17:58,951 INFO] number of examples: 4848
+[2020-08-18 17:19:11,309 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:19:11,331 INFO] number of examples: 4848
+[2020-08-18 17:20:07,336 INFO] Step 18000/50000; acc:  89.59; ppl:  1.23; xent: 0.20; lr: 0.00093; 2567/2067 tok/s;   2873 sec
+[2020-08-18 17:20:23,692 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:20:23,715 INFO] number of examples: 4848
+[2020-08-18 17:21:36,106 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:21:36,163 INFO] number of examples: 4848
+[2020-08-18 17:22:43,106 INFO] Step 19000/50000; acc:  89.53; ppl:  1.23; xent: 0.21; lr: 0.00091; 2570/2069 tok/s;   3029 sec
+[2020-08-18 17:22:48,413 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:22:48,437 INFO] number of examples: 4848
+[2020-08-18 17:24:00,582 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:24:00,644 INFO] number of examples: 4848
+[2020-08-18 17:25:12,880 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:25:12,903 INFO] number of examples: 4848
+[2020-08-18 17:25:18,838 INFO] Step 20000/50000; acc:  90.00; ppl:  1.21; xent: 0.19; lr: 0.00088; 2569/2068 tok/s;   3184 sec
+[2020-08-18 17:25:18,839 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.valid.0.pt
+[2020-08-18 17:25:18,842 INFO] number of examples: 303
+[2020-08-18 17:25:19,361 INFO] Validation perplexity: 1.23284
+[2020-08-18 17:25:19,361 INFO] Validation accuracy: 91.6898
+[2020-08-18 17:25:19,362 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased/toy_model_step_20000.pt
+[2020-08-18 17:26:26,248 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:26:26,313 INFO] number of examples: 4848
+[2020-08-18 17:27:38,594 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:27:38,617 INFO] number of examples: 4848
+[2020-08-18 17:27:55,720 INFO] Step 21000/50000; acc:  89.89; ppl:  1.22; xent: 0.20; lr: 0.00086; 2548/2052 tok/s;   3341 sec
+[2020-08-18 17:28:50,966 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:28:50,989 INFO] number of examples: 4848
+[2020-08-18 17:30:02,619 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:30:02,678 INFO] number of examples: 4848
+[2020-08-18 17:30:30,922 INFO] Step 22000/50000; acc:  90.25; ppl:  1.21; xent: 0.19; lr: 0.00084; 2578/2076 tok/s;   3496 sec
+[2020-08-18 17:31:15,137 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:31:15,159 INFO] number of examples: 4848
+[2020-08-18 17:32:27,510 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:32:27,574 INFO] number of examples: 4848
+[2020-08-18 17:33:06,859 INFO] Step 23000/50000; acc:  90.40; ppl:  1.20; xent: 0.19; lr: 0.00082; 2568/2068 tok/s;   3652 sec
+[2020-08-18 17:33:39,868 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:33:39,890 INFO] number of examples: 4848
+[2020-08-18 17:34:52,179 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:34:52,202 INFO] number of examples: 4848
+[2020-08-18 17:35:42,567 INFO] Step 24000/50000; acc:  90.55; ppl:  1.20; xent: 0.18; lr: 0.00081; 2569/2069 tok/s;   3808 sec
+[2020-08-18 17:36:04,530 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:36:04,584 INFO] number of examples: 4848
+[2020-08-18 17:37:16,917 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:37:16,941 INFO] number of examples: 4848
+[2020-08-18 17:38:18,423 INFO] Step 25000/50000; acc:  90.49; ppl:  1.20; xent: 0.18; lr: 0.00079; 2569/2068 tok/s;   3964 sec
+[2020-08-18 17:38:18,425 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased/toy_model_step_25000.pt
+[2020-08-18 17:38:29,482 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:38:29,543 INFO] number of examples: 4848
+[2020-08-18 17:39:41,857 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:39:41,880 INFO] number of examples: 4848
+[2020-08-18 17:40:54,242 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:40:54,309 INFO] number of examples: 4848
+[2020-08-18 17:40:54,655 INFO] Step 26000/50000; acc:  90.74; ppl:  1.20; xent: 0.18; lr: 0.00078; 2562/2063 tok/s;   4120 sec
+[2020-08-18 17:42:06,681 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:42:06,704 INFO] number of examples: 4848
+[2020-08-18 17:43:18,981 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:43:19,004 INFO] number of examples: 4848
+[2020-08-18 17:43:30,548 INFO] Step 27000/50000; acc:  90.80; ppl:  1.20; xent: 0.18; lr: 0.00076; 2562/2063 tok/s;   4276 sec
+[2020-08-18 17:44:30,853 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:44:31,082 INFO] number of examples: 4848
+[2020-08-18 17:45:42,565 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:45:42,588 INFO] number of examples: 4848
+[2020-08-18 17:46:05,175 INFO] Step 28000/50000; acc:  90.94; ppl:  1.19; xent: 0.18; lr: 0.00075; 2587/2083 tok/s;   4431 sec
+[2020-08-18 17:46:54,778 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:46:54,839 INFO] number of examples: 4848
+[2020-08-18 17:48:07,072 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:48:07,094 INFO] number of examples: 4848
+[2020-08-18 17:48:41,081 INFO] Step 29000/50000; acc:  91.04; ppl:  1.19; xent: 0.17; lr: 0.00073; 2569/2068 tok/s;   4587 sec
+[2020-08-18 17:49:19,498 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:49:19,521 INFO] number of examples: 4848
+[2020-08-18 17:50:32,043 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:50:32,101 INFO] number of examples: 4848
+[2020-08-18 17:51:17,035 INFO] Step 30000/50000; acc:  91.24; ppl:  1.19; xent: 0.17; lr: 0.00072; 2566/2067 tok/s;   4743 sec
+[2020-08-18 17:51:17,036 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.valid.0.pt
+[2020-08-18 17:51:17,039 INFO] number of examples: 303
+[2020-08-18 17:51:17,553 INFO] Validation perplexity: 1.18407
+[2020-08-18 17:51:17,553 INFO] Validation accuracy: 93.7273
+[2020-08-18 17:51:17,555 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased/toy_model_step_30000.pt
+[2020-08-18 17:51:45,195 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:51:45,218 INFO] number of examples: 4848
+[2020-08-18 17:52:57,519 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:52:57,583 INFO] number of examples: 4848
+[2020-08-18 17:53:53,719 INFO] Step 31000/50000; acc:  91.37; ppl:  1.18; xent: 0.17; lr: 0.00071; 2555/2057 tok/s;   4899 sec
+[2020-08-18 17:54:09,954 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:54:09,977 INFO] number of examples: 4848
+[2020-08-18 17:55:22,267 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:55:22,291 INFO] number of examples: 4848
+[2020-08-18 17:56:29,411 INFO] Step 32000/50000; acc:  91.26; ppl:  1.18; xent: 0.17; lr: 0.00070; 2571/2070 tok/s;   5055 sec
+[2020-08-18 17:56:34,539 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:56:34,561 INFO] number of examples: 4848
+[2020-08-18 17:57:46,821 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:57:46,844 INFO] number of examples: 4848
+[2020-08-18 17:58:59,069 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 17:58:59,130 INFO] number of examples: 4848
+[2020-08-18 17:59:05,299 INFO] Step 33000/50000; acc:  91.48; ppl:  1.18; xent: 0.16; lr: 0.00069; 2566/2066 tok/s;   5211 sec
+[2020-08-18 18:00:10,513 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:00:10,537 INFO] number of examples: 4848
+[2020-08-18 18:01:22,801 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:01:22,868 INFO] number of examples: 4848
+[2020-08-18 18:01:40,049 INFO] Step 34000/50000; acc:  91.62; ppl:  1.18; xent: 0.16; lr: 0.00068; 2583/2080 tok/s;   5366 sec
+[2020-08-18 18:02:35,146 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:02:35,170 INFO] number of examples: 4848
+[2020-08-18 18:03:47,341 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:03:47,363 INFO] number of examples: 4848
+[2020-08-18 18:04:15,752 INFO] Step 35000/50000; acc:  91.39; ppl:  1.18; xent: 0.17; lr: 0.00067; 2570/2069 tok/s;   5521 sec
+[2020-08-18 18:04:15,754 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased/toy_model_step_35000.pt
+[2020-08-18 18:05:00,219 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:05:00,277 INFO] number of examples: 4848
+[2020-08-18 18:06:12,836 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:06:12,860 INFO] number of examples: 4848
+[2020-08-18 18:06:52,268 INFO] Step 36000/50000; acc:  91.77; ppl:  1.17; xent: 0.16; lr: 0.00066; 2559/2060 tok/s;   5678 sec
+[2020-08-18 18:07:25,174 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:07:25,238 INFO] number of examples: 4848
+[2020-08-18 18:08:37,419 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:08:37,442 INFO] number of examples: 4848
+[2020-08-18 18:09:28,178 INFO] Step 37000/50000; acc:  91.94; ppl:  1.17; xent: 0.16; lr: 0.00065; 2566/2066 tok/s;   5834 sec
+[2020-08-18 18:09:50,027 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:09:50,049 INFO] number of examples: 4848
+[2020-08-18 18:11:02,341 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:11:02,364 INFO] number of examples: 4848
+[2020-08-18 18:12:04,025 INFO] Step 38000/50000; acc:  92.07; ppl:  1.17; xent: 0.15; lr: 0.00064; 2569/2068 tok/s;   5990 sec
+[2020-08-18 18:12:14,620 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:12:14,643 INFO] number of examples: 4848
+[2020-08-18 18:13:26,853 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:13:26,912 INFO] number of examples: 4848
+[2020-08-18 18:14:39,288 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:14:39,312 INFO] number of examples: 4848
+[2020-08-18 18:14:39,818 INFO] Step 39000/50000; acc:  92.16; ppl:  1.16; xent: 0.15; lr: 0.00063; 2569/2069 tok/s;   6145 sec
+[2020-08-18 18:15:51,509 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:15:51,575 INFO] number of examples: 4848
+[2020-08-18 18:17:03,744 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:17:03,770 INFO] number of examples: 4848
+[2020-08-18 18:17:15,501 INFO] Step 40000/50000; acc:  92.30; ppl:  1.16; xent: 0.15; lr: 0.00062; 2566/2066 tok/s;   6301 sec
+[2020-08-18 18:17:15,502 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.valid.0.pt
+[2020-08-18 18:17:15,518 INFO] number of examples: 303
+[2020-08-18 18:17:16,030 INFO] Validation perplexity: 1.15794
+[2020-08-18 18:17:16,030 INFO] Validation accuracy: 95.0608
+[2020-08-18 18:17:16,031 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased/toy_model_step_40000.pt
+[2020-08-18 18:18:16,884 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:18:16,906 INFO] number of examples: 4848
+[2020-08-18 18:19:29,437 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:19:29,496 INFO] number of examples: 4848
+[2020-08-18 18:19:52,359 INFO] Step 41000/50000; acc:  92.32; ppl:  1.16; xent: 0.15; lr: 0.00062; 2550/2053 tok/s;   6458 sec
+[2020-08-18 18:20:41,925 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:20:41,947 INFO] number of examples: 4848
+[2020-08-18 18:21:54,170 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:21:54,233 INFO] number of examples: 4848
+[2020-08-18 18:22:28,252 INFO] Step 42000/50000; acc:  92.26; ppl:  1.16; xent: 0.15; lr: 0.00061; 2569/2068 tok/s;   6614 sec
+[2020-08-18 18:23:06,512 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:23:06,535 INFO] number of examples: 4848
+[2020-08-18 18:24:19,060 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:24:19,083 INFO] number of examples: 4848
+[2020-08-18 18:25:04,094 INFO] Step 43000/50000; acc:  92.46; ppl:  1.16; xent: 0.15; lr: 0.00060; 2568/2068 tok/s;   6770 sec
+[2020-08-18 18:25:31,335 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:25:31,391 INFO] number of examples: 4848
+[2020-08-18 18:26:43,757 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:26:43,780 INFO] number of examples: 4848
+[2020-08-18 18:27:40,051 INFO] Step 44000/50000; acc:  92.59; ppl:  1.16; xent: 0.14; lr: 0.00060; 2566/2066 tok/s;   6926 sec
+[2020-08-18 18:27:56,113 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:27:56,174 INFO] number of examples: 4848
+[2020-08-18 18:29:08,576 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:29:08,599 INFO] number of examples: 4848
+[2020-08-18 18:30:15,694 INFO] Step 45000/50000; acc:  92.68; ppl:  1.15; xent: 0.14; lr: 0.00059; 2572/2071 tok/s;   7081 sec
+[2020-08-18 18:30:15,696 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased/toy_model_step_45000.pt
+[2020-08-18 18:30:20,962 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:30:21,026 INFO] number of examples: 4848
+[2020-08-18 18:31:33,384 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:31:33,407 INFO] number of examples: 4848
+[2020-08-18 18:32:45,755 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:32:45,777 INFO] number of examples: 4848
+[2020-08-18 18:32:52,094 INFO] Step 46000/50000; acc:  92.74; ppl:  1.15; xent: 0.14; lr: 0.00058; 2557/2059 tok/s;   7238 sec
+[2020-08-18 18:33:58,248 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:33:58,306 INFO] number of examples: 4848
+[2020-08-18 18:35:10,642 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:35:10,665 INFO] number of examples: 4848
+[2020-08-18 18:35:28,014 INFO] Step 47000/50000; acc:  92.85; ppl:  1.15; xent: 0.14; lr: 0.00058; 2564/2065 tok/s;   7393 sec
+[2020-08-18 18:36:23,008 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:36:23,069 INFO] number of examples: 4848
+[2020-08-18 18:37:35,394 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:37:35,418 INFO] number of examples: 4848
+[2020-08-18 18:38:03,971 INFO] Step 48000/50000; acc:  92.56; ppl:  1.16; xent: 0.15; lr: 0.00057; 2566/2066 tok/s;   7549 sec
+[2020-08-18 18:38:47,850 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:38:47,873 INFO] number of examples: 4848
+[2020-08-18 18:40:00,237 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:40:00,294 INFO] number of examples: 4848
+[2020-08-18 18:40:39,983 INFO] Step 49000/50000; acc:  92.93; ppl:  1.15; xent: 0.14; lr: 0.00056; 2567/2067 tok/s;   7705 sec
+[2020-08-18 18:41:12,747 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:41:12,768 INFO] number of examples: 4848
+[2020-08-18 18:42:25,078 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.train.0.pt
+[2020-08-18 18:42:25,140 INFO] number of examples: 4848
+[2020-08-18 18:43:15,905 INFO] Step 50000/50000; acc:  93.02; ppl:  1.15; xent: 0.14; lr: 0.00056; 2566/2066 tok/s;   7861 sec
+[2020-08-18 18:43:15,906 INFO] Loading dataset from /home/dpk25/rds/hpc-work/toy_model/data_sear_supBiased/.valid.0.pt
+[2020-08-18 18:43:15,909 INFO] number of examples: 303
+[2020-08-18 18:43:16,428 INFO] Validation perplexity: 1.13904
+[2020-08-18 18:43:16,428 INFO] Validation accuracy: 95.8396
+[2020-08-18 18:43:16,429 INFO] Saving checkpoint /home/dpk25/rds/hpc-work/toy_model/sear_models_supBiased/toy_model_step_50000.pt

@@ -1,0 +1,310 @@
+C C ( C ) = C C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) C = C C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = O ) N c 1 c c c c c 1 . C C C C C ( C ) ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C C ( = O ) N c 1 c c c c c 1 . C C C = C ( C ) C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C C C C C C C ( = O ) Cl . C C ( C ) O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C C ( C ) ( C ) C ) C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C C ( C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C ( = O ) Cl ) C ( C ) C . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) = C C C ( = O ) Cl . C C ( C ) O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C C C = C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) C = C C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = O ) N c 1 c c c c c 1 . C C ( C ) = C C C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C = C ( C ) C C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ( C ) C ) C ( C ) C ( = O ) Cl . C C ( C ) O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C = C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C C ( C ) C ( C ) ( C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C ( C C ( = O ) Cl ) C ( C ) ( C ) C . Cl [Al] ( Cl ) Cl
+C = C C ( C ) C C C ( = O ) Cl . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C ( C ) ( C C ) C ( = O ) Cl . C C ( C ) ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C C ( C C C ) C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C ) c 1 c c c c c 1 . C C C C = C C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) C C C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C ( C ) ( C C ) C ( = O ) Cl . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C ) c 1 c c c c c 1 . C C C C ( C ) = C ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C C ( = O ) N c 1 c c c c c 1 . C C C ( C ) = C C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C ( C C ( C ) ( C ) C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C = C ( C ) C ( C ) C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C ) ( C ) C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C ) C C = C C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C ) c 1 c c c c c 1 . C C C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C C ( C ) C C C C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C C ( C = C ( C ) C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C ( C C C ) C C C ( = O ) Cl . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ( = O ) Cl ) C ( C ) ( C ) C . C C ( C ) O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C ( C ( = O ) Cl ) C ( C ) ( C ) C . C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C ( C ( = O ) Cl ) C ( C ) C C . C C ( C ) O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = O ) N c 1 c c c c c 1 . C C C = C ( C ( = O ) Cl ) C ( C ) C . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C = C C ( C C C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C C ( C ) ( C C ) C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ( = O ) Cl ) C ( C ) C . C C ( C ) O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = C C C ( = O ) Cl ) C ( C ) C . C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C ( C ) C ( C ) C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C C C C = C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C ( C C C C ) C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C ) C C = C C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C ( C C C ) C C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) C C C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C C C ) C C C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C ( C ) ( C C ) C ( = O ) Cl . C C ( C ) ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C = C C ( C ) ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) O c 1 c c c c c 1 . C C C ( = C C ( = O ) Cl ) C ( C ) C . Cl [Al] ( Cl ) Cl
+C = C C C ( C ) C ( C ) C ( = O ) Cl . C C ( C ) O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C = C C C ( C ) ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C C C C ( C ) C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C C ( C C C ) C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C ( C ) ( C ) C ( = O ) Cl . C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C C C ( C ) C ) C ( = O ) Cl . C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C ) C ( C ) C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = O ) N c 1 c c c c c 1 . C C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) O c 1 c c c c c 1 . C C C C ( = C C ( = O ) Cl ) C C . Cl [Al] ( Cl ) Cl
+C = C ( C ( = O ) Cl ) C ( C ) ( C ) C . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C C ) C ( C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C C C C C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C = C C C C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C C ( C ) ( C ) C ( C ) C ( = O ) Cl . C C ( C ) ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) = C C C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( = O ) N c 1 c c c c c 1 . C C C ( C ) ( C ( = O ) Cl ) C ( C ) C . Cl [Al] ( Cl ) Cl
+C C C ( C ) C C = C C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = O ) N c 1 c c c c c 1 . C C C = C C ( C ) C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C C ( C ) C C C ( = O ) Cl . C C ( C ) O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C ( C C C ) C C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C C C = C C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( = O ) N c 1 c c c c c 1 . C C C C ( C ( = O ) Cl ) = C ( C ) C . Cl [Al] ( Cl ) Cl
+C = C C ( C ) ( C C C ) C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) = C C ( C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C ( C ) C ( C ) C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C C ( C ) C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C C ( C ) C ( C ) ( C ) C ( = O ) Cl . C C ( C ) ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( = C C ( = O ) Cl ) C ( C ) C . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C ( C ) ( C C ) C ( = O ) Cl . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( = O ) N c 1 c c c c c 1 . C C C ( C ) C ( C ) C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C = C C ( C ) C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) O c 1 c c c c c 1 . C C C ( C ) C ( C ) = C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C C ( C C C C ) C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C ( C C ) C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C ( C ) ( C ) C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) C ( C ) ( C ) C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C ( C ) C C C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C ( C ) ( C ) C ( = O ) Cl . C C ( C ) O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = O ) N c 1 c c c c c 1 . C C C = C ( C C ) C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C C C ( C ) C = C C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C C = C ( C ( = O ) Cl ) C ( C ) C . Cl [Al] ( Cl ) Cl
+C C ( C ) = C C C C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C C C C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C C C = C ( C ) C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C = C C ( C ) ( C ) C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) O c 1 c c c c c 1 . C C = C C C C ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C ( C ) C ( C ) ( C ) C C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C C C ) C ( C ) C ( = O ) Cl . C C ( C ) O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C ( C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C ( C ) C ( C ) C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C ( C ( = O ) Cl ) C ( C ) C . C C ( C ) ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) O c 1 c c c c c 1 . C C = C ( C ) C ( C ) C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C C C C ( C ) C C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C C = C C C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C C ( C ( = O ) Cl ) C ( C ) C . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C C C = C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) = C C C C C ( = O ) Cl . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C ( C ) ( C ) C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C C C C C ) C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C C C ( C C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( = O ) N c 1 c c c c c 1 . C C C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C C C C = C C C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C ( C ) ( C C ) C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) = C C ( C ) C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C C C ( C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C C C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C ( C C ( = O ) Cl ) C ( C ) C . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C = C ( C C C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C C ( C ) C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = C C ( C ) C ) C ( = O ) Cl . C C ( C ) O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ( = O ) Cl ) C ( C ) ( C ) C . C C ( C ) O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) = C C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = O ) N c 1 c c c c c 1 . C C C C C = C ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C = C C ( C ) C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C C ( C ) ( C ) C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C C ( C ) ( C ) C ) C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ( = O ) Cl ) C ( C ) C C . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C ( C ) ( C ) C C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C C ( C ) ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( = O ) N c 1 c c c c c 1 . C C ( C ) C = C C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C = C ( C ) C C C C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C ( C ) C ( C C ) C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C C ( C C ) C C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ( = O ) Cl ) C ( C ) C ( C ) C . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C ( C ) C C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = O ) N c 1 c c c c c 1 . C C C ( C ) = C C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C = C C C C ( C ) C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C ( C ( = O ) Cl ) C ( C ) C . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C = C C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C C = C ( C C C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C C C ( C ) C C C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) = C ( C ) C ( C ) C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C C ) C ( C ) C C ( = O ) Cl . C C ( C ) ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C C C ( C ( = O ) Cl ) C ( C ) C . Cl [Al] ( Cl ) Cl
+C = C ( C ( = O ) Cl ) C ( C ) C C . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C ( C C ( = O ) Cl ) C ( C ) C . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) O c 1 c c c c c 1 . C C C C ( C ) C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C C ( C ) ( C ) C C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C ( C C ) C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) O c 1 c c c c c 1 . C C = C ( C C ) C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) O c 1 c c c c c 1 . C C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C ( C ) = C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C C C ( C ) = C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C = C C ( C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C ( C ) C ( C ) C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C ( C ) C = C C ( = O ) Cl . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C C ( C ) C ) C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C C C C C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C ( C C ) C C C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C C C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C ( C C ) C C ( = O ) Cl . C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C ( C ) C C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C C C = C C C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C C ( C ) C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C C C ( C ) C C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C ( C ) C ( C C ) C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( = O ) N c 1 c c c c c 1 . C C C = C ( C C ) C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C C ( C C ) C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C = C ( C ) C ) C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C ( C ( = O ) Cl ) C ( C ) C . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C ) ( C ) C ( C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C C ( C ) C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C = C C C C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C C ( = O ) Cl . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C ( C ) ( C C ) C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C = C ( C ) C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( = O ) N c 1 c c c c c 1 . C C C C = C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C C ( = C C ( = O ) Cl ) C C . Cl [Al] ( Cl ) Cl
+C = C C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C C ( C ) C C C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) O c 1 c c c c c 1 . C C = C C ( C ) ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) O c 1 c c c c c 1 . C C C ( C C ( = O ) Cl ) = C ( C ) C . Cl [Al] ( Cl ) Cl
+C C C C = C ( C ) C C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C C C = C C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C ) ( C ( = O ) Cl ) C ( C ) C . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) O c 1 c c c c c 1 . C C C = C C ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C C = C C C C C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C C C C ( = O ) Cl . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C C C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C C ( C ) = C ( C ) C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C C C ( C C ) C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C C ( C ) C ( = O ) Cl . C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C ( C ) C C C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = C C C ( C ) C ) C ( = O ) Cl . C C ( C ) ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) C C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C C C ( = O ) Cl . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C ) c 1 c c c c c 1 . C C C = C ( C ( = O ) Cl ) C ( C ) C . Cl [Al] ( Cl ) Cl
+C = C C ( C ( = O ) Cl ) C ( C ) ( C ) C . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C C C = C C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C ( C C ) C C ( = O ) Cl . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) = C ( C ) C ( C ) C ( = O ) Cl . C C ( C ) O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C C ( C ) ( C ) C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C C ( = O ) Cl . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C ( C C ) ( C C ) C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C C ( C ) ( C ) C ( = O ) Cl . C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( = O ) N c 1 c c c c c 1 . C C C = C ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) C ( C ) ( C ) C C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C = C C C C C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C C C ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) = C ( C ) C C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C ( C C ) C ( = O ) Cl . C C ( C ) ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = O ) N c 1 c c c c c 1 . C C ( C ( = O ) Cl ) C ( C ) ( C ) C . Cl [Al] ( Cl ) Cl
+C C ( C ) C ( C ) C C ( = O ) Cl . F c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = O ) N c 1 c c c c c 1 . C C ( C ) ( C ) C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) = C C ( C ) C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) O c 1 c c c c c 1 . C C C ( C ) C = C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) C C ( C ) C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C C ( C ) C = C ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C C ( C C ( C ) C ) C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C ( C C ) C C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C C ( C C ) C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C C = C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C = C C C C ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) = C C C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C C C ) C C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C ( C ) ( C ) C ( = O ) Cl . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C C ( C ) C C = C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( = O ) N c 1 c c c c c 1 . C C ( C ) C C ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C = C C ( C ) C ( C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C ( C ) ( C ) C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = C C ( C ) C ) C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C C C C ( = O ) Cl . O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C ( C C ) C C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C C C ( C ) C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C = C C ( C ) C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) C C = C C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C ( C C ) C C ( = O ) Cl . C C ( C ) ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C = C C C ( C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = O ) N c 1 c c c c c 1 . C C = C ( C ) C C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) O c 1 c c c c c 1 . C C C C C ( C ) C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C C ( C ) ( C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C C ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C = C ( C C ( C ) C ) C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C ( C ) C C ( C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C ( C C C ) C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C C ( C ) ( C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C C C = C ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C = C ( C C C ) C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C ( C C C ) C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C = C ( C ) C ( C C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C C C ( C ) C C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C = C C ( C ) C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C C ( C ) C ( = O ) Cl . C C O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C C ) C ( = O ) Cl . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C ( C ) C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C ( C C ) C C C ( = O ) Cl . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( = O ) N c 1 c c c c c 1 . C C C ( C ) C C = C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C = C C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) ( C ) c 1 c c c c c 1 . C C C ( C ) = C ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C ( C ) C C C ( = O ) Cl . C C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) c 1 c c c c c 1 . C C C = C C C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) C = C C ( = O ) Cl . C C C ( = O ) N c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C C = C C C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C ( C ) C C C ( = O ) Cl . Cl c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C C C ( C ) ( C C ) C ( = O ) Cl . C C ( C ) O c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = O ) N c 1 c c c c c 1 . C C = C C ( C ) ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C ( C ) C ( C ) ( C ) C ( = O ) Cl . C C ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) = C C ( C ) ( C ) C ( = O ) Cl . C C O C ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = O ) c 1 c c c c c 1 . C C ( C ) C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C = C C ( C C ( = O ) Cl ) C ( C ) C . C C O C ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) = C C ( C ) C C ( = O ) Cl . C O C ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ( = O ) Cl ) C ( C ) ( C ) C C . O = [N+] ( [O-] ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C ) = C C ( C ) C ( = O ) Cl . O = [N+] ( [O-] ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C ( C ) C ( = O ) Cl . C C O S ( = O ) ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C C ) C ( C ) C ( = O ) Cl . O = [N+] ( [O-] ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) = C ( C ) C C ( = O ) Cl . O = C c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C ( C ) C ( C ) C ( = O ) Cl . C C O S ( = O ) ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ( = O ) Cl ) C ( C ) ( C ) C C . C O S ( = O ) ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C ) C C C ( = O ) Cl . N # C c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C C C C C ( = O ) Cl . C O C ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C = C ( C C C C ) C ( = O ) Cl . C [N+] ( C ) ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ( = O ) Cl ) = C ( C ) C ( C ) C . C C O S ( = O ) ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C ( = O ) Cl . C [N+] ( C ) ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C C C C ( C ) C ( = O ) Cl . C C O C ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C ( C ( = O ) Cl ) C ( C ) C . N # C c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C ( C ) C ( = O ) Cl . C O C ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = O ) c 1 c c c c c 1 . C C C ( C ) C C C ( = O ) Cl . Cl [Al] ( Cl ) Cl
+C C C ( C C ) C ( C ) C ( = O ) Cl . C O S ( = O ) ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) = C ( C ) C C ( = O ) Cl . C C O C ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C ( C ) C ( = O ) Cl . C [N+] ( C ) ( C ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C ( C ) C ( C ) C ( = O ) Cl . N # C c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C ) ( C ) C C ( = O ) Cl . O = [N+] ( [O-] ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C = C ( C ) C ( C ) C C ( = O ) Cl . C O S ( = O ) ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C ( C ( = O ) Cl ) C ( C ) ( C ) C . C O C ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C C = C C ( C C ) C ( = O ) Cl . N # C c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) C C C C C ( = O ) Cl . C C O C ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( C ) = C ( C ) C C ( = O ) Cl . O = [N+] ( [O-] ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl
+C C ( = C C ( C ) ( C ) C ) C ( = O ) Cl . C C ( = O ) c 1 c c c c c 1 . Cl [Al] ( Cl ) Cl

@@ -1,0 +1,2 @@
+Top-1: 82.7% || Invalid SMILES 3.33%
+Top-2: 85.1% || Invalid SMILES 27.56%

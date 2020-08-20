@@ -7,12 +7,10 @@ multi-bleu.perl
 *.sublime-*
 .DS_Store
 data/
-<<<<<<< HEAD
-experiments/test_reactions
-experiments/test_set_preds
 experiments/unlearn/
 experiments/test_set_preds/
-experiments/test_reactions/
+experiments/test_reactions
+experiments/data_attribution/pistachio/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

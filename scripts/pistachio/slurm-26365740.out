@@ -1,0 +1,33 @@
+Changed directory to /home/dpk25/MolecularTransformer2/scripts/pistachio.
+
+JobID: 26365740
+======
+Time: Fri 24 Jul 09:59:16 BST 2020
+Running on master node: gpu-e-1
+Current directory: /home/dpk25/MolecularTransformer2/scripts/pistachio
+
+Nodes allocated:
+================
+gpu-e-1
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+./test_preds.sh 
+
+[2020-07-24 09:59:23,293 INFO] Translating shard 0.
+[2020-07-24 11:15:37,237 INFO] Translating shard 1.
+[2020-07-24 12:28:58,472 INFO] Translating shard 2.
+[2020-07-24 13:42:14,905 INFO] Translating shard 3.
+[2020-07-24 14:50:40,618 INFO] Translating shard 4.
+[2020-07-24 16:06:05,104 INFO] Translating shard 5.
+[2020-07-24 17:23:51,597 INFO] Translating shard 6.
+[2020-07-24 18:36:49,725 INFO] Translating shard 7.
+[2020-07-24 19:53:30,043 INFO] Translating shard 8.
+[2020-07-24 21:03:50,916 INFO] Translating shard 9.
+[2020-07-24 22:13:24,239 INFO] Translating shard 10.
+[2020-07-24 23:32:16,695 INFO] Translating shard 11.
+[2020-07-25 00:47:36,268 INFO] Translating shard 12.
+slurmstepd: error: *** JOB 26365740 ON gpu-e-1 CANCELLED AT 2020-07-25T01:59:44 DUE TO TIME LIMIT ***
+slurmstepd: error: task_p_post_term: rmdir(/sys/fs/cgroup/cpuset/slurm26365740/slurm26365740.4294967294_0) failed Device or resource busy

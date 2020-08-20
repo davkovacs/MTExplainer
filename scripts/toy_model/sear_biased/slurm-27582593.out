@@ -1,0 +1,21 @@
+Changed directory to /home/dpk25/MolecularTransformer2/scripts/toy_model/sear_biased.
+
+JobID: 27582593
+======
+Time: Tue 18 Aug 20:04:51 BST 2020
+Running on master node: gpu-e-11
+Current directory: /home/dpk25/MolecularTransformer2/scripts/toy_model/sear_biased
+
+Nodes allocated:
+================
+gpu-e-11
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+./test_preds.sh 
+
+[2020-08-18 20:04:58,408 INFO] Translating shard 0.
+PRED AVG SCORE: -0.1548, PRED PPL: 1.1674
+[20:05:31] SMILES Parse Error: extra open parentheses for input: 'C=C(C)C(C)(C)C(=O)c1cccc(S(=O)(=O)c1'

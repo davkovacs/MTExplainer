@@ -1,1 +1,0 @@
-Top-1: 100.0% || Invalid SMILES 0.00%

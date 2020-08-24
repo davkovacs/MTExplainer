@@ -1,1 +1,0 @@
-Top-1: 0.2% || Invalid SMILES 12.57%

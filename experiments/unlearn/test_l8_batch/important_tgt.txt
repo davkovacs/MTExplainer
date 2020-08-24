@@ -1,4 +1,0 @@
-c1cc2c3c(cnc2[nH]1)CCCN3C1CCCCC1
-COc1cccc(N(CC(O)Cn2c3ccc(Br)cc3c3cc(Br)ccc32)C(C)=O)c1
-CN(Cc1ccccc1)CC1CCCO1
-CC(C)C(CO)N=Cc1ccccc1

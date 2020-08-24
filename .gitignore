@@ -11,6 +11,10 @@ experiments/unlearn/
 experiments/test_set_preds/
 experiments/test_reactions
 experiments/data_attribution/pistachio/
+scripts/toy_model/sear_convergence/*.out
+scripts/toy_model/sear_convergence/small
+scripts/toy_model/sear_convergence/biased
+scripts/toy_model/sear_convergence/supBiased
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

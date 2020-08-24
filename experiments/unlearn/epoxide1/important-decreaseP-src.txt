@@ -1,5 +1,0 @@
-C C ( C ) O . C O . C O c 1 n c c ( - c 2 c c ( - c 3 n c c ( C N 4 C C N ( C ( C ) C ) C C 4 ) o 3 ) c 3 c n n ( S ( = O ) ( = O ) c 4 c c c c c 4 ) c 3 c 2 ) c c 1 N S ( = O ) ( = O ) c 1 c c c ( F ) c c 1 F . [Na+] . [OH-]
-C C # N . O . O = C ( N 1 C C O C 2 ( C C N ( C c 3 c c ( C C O ) c c c 3 F ) C C 2 ) C 1 ) C ( F ) ( F ) F . O = C ( [O-] ) [O-] . [Na+] . [Na+]
-C C ( = O ) N ( C ) C . C c 1 c c c ( O ) c c 1 Cl . N # C c 1 c c c ( F ) c c 1 Cl . O . O = C ( [O-] ) [O-] . [K+] . [K+]
-
-

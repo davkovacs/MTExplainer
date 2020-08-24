@@ -1,5 +1,0 @@
-C C C C C C C C C C C C C C C C C C [S+] ( C C C ) c 1 c c c c c 1 C ( = O ) O C      C . C C O . C c 1 c c c ( S ( = O ) ( = O ) [O-] ) c c 1 . Cl C Cl . F [B-] ( F      ) ( F ) F . O . [K+]
-CC(C)(C)OC(=O)N1CCC(C=O)CC1.Clc1ccsc1
-CC1(C)OB(c2cccc3[nH]ncc23)OC1(C)C.CS(=O)(=O)CCCNCc1cc2nc(Cl)nc(N3CCOCC3)c2s1
-CCN(C(C)C)C(C)C.CN(C)C=O.CO.CS(C)=O.Cc1cc2nc(NC(=O)c3ccc(C(C)(C)O)cc3)cc(Cl)n2n1.Cl.O=S(=O)(c1ccccc1)C1CCNCC1
-

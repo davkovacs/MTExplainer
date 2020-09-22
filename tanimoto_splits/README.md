@@ -16,7 +16,7 @@ num_cores=32
 mpirun -np $num_cores -ppn $num_cores python tanimoto_calc.py $tanimoto_sim
 mpirun -np $num_cores -ppn $num_cores python do_tanimoto_split.py
 
-# Tokenization, Augmentation, train/val splitting, separation into src/tgt:
+# train/val splitting,  Augmentation + shuffling of training set, Tokenization, separation into src/tgt:
 python tokenize_and_aug.py
 ./split_src_tgt.sh
 ```

@@ -5,16 +5,17 @@ This directory contains code for splitting USPTO (or any other reaction dataset)
 We also provide two pre-split USPTO datasets in the `.tar.gz` files with Tanimoto similarity threshold 0.4 and 0.6. These contain separate reactant-reagent and product files for train/val/test as tokenized SMILES strings. Both training sets are augmented.
 
 ## Performing Tanimoto Splitting
-To split your own reaction dataset via the Tanimoto similarities of the reaction products, first process your dataset so it is the same format as `MIT_mixed_clean.csv` (unzip from this directory for a look) and run the following code (changing filenames where necessary):
+To split your own reaction dataset via the Tanimoto similarities of the reaction products, first process your dataset so it is the same format as `MIT_mixed_clean.csv` (.csv with separate columns for 'src' and 'tgt' - unzip from this directory for a look) and run the following code (changing filenames where necessary):
 
 ```
 #! /bin/bash
 
 # Tanimoto splitting:
-tanimoto_sim=0.5
+filename=MIT_mixed_clean.csv
+tanimoto_sim=0.4
 num_cores=32
-mpirun -np $num_cores -ppn $num_cores python tanimoto_calc.py $tanimoto_sim
-mpirun -np $num_cores -ppn $num_cores python do_tanimoto_split.py
+mpirun -np $num_cores -ppn $num_cores python tanimoto_calc.py $filename
+mpirun -np $num_cores -ppn $num_cores python do_tanimoto_split.py $tanimoto_sim
 
 # Run this for some examples of similar reactions:
 # python find_similar.py

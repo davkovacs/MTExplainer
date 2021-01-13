@@ -159,11 +159,15 @@ def main():
     print('Generating Integrated Gradients...\n')
     for c, inp in enumerate(tqdm.tqdm(scaled_inputs)):
         inp.requires_grad = True
-        gold_diff = gold_scorer(inp)
+        gold_diff, gold_1, gold_2 = gold_scorer(inp)
         if c == 0:
             min_diff = gold_diff.detach().numpy()[0]
+            gold_1_base = gold_1.detach().numpy()[0]
+            gold_2_base = gold_2.detach().numpy()[0]
         elif c == steps:
             max_diff = gold_diff.detach().numpy()[0]
+            gold_1_src = gold_1.detach().numpy()[0]
+            gold_2_src = gold_2.detach().numpy()[0]
         gold_scorer.zero_grad()
         grad = torch.autograd.grad(gold_diff, inp)[0].numpy()
         gdiffs.append(grad)
@@ -172,7 +176,13 @@ def main():
     IG = (src_embed.numpy() - baseline_emb.numpy()) * avg_grads
     IG_norm = np.sum(IG, axis=2).squeeze(-1)
     print('\nNumber of IG steps: {}'.format(steps))
-    print('Difference in target probabilities: {:.3f}'.format(max_diff-min_diff))
+    print('ln p(tgt1 | src): {:.4f}, p(tgt1 | src): {:.4f}'.format(gold_1_src, np.exp(gold_1_src)))
+    print('ln p(tgt2 | src): {:.4f}, p(tgt2 | src): {:.4f}'.format(gold_2_src, np.exp(gold_2_src)))
+    print('p(tgt1 | src) - p(tgt2 | src): {:.4f}'.format(max_diff))
+    print('\nln p(tgt1 | baseline): {:.4f}, p(tgt1 | baseline): {:.4f}'.format(gold_1_base, np.exp(gold_1_base)))
+    print('ln p(tgt2 | baseline): {:.4f}, p(tgt2 | baseline): {:.4f}'.format(gold_2_base, np.exp(gold_1_base)))
+    print('p(tgt1 | baseline) - p(tgt2 | baseline): {}'.format(min_diff))
+    print('\nDifference in target probabilities: {:.3f}'.format(max_diff-min_diff))
     print('Sum of attributions: {:.3f} \n'.format(np.sum(IG_norm)))
 
     convergence_diff = (max_diff-min_diff) / np.sum(IG_norm)
@@ -181,12 +191,17 @@ def main():
   
     np.save(opt.output, IG_norm)
     
-    print('\n')
+    print('\nAttributions:')
     with open(opt.src) as file:
         for line in file:
             for i, ch in enumerate(line.split()):
-                print(ch, "{0:.5g}".format(IG_norm[i]))
-
+                att = IG_norm[i]
+                ua = np.sum(IG_norm)/len(line.split())
+                ratio = att/ua
+                if ratio > 1 or ratio < 0:
+                    print(ch, "{:.3f}, UA: {:.3f}, ratio: {:.3f} !!!".format(att, ua, ratio))
+                else:
+                    print(ch, "{:.3f}, UA: {:.3f}, ratio: {:.3f}".format(att, ua, ratio))
 
 if __name__ == "__main__":
     main()

@@ -3,6 +3,7 @@ Code for conducting a random split of a reaction dataset, and calculating the Ta
 
 Author: William McCorkindale
 """
+import sys
 import pandas as pd
 import numpy as np
 from rdkit import DataStructs
@@ -31,9 +32,9 @@ def return_borders(my_ind, dat_len, mpi_size):
     border_high = mpi_borders[my_ind+1]
     return border_low, border_high
 
-# Change this file to whatever reaction .csv you want to split
-# .csv needs to have separate columns for 'src' (reactant-reagents) and 'tgt' (products)
-df = pd.read_csv('MIT_mixed_clean.csv') 
+# file has to be .csv with separate columns for 'src' (reactant-reagents) and 'tgt' (products)
+filename = sys.argv[1]
+df = pd.read_csv(filename) 
 
 df_train, df_test = train_test_split(df, test_size=0.7, random_state=42)
 

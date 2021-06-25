@@ -7,6 +7,7 @@ We also provide two pre-split USPTO datasets in the `.tar.gz` files with Tanimot
 ## Performing Tanimoto Splitting
 To split your own reaction dataset via the Tanimoto similarities of the reaction products, first process your dataset so it is the same format as `MIT_mixed_clean.csv` (.csv with separate columns for 'src' and 'tgt' - unzip from this directory for a look) and run the following code (changing filenames where necessary):
 
+(25 June 2021) - much less memory intensive scripts utilising scipy sparse matrices have been added, and the example script has been changed accordingly.
 ```
 #! /bin/bash
 
@@ -14,13 +15,15 @@ To split your own reaction dataset via the Tanimoto similarities of the reaction
 filename=MIT_mixed_clean.csv
 tanimoto_sim=0.4
 num_cores=32
-mpirun -np $num_cores -ppn $num_cores python tanimoto_calc.py $filename
-mpirun -np $num_cores -ppn $num_cores python do_tanimoto_split.py $tanimoto_sim
+save_dir=data
 
-# Run this for some examples of similar reactions:
+mpirun -np $num_cores -ppn $num_cores python tanimoto_calc_sparse.py -csv_path $filename -threshold 0.6 -npz_path tanimoto_s6.npz
+mpirun -np $num_cores -ppn $num_cores python do_tanimoto_split_sparse.py -csv_path $filename -test_frac 0.3 -npz_path tanimoto_s6.npz -save_dir $save_dir
+
+# Run this for some examples of similar reactions (doesn't work with sparse matrices, rerun with non-sparse methods instead):
 # python find_similar.py
 
 # train/val splitting,  Augmentation + shuffling of training set, Tokenization, separation into src/tgt:
-python tokenize_and_aug.py
-./split_src_tgt.sh
+python tokenize_and_aug.py -save_dir $save_dir
+./split_src_tgt.sh $save_dir
 ```

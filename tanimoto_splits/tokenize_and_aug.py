@@ -26,7 +26,7 @@ def smi_list_tokenizer(smi_list):
 
 def data_augm(rx_list):
     """
-    Tokenize a SMILES molecule or reaction 
+    Augment a SMILES molecule or reaction 
     """
     RDLogger.DisableLog('rdApp.*')
     rx_list_augm = rx_list.copy()
